@@ -2,10 +2,12 @@
 
 using namespace std;
 #include "menu.h"
+#include "ui.h"
+#include "rlutil.h"
 
 int main()
 {
-
+    initUI();
     if(menuLogin()){
         menuPrincipal();
     }

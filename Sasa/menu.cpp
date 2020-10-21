@@ -1,11 +1,12 @@
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 #include "menu.h"
 #include "ui.h"
+#include "rlutil.h"
+using namespace rlutil;
 
 void menuPrincipal(){
-    initUI();
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
     gotoxy(1, 5);
@@ -15,7 +16,6 @@ void menuPrincipal(){
 }
 
 bool menuLogin(){
-    initUI();
     cls();
     char user[10]{}, pass[10];
     bool login = false;
