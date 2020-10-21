@@ -3,5 +3,31 @@
 	<iostream>
 	"menu.h"
 
-1603303255 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1603304597 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+
+1603304597 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+	<iostream>
+	"menu.h"
+	"ui.h"
+
+1603290157 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1601305701 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
 

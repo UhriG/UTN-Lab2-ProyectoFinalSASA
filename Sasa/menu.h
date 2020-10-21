@@ -3,6 +3,6 @@
 
 // Declaraciones de Menu
 void menuPrincipal();
-void menuLogin();
+bool menuLogin();
 
 #endif // MENU_H_INCLUDED

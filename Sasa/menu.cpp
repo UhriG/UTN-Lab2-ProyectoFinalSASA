@@ -6,7 +6,6 @@ using namespace std;
 
 void menuPrincipal(){
     initUI();
-    menuLogin();
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
     gotoxy(1, 5);
@@ -15,16 +14,18 @@ void menuPrincipal(){
     cout << "OPCION 3" << endl;
 }
 
-void menuLogin(){
+bool menuLogin(){
     cls();
     char user[10]{}, pass[10];
+    bool login;
     title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
     gotoxy(5, 5);
-    cout << "INICIAR SESION" << endl;
+    cout << "*INICIAR SESION" << endl;
     gotoxy(5, 6);
-    cout << "Ingresar USER: > ";
+    cout << "USER: > ";
     cin >> user;
     gotoxy(5, 7);
-    cout << "Ingresar PASSWORD: > ";
+    cout << "PASSWORD: > ";
     cin >> pass;
+    return login;
 }

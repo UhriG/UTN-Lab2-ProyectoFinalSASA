@@ -5,7 +5,9 @@ using namespace std;
 
 int main()
 {
+
     menuPrincipal();
+
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
     return 0;
 }
