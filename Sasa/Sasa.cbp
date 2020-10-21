@@ -36,6 +36,7 @@
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
 		<Unit filename="rlutil.h" />
+		<Unit filename="ui.cpp" />
 		<Unit filename="ui.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
