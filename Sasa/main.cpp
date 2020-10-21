@@ -6,7 +6,12 @@ using namespace std;
 int main()
 {
 
-    menuPrincipal();
+    if(menuLogin()){
+        menuPrincipal();
+    }
+    else {
+        menuLogin();
+    }
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
     return 0;
