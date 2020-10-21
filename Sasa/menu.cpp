@@ -20,14 +20,12 @@ bool menuLogin(){
     char user[10]{}, pass[10];
     bool login = false;
     title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
-    gotoxy(5, 5);
+    gotoxy(1, 5);
     cout << "*INICIAR SESION" << endl;
 
-    gotoxy(5, 6);
     cout << "USER: > ";
     cin >> user;
 
-    gotoxy(5, 7);
     cout << "PASSWORD: > ";
     cin >> pass;
     login = true;

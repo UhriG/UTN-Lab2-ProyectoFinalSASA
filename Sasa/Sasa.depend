@@ -30,3 +30,10 @@
 	<sys/types.h>
 	<sys/time.h>
 
+1603306690 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
