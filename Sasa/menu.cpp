@@ -6,39 +6,95 @@ using namespace std;
 #include "rlutil.h"
 using namespace rlutil;
 
-bool menuLogin(){
-    cls();
-    char user[10]{}, pass[10];
-    bool login = false;
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
-    gotoxy(1, 5);
-    cout << "*INICIAR SESION" << endl;
+void menuPrincipal(){
+    bool menu = true;
+    while(menu){
 
-    cout << "USER: > ";
-    cin >> user;
+        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+        gotoxy(1, 5);
+        cout << "1) USUARIO" << endl;
+        cout << "2) PRODUCTOS" << endl;
+        cout << "3) CATEGORÍA" << endl;
 
-    cout << "PASSWORD: > ";
-    cin >> pass;
-    login = true;
-    return login;
+        cout << "0) SALIR DEL PROGRAMA" << endl;
+        cout << endl;
+        cout << "> ";
+        int opc;
+        cin>>opc;
+        cls();
+        switch(opc){
+            case 1:
+                menuUsuario();
+            break;
+            case 2:
+                menuProducto();
+            break;
+            case 3:
+                //subMenu3();
+            break;
+            case 0:
+                menu = false;
+            break;
+            default:
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            break;
+        }
+    }
 }
 
-void menuPrincipal(){
+
+void menuUsuario(){
+    bool menu = true;
+    while(menu){
+        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+        gotoxy(1, 5);
+        cout << "1) CREAR NUEVO USUARIO" << endl;
+        cout << "2) LISTAR USUARIOS" << endl;
+
+        cout << "0) VOLVER ATRÁS" << endl;
+        cout << endl;
+        cout << "> ";
+        int opc;
+        cin>>opc;
+        cls();
+        switch(opc){
+            case 1:
+                //menuUsuario();
+            break;
+            case 2:
+                //subMenu2();
+            break;
+            case 3:
+                //subMenu3();
+            break;
+            case 0:
+                menu = false;
+            break;
+            default:
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            break;
+        }
+    }
+}
+
+void menuProducto(){
     cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    cout << "1) SUBMENU 1" << endl;
-    cout << "2) SUBMENU 2" << endl;
-    cout << "3) SUBMENU 3" << endl;
-    cout << "0) SALIR DEL PROGRAMA" << endl;
+    cout << "1) CREAR NUEVO PRODUCTO" << endl;
+    cout << "2) MODIFICAR PRODUCTO" << endl;
+    cout << "3) ELIMINAR PRODUCTO" << endl;
+    cout << "4) LISTAR PRODUCTOS" << endl;
+
+    cout << "0) VOLVER ATRÁS" << endl;
     cout << endl;
     cout << "> ";
     int opc;
     cin>>opc;
-    system("cls");
+    cls();
     switch(opc){
         case 1:
-            //subMenu1();
+            //menuUsuario();
         break;
         case 2:
             //subMenu2();
@@ -55,6 +111,3 @@ void menuPrincipal(){
     }
     system("pause");
 }
-
-
-

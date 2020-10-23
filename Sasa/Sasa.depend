@@ -37,3 +37,41 @@
 	"ui.h"
 	"rlutil.h"
 
+1603494224 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603495221 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+
+1603329149 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
+
+1603329149 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1603329149 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1603495626 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+	<iostream>
+	<iomanip>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
