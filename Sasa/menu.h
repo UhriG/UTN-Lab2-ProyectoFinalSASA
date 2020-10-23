@@ -2,7 +2,7 @@
 #define MENU_H_INCLUDED
 
 // Declaraciones de Menu
-bool menuLogin();
+
 void menuPrincipal();
 
 

@@ -37,3 +37,54 @@
 	"ui.h"
 	"rlutil.h"
 
+1603492363 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+
+1603492378 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.h
+
+1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.h
+
+1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1603492257 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+	<iostream>
+	<iomanip>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603490629 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1603492399 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.h
+
+1603496077 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<conio.h>
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+

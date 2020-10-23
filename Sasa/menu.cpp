@@ -6,23 +6,6 @@ using namespace std;
 #include "rlutil.h"
 using namespace rlutil;
 
-bool menuLogin(){
-    cls();
-    char user[10]{}, pass[10];
-    bool login = false;
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
-    gotoxy(1, 5);
-    cout << "*INICIAR SESION" << endl;
-
-    cout << "USER: > ";
-    cin >> user;
-
-    cout << "PASSWORD: > ";
-    cin >> pass;
-    login = true;
-    return login;
-}
-
 void menuPrincipal(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
