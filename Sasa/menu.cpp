@@ -222,6 +222,23 @@ void crearUsuario(){
 }
 
 void listarUsuarios(){
-
-
+    int ancho =10; // Determina el ancho de cada columna
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "LISTADO DE TODOS LOS USUARIOS";
+    cout << left;
+    cout << setw(ancho) << "COL-1" << setw(ancho) << "COL-2" << setw(ancho) << "COL-3" << setw(ancho) << "COL-4" << setw(ancho) << "COL-5";
+    cout << endl << "----------------------------------------------------------------------------" << endl;
+    for(int i = 0; i<2; i++){
+        cout << setw(ancho) << "CELDA-1";
+        cout << setw(ancho) << "CELDA-2";
+        cout << setw(ancho) << "CELDA-3";
+        cout << setw(ancho) << "CELDA-4";
+        cout << setw(ancho) << "CELDA-5";
+        cout << endl << "----------------------------------------------------------------------------" << endl;
+    }
+    cout << "1) MODIFICAR USUARIO" << endl;
+    cout << "2) ELIMINAR USUARIO" << endl;
+    msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
 }
