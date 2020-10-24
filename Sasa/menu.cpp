@@ -99,7 +99,7 @@ void menuProducto(){
         cls();
         switch(opc){
             case 1:
-                //menuUsuario();
+                crearProducto();
             break;
             case 2:
                 //subMenu2();
@@ -196,12 +196,11 @@ void menuConfiguracion(){
 // SUB MENU USUARIO
 
 void crearUsuario(){
-    bool menu = true;
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
     string user, nombre, apellido;
-    int dni, perfil;
+    int id, dni, perfil;
     cout << "*CREAR USUARIO" << endl;
     cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
     cout << "USUARIO: " << endl;
@@ -216,9 +215,6 @@ void crearUsuario(){
     cout << "PERFIL: " << endl;
     cin >> perfil;
     cout << endl;
-    if(perfil != 0){
-        menu = false;
-    }
 }
 
 void listarUsuarios(){
@@ -241,4 +237,23 @@ void listarUsuarios(){
     cout << "1) MODIFICAR USUARIO" << endl;
     cout << "2) ELIMINAR USUARIO" << endl;
     msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
+}
+
+// SUB MENU PRODUCTO
+
+void crearProducto(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    int id, categoria_id, estado, stock;
+    string nombre;
+    cout << "*CREAR PRODUCTO" << endl;
+    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
+    cout << "NOMBRE: " << endl;
+    cin >> nombre;
+    cout << "CATEGORIA: " << endl;
+    cin >> categoria_id;
+    cout << "STOCK: " << endl;
+    cin >> stock;
+    cout << endl;
 }
