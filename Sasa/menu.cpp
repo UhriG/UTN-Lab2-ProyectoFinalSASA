@@ -6,10 +6,11 @@ using namespace std;
 #include "rlutil.h"
 using namespace rlutil;
 
+// MENUES PRINCIPAL
 void menuPrincipal(){
     bool menu = true;
     while(menu){
-
+        cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
         gotoxy(1, 5);
         cout << "1) USUARIO" << endl;
@@ -50,6 +51,7 @@ void menuPrincipal(){
 void menuUsuario(){
     bool menu = true;
     while(menu){
+        cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
         gotoxy(1, 5);
         cout << "1) CREAR USUARIO" << endl;
@@ -63,10 +65,10 @@ void menuUsuario(){
         cls();
         switch(opc){
             case 1:
-                //menuUsuario();
+                crearUsuario();
             break;
             case 2:
-                //subMenu2();
+                listarUsuarios();
             break;
             case 0:
                 menu = false;
@@ -81,6 +83,7 @@ void menuUsuario(){
 void menuProducto(){
     bool menu = true;
     while(menu){
+        cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
         gotoxy(1, 5);
         cout << "1) CREAR PRODUCTO" << endl;
@@ -120,6 +123,7 @@ void menuProducto(){
 void menuCategoria(){
     bool menu = true;
     while(menu){
+        cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
         gotoxy(1, 5);
         cout << "1) CREAR CATEGORÍA" << endl;
@@ -156,6 +160,7 @@ void menuCategoria(){
 void menuConfiguracion(){
     bool menu = true;
     while(menu){
+        cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
         gotoxy(1, 5);
         cout << "1) REALIZAR COPIA DE SEGURIDAD" << endl;
@@ -188,3 +193,35 @@ void menuConfiguracion(){
     }
 }
 
+// SUB MENU USUARIO
+
+void crearUsuario(){
+    bool menu = true;
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    string user, nombre, apellido;
+    int dni, perfil;
+    cout << "*CREAR USUARIO" << endl;
+    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
+    cout << "USUARIO: " << endl;
+    cin >> user;
+    cout << "NOMBRE: " << endl;
+    cin >> nombre;
+    cout << "APELLIDO: " << endl;
+    cin >> apellido;
+    cout << "DNI: " << endl;
+    cin >> dni;
+    cout << "1- ADMINISTRADOR, 2- SUPERVISOR, 3- OPERADOR"<< endl;
+    cout << "PERFIL: " << endl;
+    cin >> perfil;
+    cout << endl;
+    if(perfil != 0){
+        menu = false;
+    }
+}
+
+void listarUsuarios(){
+
+
+}
