@@ -23,7 +23,7 @@ void menuPrincipal(){
         cout << "> ";
         int opc;
         cin>>opc;
-        cls();
+        //cls();
         switch(opc){
             case 1:
                 menuUsuario();
@@ -102,7 +102,7 @@ void menuProducto(){
                 crearProducto();
             break;
             case 2:
-                //subMenu2();
+                modificarProducto();
             break;
             case 3:
                 //subMenu3();
@@ -249,6 +249,24 @@ void crearProducto(){
     string nombre;
     cout << "*CREAR PRODUCTO" << endl;
     cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
+    cout << "NOMBRE: " << endl;
+    cin >> nombre;
+    cout << "CATEGORIA: " << endl;
+    cin >> categoria_id;
+    cout << "STOCK: " << endl;
+    cin >> stock;
+    cout << endl;
+}
+
+void modificarProducto(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    int id, categoria_id, estado, stock;
+    string nombre;
+    cout << "*MODIFICAR PRODUCTO" << endl;
+    cout << "INGRESAR ID PRODUCTO" << endl;
+    cin >> id;
     cout << "NOMBRE: " << endl;
     cin >> nombre;
     cout << "CATEGORIA: " << endl;
