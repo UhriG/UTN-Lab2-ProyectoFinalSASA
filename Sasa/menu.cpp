@@ -139,7 +139,7 @@ void menuCategoria(){
         cls();
         switch(opc){
             case 1:
-                //menuUsuario();
+                crearCategoria();
             break;
             case 2:
                 //subMenu2();
@@ -332,5 +332,21 @@ void listarProducto(){
             break;
         }
     }
+}
+
+// SUB MENU CATEGORIA
+
+void crearCategoria(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    string nombre;
+    int id;
+    cout << "*CREAR CATEGORÍA" << endl;
+    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
+    cout << "NOMBRE: " << endl;
+    cin >> nombre;
+    cout << endl;
+    msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
 }
 
