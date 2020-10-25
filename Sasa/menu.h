@@ -17,5 +17,8 @@ void eliminarProducto(); // Elimina un Producto
 void listarProducto(); // Lista los Producto
 // SUB MENU CATEGORIA
 void crearCategoria(); // Crear Categoria
+void modificarCategoria(); // Modifica Categoria
+void eliminarCategoria(); // Elimina una Categoria
+
 
 #endif // MENU_H_INCLUDED

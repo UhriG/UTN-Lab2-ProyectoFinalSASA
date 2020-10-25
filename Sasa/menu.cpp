@@ -142,10 +142,10 @@ void menuCategoria(){
                 crearCategoria();
             break;
             case 2:
-                //subMenu2();
+                modificarCategoria();
             break;
             case 3:
-                //subMenu3();
+                eliminarCategoria();
             break;
             case 0:
                 menu = false;
@@ -292,7 +292,6 @@ void eliminarProducto(){
         estado = false;
         msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
     }
-    anykey();
 }
 
 void listarProducto(){
@@ -348,5 +347,40 @@ void crearCategoria(){
     cin >> nombre;
     cout << endl;
     msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+}
+
+void modificarCategoria(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    string nombre;
+    int id;
+    cout << "*MODIFICAR CATEGORÍA" << endl;
+    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
+    cout << "ID CATEGORÍA: " << endl;
+    cin >> id;
+    //funcion buscar id
+    cout << "INGRESAR NOMBRE NUEVO: " << endl;
+    cin >> nombre;
+    cout << endl;
+    msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+}
+
+void eliminarCategoria(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    int id;
+    char resp[2];
+    bool estado = true;
+    cout << "*ELIMINAR CATEGORÍA" << endl;
+    cout << "INGRESAR ID CATEGORÍA" << endl;
+    cin >> id;
+    cout << "ELIMINAR? (SI/NO): " << endl;
+    cin >> resp;
+    if(resp == "SI"){
+        estado = false;
+        msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+    }
 }
 
