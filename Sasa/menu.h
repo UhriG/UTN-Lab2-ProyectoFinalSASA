@@ -22,5 +22,8 @@ void eliminarCategoria(); // Elimina una Categoria
 // SUB MENU CONFIGURACION
 void copiaSeguridad(); // Crear Copia de Seguridad
 void recuperarCopia(); // Recupera Copia de Seguridad
+void exportarDatos(); // Exporta datos a csv
+// FUNCIONES GLOBALES O NECESARIAS
+
 
 #endif // MENU_H_INCLUDED

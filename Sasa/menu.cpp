@@ -181,7 +181,7 @@ void menuConfiguracion(){
                 recuperarCopia();
             break;
             case 3:
-                //subMenu3();
+                exportarDatos();
             break;
             case 0:
                 menu = false;
@@ -401,3 +401,14 @@ void recuperarCopia(){
     cout << "*SE RECUPERA COPIA DE SEGURIDAD DE LOS DATOS.DAT" << endl;
     msj("SE RECUPERO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
 }
+
+void exportarDatos(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "*SE EXPORTA DATOS.DAT A CSV" << endl;
+    cout << "Si es que me sale jaja by Max" << endl;
+    msj("SE EXPORTO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+}
+
+
