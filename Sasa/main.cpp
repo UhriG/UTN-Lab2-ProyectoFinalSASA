@@ -15,7 +15,8 @@ int main()
     else {
         menuLogin();
     }*/
-    menuLogin();
+    //menuLogin();
+    menuPrincipal();
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
     return 0;

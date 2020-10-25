@@ -37,6 +37,8 @@
 	"ui.h"
 	"rlutil.h"
 
+1603329149 D
+
 1603492363 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
@@ -49,6 +51,21 @@
 1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.h
 
 1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+
+1603661740 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+
+1603661740 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+
+1603329149 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
+
+1603329149 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+
+1603495626 i
 	<iostream>
 	<string>
 	<cstdio>
@@ -61,6 +78,13 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+	"ui.h"
+	"rlutil.h"
 
 1603492257 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
@@ -70,15 +94,31 @@
 	"rlutil.h"
 
 1603490629 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.cpp
-	<iostream>
-	<iomanip>
-	<cstring>
-	"ui.h"
-	"rlutil.h"
+
+1603329149 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
 
 1603492399 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.h
 
 1603496077 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<conio.h>
+	"login.h"
+
+1603496077 
+
+1603661764 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+	<iostream>
+	<iomanip>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603661587 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
+
+1603661587 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
 	<iostream>
 	<string>
 	<iomanip>
