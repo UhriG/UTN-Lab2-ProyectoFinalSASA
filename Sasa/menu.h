@@ -13,6 +13,7 @@ void listarUsuarios(); // Lista Todos los Usuarios
 // SUB MENU PRODUCTO
 void crearProducto(); // Crear Producto
 void modificarProducto(); // Modifica un Producto
+void eliminarProducto(); // Modifica un Producto
 
 
 #endif // MENU_H_INCLUDED

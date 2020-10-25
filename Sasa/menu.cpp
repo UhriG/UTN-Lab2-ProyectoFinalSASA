@@ -105,7 +105,7 @@ void menuProducto(){
                 modificarProducto();
             break;
             case 3:
-                //subMenu3();
+                eliminarProducto();
             break;
             case 4:
                 //subMenu3();
@@ -275,3 +275,24 @@ void modificarProducto(){
     cin >> stock;
     cout << endl;
 }
+
+void eliminarProducto(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    int id;
+    char resp[2];
+    bool estado = true;
+    cout << "*ELIMINAR PRODUCTO" << endl;
+    cout << "INGRESAR ID PRODUCTO" << endl;
+    cin >> id;
+    cout << "ELIMINAR? (SI/NO): " << endl;
+    cin >> resp;
+    if(resp == "SI"){
+        estado = false;
+        msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+    }
+    anykey();
+}
+
+
