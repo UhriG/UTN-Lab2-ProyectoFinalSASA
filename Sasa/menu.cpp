@@ -178,7 +178,7 @@ void menuConfiguracion(){
                 copiaSeguridad();
             break;
             case 2:
-                //subMenu2();
+                recuperarCopia();
             break;
             case 3:
                 //subMenu3();
@@ -394,3 +394,10 @@ void copiaSeguridad(){
     msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
 }
 
+void recuperarCopia(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "*SE RECUPERA COPIA DE SEGURIDAD DE LOS DATOS.DAT" << endl;
+    msj("SE RECUPERO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+}
