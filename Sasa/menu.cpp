@@ -175,7 +175,7 @@ void menuConfiguracion(){
         cls();
         switch(opc){
             case 1:
-                //menuUsuario();
+                copiaSeguridad();
             break;
             case 2:
                 //subMenu2();
@@ -382,5 +382,15 @@ void eliminarCategoria(){
         estado = false;
         msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
     }
+}
+
+// SUB MENU CONFIGURACION
+
+void copiaSeguridad(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "*SE CREARA COPIA DE SEGURIDAD DE LOS DATOS.DAT" << endl;
+    msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
 }
 
