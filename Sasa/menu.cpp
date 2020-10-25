@@ -108,7 +108,7 @@ void menuProducto(){
                 eliminarProducto();
             break;
             case 4:
-                //subMenu3();
+                listarProducto();
             break;
             case 0:
                 menu = false;
@@ -295,4 +295,42 @@ void eliminarProducto(){
     anykey();
 }
 
+void listarProducto(){
+    bool menu = true;
+    while(menu){
+        cls();
+        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+        gotoxy(1, 5);
+        cout << "1) LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
+        cout << "2) LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
+        cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
+        cout << "4) LISTAR TODOS LOS PRODUCTOS" << endl;
+        cout << endl;
+        cout << "0) VOLVER ATRÁS" << endl;
+        cout << endl;
+        cout << "> ";
+        int opc;
+        cin>>opc;
+        switch(opc){
+            case 1:
+                //opc1();
+            break;
+            case 2:
+                //opc2();
+            break;
+            case 3:
+                //opc3();
+            break;
+            case 4:
+                //opc4();
+            break;
+            case 0:
+                menu = false;
+            break;
+            default:
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            break;
+        }
+    }
+}
 
