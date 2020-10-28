@@ -5,6 +5,7 @@
 #include <conio.h>
 using namespace std;
 #include "login.h"
+#include "menu.h"
 #include "ui.h"
 #include "rlutil.h"
 using namespace rlutil;
@@ -12,6 +13,8 @@ using namespace rlutil;
 void menuLogin(){
     int opc;
     bool menu=true;
+    bool log = false;
+
     while(menu){
         cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
@@ -23,12 +26,18 @@ void menuLogin(){
         cin >> opc;
         system("cls");
         switch(opc){
-            case 1: login();
+            case 1: log = login();
                 break;
             case 2: registrar();
                 break;
             case 3: menu = false;
                 break;
+        }
+        if(log==true){
+            menuPrincipal();
+        }else{
+            cout << "ERROROROROROROROR" << endl;
+            system("pause");
         }
     }
 }
