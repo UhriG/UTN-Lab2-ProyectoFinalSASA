@@ -96,6 +96,7 @@ bool Usuario::leerDisco(int pos){
 	p=fopen("datos/usuario.dat","rb");
 	if(p==NULL){
 		cout<<"No existe el archivo";
+		return false;
     }
 	fseek(p,pos*sizeof *this,0);
 	x=fread(this,sizeof *this,1,p);
