@@ -37,3 +37,180 @@
 	"ui.h"
 	"rlutil.h"
 
+<<<<<<< Updated upstream
+=======
+1603329149 D
+
+1603928560 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+
+1603840610 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.h
+
+1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.h
+
+1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+
+1603943058 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+	"usuario.h"
+
+1603661740 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+
+1603329149 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
+
+1603329149 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+
+1603495626 i
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+	"ui.h"
+	"rlutil.h"
+
+1603840610 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+	<iostream>
+	<iomanip>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603490629 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+
+1603329149 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+
+1603928605 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.h
+
+1603929094 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<windows.h>
+	<conio.h>
+	"login.h"
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603496077 
+
+1603661764 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+	<iostream>
+	<iomanip>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603943046 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
+
+1603943046 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<windows.h>
+	<conio.h>
+	"login.h"
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603943058 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+	<iostream>
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	<string>
+	"usuario.h"
+
+1603943058 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+	<string>
+
+1603950332 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<windows.h>
+	<conio.h>
+	"login.h"
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603950332 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
+
+1603949992 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+
+1603949992 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
+
+1603949992 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1603949992 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+	<iostream>
+	<iomanip>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603949992 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1603950561 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+	<iostream>
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	<string>
+	"usuario.h"
+
+1603950561 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+	<string>
+
+1603950561 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+	"usuario.h"
+
+>>>>>>> Stashed changes
