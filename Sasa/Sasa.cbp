@@ -37,6 +37,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
+		<Unit filename="producto.cpp" />
 		<Unit filename="producto.h" />
 		<Unit filename="rlutil.h" />
 		<Unit filename="ui.cpp" />
