@@ -5,6 +5,7 @@ using namespace std;
 #include "rlutil.h"
 using namespace rlutil;
 #include "producto.h"
+#include "Fecha.h"
 
 void Producto::setNombre();
 void Producto::setCategoria();

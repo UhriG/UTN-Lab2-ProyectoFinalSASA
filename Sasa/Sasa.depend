@@ -37,8 +37,8 @@
 	"ui.h"
 	"rlutil.h"
 
-<<<<<<< Updated upstream
-=======
+1603306690 ated upstream
+
 1603329149 D
 
 1603928560 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\main.cpp
@@ -162,7 +162,7 @@
 
 1603950332 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
 
-1603949992 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1603953250 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
 1603949992 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
 
@@ -180,7 +180,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1603949992 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1603953250 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	"menu.h"
@@ -205,12 +205,11 @@
 1603950561 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
-1603950561 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1603953250 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
-	"login.h"
 	"ui.h"
 	"rlutil.h"
-	"usuario.h"
 
->>>>>>> Stashed changes
+1603950561 shed changes
+

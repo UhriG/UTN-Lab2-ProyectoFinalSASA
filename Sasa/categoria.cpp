@@ -6,8 +6,11 @@ using namespace std;
 using namespace rlutil;
 #include "categoria.h"
 
-void categoria::setNombre();
-void categoria::setCategoria();
+void categoria::setNombre(string n){
+    nombre = n;
+};
+void categoria::setCategoria(){
+};
 void categoria::setFechaCrea(Fecha);
 void categoria::setFechaMod(Fecha);
 int categoria::getId(){return id;};
