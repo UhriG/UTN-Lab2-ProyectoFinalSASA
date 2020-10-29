@@ -1,11 +1,10 @@
-#include <iostream>
+/*#include <iostream>
 #include <iomanip>
 using namespace std;
 #include "ui.h"
 #include "rlutil.h"
 using namespace rlutil;
 #include "producto.h"
-#include "Fecha.h"
 
 void Producto::setNombre();
 void Producto::setCategoria();
@@ -23,4 +22,4 @@ Fecha Producto::getFechaMod(){return Fecha;};
 void Producto::cargar();
 void Producto::mostrar();
 bool Producto::escribirDisco();
-bool Producto::leerDisco();
+bool Producto::leerDisco();*/

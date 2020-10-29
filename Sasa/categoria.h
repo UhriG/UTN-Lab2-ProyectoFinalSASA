@@ -9,17 +9,17 @@ class categoria
 //        Fecha fecha_creacion;
 //        Fecha fecha_modificacion;
     public:
-        void setNombre();
+        void setNombre(string);
 //        void setFechaCrea(Fecha);
 //        void setFechaMod(Fecha);
-        int getId(){return id;};
-        string getNombre(){return nombre;};
+        int getId();
+        string getNombre();
 //        Fecha getFechaCrea(){return Fecha;};
 //        Fecha getFechaMod(){return Fecha;};
-        void cargar();
+        void cargar(int);
         void mostrar();
         bool escribirDisco();
-        bool leerDisco();
+        bool leerDisco(int);
 };
 
 #endif // CATEGORIA_H_INCLUDED

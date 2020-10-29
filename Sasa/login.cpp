@@ -29,9 +29,7 @@ void Login::menuLogin(){
         switch(opc){
             case 1: log = login();
                 break;
-            case 2: //registrar();
-                break;
-            case 3: return;
+            case 2: return;
                 break;
         }
         if(log==true){

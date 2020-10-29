@@ -1,5 +1,6 @@
 #include<iostream>
 #include<iomanip>
+#include<string>
 using namespace std;
 #include "ui.h"
 #include "rlutil.h"
@@ -10,28 +11,27 @@ using namespace rlutil;
 void categoria::setNombre(string n){
     nombre = n;
 };
-void categoria::setFechaCrea(Fecha);
-void categoria::setFechaMod(Fecha);
+//void categoria::setFechaCrea(Fecha);
+//void categoria::setFechaMod(Fecha);
 int categoria::getId(){
     return id;
 };
 string categoria::getNombre(){
     return nombre;
 };
-Fecha categoria::getFechaCrea(){
-    return Fecha;
-};
-Fecha categoria::getFechaMod(){
-    return Fecha;
-};
+//Fecha categoria::getFechaCrea(){
+//    return Fecha;
+//};
+//Fecha categoria::getFechaMod(){
+//    return Fecha;
+//};
 
-void categoria::cargar(){
+void categoria::cargar(int categoria){
     cls();
     cout << "Ingresar Categoría: ";
     cin >> categoria;
 
 
-    setEstado();
     escribirDisco();
 };
 void categoria::mostrar(){
@@ -49,7 +49,7 @@ bool categoria::escribirDisco(){
     fclose(f);
     return guardo;
 };
-bool categoria::leerDisco(){
+bool categoria::leerDisco(int pos){
     int x;
 	FILE *p;
 	p=fopen("datos/usuario.dat","rb");

@@ -1,5 +1,6 @@
 #include<iostream>
 #include<iomanip>
+#include<string>
 using namespace std;
 #include "ui.h"
 #include "rlutil.h"
@@ -22,13 +23,13 @@ void Fecha::setMes(int m){
 void Fecha::setAnio(int a){
     anio=a;
 };;
-void Fecha::getDia(){
+int Fecha::getDia(){
     return dia;
 };
-void Fecha::getMes(){
+int Fecha::getMes(){
     return mes;
 };
-void Fecha::getAnio(){
+int Fecha::getAnio(){
     return anio;
 };
 void Fecha::cargarFecha(){
@@ -47,7 +48,7 @@ void Fecha::mostrarFecha(){
     cout << dia << "/" << mes << "/" << anio;
 };
 
-void fechaActual(){
+void fechaActual(int *d, int *m, int *a){
     time_t tiempo;
     struct tm *tmPtr;
     tiempo=time(NULL);

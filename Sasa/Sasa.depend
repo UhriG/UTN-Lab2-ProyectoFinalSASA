@@ -37,8 +37,6 @@
 	"ui.h"
 	"rlutil.h"
 
-1603306690 ated upstream
-
 1603329149 D
 
 1603928560 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\main.cpp
@@ -148,7 +146,7 @@
 1603943058 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
-1603951706 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
+1603973858 source:c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\login.cpp
 	<iostream>
 	<string>
 	<iomanip>
@@ -160,13 +158,13 @@
 	"ui.h"
 	"rlutil.h"
 
-1603953214 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
+1603973097 c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\login.h
 
-1603953250 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1603973097 c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1603949992 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
+1603973097 c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\ui.h
 
-1603949992 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+1603973097 c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -180,21 +178,32 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1603953250 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1603974791 source:c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+	"usuario.h"
+
+1603973097 c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\usuario.h
+	<string>
+
+1603973854 source:c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	"menu.h"
 	"ui.h"
 	"rlutil.h"
 
-1603949992 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+1603973097 source:c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\ui.cpp
 	<iostream>
 	<iomanip>
 	<cstring>
 	"ui.h"
 	"rlutil.h"
 
-1603951706 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1603973097 source:c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -202,14 +211,106 @@
 	<string>
 	"usuario.h"
 
-1603953214 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
-	<string>
+1603973334 source:c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	"producto.h"
 
-1603953250 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1603973323 c:\users\cristian\desktop\diseño\c++\utn-lab2-proyectofinalsasa\sasa\producto.h
+
+1603973858 source:c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\login.cpp
 	<iostream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<windows.h>
+	<conio.h>
+	"login.h"
 	"menu.h"
 	"ui.h"
 	"rlutil.h"
 
-1603950561 shed changes
+1603973097 c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\login.h
+
+1603973097 c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\menu.h
+
+1603973097 c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\ui.h
+
+1603973097 c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1603974791 source:c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+	"usuario.h"
+
+1603973097 c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\usuario.h
+	<string>
+
+1603973854 source:c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\menu.cpp
+	<iostream>
+	<iomanip>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603973334 source:c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\producto.cpp
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	"producto.h"
+
+1603973323 c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\producto.h
+
+1603973097 source:c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\ui.cpp
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1603973097 source:c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\usuario.cpp
+	<iostream>
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	<string>
+	"usuario.h"
+
+1603985092 source:c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\categoria.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	"ui.h"
+	"rlutil.h"
+	"categoria.h"
+	"Fecha.h"
+
+1603985103 c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\categoria.h
+
+1603985598 c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\fecha.h
+
+1603985574 source:c:\users\gabri\documents\utn tsp\laboratorio computacion ii\sasa\sasa\fecha.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	"ui.h"
+	"rlutil.h"
+	"fecha.h"
+	"producto.h"
 

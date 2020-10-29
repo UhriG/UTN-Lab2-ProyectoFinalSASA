@@ -9,15 +9,15 @@ class Fecha
         int anio;
     public:
         Fecha();
-        void setDia();
-        void setMes();
-        void setAnio();
-        void getDia();
-        void getMes();
-        void getAnio();
+        void setDia(int);
+        void setMes(int);
+        void setAnio(int);
+        int getDia();
+        int getMes();
+        int getAnio();
         void cargarFecha();
         void mostrarFecha();
-        void fechaActual();
+        void fechaActual(int, int, int);
 };
 
 
