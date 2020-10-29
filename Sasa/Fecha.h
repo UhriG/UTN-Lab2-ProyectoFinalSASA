@@ -8,6 +8,7 @@ class Fecha
         int mes;
         int anio;
     public:
+        Fecha();
         void setDia();
         void setMes();
         void setAnio();
@@ -16,6 +17,7 @@ class Fecha
         void getAnio();
         void cargarFecha();
         void mostrarFecha();
+        void fechaActual();
 };
 
 
