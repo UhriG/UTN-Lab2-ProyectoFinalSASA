@@ -5,9 +5,9 @@
 	"ui.h"
 	"rlutil.h"
 
-1603307611 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1603977026 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1603307689 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1603977026 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	"menu.h"
@@ -144,5 +144,30 @@
 	"usuario.h"
 
 1603943058 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+	<string>
+
+1603977035 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<windows.h>
+	<conio.h>
+	"login.h"
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+
+1603977035 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
+
+1603977035 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+	<iostream>
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	<string>
+	"usuario.h"
+
+1603977035 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 

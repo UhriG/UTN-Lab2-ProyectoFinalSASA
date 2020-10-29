@@ -6,20 +6,50 @@ using namespace std;
 using namespace rlutil;
 #include "producto.h"
 
-void Producto::setNombre();
-void Producto::setCategoria();
-void Producto::setEstado();
-void Producto::setStock();
-void Producto::setFechaCrea(Fecha);
-void Producto::setFechaMod(Fecha);
-int Producto::getId(){return id;};
-string Producto::getNombre(){return nombre;};
-int Producto::getCategoria(){return categoria_id;};
-int Producto::getEstado(){return estado;};
-int Producto::getStock(){return stock;};
-Fecha Producto::getFechaCrea(){return Fecha;};
-Fecha Producto::getFechaMod(){return Fecha;};
-void Producto::cargar();
-void Producto::mostrar();
-bool Producto::escribirDisco();
-bool Producto::leerDisco();
+void Producto::setNombre(string n){
+    nombre = n;
+}
+
+void Producto::setCategoria(int c){
+    categoria_id = c;
+}
+
+void Producto::setEstado(int e){
+    estado = e;
+}
+
+void Producto::setStock(int s){
+    stock = s;
+}
+/*
+void Producto::setFechaCrea(Fecha f){
+    fecha_creacion = f;
+}
+
+void Producto::setFechaMod(Fecha f){
+    fecha_modificacion = f;
+}
+*/
+
+void Producto::cargar(){
+    cout << "Ingresar Producto, completar los siguientes datos: " << endl;
+    cout << "Nombre: ";
+    cin >> nombre;
+    cout << "Categoria: ";
+    cin >> categoria_id;
+    cout << "Estado: ";
+    cin >> estado;
+    cout << "Stock: ";
+    cin >> stock;
+}
+
+void Producto::mostrar(){
+    cout << "Detalles del producto: " << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Categoria: " << categoria_id << endl;
+    cout << "Estado: " << estado << endl;
+    cout << "Stock: " << stock << endl;
+}
+
+//bool Producto::escribirDisco();
+//bool Producto::leerDisco();

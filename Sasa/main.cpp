@@ -6,6 +6,8 @@ using namespace std;
 #include "rlutil.h"
 #include "usuario.h"
 
+#include "producto.h"
+
 int main()
 {
     initUI();
@@ -13,10 +15,10 @@ int main()
     //menuLogin();
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
-    Usuario u;
-    u.cargar();
-    u.leerDisco();
-    u.mostrar();
+    Producto p;
+    p.cargar();
+    cout << endl;
+    p.mostrar();
 
     //return 0;
 }
