@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include <cstdlib>
+#include <windows.h>
 #include <conio.h>
 using namespace std;
 #include "login.h"
@@ -10,7 +11,7 @@ using namespace std;
 #include "rlutil.h"
 using namespace rlutil;
 
-void menuLogin(){
+void Login::menuLogin(){
     int opc;
     bool menu=true;
     bool log = false;
@@ -24,25 +25,25 @@ void menuLogin(){
         cout << "2 - REGISTRARSE" << endl;
         cout << "3 - SALIR" << endl;
         cin >> opc;
-        system("cls");
+        cls();
         switch(opc){
             case 1: log = login();
                 break;
-            case 2: registrar();
+            case 2: //registrar();
                 break;
-            case 3: menu = false;
+            case 3: return;
                 break;
         }
         if(log==true){
             menuPrincipal();
         }else{
-            cout << "ERROROROROROROROR" << endl;
-            system("pause");
+            msj("DEMASIADOS INTENTOS FALLIDOS, VUELVA A INTENTAR EN 3 MINUTOS", rlutil::WHITE, rlutil::RED);
+            Sleep(300);
         }
     }
 }
 
-bool login(){
+bool Login::login(){
     /// usuario y password de prueba, se deberá reemplazar por una busqueda en archivo
     string user = "admin", pass = "admin";
 
@@ -97,7 +98,4 @@ bool login(){
     }while(logueado == false && contador < 3);
 
     return logueado;
-}
-
-void registrar(){
 }
