@@ -9,18 +9,8 @@ using namespace std;
 int main()
 {
     initUI();
-<<<<<<< HEAD
-    /*if(menuLogin()){
-        menuPrincipal();
-    }
-    else {
-        menuLogin();
-    }*/
-    Login l;
-    l.menuLogin();
-=======
+
     //menuLogin();
->>>>>>> maxi
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
     Usuario u;
