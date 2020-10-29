@@ -37,9 +37,13 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
+		<Unit filename="producto.cpp" />
+		<Unit filename="producto.h" />
 		<Unit filename="rlutil.h" />
 		<Unit filename="ui.cpp" />
 		<Unit filename="ui.h" />
+		<Unit filename="usuario.cpp" />
+		<Unit filename="usuario.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
