@@ -5,7 +5,7 @@
 class Usuario
 {
     private:
-        int id = 1;
+        int id = 0;
         string nombre;
         string password;
         int perfil;
