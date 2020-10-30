@@ -8,8 +8,8 @@ using namespace rlutil;
 #include "usuario.h"
 
 
-void Usuario::setNombre(string n){
-    nombre = n;
+void Usuario::setNombre(char *n){
+    strcpy(nombre,n);
 }
 
 void Usuario::setPassword(string p){
@@ -25,36 +25,39 @@ void Usuario::setEstado(int e){
 }
 
 void Usuario::cargar(){
-    cls();
     id++;
-    cout << "Ingresar Nombre: ";
+    cout << "*CREAR USUARIO" << endl;
+    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
+    cout << "Nombre: ";
     cin >> nombre;
 
-    cout << "Ingresar Password: ";
-    cin >> password;
+    int existe=-1;
+    existe=buscarNombre(nombre);
+	if(existe==-1){
+        cout << "Password: ";
+        cin >> password;
 
-    cout << "Ingresar Perfil: ";
-    cin >> perfil;  // 1 - Admin 2- Supervisor 3- Operador
+        cout << "Perfil: ";
+        cin >> perfil;  // 1 - Admin 2- Supervisor 3- Operador
 
-    setEstado();
-    escribirDisco();
+        estado = 1;
+	} else {
+        cout << "NOMBRE USADO";
+        anykey();
+	}
 }
 
 void Usuario::mostrar(){
-    //cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
-    int ancho = 10;
+    int anchos = 10;
     string perfiles[3] = {"Admin", "Supervisor", "Operador"};
     string estados[2] = {"Activo","Inactivo"};
-    cout << left;
-    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "PERFIL" << setw(ancho) << "ESTADO";
-    cout << endl << "----------------------------------------------------------------------------" << endl;
+
+    //cout << setw(5) << "ID" << setw(anchos) << "NOMBRE" << setw(anchos) << "PERFIL" << setw(anchos) << "ESTADO";
+    cout << endl << "----------------------------------------------------------------------------"<< endl;
     cout << setw(5) << id;
-    cout << setw(ancho) << nombre;
-    cout << setw(ancho) << perfiles[perfil-1];
-    cout << setw(ancho) << estados[estado-1];
-    cout << endl << "----------------------------------------------------------------------------" << endl;
+    cout << setw(anchos) << nombre;
+    cout << setw(anchos) << perfiles[perfil-1];
+    cout << setw(anchos) << estados[estado-1];
 }
 
 bool Usuario::escribirDisco(){
@@ -69,7 +72,7 @@ bool Usuario::escribirDisco(){
     return guardo;
 }
 
-bool Usuario::leerDisco(int pos){
+int Usuario::leerDisco(int pos){
     int x;
 	FILE *p;
 	p=fopen("datos/usuario.dat","rb");
@@ -104,3 +107,16 @@ bool Usuario::buscarUsuario(string busNombre){
 
 }
 
+// Funciones externas
+
+int buscarNombre(char *nombreB){
+	int pos=0;
+	Usuario u;
+	while(u.leerDisco(pos)==1){
+		if(strcmp(nombreB,u.getNombre())==0 && u.getEstado()==1){
+            return pos;
+		}
+		pos++;
+    }
+	return -1;
+}

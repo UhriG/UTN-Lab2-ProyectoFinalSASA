@@ -200,58 +200,40 @@ void crearUsuario(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    string nombre, pass;
-    int id, perfil;
     Usuario u; //Clase USUARIO
-
-
-    cout << "*CREAR USUARIO" << endl;
-    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
-    cout << "USUARIO: ";
-    cin >> nombre;
-    u.setNombre(nombre);
-
-    // Buscar usuario
-    cout << "PASSWORD: ";
-    cin >> pass;
-    u.setPassword(pass);
-    cout << "1- ADMINISTRADOR, 2- SUPERVISOR, 3- OPERADOR"<< endl;
-    cout << "PERFIL: ";
-    cin >> perfil;
-    u.setPerfil(perfil);
-    u.setEstado();
-    u.escribirDisco();
+    u.cargar();
+    if(u.escribirDisco()==true){
+        msj("SE CREO CORRECTAMENTE EL USUARIO", rlutil::WHITE, rlutil::GREEN);
+    }
 }
 
 void listarUsuarios(){
-    int ancho =10; // Determina el ancho de cada columna
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    cout << "LISTADO DE TODOS LOS USUARIOS";
+    cout << "LISTADO DE TODOS LOS USUARIOS" << endl;
+    cout << endl;
     cout << left;
-    int cant = 2;
-    for(int i=0; i<cant; i++){
-        Usuario u;
-        u.leerDisco(i);
-        cout << u.getId() << endl;
-        cout << u.getNombre() << endl;
-        cout << u.getPerfil() << endl;
+
+    Usuario u;
+	int pos=0;
+
+	int ancho = 10;
+    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "PERFIL" << setw(ancho) << "ESTADO";
+	while(u.leerDisco(pos++)==1){ //  .Leer_de_disco(pos++)==1)
+        if(u.getEstado()==1){
+            u.mostrar(); // u.mostrar();
+        }
+	}
+	if(pos==1){
+		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
+		system("pause>nul");
     }
+    cout << endl << "----------------------------------------------------------------------------"<< endl;
+    anykey();
     /*
-    cout << setw(ancho) << "COL-1" << setw(ancho) << "COL-2" << setw(ancho) << "COL-3" << setw(ancho) << "COL-4" << setw(ancho) << "COL-5";
-    cout << endl << "----------------------------------------------------------------------------" << endl;
-    for(int i = 0; i<2; i++){
-        cout << setw(ancho) << "CELDA-1";
-        cout << setw(ancho) << "CELDA-2";
-        cout << setw(ancho) << "CELDA-3";
-        cout << setw(ancho) << "CELDA-4";
-        cout << setw(ancho) << "CELDA-5";
-        cout << endl << "----------------------------------------------------------------------------" << endl;
-    }
     cout << "1) MODIFICAR USUARIO" << endl;
     cout << "2) ELIMINAR USUARIO" << endl;
-    msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
 */
 }
 

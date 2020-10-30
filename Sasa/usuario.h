@@ -6,26 +6,29 @@ class Usuario
 {
     private:
         int id = 0;
-        string nombre;
+        char nombre[10];
         string password;
         int perfil;
         int estado;
     public:
-        void setNombre(string n);
+        void setNombre(char *n);
         void setPassword(string p);
         void setPerfil(int p=3);
         void setEstado(int e=1);
         //Get
         int getId(){return id;};
-        string getNombre(){return nombre;};
+        char * getNombre(){return nombre;};
         string getPassword(){return password;};
         int getPerfil(){return perfil;};
         int getEstado(){return estado;};
         void cargar();
         void mostrar();
         bool escribirDisco();
-        bool leerDisco(int pos=0);
+        int leerDisco(int pos);
         bool buscarUsuario(string nombre);
 };
+
+int buscarNombre(char *nombre);
+
 
 #endif // USUARIO_H_INCLUDED
