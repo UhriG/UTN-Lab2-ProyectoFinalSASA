@@ -16,15 +16,16 @@ class Usuario
         void setPerfil(int p=3);
         void setEstado(int e=1);
         //Get
-        int getId();
-        string getNombre();
-        string getPassword();
-        int getPerfil();
-        int getEstado();
+        int getId(){return id;};
+        string getNombre(){return nombre;};
+        string getPassword(){return password;};
+        int getPerfil(){return perfil;};
+        int getEstado(){return estado;};
         void cargar();
         void mostrar();
         bool escribirDisco();
         bool leerDisco(int pos=0);
+        bool buscarUsuario(string nombre);
 };
 
 #endif // USUARIO_H_INCLUDED

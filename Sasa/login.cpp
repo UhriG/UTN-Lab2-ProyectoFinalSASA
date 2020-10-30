@@ -7,6 +7,7 @@
 using namespace std;
 #include "login.h"
 #include "menu.h"
+#include "usuario.h"
 #include "ui.h"
 #include "rlutil.h"
 using namespace rlutil;
@@ -82,6 +83,10 @@ bool Login::login(){
 
             caracter = getch();
         }
+        // PRUEBA DE USUARIO
+        //Usuario u;
+
+
 
         ///Comprobamos que el usuario y password ingresado coincidan con el definito temporalmente como default
         if(usuario == user && password == pass){

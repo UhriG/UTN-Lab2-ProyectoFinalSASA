@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 #include "menu.h"
 #include "login.h"
@@ -15,10 +16,7 @@ int main()
     //menuLogin();
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
-    Producto p;
-    p.cargar();
-    cout << endl;
-    p.mostrar();
+    menuUsuario();
 
     //return 0;
 }

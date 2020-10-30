@@ -24,27 +24,6 @@ void Usuario::setEstado(int e){
     estado = e;
 }
 
-//Get
-int Usuario::getId(){
-    return id;
-}
-
-string Usuario::getNombre(){
-    return nombre;
-}
-
-string Usuario::getPassword(){
-    return password;
-}
-
-int Usuario::getPerfil(){
-    return perfil;
-}
-
-int Usuario::getEstado(){
-    return estado;
-}
-
 void Usuario::cargar(){
     cls();
     id++;
@@ -62,7 +41,7 @@ void Usuario::cargar(){
 }
 
 void Usuario::mostrar(){
-    cls();
+    //cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
     int ancho = 10;
@@ -104,4 +83,24 @@ bool Usuario::leerDisco(int pos){
 	return x;
 }
 
+bool Usuario::buscarUsuario(string busNombre){
+    /*FILE *p;
+    int pos=0;
+    bool en = false;
+	p=fopen("datos/usuario.dat","rb");
+	if(p==NULL){
+		cout<<"No existe el archivo";
+		return false;
+    }
+	fseek(p,pos*sizeof *this,0);
+	while(fread(this,sizeof *this,1,p)){
+        if(busNombre == nombre){
+            //fclose(p);
+            en = true;
+        }
+	}
+	fclose(p);
+	return en;*/
+
+}
 

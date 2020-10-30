@@ -5,6 +5,7 @@ using namespace std;
 #include "ui.h"
 #include "rlutil.h"
 using namespace rlutil;
+#include "usuario.h"
 
 // MENUES PRINCIPAL
 void menuPrincipal(){
@@ -199,22 +200,27 @@ void crearUsuario(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    string user, nombre, apellido;
-    int id, dni, perfil;
+    string nombre, pass;
+    int id, perfil;
+    Usuario u; //Clase USUARIO
+
+
     cout << "*CREAR USUARIO" << endl;
     cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
-    cout << "USUARIO: " << endl;
-    cin >> user;
-    cout << "NOMBRE: " << endl;
+    cout << "USUARIO: ";
     cin >> nombre;
-    cout << "APELLIDO: " << endl;
-    cin >> apellido;
-    cout << "DNI: " << endl;
-    cin >> dni;
+    u.setNombre(nombre);
+
+    // Buscar usuario
+    cout << "PASSWORD: ";
+    cin >> pass;
+    u.setPassword(pass);
     cout << "1- ADMINISTRADOR, 2- SUPERVISOR, 3- OPERADOR"<< endl;
-    cout << "PERFIL: " << endl;
+    cout << "PERFIL: ";
     cin >> perfil;
-    cout << endl;
+    u.setPerfil(perfil);
+    u.setEstado();
+    u.escribirDisco();
 }
 
 void listarUsuarios(){
@@ -224,6 +230,15 @@ void listarUsuarios(){
     gotoxy(1, 5);
     cout << "LISTADO DE TODOS LOS USUARIOS";
     cout << left;
+    int cant = 2;
+    for(int i=0; i<cant; i++){
+        Usuario u;
+        u.leerDisco(i);
+        cout << u.getId() << endl;
+        cout << u.getNombre() << endl;
+        cout << u.getPerfil() << endl;
+    }
+    /*
     cout << setw(ancho) << "COL-1" << setw(ancho) << "COL-2" << setw(ancho) << "COL-3" << setw(ancho) << "COL-4" << setw(ancho) << "COL-5";
     cout << endl << "----------------------------------------------------------------------------" << endl;
     for(int i = 0; i<2; i++){
@@ -237,6 +252,7 @@ void listarUsuarios(){
     cout << "1) MODIFICAR USUARIO" << endl;
     cout << "2) ELIMINAR USUARIO" << endl;
     msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
+*/
 }
 
 // SUB MENU PRODUCTO
