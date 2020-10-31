@@ -25,6 +25,9 @@ void recuperarCopia(); // Recupera Copia de Seguridad
 void exportarDatos(); // Exporta datos a csv
 // SUB MENU PRODUCTO LISTAR PRODUCTOS
 void listarProductoPorCodAs(); // Lista los productos por codigo ascendente
+void listarProductoPorCodDes(); // Lista los productos por codigo descendente
+void listarProductoInd(); // Lista producto individual
+void listarProductoTodos(); // Listar todos los productos
 // FUNCIONES GLOBALES O NECESARIAS
 
 

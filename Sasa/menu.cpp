@@ -253,35 +253,60 @@ void modificarProducto(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    int id, categoria_id, estado, stock;
-    string nombre;
+    int pos, id, cat, stock;
+    Producto p;
     cout << "*MODIFICAR PRODUCTO" << endl;
     cout << "INGRESAR ID PRODUCTO" << endl;
     cin >> id;
-    cout << "NOMBRE: " << endl;
-    cin >> nombre;
-    cout << "CATEGORIA: " << endl;
-    cin >> categoria_id;
-    cout << "STOCK: " << endl;
-    cin >> stock;
-    cout << endl;
+    pos = buscarCod(id);
+    if(pos!=-1){
+		cout<<"INGRESE NUEVO STOCK: ";
+		cin>>stock;
+		p.leerDisco(pos);
+		p.setStock(stock);
+		if(p.modDisco(pos)==true){
+            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+		}
+
+    }else{
+		msj("NO EXISTE EL PRODUCTO", rlutil::WHITE, rlutil::RED);
+		anykey();
+    }
 }
 
 void eliminarProducto(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    int id;
+    int id, pos;
     char resp[2];
-    bool estado = true;
     cout << "*ELIMINAR PRODUCTO" << endl;
-    cout << "INGRESAR ID PRODUCTO" << endl;
+    cout << "INGRESAR ID PRODUCTO: ";
     cin >> id;
-    cout << "ELIMINAR? (SI/NO): " << endl;
-    cin >> resp;
-    if(resp == "SI"){
-        estado = false;
-        msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+    pos = buscarCod(id);
+    Producto p;
+    if(pos!=-1){
+        int ancho = 10;
+        p.leerDisco(pos);
+        cout << left;
+        cout << endl;
+        cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        p.mostrar();
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        cout << endl;
+        cout << "ELIMINAR? (SI/NO): ";
+        cin >> resp;
+        if(resp == "SI"){
+            p.setEstado(0);
+            if(p.modDisco(pos)==true){
+                msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+            }
+        } else{
+            msj("NO SE ELIMINO EL PRODUCTO", rlutil::WHITE, rlutil::RED);
+        }
+    }else{
+		msj("NO EXISTE EL PRODUCTO", rlutil::WHITE, rlutil::RED);
     }
 }
 
@@ -306,13 +331,13 @@ void listarProducto(){
                 listarProductoPorCodAs();
             break;
             case 2:
-                //opc2();
+                listarProductoPorCodDes();
             break;
             case 3:
-                //opc3();
+                listarProductoInd();
             break;
             case 4:
-                //opc4();
+                listarProductoTodos();
             break;
             case 0:
                 menu = false;
@@ -421,13 +446,96 @@ void listarProductoPorCodAs(){
 	while(p.leerDisco(pos++)==1){
         if(p.getEstado()==1){
             p.mostrar();
-            cout << endl;
+            cout << endl << "----------------------------------------------------------------------------"<< endl;
         }
 	}
 	if(pos==1){
 		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
 		system("pause>nul");
     }
-    cout << endl << "----------------------------------------------------------------------------"<< endl;
+    anykey();
+}
+
+void listarProductoPorCodDes(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
+    cout << endl;
+    cout << left;
+
+    Producto p;
+	int pos=0;
+
+	int ancho = 10;
+    cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+	cout << endl << "----------------------------------------------------------------------------"<< endl;
+	while(p.leerDisco(pos++)==1){
+        if(p.getEstado()==1){
+            p.mostrar();
+            cout << endl << "----------------------------------------------------------------------------"<< endl;
+        }
+	}
+	if(pos==1){
+		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
+		system("pause>nul");
+    }
+    anykey();
+}
+
+void listarProductoInd(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "LISTAR PRODUCTO INDIVIDUAL" << endl;
+    cout << endl;
+    cout << left;
+    cout << "INGRESAR ID: ";
+    int cod;
+    cin >> cod;
+
+    Producto p;
+	int pos=0;
+
+	int ancho = 10;
+    cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+	cout << endl << "----------------------------------------------------------------------------"<< endl;
+	while(p.leerDisco(pos++)==1){
+        if(p.getEstado()==1 && cod == p.getId()){
+            p.mostrar();
+            cout << endl << "----------------------------------------------------------------------------"<< endl;
+        }
+	}
+	if(pos==1){
+		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
+		system("pause>nul");
+    }
+    anykey();
+}
+
+void listarProductoTodos(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "LISTAR TODOS LOS PRODUCTOS" << endl;
+    cout << endl;
+    cout << left;
+
+    Producto p;
+	int pos=0;
+
+	int ancho = 10;
+    cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+	cout << endl << "----------------------------------------------------------------------------"<< endl;
+	while(p.leerDisco(pos++)==1){
+        if(p.getEstado()==1){
+            p.mostrar();
+            cout << endl << "----------------------------------------------------------------------------"<< endl;
+        }
+	}
+	if(pos==1){
+		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
+		system("pause>nul");
+    }
     anykey();
 }

@@ -32,6 +32,10 @@ class Producto
         void mostrar();
         bool escribirDisco();
         int leerDisco(int pos);
+        bool modDisco(int pos);
 };
+
+// Funciones Externas
+int buscarCod(int codB);
 
 #endif // PRODUCTO_H_INCLUDED

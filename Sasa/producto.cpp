@@ -37,17 +37,19 @@ void Producto::setFechaMod(Fecha f){
 
 void Producto::cargar(){
     cout << "Ingresar Producto, completar los siguientes datos: " << endl;
-    id =1;
-    cout << "ID: " << id <<endl;
-    cout << "Nombre: ";
-    cin >> nombre;
-    cout << "Marca: ";
-    cin >> marca;
-    cout << "Categoría: ";
-    cin >> categoria_id;
-    estado = 1;
-    cout << "Stock: ";
-    cin >> stock;
+    id =2;
+    //while(buscarCod(pos++)==-1){
+        cout << "ID: " << id <<endl;
+        cout << "Nombre: ";
+        cin >> nombre;
+        cout << "Marca: ";
+        cin >> marca;
+        cout << "Categoría: ";
+        cin >> categoria_id;
+        estado = 1;
+        cout << "Stock: ";
+        cin >> stock;
+    //}
 }
 
 void Producto::mostrar(){
@@ -87,17 +89,31 @@ int Producto::leerDisco(int pos){
 	return x;
 }
 
+bool Producto::modDisco(int pos){
+    bool guardo;
+    FILE *p;
+	p=fopen("datos/producto.dat","rb+");
+	if(p==NULL){
+        cout<<"Error de archivo";
+        return false;
+    }
+	fseek(p,pos*sizeof *this,0);
+	guardo = fwrite(this,sizeof *this,1,p);
+	fclose(p);
+	return guardo;
+}
+
 // Funciones externas
-/*
-int buscarNombre(char *nombreB){
+
+int buscarCod(int codB){
 	int pos=0;
-	Usuario u;
-	while(u.leerDisco(pos)==1){
-		if(strcmp(nombreB,u.getNombre())==0 && u.getEstado()==1){
+	Producto p;
+	while(p.leerDisco(pos)==1){
+		if(codB == p.getId() && p.getEstado()==1){
             return pos;
-		}
+		} // deberia filtrar el estado?
 		pos++;
     }
 	return -1;
 }
-*/
+
