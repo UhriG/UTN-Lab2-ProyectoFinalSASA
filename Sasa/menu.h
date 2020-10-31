@@ -31,7 +31,10 @@ void listarProductoTodos(); // Listar todos los productos
 // SUB MENU CONFIGURACION COPIA DE SEGURIDAD
 bool copiaUsuario(); // crea bk de usuario.dat
 bool copiaProducto(); // crea bk de producto.dat
+// SUB MENU CONFIGURACION RESTAURAR COPIAS
+bool recUsuario(); // recupera bk de usuario.dat
+bool recProducto(); // recupera bk de producto.dat
 // FUNCIONES GLOBALES O NECESARIAS
-
+void barraDeProgreso(); // Barra de progreso
 
 #endif // MENU_H_INCLUDED

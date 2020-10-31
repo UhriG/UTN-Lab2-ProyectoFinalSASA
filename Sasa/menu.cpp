@@ -406,6 +406,19 @@ void copiaSeguridad(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
+    // BARRA DE PROGRESO
+    gotoxy(35,10);
+    printf("CARGANDO");
+    for(int i=1; i<90; i++){
+        gotoxy(i,13);
+        printf("#");
+        for(int x=50; x<70; x++){
+            for(int y=1; y<70; y++){
+                gotoxy(y,24);
+            }
+        }
+    }
+
     int guardo =0;
     guardo += copiaUsuario();
     guardo += copiaProducto();
@@ -414,15 +427,33 @@ void copiaSeguridad(){
     } else {
         msj("ERROR AL CREAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
     }
-
 }
 
 void recuperarCopia(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    cout << "*SE RECUPERA COPIA DE SEGURIDAD DE LOS DATOS.DAT" << endl;
-    msj("SE RECUPERO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+    // BARRA DE PROGRESO
+    gotoxy(35,10);
+    printf("CARGANDO");
+    for(int i=1; i<90; i++){
+        gotoxy(i,13);
+        printf("#");
+        for(int x=50; x<70; x++){
+            for(int y=1; y<70; y++){
+                gotoxy(y,24);
+            }
+        }
+    }
+
+    int rec = 0;
+    rec += recUsuario();
+    rec += recProducto();
+    if(rec > 0){
+        msj("SE RECUPERO CORRECTAMENTE",rlutil::WHITE, rlutil::GREEN);
+    } else {
+        msj("ERROR AL RECUPERAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
+    }
 }
 
 void exportarDatos(){
@@ -595,3 +626,53 @@ bool copiaProducto(){
     fclose(f);
     return true;
 }
+
+// SUB MENU RESTAURAR COPIA DE SEGURIDAD
+bool recUsuario(){
+    Usuario u;
+    FILE *bk = fopen("datos/usuarioBK.dat", "rb");
+    FILE *orig = fopen("datos/usuario.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el usuarioBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&u, sizeof(Usuario), 1, bk)){
+        FILE *f = fopen("datos/usuario.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en usuario.";
+            system("pause");
+            return false;
+        }
+        fwrite(&u, sizeof(Usuario), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
+}
+
+bool recProducto(){
+    Producto p;
+    FILE *bk = fopen("datos/productoBK.dat", "rb");
+    FILE *orig = fopen("datos/producto.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el productoBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&p, sizeof(Producto), 1, bk)){
+        FILE *f = fopen("datos/producto.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en producto.";
+            system("pause");
+            return false;
+        }
+        fwrite(&p, sizeof(Producto), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
+}
+
