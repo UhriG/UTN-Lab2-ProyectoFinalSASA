@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <stdio.h>
 using namespace std;
 #include "ui.h"
 #include "rlutil.h"
@@ -12,8 +13,8 @@ void Usuario::setNombre(char *n){
     strcpy(nombre,n);
 }
 
-void Usuario::setPassword(string p){
-    password = p;
+void Usuario::setPassword(char *p){
+    strcpy(password,p);
 }
 
 void Usuario::setPerfil(int p){
@@ -32,20 +33,19 @@ void Usuario::cargar(){
     cout << "Nombre: ";
     cin >> nombre;
 
-    int existe=-1;
-    //existe=buscarNombre(nombre);
-	if(existe==-1){
-        cout << "Password: ";
-        cin >> password;
+    int existe;
+    while(existe=buscarNombre(nombre) != -1){
+        msj("NOMBRE EXISTE, INGRESAR UNO DISTINTO", rlutil::WHITE, rlutil::RED);
+        cout << "\nNombre: ";
+        cin >> nombre;
+    }
+    cout << "Password: ";
+    cin >> password;
 
-        cout << "Perfil: ";
-        cin >> perfil;  // 1 - Admin 2- Supervisor 3- Operador
+    cout << "Perfil: ";
+    cin >> perfil;  // 1 - Admin 2- Supervisor 3- Operador
 
-        estado = 1;
-	} else {
-        cout << "NOMBRE USADO";
-        anykey();
-	}
+    estado = 1;
 }
 
 void Usuario::mostrar(){
@@ -87,25 +87,14 @@ int Usuario::leerDisco(int pos){
 	return x;
 }
 
-bool Usuario::buscarUsuario(string busNombre){
-    /*FILE *p;
-    int pos=0;
-    bool en = false;
-	p=fopen("datos/usuario.dat","rb");
-	if(p==NULL){
-		cout<<"No existe el archivo";
-		return false;
-    }
-	fseek(p,pos*sizeof *this,0);
-	while(fread(this,sizeof *this,1,p)){
-        if(busNombre == nombre){
-            //fclose(p);
-            en = true;
-        }
-	}
-	fclose(p);
-	return en;*/
+void Usuario::admin(){
 
+    strcpy(nombre,"admin");
+    strcpy(password,"admin");
+    id = 1;
+    perfil = 1;
+    estado = 1;
+    escribirDisco();
 }
 
 // Funciones externas
@@ -134,4 +123,12 @@ int cantUsuario(){
     fclose(f);
     cant = bytes / sizeof(Usuario);
     return cant;
+}
+
+void compAdmin(){
+    int existe=cantUsuario();
+    if(existe == 0){
+        Usuario u;
+        u.admin();
+    }
 }

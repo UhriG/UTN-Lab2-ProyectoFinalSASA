@@ -12,6 +12,7 @@ int main()
 {
     initUI();
 
+    compAdmin();
     //menuLogin();
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
