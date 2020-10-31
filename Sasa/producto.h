@@ -5,21 +5,24 @@ class Producto
 {
     private:
         int id;
-        string nombre;
+        char nombre[10];
+        char marca[10];
         int categoria_id;
         int estado;
         int stock;
         //Fecha fecha_creacion;
         //Fecha fecha_modificacion;
     public:
-        void setNombre(string n);
+        void setNombre(char *n);
+        void setMarca(char *m);
         void setCategoria(int c);
         void setEstado(int e);
         void setStock(int s);
         //void setFechaCrea(Fecha);
         //void setFechaMod(Fecha);
         int getId(){return id;};
-        string getNombre(){return nombre;};
+        char *getNombre(){return nombre;};
+        char *getMarca(){return marca;};
         int getCategoria(){return categoria_id;};
         int getEstado(){return estado;};
         int getStock(){return stock;};
@@ -28,7 +31,7 @@ class Producto
         void cargar();
         void mostrar();
         bool escribirDisco();
-        bool leerDisco();
+        int leerDisco(int pos);
 };
 
 #endif // PRODUCTO_H_INCLUDED

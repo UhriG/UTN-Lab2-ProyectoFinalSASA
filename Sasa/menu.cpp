@@ -6,6 +6,7 @@ using namespace std;
 #include "rlutil.h"
 using namespace rlutil;
 #include "usuario.h"
+#include "producto.h"
 
 // MENUES PRINCIPAL
 void menuPrincipal(){
@@ -243,17 +244,9 @@ void crearProducto(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    int id, categoria_id, estado, stock;
-    string nombre;
-    cout << "*CREAR PRODUCTO" << endl;
-    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
-    cout << "NOMBRE: " << endl;
-    cin >> nombre;
-    cout << "CATEGORIA: " << endl;
-    cin >> categoria_id;
-    cout << "STOCK: " << endl;
-    cin >> stock;
-    cout << endl;
+    Producto p;
+    p.cargar();
+    p.escribirDisco();
 }
 
 void modificarProducto(){
@@ -310,7 +303,7 @@ void listarProducto(){
         cin>>opc;
         switch(opc){
             case 1:
-                //opc1();
+                listarProductoPorCodAs();
             break;
             case 2:
                 //opc2();
@@ -409,4 +402,32 @@ void exportarDatos(){
     msj("SE EXPORTO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
 }
 
+// SUB MENU PRODUCTO LISTAR PRODUCTOS
 
+void listarProductoPorCodAs(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
+    cout << endl;
+    cout << left;
+
+    Producto p;
+	int pos=0;
+
+	int ancho = 10;
+    cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+	cout << endl << "----------------------------------------------------------------------------"<< endl;
+	while(p.leerDisco(pos++)==1){
+        if(p.getEstado()==1){
+            p.mostrar();
+            cout << endl;
+        }
+	}
+	if(pos==1){
+		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
+		system("pause>nul");
+    }
+    cout << endl << "----------------------------------------------------------------------------"<< endl;
+    anykey();
+}

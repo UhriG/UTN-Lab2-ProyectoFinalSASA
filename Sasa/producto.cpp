@@ -6,8 +6,12 @@ using namespace std;
 using namespace rlutil;
 #include "producto.h"
 
-void Producto::setNombre(string n){
-    nombre = n;
+void Producto::setNombre(char *n){
+    strcpy(nombre,n);
+}
+
+void Producto::setMarca(char *m){
+   strcpy(marca,m);
 }
 
 void Producto::setCategoria(int c){
@@ -33,23 +37,67 @@ void Producto::setFechaMod(Fecha f){
 
 void Producto::cargar(){
     cout << "Ingresar Producto, completar los siguientes datos: " << endl;
+    id =1;
+    cout << "ID: " << id <<endl;
     cout << "Nombre: ";
     cin >> nombre;
-    cout << "Categoria: ";
+    cout << "Marca: ";
+    cin >> marca;
+    cout << "Categoría: ";
     cin >> categoria_id;
-    cout << "Estado: ";
-    cin >> estado;
+    estado = 1;
     cout << "Stock: ";
     cin >> stock;
 }
 
 void Producto::mostrar(){
-    cout << "Detalles del producto: " << endl;
-    cout << "Nombre: " << nombre << endl;
-    cout << "Categoria: " << categoria_id << endl;
-    cout << "Estado: " << estado << endl;
-    cout << "Stock: " << stock << endl;
+    int anchos = 10;
+    string estados[2] = {"Activo","Inactivo"};
+    cout << setw(anchos) << id;
+    cout << setw(anchos) << nombre;
+    cout << setw(anchos) << marca;
+    cout << setw(anchos) << categoria_id;
+    cout << setw(anchos) << estados[estado-1];
+    cout << setw(anchos) << stock;
 }
 
-//bool Producto::escribirDisco();
-//bool Producto::leerDisco();
+bool Producto::escribirDisco(){
+    bool guardo;
+    FILE *f = fopen("datos/producto.dat", "ab");
+    if(f == NULL){
+        cout << "No se puede guardar.";
+        return false;
+    }
+    guardo = fwrite(this,sizeof *this, 1, f);
+    fclose(f);
+    return guardo;
+}
+
+int Producto::leerDisco(int pos){
+    int x;
+	FILE *p;
+	p=fopen("datos/producto.dat","rb");
+	if(p==NULL){
+		cout<<"No existe el archivo";
+		return -1;
+    }
+	fseek(p,pos*sizeof *this,0);
+	x=fread(this,sizeof *this,1,p);
+	fclose(p);
+	return x;
+}
+
+// Funciones externas
+/*
+int buscarNombre(char *nombreB){
+	int pos=0;
+	Usuario u;
+	while(u.leerDisco(pos)==1){
+		if(strcmp(nombreB,u.getNombre())==0 && u.getEstado()==1){
+            return pos;
+		}
+		pos++;
+    }
+	return -1;
+}
+*/

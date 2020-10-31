@@ -23,6 +23,8 @@ void eliminarCategoria(); // Elimina una Categoria
 void copiaSeguridad(); // Crear Copia de Seguridad
 void recuperarCopia(); // Recupera Copia de Seguridad
 void exportarDatos(); // Exporta datos a csv
+// SUB MENU PRODUCTO LISTAR PRODUCTOS
+void listarProductoPorCodAs(); // Lista los productos por codigo ascendente
 // FUNCIONES GLOBALES O NECESARIAS
 
 

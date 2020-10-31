@@ -5,7 +5,6 @@ using namespace std;
 #include "login.h"
 #include "ui.h"
 #include "rlutil.h"
-#include "usuario.h"
 
 #include "producto.h"
 
@@ -16,7 +15,7 @@ int main()
     //menuLogin();
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
-    menuUsuario();
+    menuPrincipal();
 
     //return 0;
 }

@@ -56,16 +56,15 @@
 
 1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\rlutil.h
 
-1604016939 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1604102380 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
 	"ui.h"
 	"rlutil.h"
-	"usuario.h"
 	"producto.h"
 
-1603661740 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1604104658 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
 1603329149 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
 
@@ -119,12 +118,14 @@
 
 1603496077 
 
-1603661764 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604112275 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	"menu.h"
 	"ui.h"
 	"rlutil.h"
+	"usuario.h"
+	"producto.h"
 
 1603943277 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
 
@@ -141,7 +142,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1604014643 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1604104658 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -149,7 +150,7 @@
 	<string>
 	"usuario.h"
 
-1604017046 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+1604101635 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
 1604065351 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
@@ -178,14 +179,14 @@
 1604087287 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
-1604006322 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1604105628 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
 	"rlutil.h"
 	"producto.h"
 
-1604006322 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
+1604112615 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
 1603997401 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
