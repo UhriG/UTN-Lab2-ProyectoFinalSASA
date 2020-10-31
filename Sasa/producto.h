@@ -36,6 +36,7 @@ class Producto
 };
 
 // Funciones Externas
-int buscarCod(int codB);
+int buscarCod(int codB); // Busca el ID
+int cantProd(); // Devuelve la cantidad de registros
 
 #endif // PRODUCTO_H_INCLUDED

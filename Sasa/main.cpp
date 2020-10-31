@@ -6,7 +6,7 @@ using namespace std;
 #include "ui.h"
 #include "rlutil.h"
 
-#include "producto.h"
+#include "usuario.h"
 
 int main()
 {
@@ -16,6 +16,7 @@ int main()
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
     menuPrincipal();
+
 
     //return 0;
 }

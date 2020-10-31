@@ -5,7 +5,7 @@
 class Usuario
 {
     private:
-        int id = 0;
+        int id;
         char nombre[10];
         string password;
         int perfil;
@@ -29,6 +29,6 @@ class Usuario
 };
 
 int buscarNombre(char *nombre);
-
+int cantUsuario(); // Devuelve la cantidad de registros
 
 #endif // USUARIO_H_INCLUDED

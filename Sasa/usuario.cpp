@@ -25,14 +25,15 @@ void Usuario::setEstado(int e){
 }
 
 void Usuario::cargar(){
-    id++;
+    id = cantUsuario()+1;
     cout << "*CREAR USUARIO" << endl;
+    cout << "ID USUARIO: " << id << endl;
     cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
     cout << "Nombre: ";
     cin >> nombre;
 
     int existe=-1;
-    existe=buscarNombre(nombre);
+    //existe=buscarNombre(nombre);
 	if(existe==-1){
         cout << "Password: ";
         cin >> password;
@@ -119,4 +120,18 @@ int buscarNombre(char *nombreB){
 		pos++;
     }
 	return -1;
+}
+
+int cantUsuario(){
+    FILE *f;
+    f = fopen("datos/usuario.dat", "rb");
+    if(f == NULL){
+        return 0;
+    }
+    int bytes, cant;
+    fseek(f, 0, SEEK_END);
+    bytes = ftell(f);
+    fclose(f);
+    cant = bytes / sizeof(Usuario);
+    return cant;
 }

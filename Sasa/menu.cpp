@@ -253,7 +253,7 @@ void modificarProducto(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    int pos, id, cat, stock;
+    int pos, id, stock;
     Producto p;
     cout << "*MODIFICAR PRODUCTO" << endl;
     cout << "INGRESAR ID PRODUCTO" << endl;
@@ -297,7 +297,7 @@ void eliminarProducto(){
         cout << endl;
         cout << "ELIMINAR? (SI/NO): ";
         cin >> resp;
-        if(resp == "SI"){
+        if(resp == "SI" || resp == "si"){
             p.setEstado(0);
             if(p.modDisco(pos)==true){
                 msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);

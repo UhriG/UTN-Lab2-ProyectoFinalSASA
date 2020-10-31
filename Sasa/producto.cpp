@@ -37,19 +37,17 @@ void Producto::setFechaMod(Fecha f){
 
 void Producto::cargar(){
     cout << "Ingresar Producto, completar los siguientes datos: " << endl;
-    id =2;
-    //while(buscarCod(pos++)==-1){
-        cout << "ID: " << id <<endl;
-        cout << "Nombre: ";
-        cin >> nombre;
-        cout << "Marca: ";
-        cin >> marca;
-        cout << "Categoría: ";
-        cin >> categoria_id;
-        estado = 1;
-        cout << "Stock: ";
-        cin >> stock;
-    //}
+    id = cantProd()+1;
+    cout << "ID: " << id <<endl;
+    cout << "Nombre: ";
+    cin >> nombre;
+    cout << "Marca: ";
+    cin >> marca;
+    cout << "Categoría: ";
+    cin >> categoria_id;
+    estado = 1;
+    cout << "Stock: ";
+    cin >> stock;
 }
 
 void Producto::mostrar(){
@@ -117,3 +115,16 @@ int buscarCod(int codB){
 	return -1;
 }
 
+int cantProd(){
+    FILE *f;
+    f = fopen("datos/producto.dat", "rb");
+    if(f == NULL){
+        return 0;
+    }
+    int bytes, cant;
+    fseek(f, 0, SEEK_END);
+    bytes = ftell(f);
+    fclose(f);
+    cant = bytes / sizeof(Producto);
+    return cant;
+}
