@@ -290,7 +290,7 @@ void eliminarProducto(){
         p.leerDisco(pos);
         cout << left;
         cout << endl;
-        cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+        cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
         cout << endl << "----------------------------------------------------------------------------"<< endl;
         p.mostrar();
         cout << endl << "----------------------------------------------------------------------------"<< endl;
@@ -441,7 +441,7 @@ void listarProductoPorCodAs(){
 	int pos=0;
 
 	int ancho = 10;
-    cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
 	cout << endl << "----------------------------------------------------------------------------"<< endl;
 	while(p.leerDisco(pos++)==1){
         if(p.getEstado()==1){
@@ -468,7 +468,7 @@ void listarProductoPorCodDes(){
 	int pos=0;
 
 	int ancho = 10;
-    cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
 	cout << endl << "----------------------------------------------------------------------------"<< endl;
 	while(p.leerDisco(pos++)==1){
         if(p.getEstado()==1){
@@ -498,7 +498,7 @@ void listarProductoInd(){
 	int pos=0;
 
 	int ancho = 10;
-    cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
 	cout << endl << "----------------------------------------------------------------------------"<< endl;
 	while(p.leerDisco(pos++)==1){
         if(p.getEstado()==1 && cod == p.getId()){
@@ -525,7 +525,7 @@ void listarProductoTodos(){
 	int pos=0;
 
 	int ancho = 10;
-    cout << setw(ancho) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
 	cout << endl << "----------------------------------------------------------------------------"<< endl;
 	while(p.leerDisco(pos++)==1){
         if(p.getEstado()==1){

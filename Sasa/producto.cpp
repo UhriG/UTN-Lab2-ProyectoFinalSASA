@@ -53,7 +53,7 @@ void Producto::cargar(){
 void Producto::mostrar(){
     int anchos = 10;
     string estados[2] = {"Activo","Inactivo"};
-    cout << setw(anchos) << id;
+    cout << setw(5) << id;
     cout << setw(anchos) << nombre;
     cout << setw(anchos) << marca;
     cout << setw(anchos) << categoria_id;
