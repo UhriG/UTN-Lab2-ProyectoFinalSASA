@@ -406,8 +406,15 @@ void copiaSeguridad(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
-    cout << "*SE CREARA COPIA DE SEGURIDAD DE LOS DATOS.DAT" << endl;
-    msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+    int guardo =0;
+    guardo += copiaUsuario();
+    guardo += copiaProducto();
+    if(guardo > 0){
+        msj("SE CREO COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::GREEN);
+    } else {
+        msj("ERROR AL CREAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
+    }
+
 }
 
 void recuperarCopia(){
@@ -538,4 +545,53 @@ void listarProductoTodos(){
 		system("pause>nul");
     }
     anykey();
+}
+
+// SUB MENU COPIA DE SEGURIDAD
+bool copiaUsuario(){
+    Usuario u;
+    FILE *f = fopen("datos/usuario.dat", "rb");
+    FILE *backup = fopen("datos/usuarioBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer usuario.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&u, sizeof(Usuario), 1, f)){
+        FILE *bk = fopen("datos/usuarioBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&u, sizeof(Usuario), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
+}
+
+bool copiaProducto(){
+    Producto p;
+    FILE *f = fopen("datos/producto.dat", "rb");
+    FILE *backup = fopen("datos/productoBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer producto.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&p, sizeof(Producto), 1, f)){
+        FILE *bk = fopen("datos/productoBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&p, sizeof(Producto), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
 }

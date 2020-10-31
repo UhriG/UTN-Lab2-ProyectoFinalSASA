@@ -28,6 +28,9 @@ void listarProductoPorCodAs(); // Lista los productos por codigo ascendente
 void listarProductoPorCodDes(); // Lista los productos por codigo descendente
 void listarProductoInd(); // Lista producto individual
 void listarProductoTodos(); // Listar todos los productos
+// SUB MENU CONFIGURACION COPIA DE SEGURIDAD
+bool copiaUsuario(); // crea bk de usuario.dat
+bool copiaProducto(); // crea bk de producto.dat
 // FUNCIONES GLOBALES O NECESARIAS
 
 
