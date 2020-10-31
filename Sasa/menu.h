@@ -35,6 +35,6 @@ bool copiaProducto(); // crea bk de producto.dat
 bool recUsuario(); // recupera bk de usuario.dat
 bool recProducto(); // recupera bk de producto.dat
 // FUNCIONES GLOBALES O NECESARIAS
-void barraDeProgreso(); // Barra de progreso
+
 
 #endif // MENU_H_INCLUDED
