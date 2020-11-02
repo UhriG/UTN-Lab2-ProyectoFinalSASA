@@ -51,14 +51,14 @@ void Producto::cargar(){
 }
 
 void Producto::mostrar(){
-    int anchos = 10;
+    int anchos = 15;
     string estados[2] = {"Activo","Inactivo"};
     cout << setw(5) << id;
     cout << setw(anchos) << nombre;
     cout << setw(anchos) << marca;
-    cout << setw(anchos) << categoria_id;
+    cout << setw(10) << categoria_id;
     cout << setw(anchos) << estados[estado-1];
-    cout << setw(anchos) << stock;
+    cout << setw(4) << stock;
 }
 
 bool Producto::escribirDisco(){

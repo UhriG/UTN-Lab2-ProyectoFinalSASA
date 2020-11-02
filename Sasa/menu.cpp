@@ -503,10 +503,11 @@ void listarProductoPorCodDes(){
     cout << left;
 
     Producto p;
+
 	int pos=0;
 
-	int ancho = 10;
-    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+	int ancho = 15;
+    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(10) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(4) << "STOCK";
 	cout << endl << "----------------------------------------------------------------------------"<< endl;
 	while(p.leerDisco(pos++)==1){
         if(p.getEstado()==1){
