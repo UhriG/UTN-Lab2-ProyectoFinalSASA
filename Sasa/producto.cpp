@@ -50,21 +50,29 @@ void Producto::cargar(){
     int s;
     cin >> s;
     while(s <= 0){
-        cout << "Ingresar Stock mayor a 0: >";
+        cout << "Ingresar Stock mayor a 0: > ";
         cin >> s;
     }
     setStock(s);
 }
 
-void Producto::mostrar(){
-    int ancho = 10;
+void Producto::mostrar(int modo){
     string estados[2] = {"Activo","Inactivo"};
-    cout << setw(4) << id;
-    cout << setw(20) << nombre;
-    cout << setw(20) << marca;
-    //cout << setw(ancho) << categoria_id;
-    cout << setw(ancho) << estados[estado-1];
-    cout << setw(5) << stock;
+    if(modo == 1){ // MODO 1 MUESTRA EN LISTA
+        int ancho = 10;
+        cout << setw(4) << id;
+        cout << setw(20) << nombre;
+        cout << setw(20) << marca;
+        //cout << setw(ancho) << categoria_id;
+        cout << setw(ancho) << estados[estado-1];
+        cout << setw(5) << stock;
+    } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
+        cout << "ID: "<< id << endl;
+        cout << "NOMBRE: "<< nombre << endl;
+        cout << "MARCA: "<< marca << endl;
+        cout << "ESTADO: "<< estados[estado-1] << endl;
+        cout << "STOCK: "<< stock << endl;
+    }
 }
 
 bool Producto::escribirDisco(){

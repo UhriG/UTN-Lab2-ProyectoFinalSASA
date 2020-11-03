@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1604346596 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1604413724 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
@@ -9,7 +9,7 @@
 
 1604346596 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1604409618 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604415027 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	"menu.h"
@@ -34,7 +34,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1603306690 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+1604415886 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
 	<iostream>
 	<iomanip>
 	<cstring>
@@ -190,9 +190,9 @@
 
 1604364231 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
-1604409618 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
+1604416614 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
-1604411255 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1604416614 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"

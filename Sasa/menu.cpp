@@ -246,7 +246,12 @@ void crearProducto(){
     gotoxy(1, 5);
     Producto p;
     p.cargar();
-    p.escribirDisco();
+    if(p.escribirDisco()==true){
+        msj("SE CREO PRODUCTO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+    } else{
+        msj("ERROR AL CREAR PRODUCTO", rlutil::WHITE, rlutil::RED);
+    }
+
 }
 
 void modificarProducto(){
@@ -256,13 +261,16 @@ void modificarProducto(){
     int pos, id, stock;
     Producto p;
     cout << "*MODIFICAR PRODUCTO" << endl;
-    cout << "INGRESAR ID PRODUCTO" << endl;
+    cout << "INGRESAR ID PRODUCTO: ";
     cin >> id;
+    cout << endl;
     pos = buscarCod(id);
     if(pos!=-1){
+		p.leerDisco(pos);
+		p.mostrar(2);
+		cout << endl;
 		cout<<"INGRESE NUEVO STOCK: ";
 		cin>>stock;
-		p.leerDisco(pos);
 		p.setStock(stock);
 		if(p.modDisco(pos)==true){
             msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
@@ -283,17 +291,13 @@ void eliminarProducto(){
     cout << "*ELIMINAR PRODUCTO" << endl;
     cout << "INGRESAR ID PRODUCTO: ";
     cin >> id;
+    cout << endl;
     pos = buscarCod(id);
     Producto p;
     if(pos!=-1){
         int ancho = 10;
         p.leerDisco(pos);
-        cout << left;
-        cout << endl;
-        cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
-        p.mostrar();
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        p.mostrar(2);
         cout << endl;
         cout << "ELIMINAR? (SI/NO): ";
         cin >> resp;

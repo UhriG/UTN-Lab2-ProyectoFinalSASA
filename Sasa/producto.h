@@ -29,7 +29,7 @@ class Producto
         //Fecha getFechaCrea(){return Fecha;};
         //Fecha getFechaMod(){return Fecha;};
         void cargar();
-        void mostrar();
+        void mostrar(int modo=1);
         bool escribirDisco();
         int leerDisco(int pos);
         bool modDisco(int pos);
