@@ -1,22 +1,22 @@
 # depslib dependency file v1.0
-1604087287 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1604346596 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
 	"ui.h"
 	"rlutil.h"
 	"usuario.h"
-	"producto.h"
 
-1603977026 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1604346596 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1604089702 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604409618 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	"menu.h"
 	"ui.h"
 	"rlutil.h"
 	"usuario.h"
+	"producto.h"
 
 1603306690 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
 
@@ -169,15 +169,16 @@
 
 1603977035 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
 
-1604089598 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1604346596 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
+	<stdio.h>
 	"ui.h"
 	"rlutil.h"
 	<string>
 	"usuario.h"
 
-1604087287 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+1604346596 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
 1604364243 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
@@ -189,9 +190,9 @@
 
 1604364231 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
-1603997401 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
+1604409618 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
-1603997401 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1604411255 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"

@@ -47,7 +47,13 @@ void Producto::cargar(){
     //cin >> categoria_id;
     estado = 1;
     cout << "Stock: ";
-    cin >> stock;
+    int s;
+    cin >> s;
+    while(s <= 0){
+        cout << "Ingresar Stock mayor a 0: >";
+        cin >> s;
+    }
+    setStock(s);
 }
 
 void Producto::mostrar(){

@@ -16,8 +16,14 @@ int main()
     //menuLogin();
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
-    menuPrincipal();
-
-
+    //menuPrincipal();
+    cout << "Ingresar Nombre: >";
+    char n[5];
+    cin >> n;
+    while(n == " "){
+        cout << "NO DEBE ESTAR VACIO EL CAMPO NOMBRE: >";
+        cin >> n;
+    }
+    cout << n;
     //return 0;
 }
