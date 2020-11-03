@@ -57,7 +57,9 @@ void menuUsuario(){
         title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
         gotoxy(1, 5);
         cout << "1) CREAR USUARIO" << endl;
-        cout << "2) LISTAR USUARIOS" << endl;
+        cout << "2) MODIFICAR USUARIO" << endl;
+        cout << "3) ELIMINAR USUARIO" << endl;
+        cout << "4) LISTAR USUARIOS" << endl;
         cout << endl;
         cout << "0) VOLVER ATRÁS" << endl;
         cout << endl;
@@ -70,6 +72,12 @@ void menuUsuario(){
                 crearUsuario();
             break;
             case 2:
+                modificarUsuario();
+            break;
+            case 3:
+                eliminarUsuario();
+            break;
+            case 4:
                 listarUsuarios();
             break;
             case 0:
@@ -208,6 +216,88 @@ void crearUsuario(){
     }
 }
 
+void modificarUsuario(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    Usuario u;
+    int pos, id;
+    cout << "*MODIFICAR USUARIO" << endl;
+    cout << "INGRESAR ID USUARIO: ";
+    cin >> id;
+    cout << endl;
+    pos = buscarID(id);
+    if(pos!=-1){
+		u.leerDisco(pos);
+		u.mostrar(2);
+		cout << endl;
+		cout << "1- NOMBRE 2- CONTRASEÑA 3- PERFIL" << endl;
+		cout << "ELEGIR UNA OPCIÓN: ";
+		int opc;
+		cin >> opc;
+        switch(opc){
+            case 1:
+                char n[20];
+                cout << "INGRESAR NOMBRE: ";
+                cin >> n;
+                u.setNombre(n);
+            break;
+            case 2:
+                char p[10];
+                cout << "INGRESAR PASSWORD: ";
+                cin >> p;
+                u.setPassword(p);
+            break;
+            case 3:
+                int per;
+                cout << "INGRESAR PERFIL: ";
+                cin >> per;
+                u.setPerfil(per);
+            break;
+            case 0:
+                return;
+        }
+		if(u.modDisco(pos)==true){
+            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+		}
+    }else{
+		msj("NO EXISTE EL USUARIO", rlutil::WHITE, rlutil::RED);
+		anykey();
+    }
+}
+
+void eliminarUsuario(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    int id, pos;
+    char resp[2];
+    cout << "*ELIMINAR USUARIO" << endl;
+    cout << "INGRESAR ID USUARIO: ";
+    cin >> id;
+    cout << endl;
+    pos = buscarID(id);
+    Usuario u;
+    if(pos!=-1){
+        int ancho = 10;
+        u.leerDisco(pos);
+        u.mostrar(2);
+        cout << endl;
+        cout << "ELIMINAR? (SI/NO): ";
+        cin >> resp;
+        if(resp == "SI" || resp == "si"){
+            u.setEstado(0);
+            if(u.modDisco(pos)==true){
+                msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+            }
+        } else{
+            msj("NO SE ELIMINO EL USUARIO", rlutil::WHITE, rlutil::RED);
+        }
+    }else{
+		msj("NO EXISTE EL USUARIO", rlutil::WHITE, rlutil::RED);
+    }
+}
+
 void listarUsuarios(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
@@ -219,7 +309,7 @@ void listarUsuarios(){
     Usuario u;
 	int pos=0;
 
-	int ancho = 10;
+	int ancho = 15;
     cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "PERFIL" << setw(ancho) << "ESTADO";
 	while(u.leerDisco(pos++)==1){ //  .Leer_de_disco(pos++)==1)
         if(u.getEstado()==1){
@@ -232,10 +322,6 @@ void listarUsuarios(){
     }
     cout << endl << "----------------------------------------------------------------------------"<< endl;
     anykey();
-    /*
-    cout << "1) MODIFICAR USUARIO" << endl;
-    cout << "2) ELIMINAR USUARIO" << endl;
-*/
 }
 
 // SUB MENU PRODUCTO

@@ -22,12 +22,14 @@ class Usuario
         int getPerfil(){return perfil;};
         int getEstado(){return estado;};
         void cargar();
-        void mostrar();
+        void mostrar(int modo=1);
         bool escribirDisco();
         int leerDisco(int pos);
+        bool modDisco(int pos);
         void admin(); // crea usuario admin
 };
 
+int buscarID(int idB); // Busca el ID
 int buscarNombre(char *nombre);
 int cantUsuario(); // Devuelve la cantidad de registros
 void compAdmin(); // Comprueba si existe admin

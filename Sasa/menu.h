@@ -9,6 +9,8 @@ void menuCategoria(); // Menu Categoria
 void menuConfiguracion(); // Menu Configuracion
 // SUB MENU USUARIO
 void crearUsuario(); // Crear Usuario
+void modificarUsuario(); // Modifica Usuario
+void eliminarUsuario(); // Elimina Usuario
 void listarUsuarios(); // Lista Todos los Usuarios
 // SUB MENU PRODUCTO
 void crearProducto(); // Crear Producto

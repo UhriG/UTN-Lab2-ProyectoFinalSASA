@@ -7,7 +7,7 @@
 	"rlutil.h"
 	"usuario.h"
 
-1604346596 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1604421024 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
 1604415027 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
@@ -169,7 +169,7 @@
 
 1603977035 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
 
-1604346596 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1604424173 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -178,7 +178,7 @@
 	<string>
 	"usuario.h"
 
-1604346596 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+1604424173 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
 1604364243 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp

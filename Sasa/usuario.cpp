@@ -48,17 +48,23 @@ void Usuario::cargar(){
     estado = 1;
 }
 
-void Usuario::mostrar(){
-    int anchos = 10;
+void Usuario::mostrar(int modo){
+    int anchos = 15;
     string perfiles[3] = {"Admin", "Supervisor", "Operador"};
     string estados[2] = {"Activo","Inactivo"};
+    if(modo == 1){ //MODO 1 MUESTRA EN LISTA
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        cout << setw(5) << id;
+        cout << setw(anchos) << nombre;
+        cout << setw(anchos) << perfiles[perfil-1];
+        cout << setw(anchos) << estados[estado-1];
+    } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
+        cout << "ID: "<< id << endl;
+        cout << "NOMBRE: "<< nombre << endl;
+        cout << "PERFIL: "<< perfiles[-1] << endl;
+        cout << "ESTADO: "<< estados[estado-1] << endl;
+    }
 
-    //cout << setw(5) << "ID" << setw(anchos) << "NOMBRE" << setw(anchos) << "PERFIL" << setw(anchos) << "ESTADO";
-    cout << endl << "----------------------------------------------------------------------------"<< endl;
-    cout << setw(5) << id;
-    cout << setw(anchos) << nombre;
-    cout << setw(anchos) << perfiles[perfil-1];
-    cout << setw(anchos) << estados[estado-1];
 }
 
 bool Usuario::escribirDisco(){
@@ -87,6 +93,20 @@ int Usuario::leerDisco(int pos){
 	return x;
 }
 
+bool Usuario::modDisco(int pos){
+    bool guardo;
+    FILE *p;
+	p=fopen("datos/usuario.dat","rb+");
+	if(p==NULL){
+        cout<<"Error de archivo";
+        return false;
+    }
+	fseek(p,pos*sizeof *this,0);
+	guardo = fwrite(this,sizeof *this,1,p);
+	fclose(p);
+	return guardo;
+}
+
 void Usuario::admin(){
 
     strcpy(nombre,"admin");
@@ -98,6 +118,17 @@ void Usuario::admin(){
 }
 
 // Funciones externas
+int buscarID(int idB){
+    int pos=0;
+	Usuario u;
+	while(u.leerDisco(pos)==1){
+		if(idB == u.getId() && u.getEstado()==1){
+            return pos;
+		}
+		pos++;
+    }
+	return -1;
+}
 
 int buscarNombre(char *nombreB){
 	int pos=0;
