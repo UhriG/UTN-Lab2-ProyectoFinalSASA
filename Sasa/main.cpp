@@ -7,7 +7,7 @@ using namespace std;
 #include "rlutil.h"
 
 #include "usuario.h"
-
+#include "producto.h" // BORRAR DESPUES DE LA PRUEBA
 int main()
 {
     initUI();
