@@ -43,8 +43,13 @@ void Usuario::cargar(){
     cin >> password;
 
     cout << "Perfil: ";
-    cin >> perfil;  // 1 - Admin 2- Supervisor 3- Operador
-
+    int p;
+    cin >> p;  // 1 - Admin 2- Supervisor 3- Operador
+    while (p > 3 || p <= 0){
+        cout << "Perfil DEBE SER 1, 2 O 3: > ";
+        cin >> p;
+    }
+    setPerfil(p);
     estado = 1;
 }
 
@@ -58,10 +63,10 @@ void Usuario::mostrar(int modo){
         cout << setw(anchos) << nombre;
         cout << setw(anchos) << perfiles[perfil-1];
         cout << setw(anchos) << estados[estado-1];
-    } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
+    }else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
         cout << "NOMBRE: "<< nombre << endl;
-        cout << "PERFIL: "<< perfiles[-1] << endl;
+        cout << "PERFIL: "<< perfiles[perfil-1] << endl;
         cout << "ESTADO: "<< estados[estado-1] << endl;
     }
 

@@ -285,12 +285,13 @@ void eliminarUsuario(){
         cout << endl;
         cout << "ELIMINAR? (SI/NO): ";
         cin >> resp;
-        if(resp == "SI" || resp == "si"){
-            u.setEstado(0);
+        if(resp == "SI" && resp == "si"){
+            int baja = 0;
+            u.setEstado(baja);
             if(u.modDisco(pos)==true){
                 msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
             }
-        } else{
+        }else{
             msj("NO SE ELIMINO EL USUARIO", rlutil::WHITE, rlutil::RED);
         }
     }else{
