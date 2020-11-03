@@ -14,9 +14,9 @@ void Producto::setMarca(char *m){
    strcpy(marca,m);
 }
 
-void Producto::setCategoria(int c){
+/*void Producto::setCategoria(int c){
     categoria_id = c;
-}
+}*/
 
 void Producto::setEstado(int e){
     estado = e;
@@ -43,22 +43,22 @@ void Producto::cargar(){
     cin >> nombre;
     cout << "Marca: ";
     cin >> marca;
-    cout << "Categoría: ";
-    cin >> categoria_id;
+    //cout << "Categoría: ";
+    //cin >> categoria_id;
     estado = 1;
     cout << "Stock: ";
     cin >> stock;
 }
 
 void Producto::mostrar(){
-    int anchos = 15;
+    int ancho = 10;
     string estados[2] = {"Activo","Inactivo"};
-    cout << setw(5) << id;
-    cout << setw(anchos) << nombre;
-    cout << setw(anchos) << marca;
-    cout << setw(10) << categoria_id;
-    cout << setw(anchos) << estados[estado-1];
-    cout << setw(4) << stock;
+    cout << setw(4) << id;
+    cout << setw(20) << nombre;
+    cout << setw(20) << marca;
+    //cout << setw(ancho) << categoria_id;
+    cout << setw(ancho) << estados[estado-1];
+    cout << setw(5) << stock;
 }
 
 bool Producto::escribirDisco(){

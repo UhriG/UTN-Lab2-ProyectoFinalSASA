@@ -118,7 +118,7 @@
 
 1603496077 
 
-1604179781 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604364231 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	"menu.h"
@@ -180,14 +180,14 @@
 1604087287 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
-1604172998 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1604364243 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
 	"rlutil.h"
 	"producto.h"
 
-1604172998 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
+1604364231 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
 1603997401 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 

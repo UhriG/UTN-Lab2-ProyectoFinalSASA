@@ -479,7 +479,7 @@ void listarProductoPorCodAs(){
 	int pos=0;
 
 	int ancho = 10;
-    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+    cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
 	cout << endl << "----------------------------------------------------------------------------"<< endl;
 	while(p.leerDisco(pos++)==1){
         if(p.getEstado()==1){
@@ -506,8 +506,8 @@ void listarProductoPorCodDes(){
 
 	int pos=0;
 
-	int ancho = 15;
-    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(10) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(4) << "STOCK";
+	int ancho = 12;
+    cout << setw(4) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(10) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(6) << "STOCK";
 	cout << endl << "----------------------------------------------------------------------------"<< endl;
 	while(p.leerDisco(pos++)==1){
         if(p.getEstado()==1){
@@ -530,25 +530,16 @@ void listarProductoInd(){
     cout << endl;
     cout << left;
     cout << "INGRESAR ID: ";
-    int cod;
+    int cod, pos;
     cin >> cod;
-
+    pos=buscarCod(cod);
     Producto p;
-	int pos=0;
-
+    p.leerDisco(pos);
 	int ancho = 10;
-    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(ancho) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(ancho) << "STOCK";
+    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(10) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(4) << "STOCK";
 	cout << endl << "----------------------------------------------------------------------------"<< endl;
-	while(p.leerDisco(pos++)==1){
-        if(p.getEstado()==1 && cod == p.getId()){
-            p.mostrar();
-            cout << endl << "----------------------------------------------------------------------------"<< endl;
-        }
-	}
-	if(pos==1){
-		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
-		system("pause>nul");
-    }
+    p.mostrar();
+    cout << endl << "----------------------------------------------------------------------------"<< endl;
     anykey();
 }
 

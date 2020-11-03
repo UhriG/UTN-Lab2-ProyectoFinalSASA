@@ -5,9 +5,9 @@ class Producto
 {
     private:
         int id;
-        char nombre[10];
-        char marca[10];
-        int categoria_id;
+        char nombre[20];
+        char marca[20];
+        //int categoria_id;
         int estado;
         int stock;
         //Fecha fecha_creacion;
@@ -15,7 +15,7 @@ class Producto
     public:
         void setNombre(char *n);
         void setMarca(char *m);
-        void setCategoria(int c);
+        //void setCategoria(int c);
         void setEstado(int e);
         void setStock(int s);
         //void setFechaCrea(Fecha);
@@ -23,7 +23,7 @@ class Producto
         int getId(){return id;};
         char *getNombre(){return nombre;};
         char *getMarca(){return marca;};
-        int getCategoria(){return categoria_id;};
+        //int getCategoria(){return categoria_id;};
         int getEstado(){return estado;};
         int getStock(){return stock;};
         //Fecha getFechaCrea(){return Fecha;};
