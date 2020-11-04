@@ -8,6 +8,7 @@ using namespace std;
 
 #include "usuario.h"
 #include "producto.h" // BORRAR DESPUES DE LA PRUEBA
+int validarMenu(int opc, int min, int max);
 int main()
 {
     initUI();
@@ -20,3 +21,5 @@ int main()
 
     //return 0;
 }
+
+
