@@ -639,40 +639,36 @@ void listarProductoTodos(){
     int cant = cantProd(), pos = 0, productos = 5;
     int paginas= cant / productos;
     int resp=1, i=0;
-    while(resp != 0){
-        for(i; i<paginas; i++){
-            cls();
-            title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-            gotoxy(1, 5);
-            cout << left;
-            cout << "*LISTAR TODOS LOS PRODUCTOS" << endl;
-            cout << endl;
-            cout << "-----------------------------" << endl;
-            cout << "TOTAL DE PRODUCTOS: " << cant << endl;
-            cout << "-----------------------------" << endl;
-            int ancho = 10;
-            cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
-            cout << endl << "----------------------------------------------------------------------------"<< endl;
-            for(pos; pos < productos; pos++){
-                p.leerDisco(pos);
-                if(p.getEstado()==1){
-                    p.mostrar();
-                    cout << endl << "----------------------------------------------------------------------------"<< endl;
-                }
-            }
-            cout << endl;
-            cout << "PAGINAS: " << paginas << endl;
-            cout << "0- SALIR 1- PAGINA SIGUIENTE: > ";
-            cin >> resp;
-            cout << "-----------------------------" << endl;
-            if(i+1==paginas){
-                    msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
-                }
-            if(resp != 0){
-                productos+=5;
+    while(i<paginas && resp != 0){
+        cls();
+        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+        gotoxy(1, 5);
+        cout << left;
+        cout << "*LISTAR TODOS LOS PRODUCTOS" << endl;
+        cout << endl;
+        cout << "-----------------------------" << endl;
+        cout << "TOTAL DE PRODUCTOS: " << cant << endl;
+        cout << "-----------------------------" << endl;
+        int ancho = 10;
+        cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        for(pos; pos < productos; pos++){
+            p.leerDisco(pos);
+            if(p.getEstado()==1){
+                p.mostrar();
+                cout << endl << "----------------------------------------------------------------------------"<< endl;
             }
         }
-        resp = 0;
+        cout << "PAGINAS: " << paginas << endl;
+        cout << "0- SALIR 1- PAGINA SIGUIENTE: > ";
+        cin >> resp;
+        if(pos == cant){
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                resp = 0;
+            }
+        if(resp != 0){
+            productos+=5;
+        }
     }
 }
 
