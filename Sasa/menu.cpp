@@ -285,7 +285,7 @@ void eliminarUsuario(){
         cout << endl;
         cout << "ELIMINAR? (SI/NO): ";
         cin >> resp;
-        if(resp == "SI" && resp == "si"){
+        if(resp == "SI" || resp == "si"){
             int baja = 0;
             u.setEstado(baja);
             if(u.modDisco(pos)==true){
