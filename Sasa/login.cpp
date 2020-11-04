@@ -24,35 +24,33 @@ void Login::menuLogin(){
         cout << "INGRESE UNA OPCIÓN" << endl;
         cout << "1 - INGRESAR" << endl;
         cout << "2 - REGISTRARSE" << endl;
-        cout << "3 - SALIR" << endl;
-        cin >> opc;
-        cls();
+        cout << "3 - SALIR" << endl <<" >";
+
+        while(!(cin >> opc) || (opc < 1 || opc > 3)){
+            cout << "SOLO SE ACEPTAN NUMEROS DEL 1 al 3: ";
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+
         switch(opc){
-            case 1: log = login();
+            case 1: login();
                 break;
             case 2: //registrar();
                 break;
             case 3: return;
                 break;
-        }
-        if(log==true){
-            menuPrincipal();
-        }else{
-            msj("DEMASIADOS INTENTOS FALLIDOS, VUELVA A INTENTAR EN 3 MINUTOS", rlutil::WHITE, rlutil::RED);
-            Sleep(300);
+            //default: msj("INRGRESE UN VALOR VÁLIDO DEL 1 AL 3", rlutil::WHITE, rlutil::RED);
         }
     }
 }
 
-bool Login::login(){
-    /// usuario y password de prueba, se deberá reemplazar por una busqueda en archivo
-    string user = "admin", pass = "admin";
+void Login::login(){
 
     /// Contador para solo permitir 3 intentos, si falla los 3 sale del programa
     int contador = 0;
 
     bool logueado = false;
-    string usuario, password;
+    char usuario[20], password[10];
 
     do{
         system("cls");
@@ -63,44 +61,36 @@ bool Login::login(){
         cout << ">USUARIO: ";
         cin >> usuario;
 
-        char caracter;
+        cout << ">PASSWORD: ";
+        cin >> password;
 
-        cout << ">CONTRASEÑA: ";
-        caracter = getch();
-
-        password = "";
-
-        while(caracter != 13){ ///13 por el código ascii del enter, entonces le digo que haga lo del while mientras no se presione enter
-            if (caracter != 8){ ///8 por el código ascii del retroceso
-                password.push_back(caracter); ///vamos añadiendo al password caracter por caracter ingresado siempre y cuando no sea un enter o retroceso
-                cout << "*";
-            }else{
-                if(password.length() > 0){ ///Acá hacemos que mientras la longitud del password sea mayor a cero se borren los caracteres ingresados
-                    cout << "\b \b";
-                    password = password.substr(0, password.length() - 1);
-                }
-            }
-
-            caracter = getch();
-        }
-        // PRUEBA DE USUARIO
-        //Usuario u;
-
-
-
-        ///Comprobamos que el usuario y password ingresado coincidan con el definito temporalmente como default
-        if(usuario == user && password == pass){
-            logueado =  true;
-        }
-
-        if(!logueado){
-            cout << "\n\nEL USUARIO Y/O PASSWORD SON INCORRECTOS" << endl;
-            getch();
+        if(comprobarCredenciales(password, usuario) != -1){
+            logueado = true;
+        }else{
+            msj("CREDENCIALES INCORRECTAS, INTENTE NUEVAMENTE", rlutil::WHITE, rlutil::RED);
             contador++;
         }
 
-
     }while(logueado == false && contador < 3);
 
-    return logueado;
+    if(logueado){
+        menuPrincipal();
+    }else{
+        cls();
+        system("color 47");
+        cout << "\n\n\n\t\tDEMASIADOS INTENTOS FALLIDOS, EL PROGRAMA SE CERRARÁ" << endl;
+        exit(0);
+    }
+}
+
+int Login::comprobarCredenciales(char *passB, char *nombreB){
+	int pos=0;
+	Usuario u;
+	while(u.leerDisco(pos)==1){
+		if(strcmp(passB,u.getPassword())==0 && strcmp(nombreB,u.getNombre())==0 && u.getEstado()==1){
+            return pos;
+		}
+		pos++;
+    }
+	return -1;
 }

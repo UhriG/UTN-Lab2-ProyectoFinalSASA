@@ -13,10 +13,11 @@ int main()
     initUI();
 
     compAdmin();
-    //menuLogin();
+    Login l;
+    l.menuLogin();
 
     //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
-    menuPrincipal();
+    //menuPrincipal();
 
     //return 0;
 }
