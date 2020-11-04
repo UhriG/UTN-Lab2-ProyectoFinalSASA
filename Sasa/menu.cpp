@@ -559,58 +559,91 @@ void exportarDatos(){
 // SUB MENU PRODUCTO LISTAR PRODUCTOS
 
 void listarProductoPorCodAs(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
-    cout << "LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
-    cout << endl;
-    cout << left;
-
     Producto p;
-	int pos=0;
-
-	int ancho = 10;
-    cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
-	cout << endl << "----------------------------------------------------------------------------"<< endl;
-	while(p.leerDisco(pos++)==1){
-        if(p.getEstado()==1){
-            p.mostrar();
-            cout << endl << "----------------------------------------------------------------------------"<< endl;
-        }
-	}
-	if(pos==1){
-		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
-		system("pause>nul");
+    int cant = cantProd(), pos = 0, productos = 5, paginas;
+    if(cant % productos == 0){
+        paginas = cant / productos;
+    } else {
+        paginas = (cant / productos)+1;
     }
-    anykey();
+    int idanterior = -1;;
+    int resp=1, i=0;
+    while(i<paginas && resp != 0){
+        cls();
+        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+        gotoxy(1, 5);
+        cout << left;
+        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
+        cout << endl;
+        cout << "-----------------------------" << endl;
+        cout << "TOTAL DE PRODUCTOS: " << cant << endl;
+        cout << "-----------------------------" << endl;
+        int ancho = 10;
+        cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        for(pos; pos < productos; pos++){
+            p.leerDisco(pos);
+            if(p.getEstado()==1 && p.getId() != idanterior){
+                p.mostrar();
+                cout << endl << "----------------------------------------------------------------------------"<< endl;
+            }
+            idanterior = p.getId();
+        }
+        cout << "PAGINAS: " << paginas << endl;
+        cout << "0- SALIR 1- PAGINA SIGUIENTE: > ";
+        cin >> resp;
+        if(pos == cant){
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                resp = 0;
+            }
+        if(resp != 0){
+            productos+=5;
+        }
+    }
 }
 
 void listarProductoPorCodDes(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
-    cout << "LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
-    cout << endl;
-    cout << left;
-
     Producto p;
-
-	int pos=0;
-
-	int ancho = 12;
-    cout << setw(4) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(10) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(6) << "STOCK";
-	cout << endl << "----------------------------------------------------------------------------"<< endl;
-	while(p.leerDisco(pos++)==1){
-        if(p.getEstado()==1){
-            p.mostrar();
-            cout << endl << "----------------------------------------------------------------------------"<< endl;
-        }
-	}
-	if(pos==1){
-		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
-		system("pause>nul");
+    int cant = cantProd(), pos = 0, productos = 5, paginas;
+    if(cant % productos == 0){
+        paginas = cant / productos;
+    } else {
+        paginas = (cant / productos)+1;
     }
-    anykey();
+    int idanterior = -1;;
+    int resp=1, i=0;
+    while(i<paginas && resp != 0){
+        cls();
+        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+        gotoxy(1, 5);
+        cout << left;
+        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD DESCENDENTE" << endl;
+        cout << endl;
+        cout << "-----------------------------" << endl;
+        cout << "TOTAL DE PRODUCTOS: " << cant << endl;
+        cout << "-----------------------------" << endl;
+        int ancho = 10;
+        cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        for(pos; pos < productos; pos++){
+            p.leerDisco(pos);
+            if(p.getEstado()==1 && p.getId() != idanterior){
+                p.mostrar();
+                cout << endl << "----------------------------------------------------------------------------"<< endl;
+            }
+            idanterior = p.getId();
+        }
+        cout << "PAGINAS: " << paginas << endl;
+        cout << "0- SALIR 1- PAGINA SIGUIENTE: > ";
+        cin >> resp;
+        if(pos == cant){
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                resp = 0;
+            }
+        if(resp != 0){
+            productos+=5;
+        }
+    }
 }
 
 void listarProductoInd(){
@@ -636,8 +669,13 @@ void listarProductoInd(){
 
 void listarProductoTodos(){
     Producto p;
-    int cant = cantProd(), pos = 0, productos = 5;
-    int paginas= cant / productos;
+    int cant = cantProd(), pos = 0, productos = 5, paginas;
+    if(cant % productos == 0){
+        paginas = cant / productos;
+    } else {
+        paginas = (cant / productos)+1;
+    }
+    int idanterior = -1;;
     int resp=1, i=0;
     while(i<paginas && resp != 0){
         cls();
@@ -654,10 +692,11 @@ void listarProductoTodos(){
         cout << endl << "----------------------------------------------------------------------------"<< endl;
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
-            if(p.getEstado()==1){
+            if(p.getEstado()==1 && p.getId() != idanterior){
                 p.mostrar();
                 cout << endl << "----------------------------------------------------------------------------"<< endl;
             }
+            idanterior = p.getId();
         }
         cout << "PAGINAS: " << paginas << endl;
         cout << "0- SALIR 1- PAGINA SIGUIENTE: > ";
