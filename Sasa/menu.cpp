@@ -5,6 +5,7 @@ using namespace std;
 #include "ui.h"
 #include "rlutil.h"
 using namespace rlutil;
+#include "carteles.h"
 #include "usuario.h"
 #include "producto.h"
 
@@ -14,20 +15,10 @@ void menuPrincipal(){
     int opc=-1;
     while(menu){
         while(opc == -1){
-                cls();
-            title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-            gotoxy(1, 5);
-            cout << "1) USUARIO" << endl;
-            cout << "2) PRODUCTOS" << endl;
-            cout << "3) CATEGORÍA" << endl;
-            cout << "4) CONFIGURACIONES" << endl;
-            cout << endl;
-            cout << "5) CERRAR SESIÓN" << endl;
-            cout << endl;
-            cout << " >";
+            cMenuPrincipal();
             !(cin >> opc);
             //opc = validarMenu(opc, 1,5);
-            cls();
+            //cls();
         }
 
         switch(opc){
@@ -54,18 +45,8 @@ void menuUsuario(){
     bool menu = true;
     int opc=-1;
     while(menu){
+        cMenuUsuario();
 
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-        gotoxy(1, 5);
-        cout << "1) CREAR USUARIO" << endl;
-        cout << "2) MODIFICAR USUARIO" << endl;
-        cout << "3) ELIMINAR USUARIO" << endl;
-        cout << "4) LISTAR USUARIOS" << endl;
-        cout << endl;
-        cout << "5) VOLVER ATRÁS" << endl;
-        cout << endl;
-        cout << " >";
         cin >> opc;
 
         switch(opc){
