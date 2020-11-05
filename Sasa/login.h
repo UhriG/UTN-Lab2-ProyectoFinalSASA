@@ -12,7 +12,8 @@ class Login
         Usuario perfil;*/
     public:
         void menuLogin();
-        bool login();
+        void login();
+        int comprobarCredenciales(char *passB, char *nombreB);
 };
 
 #endif // LOGIN_H_INCLUDED
