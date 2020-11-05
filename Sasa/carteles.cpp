@@ -33,6 +33,22 @@ void cMenuUsuario(){
     cout << endl;
     cout << " >";
 }
+
+void cMenuProducto(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "1) CREAR PRODUCTO" << endl;
+    cout << "2) MODIFICAR PRODUCTO" << endl;
+    cout << "3) ELIMINAR PRODUCTO" << endl;
+    cout << "4) LISTAR PRODUCTOS" << endl;
+    cout << endl;
+    cout << "0) VOLVER ATRÁS" << endl;
+    cout << endl;
+    cout << "> ";
+}
+
+
 #include "carteles.h"
 
 
