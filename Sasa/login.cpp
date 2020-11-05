@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <conio.h>
 using namespace std;
+#include "carteles.h"
 #include "login.h"
 #include "menu.h"
 #include "usuario.h"
@@ -18,25 +19,13 @@ void Login::menuLogin(){
     bool log = false;
 
     while(menu){
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
-        gotoxy(1, 5);
-        cout << "INGRESE UNA OPCIÓN" << endl;
-        cout << "1 - INGRESAR" << endl;
-        cout << "2 - REGISTRARSE" << endl;
-        cout << "3 - SALIR" << endl <<" >";
+        cMenuLogin();
 
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cls();
-            title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
-            gotoxy(1, 5);
-            cout << "INGRESE UNA OPCIÓN" << endl;
-            cout << "1 - INGRESAR" << endl;
-            cout << "2 - REGISTRARSE" << endl;
-            cout << "3 - SALIR" << endl <<" >";
+            cMenuLogin();
         }
 
         switch(opc){

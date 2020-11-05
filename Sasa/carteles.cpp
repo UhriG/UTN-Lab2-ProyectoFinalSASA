@@ -99,6 +99,15 @@ void cMenu(int selec){
     cout << "> ";
 }
 
+void cMenuLogin(){
+    cls();
+    cTitulo();
+    gotoXYPred();
+    cout << "INGRESE UNA OPCIÓN" << endl;
+    cout << "1 - INGRESAR" << endl;
+    cout << "2 - REGISTRARSE" << endl;
+    cout << "3 - SALIR" << endl <<" >";
+}
 
 #include "carteles.h"
 
