@@ -11,21 +11,25 @@ using namespace rlutil;
 // MENUES PRINCIPAL
 void menuPrincipal(){
     bool menu = true;
+    int opc=-1;
     while(menu){
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-        gotoxy(1, 5);
-        cout << "1) USUARIO" << endl;
-        cout << "2) PRODUCTOS" << endl;
-        cout << "3) CATEGORÍA" << endl;
-        cout << "4) CONFIGURACIONES" << endl;
-        cout << endl;
-        cout << "0) SALIR DEL PROGRAMA" << endl;
-        cout << endl;
-        cout << "> ";
-        int opc;
-        cin>>opc;
-        //cls();
+        while(opc == -1){
+                cls();
+            title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+            gotoxy(1, 5);
+            cout << "1) USUARIO" << endl;
+            cout << "2) PRODUCTOS" << endl;
+            cout << "3) CATEGORÍA" << endl;
+            cout << "4) CONFIGURACIONES" << endl;
+            cout << endl;
+            cout << "5) CERRAR SESIÓN" << endl;
+            cout << endl;
+            cout << " >";
+            !(cin >> opc);
+            //opc = validarMenu(opc, 1,5);
+            cls();
+        }
+
         switch(opc){
             case 1:
                 menuUsuario();
@@ -39,20 +43,18 @@ void menuPrincipal(){
             case 4:
                 menuConfiguracion();
             break;
-            case 0:
+            case 5:
                 menu = false;
-            break;
-            default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
 }
 
-
 void menuUsuario(){
     bool menu = true;
+    int opc=-1;
     while(menu){
+
         cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
         gotoxy(1, 5);
@@ -61,12 +63,11 @@ void menuUsuario(){
         cout << "3) ELIMINAR USUARIO" << endl;
         cout << "4) LISTAR USUARIOS" << endl;
         cout << endl;
-        cout << "0) VOLVER ATRÁS" << endl;
+        cout << "5) VOLVER ATRÁS" << endl;
         cout << endl;
-        cout << "> ";
-        int opc;
-        cin>>opc;
-        cls();
+        cout << " >";
+        cin >> opc;
+
         switch(opc){
             case 1:
                 crearUsuario();
@@ -80,11 +81,8 @@ void menuUsuario(){
             case 4:
                 listarUsuarios();
             break;
-            case 0:
+            case 5:
                 menu = false;
-            break;
-            default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -675,7 +673,7 @@ void listarProductoTodos(){
     } else {
         paginas = (cant / productos)+1;
     }
-    int idanterior = -1;;
+    int idanterior = -1;
     int resp=1, i=0;
     while(i<paginas && resp != 0){
         cls();
@@ -808,4 +806,3 @@ bool recProducto(){
     fclose(bk);
     return true;
 }
-

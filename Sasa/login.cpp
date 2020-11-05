@@ -26,10 +26,17 @@ void Login::menuLogin(){
         cout << "2 - REGISTRARSE" << endl;
         cout << "3 - SALIR" << endl <<" >";
 
-        while(!(cin >> opc) || (opc < 1 || opc > 3)){
-            cout << "SOLO SE ACEPTAN NUMEROS DEL 1 al 3: ";
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
+            cls();
+            title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
+            gotoxy(1, 5);
+            cout << "INGRESE UNA OPCIÓN" << endl;
+            cout << "1 - INGRESAR" << endl;
+            cout << "2 - REGISTRARSE" << endl;
+            cout << "3 - SALIR" << endl <<" >";
         }
 
         switch(opc){
@@ -39,7 +46,7 @@ void Login::menuLogin(){
                 break;
             case 3: return;
                 break;
-            //default: msj("INRGRESE UN VALOR VÁLIDO DEL 1 AL 3", rlutil::WHITE, rlutil::RED);
+            default:  msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED); break;
         }
     }
 }
@@ -53,7 +60,7 @@ void Login::login(){
     char usuario[20], password[10];
 
     do{
-        system("cls");
+        cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
         gotoxy(1, 5);
         cout << "\t\t\tLOGIN DE USUARIO" << endl;
