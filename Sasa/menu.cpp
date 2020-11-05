@@ -46,7 +46,6 @@ void menuUsuario(){
     int opc=-1;
     while(menu){
         cMenuUsuario();
-
         cin >> opc;
 
         switch(opc){
@@ -73,7 +72,6 @@ void menuProducto(){
     bool menu = true;
     while(menu){
         cMenuProducto();
-
         int opc;
         cin>>opc;
         cls();
@@ -103,17 +101,7 @@ void menuProducto(){
 void menuCategoria(){
     bool menu = true;
     while(menu){
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-        gotoxy(1, 5);
-        cout << "1) CREAR CATEGORÍA" << endl;
-        cout << "2) MODIFICAR CATEGORÍA" << endl;
-        cout << "3) ELIMINAR CATEGORÍA" << endl;
-        cout << "4) LISTAR CATEGORÍAS" << endl;
-        cout << endl;
-        cout << "0) VOLVER ATRÁS" << endl;
-        cout << endl;
-        cout << "> ";
+        cMenuCategoria();
         int opc;
         cin>>opc;
         cls();

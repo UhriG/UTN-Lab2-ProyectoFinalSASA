@@ -17,7 +17,7 @@ void cMenuPrincipal(){
     cout << endl;
     cout << "5) CERRAR SESIÓN" << endl;
     cout << endl;
-    cout << " >";
+    cout << "> ";
 }
 
 void cMenuUsuario(){
@@ -31,7 +31,7 @@ void cMenuUsuario(){
     cout << endl;
     cout << "5) VOLVER ATRÁS" << endl;
     cout << endl;
-    cout << " >";
+    cout << "> ";
 }
 
 void cMenuProducto(){
@@ -47,6 +47,21 @@ void cMenuProducto(){
     cout << endl;
     cout << "> ";
 }
+
+void cMenuCategoria(){
+    cls();
+    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoxy(1, 5);
+    cout << "1) CREAR CATEGORÍA" << endl;
+    cout << "2) MODIFICAR CATEGORÍA" << endl;
+    cout << "3) ELIMINAR CATEGORÍA" << endl;
+    cout << "4) LISTAR CATEGORÍAS" << endl;
+    cout << endl;
+    cout << "0) VOLVER ATRÁS" << endl;
+    cout << endl;
+    cout << "> ";
+}
+
 
 
 #include "carteles.h"
