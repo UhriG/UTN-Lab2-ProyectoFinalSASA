@@ -95,12 +95,14 @@
 	"ui.h"
 	"rlutil.h"
 
-1604534973 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604608612 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
+	<stdio.h>
 	"menu.h"
 	"ui.h"
 	"rlutil.h"
+	"carteles.h"
 	"usuario.h"
 	"producto.h"
 

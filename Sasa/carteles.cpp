@@ -78,7 +78,7 @@ void cMenuConfiguracion(){
     cout << "2) RECUPERAR COPIA DE SEGURIDAD" << endl;
     cout << "3) EXPORTAR A CSV (Si es que me sale)" << endl;
     cout << endl;
-    cout << "0) VOLVER ATRÁS" << endl;
+    cout << "5) VOLVER ATRÁS" << endl;
     cout << endl;
     cout << "> ";
 }
@@ -94,7 +94,7 @@ void cMenu(int selec){
     cout << "3) ELIMINAR " << subTi[selec-1] << endl;
     cout << "4) LISTAR " << subTi[selec-1] << "S" << endl;
     cout << endl;
-    cout << "0) VOLVER ATRÁS" << endl;
+    cout << "5) VOLVER ATRÁS" << endl;
     cout << endl;
     cout << "> ";
 }

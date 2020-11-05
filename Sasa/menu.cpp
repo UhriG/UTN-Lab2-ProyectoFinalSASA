@@ -106,7 +106,7 @@ void menuProducto(){
             case 4:
                 listarProducto();
             break;
-            case 0:
+            case 5:
                 menu = false;
             break;
             default:
@@ -140,7 +140,7 @@ void menuCategoria(){
             case 3:
                 eliminarCategoria();
             break;
-            case 0:
+            case 5:
                 menu = false;
             break;
             default:
@@ -174,7 +174,7 @@ void menuConfiguracion(){
             case 3:
                 exportarDatos();
             break;
-            case 0:
+            case 5:
                 menu = false;
             break;
             default:
@@ -218,7 +218,7 @@ void modificarUsuario(){
 		u.leerDisco(pos);
 		u.mostrar(2);
 		cout << endl;
-		cout << "NOMBRE: 1 \tCONTRASEÑA: 2 \tPERFIL: 3" << endl;
+		cout << "NOMBRE: 1 \tCONTRASEÑA: 2 \tPERFIL: 3 \tSALIR: 5" << endl;
 		cout << "ELEGIR UNA OPCIÓN: ";
 		int opc;
 		while(!(cin >> opc)){
@@ -249,7 +249,7 @@ void modificarUsuario(){
                 }
                 u.setPerfil(per);
             break;
-            case 0:
+            case 5:
                 return;
         }
 		if(u.modDisco(pos)==true){
@@ -431,7 +431,7 @@ void listarProducto(){
         cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
         cout << "4) LISTAR TODOS LOS PRODUCTOS" << endl;
         cout << endl;
-        cout << "0) VOLVER ATRÁS" << endl;
+        cout << "5) VOLVER ATRÁS" << endl;
         cout << endl;
         cout << "> ";
         int opc;
@@ -447,7 +447,7 @@ void listarProducto(){
             cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
             cout << "4) LISTAR TODOS LOS PRODUCTOS" << endl;
             cout << endl;
-            cout << "0) VOLVER ATRÁS" << endl;
+            cout << "5) VOLVER ATRÁS" << endl;
             cout << endl;
             cout << "> ";
         }
@@ -464,7 +464,7 @@ void listarProducto(){
             case 4:
                 listarProductoTodos();
             break;
-            case 0:
+            case 5:
                 menu = false;
             break;
             default:
