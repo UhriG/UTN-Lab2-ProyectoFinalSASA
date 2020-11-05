@@ -45,7 +45,8 @@ void menuUsuario(){
     bool menu = true;
     int opc=-1;
     while(menu){
-        cMenuUsuario();
+        //cMenuUsuario
+        cMenu(1);
         cin >> opc;
 
         switch(opc){
@@ -71,7 +72,8 @@ void menuUsuario(){
 void menuProducto(){
     bool menu = true;
     while(menu){
-        cMenuProducto();
+        //cMenuProducto();
+        cMenu(2);
         int opc;
         cin>>opc;
         cls();
@@ -101,7 +103,8 @@ void menuProducto(){
 void menuCategoria(){
     bool menu = true;
     while(menu){
-        cMenuCategoria();
+        //cMenuCategoria();
+        cMenu(3);
         int opc;
         cin>>opc;
         cls();
