@@ -128,16 +128,7 @@ void menuCategoria(){
 void menuConfiguracion(){
     bool menu = true;
     while(menu){
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-        gotoxy(1, 5);
-        cout << "1) REALIZAR COPIA DE SEGURIDAD" << endl;
-        cout << "2) RECUPERAR COPIA DE SEGURIDAD" << endl;
-        cout << "3) EXPORTAR A CSV (Si es que me sale)" << endl;
-        cout << endl;
-        cout << "0) VOLVER ATRÁS" << endl;
-        cout << endl;
-        cout << "> ";
+        cMenuConfiguracion();
         int opc;
         cin>>opc;
         cls();
