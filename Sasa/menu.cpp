@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <stdio.h>
 using namespace std;
 #include "menu.h"
 #include "ui.h"
@@ -12,13 +13,16 @@ using namespace rlutil;
 // MENUES PRINCIPAL
 void menuPrincipal(){
     bool menu = true;
-    int opc=-1;
+    int opc;
     while(menu){
-        while(opc == -1){
+
+        cMenuPrincipal();
+
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
             cMenuPrincipal();
-            !(cin >> opc);
-            //opc = validarMenu(opc, 1,5);
-            //cls();
         }
 
         switch(opc){
@@ -43,11 +47,17 @@ void menuPrincipal(){
 
 void menuUsuario(){
     bool menu = true;
-    int opc=-1;
+    int opc;
     while(menu){
-        //cMenuUsuario
+
         cMenu(1);
-        cin >> opc;
+
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenu(1);
+        }
 
         switch(opc){
             case 1:
@@ -71,12 +81,18 @@ void menuUsuario(){
 
 void menuProducto(){
     bool menu = true;
+    int opc;
     while(menu){
-        //cMenuProducto();
+
         cMenu(2);
-        int opc;
-        cin>>opc;
-        cls();
+
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenu(2);
+        }
+
         switch(opc){
             case 1:
                 crearProducto();
@@ -102,12 +118,18 @@ void menuProducto(){
 
 void menuCategoria(){
     bool menu = true;
+    int opc;
     while(menu){
-        //cMenuCategoria();
+
         cMenu(3);
-        int opc;
-        cin>>opc;
-        cls();
+
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenu(3);
+        }
+
         switch(opc){
             case 1:
                 crearCategoria();
@@ -130,11 +152,18 @@ void menuCategoria(){
 
 void menuConfiguracion(){
     bool menu = true;
+    int opc;
     while(menu){
+
         cMenuConfiguracion();
-        int opc;
-        cin>>opc;
-        cls();
+
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenuConfiguracion();
+        }
+
         switch(opc){
             case 1:
                 copiaSeguridad();
@@ -176,17 +205,27 @@ void modificarUsuario(){
     int pos, id;
     cout << "*MODIFICAR USUARIO" << endl;
     cout << "INGRESAR ID USUARIO: ";
-    cin >> id;
+
+    while(!(cin >> id)){
+        msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
+
     cout << endl;
     pos = buscarID(id);
     if(pos!=-1){
 		u.leerDisco(pos);
 		u.mostrar(2);
 		cout << endl;
-		cout << "1- NOMBRE 2- CONTRASEÑA 3- PERFIL" << endl;
+		cout << "NOMBRE: 1 \tCONTRASEÑA: 2 \tPERFIL: 3" << endl;
 		cout << "ELEGIR UNA OPCIÓN: ";
 		int opc;
-		cin >> opc;
+		while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
         switch(opc){
             case 1:
                 char n[20];
@@ -203,7 +242,11 @@ void modificarUsuario(){
             case 3:
                 int per;
                 cout << "INGRESAR PERFIL: ";
-                cin >> per;
+                while(!(cin >> per)){
+                    msj("OPCIÓN INCORRECTA: 1 - ADMIN \t2 - SUPERVISOR \t3 - OPERADOR", rlutil::WHITE, rlutil::RED);
+                    cin.clear();
+                    cin.ignore(123, '\n');
+                }
                 u.setPerfil(per);
             break;
             case 0:
@@ -223,10 +266,14 @@ void eliminarUsuario(){
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
     int id, pos;
-    char resp[2];
+    char conf;
     cout << "*ELIMINAR USUARIO" << endl;
     cout << "INGRESAR ID USUARIO: ";
-    cin >> id;
+    while(!(cin >> id)){
+        msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
     cout << endl;
     pos = buscarID(id);
     Usuario u;
@@ -235,9 +282,13 @@ void eliminarUsuario(){
         u.leerDisco(pos);
         u.mostrar(2);
         cout << endl;
-        cout << "ELIMINAR? (SI/NO): ";
-        cin >> resp;
-        if(resp == "SI" || resp == "si"){
+        cout << "ELIMINAR? (S/N): ";
+        conf = getche();
+        while(conf!='S' && conf!='s' && conf!='N' && conf!='n'){
+            cout << "\nIngrese una opcion valida!" << endl << " >";
+            conf = getche();
+        }
+        if(conf == 's' || conf == 'S'){
             int baja = 0;
             u.setEstado(baja);
             if(u.modDisco(pos)==true){
@@ -301,7 +352,11 @@ void modificarProducto(){
     Producto p;
     cout << "*MODIFICAR PRODUCTO" << endl;
     cout << "INGRESAR ID PRODUCTO: ";
-    cin >> id;
+    while(!(cin >> id)){
+        msj(" INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
     cout << endl;
     pos = buscarCod(id);
     if(pos!=-1){
@@ -309,7 +364,11 @@ void modificarProducto(){
 		p.mostrar(2);
 		cout << endl;
 		cout<<"INGRESE NUEVO STOCK: ";
-		cin>>stock;
+		while(!(cin >> stock)){
+            msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
 		p.setStock(stock);
 		if(p.modDisco(pos)==true){
             msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
@@ -326,10 +385,14 @@ void eliminarProducto(){
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
     int id, pos;
-    char resp[2];
+    char conf;
     cout << "*ELIMINAR PRODUCTO" << endl;
     cout << "INGRESAR ID PRODUCTO: ";
-    cin >> id;
+    while(!(cin >> id)){
+        msj(" INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
     cout << endl;
     pos = buscarCod(id);
     Producto p;
@@ -338,9 +401,13 @@ void eliminarProducto(){
         p.leerDisco(pos);
         p.mostrar(2);
         cout << endl;
-        cout << "ELIMINAR? (SI/NO): ";
-        cin >> resp;
-        if(resp == "SI" || resp == "si"){
+        cout << "ELIMINAR? (S/N): ";
+        conf = getche();
+        while(conf!='S' && conf!='s' && conf!='N' && conf!='n'){
+            cout << "\nIngrese una opcion valida!" << endl << " >";
+            conf = getche();
+        }
+        if(conf == 'S' || conf == 's'){
             p.setEstado(0);
             if(p.modDisco(pos)==true){
                 msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
@@ -368,7 +435,22 @@ void listarProducto(){
         cout << endl;
         cout << "> ";
         int opc;
-        cin>>opc;
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cls();
+            title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+            gotoxy(1, 5);
+            cout << "1) LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
+            cout << "2) LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
+            cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
+            cout << "4) LISTAR TODOS LOS PRODUCTOS" << endl;
+            cout << endl;
+            cout << "0) VOLVER ATRÁS" << endl;
+            cout << endl;
+            cout << "> ";
+        }
         switch(opc){
             case 1:
                 listarProductoPorCodAs();
@@ -417,7 +499,11 @@ void modificarCategoria(){
     cout << "*MODIFICAR CATEGORÍA" << endl;
     cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
     cout << "ID CATEGORÍA: " << endl;
-    cin >> id;
+    while(!(cin >> id)){
+        msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
     //funcion buscar id
     cout << "INGRESAR NOMBRE NUEVO: " << endl;
     cin >> nombre;
@@ -430,14 +516,22 @@ void eliminarCategoria(){
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
     gotoxy(1, 5);
     int id;
-    char resp[2];
+    char conf;
     bool estado = true;
     cout << "*ELIMINAR CATEGORÍA" << endl;
     cout << "INGRESAR ID CATEGORÍA" << endl;
-    cin >> id;
+    while(!(cin >> id)){
+        msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
     cout << "ELIMINAR? (SI/NO): " << endl;
-    cin >> resp;
-    if(resp == "SI"){
+    conf = getche();
+    while(conf!='S' && conf!='s' && conf!='N' && conf!='n'){
+        cout << "\nIngrese una opcion valida!" << endl << " >";
+        conf = getche();
+    }
+    if(conf == 'S' || conf == 's'){
         estado = false;
         msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
     }
@@ -543,7 +637,11 @@ void listarProductoPorCodAs(){
         }
         cout << "PAGINAS: " << paginas << endl;
         cout << "0- SALIR 1- PAGINA SIGUIENTE: > ";
-        cin >> resp;
+        while(!(cin >> resp)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
         if(pos == cant){
                 msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
@@ -587,7 +685,11 @@ void listarProductoPorCodDes(){
         }
         cout << "PAGINAS: " << paginas << endl;
         cout << "0- SALIR 1- PAGINA SIGUIENTE: > ";
-        cin >> resp;
+        while(!(cin >> resp)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
         if(pos == cant){
                 msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
@@ -607,7 +709,11 @@ void listarProductoInd(){
     cout << left;
     cout << "INGRESAR ID: ";
     int cod, pos;
-    cin >> cod;
+    while(!(cin >> cod)){
+        msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+}
     pos=buscarCod(cod);
     Producto p;
     p.leerDisco(pos);
@@ -652,7 +758,11 @@ void listarProductoTodos(){
         }
         cout << "PAGINAS: " << paginas << endl;
         cout << "0- SALIR 1- PAGINA SIGUIENTE: > ";
-        cin >> resp;
+        while(!(cin >> resp)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
         if(pos == cant){
                 msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
