@@ -15,9 +15,7 @@ void menuPrincipal(){
     bool menu = true;
     int opc;
     while(menu){
-
         cMenuPrincipal();
-
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
@@ -187,9 +185,7 @@ void menuConfiguracion(){
 // SUB MENU USUARIO
 
 void crearUsuario(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     Usuario u; //Clase USUARIO
     u.cargar();
     if(u.escribirDisco()==true){
@@ -198,9 +194,7 @@ void crearUsuario(){
 }
 
 void modificarUsuario(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     Usuario u;
     int pos, id;
     cout << "*MODIFICAR USUARIO" << endl;
@@ -262,9 +256,7 @@ void modificarUsuario(){
 }
 
 void eliminarUsuario(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     int id, pos;
     char conf;
     cout << "*ELIMINAR USUARIO" << endl;
@@ -303,9 +295,7 @@ void eliminarUsuario(){
 }
 
 void listarUsuarios(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     cout << "LISTADO DE TODOS LOS USUARIOS" << endl;
     cout << endl;
     cout << left;
@@ -331,9 +321,7 @@ void listarUsuarios(){
 // SUB MENU PRODUCTO
 
 void crearProducto(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     Producto p;
     p.cargar();
     if(p.escribirDisco()==true){
@@ -345,9 +333,7 @@ void crearProducto(){
 }
 
 void modificarProducto(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     int pos, id, stock;
     Producto p;
     cout << "*MODIFICAR PRODUCTO" << endl;
@@ -381,9 +367,7 @@ void modificarProducto(){
 }
 
 void eliminarProducto(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     int id, pos;
     char conf;
     cout << "*ELIMINAR PRODUCTO" << endl;
@@ -423,9 +407,7 @@ void eliminarProducto(){
 void listarProducto(){
     bool menu = true;
     while(menu){
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-        gotoxy(1, 5);
+        cTitulo();
         cout << "1) LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
         cout << "2) LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
         cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
@@ -439,9 +421,7 @@ void listarProducto(){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cls();
-            title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-            gotoxy(1, 5);
+            cTitulo();
             cout << "1) LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
             cout << "2) LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
             cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
@@ -477,9 +457,7 @@ void listarProducto(){
 // SUB MENU CATEGORIA
 
 void crearCategoria(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     string nombre;
     int id;
     cout << "*CREAR CATEGORÍA" << endl;
@@ -491,9 +469,7 @@ void crearCategoria(){
 }
 
 void modificarCategoria(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     string nombre;
     int id;
     cout << "*MODIFICAR CATEGORÍA" << endl;
@@ -512,9 +488,7 @@ void modificarCategoria(){
 }
 
 void eliminarCategoria(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     int id;
     char conf;
     bool estado = true;
@@ -540,9 +514,7 @@ void eliminarCategoria(){
 // SUB MENU CONFIGURACION
 
 void copiaSeguridad(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     // BARRA DE PROGRESO
     gotoxy(35,10);
     printf("CARGANDO");
@@ -555,7 +527,7 @@ void copiaSeguridad(){
             }
         }
     }
-
+    // TERMINA BARRA
     int guardo =0;
     guardo += copiaUsuario();
     guardo += copiaProducto();
@@ -567,9 +539,7 @@ void copiaSeguridad(){
 }
 
 void recuperarCopia(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     // BARRA DE PROGRESO
     gotoxy(35,10);
     printf("CARGANDO");
@@ -582,7 +552,7 @@ void recuperarCopia(){
             }
         }
     }
-
+    // TERMINA BARRA
     int rec = 0;
     rec += recUsuario();
     rec += recProducto();
@@ -594,9 +564,7 @@ void recuperarCopia(){
 }
 
 void exportarDatos(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     cout << "*SE EXPORTA DATOS.DAT A CSV" << endl;
     cout << "Si es que me sale jaja by Max" << endl;
     msj("SE EXPORTO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
@@ -615,9 +583,7 @@ void listarProductoPorCodAs(){
     int idanterior = -1;;
     int resp=1, i=0;
     while(i<paginas && resp != 0){
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-        gotoxy(1, 5);
+        cTitulo();
         cout << left;
         cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
         cout << endl;
@@ -663,9 +629,7 @@ void listarProductoPorCodDes(){
     int idanterior = -1;;
     int resp=1, i=0;
     while(i<paginas && resp != 0){
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-        gotoxy(1, 5);
+        cTitulo();
         cout << left;
         cout << "*LISTAR TODOS LOS PRODUCTOS POR COD DESCENDENTE" << endl;
         cout << endl;
@@ -701,9 +665,7 @@ void listarProductoPorCodDes(){
 }
 
 void listarProductoInd(){
-    cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-    gotoxy(1, 5);
+    cTitulo();
     cout << "LISTAR PRODUCTO INDIVIDUAL" << endl;
     cout << endl;
     cout << left;
@@ -736,9 +698,7 @@ void listarProductoTodos(){
     int idanterior = -1;
     int resp=1, i=0;
     while(i<paginas && resp != 0){
-        cls();
-        title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
-        gotoxy(1, 5);
+        cTitulo();
         cout << left;
         cout << "*LISTAR TODOS LOS PRODUCTOS" << endl;
         cout << endl;

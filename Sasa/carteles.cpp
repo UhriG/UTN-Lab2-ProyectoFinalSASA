@@ -7,7 +7,9 @@ using namespace rlutil;
 #include "carteles.h"
 
 void cTitulo(){
+    cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    gotoXYPred();
 }
 
 void gotoXYPred(int x, int y){
@@ -15,9 +17,7 @@ void gotoXYPred(int x, int y){
 }
 
 void cMenuPrincipal(){
-    cls();
     cTitulo();
-    gotoxy(1, 5);
     cout << "1) USUARIO" << endl;
     cout << "2) PRODUCTOS" << endl;
     cout << "3) CATEGORÍA" << endl;
@@ -29,9 +29,7 @@ void cMenuPrincipal(){
 }
 
 void cMenuUsuario(){
-    cls();
     cTitulo();
-    gotoxy(1, 5);
     cout << "1) CREAR USUARIO" << endl;
     cout << "2) MODIFICAR USUARIO" << endl;
     cout << "3) ELIMINAR USUARIO" << endl;
@@ -43,9 +41,7 @@ void cMenuUsuario(){
 }
 
 void cMenuProducto(){
-    cls();
     cTitulo();
-    gotoxy(1, 5);
     cout << "1) CREAR PRODUCTO" << endl;
     cout << "2) MODIFICAR PRODUCTO" << endl;
     cout << "3) ELIMINAR PRODUCTO" << endl;
@@ -57,9 +53,7 @@ void cMenuProducto(){
 }
 
 void cMenuCategoria(){
-    cls();
     cTitulo();
-    gotoxy(1, 5);
     cout << "1) CREAR CATEGORÍA" << endl;
     cout << "2) MODIFICAR CATEGORÍA" << endl;
     cout << "3) ELIMINAR CATEGORÍA" << endl;
@@ -71,9 +65,7 @@ void cMenuCategoria(){
 }
 
 void cMenuConfiguracion(){
-    cls();
     cTitulo();
-    gotoxy(1, 5);
     cout << "1) REALIZAR COPIA DE SEGURIDAD" << endl;
     cout << "2) RECUPERAR COPIA DE SEGURIDAD" << endl;
     cout << "3) EXPORTAR A CSV (Si es que me sale)" << endl;
@@ -84,9 +76,7 @@ void cMenuConfiguracion(){
 }
 
 void cMenu(int selec){
-    cls();
     cTitulo();
-    gotoXYPred();
     string subTi[3] = {"USUARIO", "PRODUCTO", "CATEGORÍA"};
 
     cout << "1) CREAR " << subTi[selec-1] << endl;
@@ -106,7 +96,7 @@ void cMenuLogin(){
     cout << "INGRESE UNA OPCIÓN" << endl;
     cout << "1 - INGRESAR" << endl;
     cout << "2 - REGISTRARSE" << endl;
-    cout << "3 - SALIR" << endl <<" >";
+    cout << "3 - SALIR" << endl <<" > ";
 }
 
 #include "carteles.h"

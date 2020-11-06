@@ -2,7 +2,7 @@
 #define CARTELES_H
 
 void cTitulo(); // Cartel TITULO
-void gotoXYPred(int x=1, int y=5); // GOTO X E Y PREDETERMINADOS
+void gotoXYPred(int x=1, int y=3); // GOTO X E Y PREDETERMINADOS
 void cMenuPrincipal(); // Cartel MENU PRINCIPAL
 void cMenuUsuario(); // Cartel MENU USUARIO
 void cMenuProducto(); // Cartel MENU PRODUCTO
