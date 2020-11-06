@@ -83,7 +83,17 @@ void cListarProd(){
     cout << endl << "----------------------------------------------------------------------------"<< endl;
 }
 
-
+void cTabla(int modo){
+    if(modo == 1){ //MODO 1 PARA USUARIO
+        int ancho1 = 15;
+        cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "PERFIL" << setw(ancho1) << "ESTADO";
+    }
+    if(modo == 2){ // MODO 2 PARA PRODUCTO
+        int ancho2 = 20;
+        cout << setw(4) << "ID" << setw(ancho2) << "NOMBRE" << setw(ancho2) << "MARCA" /*<< setw(ancho2) << "CATEGORÍA"*/ << setw(10) << "ESTADO" << setw(5) << "STOCK";
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
+    }
+}
 
 #include "carteles.h"
 

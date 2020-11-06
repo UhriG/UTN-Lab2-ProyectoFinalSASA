@@ -10,5 +10,6 @@ void cMenuLogin(); // Cartel MENU LOGIN
 void cMenuProdListar(); // Cartel PRODUCTO LISTAR
 void cListarUsuario(); // Cartel USUARIO LISTAR
 void cListarProd(); // Cartel PRODUCTO LISTAR
+void cTabla(int modo); // Cartel LISTAR FORMATO TABLA
 
 #endif // CARTELES_H

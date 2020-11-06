@@ -47,14 +47,12 @@ void menuUsuario(){
     bool menu = true;
     int opc;
     while(menu){
-
-        cMenu(1);
-
+        cMenu(1); // CARTEL MENU GENERAL ( USUARIO )
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenu(1);
+            cMenu(1); // CARTEL MENU GENERAL ( USUARIO )
         }
 
         switch(opc){
@@ -81,14 +79,12 @@ void menuProducto(){
     bool menu = true;
     int opc;
     while(menu){
-
-        cMenu(2);
-
+        cMenu(2); // CARTEL MENU GENERAL ( PRODUCTO )
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenu(2);
+            cMenu(2); // CARTEL MENU GENERAL ( PRODUCTO )
         }
 
         switch(opc){
@@ -118,14 +114,12 @@ void menuCategoria(){
     bool menu = true;
     int opc;
     while(menu){
-
-        cMenu(3);
-
+        cMenu(3); // CARTEL MENU GENERAL ( CATEGORÍA )
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenu(3);
+            cMenu(3); // CARTEL MENU GENERAL ( CATEGORÍA )
         }
 
         switch(opc){
@@ -152,14 +146,12 @@ void menuConfiguracion(){
     bool menu = true;
     int opc;
     while(menu){
-
-        cMenuConfiguracion();
-
+        cMenuConfiguracion(); // CARTEL MENU CONFIGURACION
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenuConfiguracion();
+            cMenuConfiguracion(); // CARTEL MENU CONFIGURACION
         }
 
         switch(opc){
@@ -302,7 +294,7 @@ void listarUsuarios(){
 
     Usuario u;
 	int pos=0;
-    cListarUsuario();
+    cTabla(1); // MODO 1 USUARIO
 	while(u.leerDisco(pos++)==1){ //  .Leer_de_disco(pos++)==1)
         if(u.getEstado()==1){
             u.mostrar(); // u.mostrar();
@@ -574,7 +566,7 @@ void listarProductoPorCodAs(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        cListarProd(); // CARTEL LISTADO PROD
+        cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior){
@@ -618,7 +610,7 @@ void listarProductoPorCodDes(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        cListarProd(); // CARTEL LISTADO PROD
+        cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior){
@@ -659,7 +651,7 @@ void listarProductoInd(){
     pos=buscarCod(cod);
     Producto p;
     p.leerDisco(pos);
-    cListarProd(); // CARTEL LISTADO PROD
+    cTabla(2); // MODO 2 PRODUCTO
 	p.mostrar();
     cout << endl << "----------------------------------------------------------------------------"<< endl;
     anykey();
@@ -683,7 +675,7 @@ void listarProductoTodos(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        cListarProd(); // CARTEL LISTADO PROD
+        cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior){
