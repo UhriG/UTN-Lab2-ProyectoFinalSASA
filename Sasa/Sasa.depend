@@ -128,7 +128,7 @@
 
 1603496077 
 
-1604611305 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604624499 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -243,7 +243,7 @@
 
 1604605446 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
-1604619569 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+1604624553 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -251,5 +251,5 @@
 	"carteles.h"
 	"carteles.h"
 
-1604622266 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
+1604624499 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
 

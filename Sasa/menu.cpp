@@ -302,9 +302,7 @@ void listarUsuarios(){
 
     Usuario u;
 	int pos=0;
-
-	int ancho = 15;
-    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "PERFIL" << setw(ancho) << "ESTADO";
+    cListarUsuario();
 	while(u.leerDisco(pos++)==1){ //  .Leer_de_disco(pos++)==1)
         if(u.getEstado()==1){
             u.mostrar(); // u.mostrar();
@@ -576,9 +574,7 @@ void listarProductoPorCodAs(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        int ancho = 10;
-        cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        cListarProd(); // CARTEL LISTADO PROD
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior){
@@ -622,9 +618,7 @@ void listarProductoPorCodDes(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        int ancho = 10;
-        cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        cListarProd(); // CARTEL LISTADO PROD
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior){
@@ -665,10 +659,8 @@ void listarProductoInd(){
     pos=buscarCod(cod);
     Producto p;
     p.leerDisco(pos);
-	int ancho = 10;
-    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "MARCA" << setw(10) << "CATEGORÍA" << setw(ancho) << "ESTADO" << setw(4) << "STOCK";
-	cout << endl << "----------------------------------------------------------------------------"<< endl;
-    p.mostrar();
+    cListarProd(); // CARTEL LISTADO PROD
+	p.mostrar();
     cout << endl << "----------------------------------------------------------------------------"<< endl;
     anykey();
 }
@@ -691,9 +683,7 @@ void listarProductoTodos(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        int ancho = 10;
-        cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        cListarProd(); // CARTEL LISTADO PROD
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior){

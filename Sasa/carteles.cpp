@@ -54,9 +54,7 @@ void cMenu(int selec){
 }
 
 void cMenuLogin(){
-    cls();
     cTitulo();
-    gotoXYPred();
     cout << "INGRESE UNA OPCIÓN" << endl;
     cout << "1 - INGRESAR" << endl;
     cout << "2 - REGISTRARSE" << endl;
@@ -73,6 +71,19 @@ void cMenuProdListar(){
     cout << endl;
     cout << "> ";
 }
+
+void cListarUsuario(){
+    int ancho = 15;
+    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "PERFIL" << setw(ancho) << "ESTADO";
+}
+
+void cListarProd(){
+    int ancho = 10;
+    cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
+    cout << endl << "----------------------------------------------------------------------------"<< endl;
+}
+
+
 
 #include "carteles.h"
 
