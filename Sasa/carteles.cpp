@@ -28,42 +28,6 @@ void cMenuPrincipal(){
     cout << "> ";
 }
 
-void cMenuUsuario(){
-    cTitulo();
-    cout << "1) CREAR USUARIO" << endl;
-    cout << "2) MODIFICAR USUARIO" << endl;
-    cout << "3) ELIMINAR USUARIO" << endl;
-    cout << "4) LISTAR USUARIOS" << endl;
-    cout << endl;
-    cout << "5) VOLVER ATRÁS" << endl;
-    cout << endl;
-    cout << "> ";
-}
-
-void cMenuProducto(){
-    cTitulo();
-    cout << "1) CREAR PRODUCTO" << endl;
-    cout << "2) MODIFICAR PRODUCTO" << endl;
-    cout << "3) ELIMINAR PRODUCTO" << endl;
-    cout << "4) LISTAR PRODUCTOS" << endl;
-    cout << endl;
-    cout << "0) VOLVER ATRÁS" << endl;
-    cout << endl;
-    cout << "> ";
-}
-
-void cMenuCategoria(){
-    cTitulo();
-    cout << "1) CREAR CATEGORÍA" << endl;
-    cout << "2) MODIFICAR CATEGORÍA" << endl;
-    cout << "3) ELIMINAR CATEGORÍA" << endl;
-    cout << "4) LISTAR CATEGORÍAS" << endl;
-    cout << endl;
-    cout << "0) VOLVER ATRÁS" << endl;
-    cout << endl;
-    cout << "> ";
-}
-
 void cMenuConfiguracion(){
     cTitulo();
     cout << "1) REALIZAR COPIA DE SEGURIDAD" << endl;
@@ -97,6 +61,17 @@ void cMenuLogin(){
     cout << "1 - INGRESAR" << endl;
     cout << "2 - REGISTRARSE" << endl;
     cout << "3 - SALIR" << endl <<" > ";
+}
+
+void cMenuProdListar(){
+    cout << "1) LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
+    cout << "2) LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
+    cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
+    cout << "4) LISTAR TODOS LOS PRODUCTOS" << endl;
+    cout << endl;
+    cout << "5) VOLVER ATRÁS" << endl;
+    cout << endl;
+    cout << "> ";
 }
 
 #include "carteles.h"

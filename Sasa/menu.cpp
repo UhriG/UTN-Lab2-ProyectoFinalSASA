@@ -336,7 +336,7 @@ void modificarProducto(){
     cTitulo();
     int pos, id, stock;
     Producto p;
-    cout << "*MODIFICAR PRODUCTO" << endl;
+    cout << "*MODIFICAR PRODUCTO (STOCK)" << endl;
     cout << "INGRESAR ID PRODUCTO: ";
     while(!(cin >> id)){
         msj(" INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
@@ -408,28 +408,14 @@ void listarProducto(){
     bool menu = true;
     while(menu){
         cTitulo();
-        cout << "1) LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
-        cout << "2) LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
-        cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
-        cout << "4) LISTAR TODOS LOS PRODUCTOS" << endl;
-        cout << endl;
-        cout << "5) VOLVER ATRÁS" << endl;
-        cout << endl;
-        cout << "> ";
+        cMenuProdListar();
         int opc;
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cTitulo();
-            cout << "1) LISTAR PRODUCTO POR CÓDIGO ASCENDENTE" << endl;
-            cout << "2) LISTAR PRODUCTO POR CÓDIGO DESCENDENTE" << endl;
-            cout << "3) LISTAR PRODUCTO INDIVIDUAL" << endl;
-            cout << "4) LISTAR TODOS LOS PRODUCTOS" << endl;
-            cout << endl;
-            cout << "5) VOLVER ATRÁS" << endl;
-            cout << endl;
-            cout << "> ";
+            cMenuProdListar();
         }
         switch(opc){
             case 1:
