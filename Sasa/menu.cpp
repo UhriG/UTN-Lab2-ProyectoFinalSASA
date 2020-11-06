@@ -602,12 +602,12 @@ void listarProductoPorCodDes(){
     } else {
         paginas = (cant / productos)+1;
     }
-    int idanterior = -1;;
-    int resp=1, i=0;
-    while(i<paginas && resp != 0){
+    int idanterior = -1, hoja = 1;
+    int resp=1;
+    while(resp != 0){
         cTitulo();
         cout << left;
-        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD DESCENDENTE" << endl;
+        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
         cout << endl;
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
@@ -621,19 +621,21 @@ void listarProductoPorCodDes(){
             }
             idanterior = p.getId();
         }
-        cout << "PAGINAS: " << paginas << endl;
-        cout << "0- SALIR | 1- PÁGINA SIGUIENTE: > ";
+        cout << "PAGINA: " << hoja << " / " << paginas << endl;
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
         while(!(cin >> resp)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
-        if(pos == cant){
+        hoja = resp;
+        if(pos == cant || hoja > paginas){
                 msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
         if(resp != 0){
-            productos+=5;
+            pos = 5 *(hoja-1);
+            productos = pos + 5;
         }
     }
 }
@@ -667,12 +669,12 @@ void listarProductoTodos(){
     } else {
         paginas = (cant / productos)+1;
     }
-    int idanterior = -1;
-    int resp=1, i=0;
-    while(i<paginas && resp != 0){
+    int idanterior = -1, hoja = 1;
+    int resp=1;
+    while(resp != 0){
         cTitulo();
         cout << left;
-        cout << "*LISTAR TODOS LOS PRODUCTOS" << endl;
+        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
         cout << endl;
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
@@ -686,19 +688,21 @@ void listarProductoTodos(){
             }
             idanterior = p.getId();
         }
-        cout << "PAGINAS: " << paginas << endl;
-        cout << "0- SALIR | 1- PÁGINA SIGUIENTE: > ";
+        cout << "PAGINA: " << hoja << " / " << paginas << endl;
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
         while(!(cin >> resp)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
-        if(pos == cant){
+        hoja = resp;
+        if(pos == cant || hoja > paginas){
                 msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
         if(resp != 0){
-            productos+=5;
+            pos = 5 *(hoja-1);
+            productos = pos + 5;
         }
     }
 }
