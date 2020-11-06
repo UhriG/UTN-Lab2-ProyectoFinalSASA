@@ -61,12 +61,13 @@
 
 1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\rlutil.h
 
-1604545711 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1604703877 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
 	"ui.h"
 	"rlutil.h"
+	"carteles.h"
 	"usuario.h"
 	"producto.h"
 
@@ -246,7 +247,7 @@
 
 1604605446 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
-1604627639 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+1604703877 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -254,7 +255,7 @@
 	"carteles.h"
 	"carteles.h"
 
-1604627639 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
+1604703877 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
 1604682385 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>

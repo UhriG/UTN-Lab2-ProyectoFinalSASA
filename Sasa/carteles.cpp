@@ -76,6 +76,7 @@ void cTabla(int modo){
     if(modo == 1){ //MODO 1 PARA USUARIO
         int ancho1 = 15;
         cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "PERFIL" << setw(ancho1) << "ESTADO";
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
     }
     if(modo == 2){ // MODO 2 PARA PRODUCTO
         int ancho2 = 20;
@@ -83,6 +84,7 @@ void cTabla(int modo){
         cout << endl << "----------------------------------------------------------------------------"<< endl;
     }
 }
+
 
 #include "carteles.h"
 

@@ -287,25 +287,49 @@ void eliminarUsuario(){
 }
 
 void listarUsuarios(){
-    cTitulo();
-    cout << "LISTADO DE TODOS LOS USUARIOS" << endl;
-    cout << endl;
-    cout << left;
-
     Usuario u;
-	int pos=0;
-    cTabla(1); // MODO 1 USUARIO
-	while(u.leerDisco(pos++)==1){ //  .Leer_de_disco(pos++)==1)
-        if(u.getEstado()==1){
-            u.mostrar(); // u.mostrar();
-        }
-	}
-	if(pos==1){
-		msj("Presione cualquier tecla para salir", rlutil::WHITE, rlutil::MAGENTA);
-		system("pause>nul");
+    int cant = cantUsuario(), pos = 0, usuarios = 5, paginas;
+    if(cant % usuarios == 0){
+        paginas = cant / usuarios;
+    } else {
+        paginas = (cant / usuarios)+1;
     }
-    cout << endl << "----------------------------------------------------------------------------"<< endl;
-    anykey();
+    int idanterior = -1, hoja = 1, resp = 1;
+    while(resp != 0){
+        cTitulo();
+        cout << left;
+        cout << "*LISTADO DE TODOS LOS USUARIOS" << endl;
+        cout << endl;
+        cout << "-----------------------------" << endl;
+        cout << "TOTAL DE USUARIOS: " << cant << endl;
+        cout << "-----------------------------" << endl;
+        cTabla(1); // MODO 1 USUARIO
+        for(pos; pos < usuarios; pos++){
+            u.leerDisco(pos);
+            if(u.getEstado()==1 && u.getId() != idanterior){
+                u.mostrar();
+                cout << endl << "----------------------------------------------------------------------------"<< endl;
+            }
+            idanterior = u.getId();
+        }
+        cout << "*PAGINA: " << hoja << " / " << paginas << endl;
+        cout << endl;
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        while(!(cin >> resp)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+        hoja = resp;
+        if(pos == cant || hoja > paginas){
+            msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+            resp = 0;
+        }
+        if(resp != 0){
+            pos = 5 *(hoja-1);
+            usuarios = pos + 5;
+        }
+    }
 }
 
 // SUB MENU PRODUCTO
@@ -575,7 +599,8 @@ void listarProductoPorCodAs(){
             }
             idanterior = p.getId();
         }
-        cout << "PAGINA: " << hoja << " / " << paginas << endl;
+        cout << "*PAGINA: " << hoja << " / " << paginas << endl;
+        cout << endl;
         cout << "0- SALIR | INDIQUE PÁGINA: > ";
         while(!(cin >> resp)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);

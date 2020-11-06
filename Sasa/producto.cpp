@@ -58,6 +58,7 @@ void Producto::cargar(){
 
 void Producto::mostrar(int modo){
     string estados[2] = {"Activo","Inactivo"};
+
     if(modo == 1){ // MODO 1 MUESTRA EN LISTA
         int ancho = 10;
         cout << setw(4) << id;

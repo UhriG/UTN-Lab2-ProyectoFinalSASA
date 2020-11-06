@@ -54,11 +54,11 @@ void Usuario::cargar(){
 }
 
 void Usuario::mostrar(int modo){
-    int anchos = 15;
     string perfiles[3] = {"Admin", "Supervisor", "Operador"};
     string estados[2] = {"Activo","Inactivo"};
+
     if(modo == 1){ //MODO 1 MUESTRA EN LISTA
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        int anchos = 15;
         cout << setw(5) << id;
         cout << setw(anchos) << nombre;
         cout << setw(anchos) << perfiles[perfil-1];
