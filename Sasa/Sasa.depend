@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1604682385 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1604689645 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
@@ -10,12 +10,14 @@
 
 1604682385 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1604515964 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604689645 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
+	<stdio.h>
 	"menu.h"
 	"ui.h"
 	"rlutil.h"
+	"carteles.h"
 	"usuario.h"
 	"producto.h"
 
