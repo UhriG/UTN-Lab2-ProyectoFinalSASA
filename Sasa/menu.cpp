@@ -576,7 +576,7 @@ void listarProductoPorCodAs(){
             idanterior = p.getId();
         }
         cout << "PAGINAS: " << paginas << endl;
-        cout << "0- SALIR | 1- PAGINA SIGUIENTE: > ";
+        cout << "0- SALIR | 1- PÁGINA SIGUIENTE: > ";
         while(!(cin >> resp)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
@@ -586,7 +586,7 @@ void listarProductoPorCodAs(){
                 msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
-        if(resp != 0){
+        if(resp == 1){
             productos+=5;
         }
     }
@@ -620,7 +620,7 @@ void listarProductoPorCodDes(){
             idanterior = p.getId();
         }
         cout << "PAGINAS: " << paginas << endl;
-        cout << "0- SALIR | 1- PAGINA SIGUIENTE: > ";
+        cout << "0- SALIR | 1- PÁGINA SIGUIENTE: > ";
         while(!(cin >> resp)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
@@ -685,7 +685,7 @@ void listarProductoTodos(){
             idanterior = p.getId();
         }
         cout << "PAGINAS: " << paginas << endl;
-        cout << "0- SALIR | 1- PAGINA SIGUIENTE: > ";
+        cout << "0- SALIR | 1- PÁGINA SIGUIENTE: > ";
         while(!(cin >> resp)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
