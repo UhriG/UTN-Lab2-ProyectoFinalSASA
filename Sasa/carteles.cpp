@@ -72,17 +72,6 @@ void cMenuProdListar(){
     cout << "> ";
 }
 
-void cListarUsuario(){
-    int ancho = 15;
-    cout << setw(5) << "ID" << setw(ancho) << "NOMBRE" << setw(ancho) << "PERFIL" << setw(ancho) << "ESTADO";
-}
-
-void cListarProd(){
-    int ancho = 10;
-    cout << setw(4) << "ID" << setw(20) << "NOMBRE" << setw(20) << "MARCA" /*<< setw(ancho) << "CATEGORÍA"*/ << setw(ancho) << "ESTADO" << setw(5) << "STOCK";
-    cout << endl << "----------------------------------------------------------------------------"<< endl;
-}
-
 void cTabla(int modo){
     if(modo == 1){ //MODO 1 PARA USUARIO
         int ancho1 = 15;
