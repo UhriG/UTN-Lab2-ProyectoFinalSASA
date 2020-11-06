@@ -557,8 +557,8 @@ void listarProductoPorCodAs(){
         paginas = (cant / productos)+1;
     }
     int idanterior = -1, hoja = 1;
-    int resp=1, i=0;
-    while(i<paginas && resp != 0){
+    int resp=1;
+    while(resp != 0){
         cTitulo();
         cout << left;
         cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
@@ -583,7 +583,7 @@ void listarProductoPorCodAs(){
             cin.ignore(123, '\n');
         }
         hoja = resp;
-        if(pos == cant){
+        if(pos == cant || hoja > paginas){
                 msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
