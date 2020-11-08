@@ -168,3 +168,19 @@ void compAdmin(){
         u.admin();
     }
 }
+
+void ordenarUsuarioDesc(Usuario *user, int cantReg){
+  Usuario aux;
+  int i, j, pMayor;
+  for(i=0; i<cantReg-1; i++){
+    pMayor = i;
+    for(j=i+1; j<cantReg; j++){
+        if(user[j].getId() > user[pMayor].getId()){
+            pMayor = j;
+        }
+    }
+    aux = user[i];
+    user[i] = user[pMayor];
+    user[pMayor] = aux;
+  }
+}

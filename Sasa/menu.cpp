@@ -676,7 +676,7 @@ void listarProductoInd(){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
         cin.clear();
         cin.ignore(123, '\n');
-}
+    }
     pos=buscarCod(cod);
     Producto p;
     p.leerDisco(pos);

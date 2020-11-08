@@ -33,5 +33,5 @@ int buscarID(int idB); // Busca el ID
 int buscarNombre(char *nombre);
 int cantUsuario(); // Devuelve la cantidad de registros
 void compAdmin(); // Comprueba si existe admin
-
+void ordenarUsuarioDesc(Usuario *user, int cantReg); // Ordena de forma descendente
 #endif // USUARIO_H_INCLUDED

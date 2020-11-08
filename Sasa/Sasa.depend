@@ -131,7 +131,7 @@
 
 1603496077 
 
-1604626532 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604704681 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -158,7 +158,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1604441332 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1604704681 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -198,7 +198,7 @@
 1604518825 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
-1604441332 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1604704681 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -247,7 +247,7 @@
 
 1604605446 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
-1604703877 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+1604704681 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
