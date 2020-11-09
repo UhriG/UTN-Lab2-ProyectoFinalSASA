@@ -32,8 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Fecha.cpp" />
+		<Unit filename="Fecha.h" />
 		<Unit filename="carteles.cpp" />
 		<Unit filename="carteles.h" />
+		<Unit filename="categoria.cpp" />
+		<Unit filename="categoria.h" />
 		<Unit filename="login.cpp" />
 		<Unit filename="login.h" />
 		<Unit filename="main.cpp" />
