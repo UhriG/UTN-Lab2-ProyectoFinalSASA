@@ -311,7 +311,7 @@
 
 1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+1604880977 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
 1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
@@ -326,7 +326,7 @@
 
 1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
-1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1604880977 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -351,7 +351,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1604880977 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -370,4 +370,15 @@
 	"producto.h"
 
 1603985598 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.h
+
+1604782570 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	"ui.h"
+	"rlutil.h"
+	"categoria.h"
+	"Fecha.h"
+
+1604782562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.h
 
