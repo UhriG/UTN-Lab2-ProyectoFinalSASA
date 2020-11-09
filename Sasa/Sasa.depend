@@ -267,3 +267,107 @@
 
 1604682385 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
+1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+	<iostream>
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	"carteles.h"
+	"carteles.h"
+
+1603973097 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
+
+1603973097 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
+
+1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
+	<iostream>
+	<string>
+	<iomanip>
+	<cstdlib>
+	<windows.h>
+	<conio.h>
+	"carteles.h"
+	"login.h"
+	"menu.h"
+	"usuario.h"
+	"ui.h"
+	"rlutil.h"
+
+1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
+
+1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+
+1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+	<string>
+
+1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+	<iostream>
+	"menu.h"
+	"login.h"
+	"ui.h"
+	"rlutil.h"
+	"carteles.h"
+	"usuario.h"
+	"producto.h"
+
+1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
+
+1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+	<iostream>
+	<iomanip>
+	<stdio.h>
+	"menu.h"
+	"ui.h"
+	"rlutil.h"
+	"carteles.h"
+	"usuario.h"
+	"producto.h"
+
+1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+	<iostream>
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	"producto.h"
+
+1603973097 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+	<iostream>
+	<iomanip>
+	<cstring>
+	"ui.h"
+	"rlutil.h"
+
+1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+	<iostream>
+	<iomanip>
+	<stdio.h>
+	"ui.h"
+	"rlutil.h"
+	<string>
+	"usuario.h"
+
+1603985574 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	"ui.h"
+	"rlutil.h"
+	"fecha.h"
+	"producto.h"
+
+1603985598 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.h
+
