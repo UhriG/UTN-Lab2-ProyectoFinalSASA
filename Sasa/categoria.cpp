@@ -13,9 +13,11 @@ void categoria::setNombre(string n){
 };
 //void categoria::setFechaCrea(Fecha);
 //void categoria::setFechaMod(Fecha);
+
 int categoria::getId(){
     return id;
 };
+
 string categoria::getNombre(){
     return nombre;
 };
