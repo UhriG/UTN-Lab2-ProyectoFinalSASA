@@ -12,9 +12,9 @@ class Fecha
         void setDia(int);
         void setMes(int);
         void setAnio(int);
-        int getDia();
-        int getMes();
-        int getAnio();
+        int getDia(){return dia;};
+        int getMes(){return mes;};
+        int getAnio(){return anio;};
         void cargarFecha();
         void mostrarFecha();
         void fechaActual(int, int, int);

@@ -14,6 +14,8 @@ Fecha::Fecha()
     mes = -1;
     anio = -1;
 }
+
+//set
 void Fecha::setDia(int d){
     dia=d;
 };
@@ -23,15 +25,7 @@ void Fecha::setMes(int m){
 void Fecha::setAnio(int a){
     anio=a;
 };;
-int Fecha::getDia(){
-    return dia;
-};
-int Fecha::getMes(){
-    return mes;
-};
-int Fecha::getAnio(){
-    return anio;
-};
+
 void Fecha::cargarFecha(){
     Fecha f;
     int d;
