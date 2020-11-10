@@ -21,6 +21,7 @@ void listarProducto(); // Lista los Producto
 void crearCategoria(); // Crear Categoria
 void modificarCategoria(); // Modifica Categoria
 void eliminarCategoria(); // Elimina una Categoria
+void listarCategoria(); // Lista Todas las Categorias
 // SUB MENU CONFIGURACION
 void copiaSeguridad(); // Crear Copia de Seguridad
 void recuperarCopia(); // Recupera Copia de Seguridad

@@ -9,6 +9,7 @@ using namespace rlutil;
 #include "carteles.h"
 #include "usuario.h"
 #include "producto.h"
+#include "categoria.h"
 
 // MENUES PRINCIPAL
 void menuPrincipal(){
@@ -131,6 +132,9 @@ void menuCategoria(){
             break;
             case 3:
                 eliminarCategoria();
+            break;
+            case 4:
+                listarCategoria();
             break;
             case 5:
                 menu = false;
@@ -458,58 +462,148 @@ void listarProducto(){
 
 void crearCategoria(){
     cTitulo();
-    string nombre;
-    int id;
-    cout << "*CREAR CATEGORÍA" << endl;
-    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
-    cout << "NOMBRE: " << endl;
-    cin >> nombre;
-    cout << endl;
+    categoria c; //Clase categoria
+    c.cargar();
+    if(c.escribirDisco()==true){
+        msj("SE CREO CORRECTAMENTE LA CATEGORIA", rlutil::WHITE, rlutil::GREEN);
+    }
     msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
 }
+
 
 void modificarCategoria(){
     cTitulo();
-    string nombre;
-    int id;
-    cout << "*MODIFICAR CATEGORÍA" << endl;
-    cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
-    cout << "ID CATEGORÍA: " << endl;
+    categoria c;
+    int pos, id;
+    cout << "*MODIFICAR CATEGORIA" << endl;
+    cout << "INGRESAR ID CATEGORIA: ";
+
     while(!(cin >> id)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
         cin.clear();
         cin.ignore(123, '\n');
     }
-    //funcion buscar id
-    cout << "INGRESAR NOMBRE NUEVO: " << endl;
-    cin >> nombre;
+
     cout << endl;
-    msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+    pos = buscarIDcat(id);
+    if(pos!=-1){
+		c.leerDisco(pos);
+		c.mostrar(2);
+		cout << endl;
+		cout << "NOMBRE: 1 \tSALIR: 5" << endl;
+		cout << "ELEGIR UNA OPCIÓN: ";
+		int opc;
+		while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+        switch(opc){
+            case 1:
+                char n[20];
+                cout << "INGRESAR NOMBRE: ";
+                cin >> n;
+                c.setNombre(n);
+            break;
+            case 5:
+                return;
+        }
+		if(c.modDisco(pos)==true){
+            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+		}
+    }else{
+		msj("NO EXISTE EL USUARIO", rlutil::WHITE, rlutil::RED);
+		anykey();
+    }
 }
+
 
 void eliminarCategoria(){
     cTitulo();
-    int id;
+    int id, pos;
     char conf;
-    bool estado = true;
-    cout << "*ELIMINAR CATEGORÍA" << endl;
-    cout << "INGRESAR ID CATEGORÍA" << endl;
+    cout << "*ELIMINAR CATEGORIA" << endl;
+    cout << "INGRESAR ID CATEGORIA: ";
     while(!(cin >> id)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
         cin.clear();
         cin.ignore(123, '\n');
     }
-    cout << "ELIMINAR? (SI/NO): " << endl;
-    conf = getche();
-    while(conf!='S' && conf!='s' && conf!='N' && conf!='n'){
-        cout << "\nIngrese una opcion valida!" << endl << " >";
+    cout << endl;
+    pos = buscarIDcat(id);
+    categoria c;
+    if(pos!=-1){
+        int ancho = 10;
+        c.leerDisco(pos);
+        c.mostrar(2);
+        cout << endl;
+        cout << "ELIMINAR? (S/N): ";
         conf = getche();
-    }
-    if(conf == 'S' || conf == 's'){
-        estado = false;
-        msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+        while(conf!='S' && conf!='s' && conf!='N' && conf!='n'){
+            cout << "\nIngrese una opcion valida!" << endl << " >";
+            conf = getche();
+        }
+        if(conf == 's' || conf == 'S'){
+            int baja = 0;
+            c.setEstado(baja);
+            if(c.modDisco(pos)==true){
+                msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+            }
+        }else{
+            msj("NO SE ELIMINO LA CATEGORIA", rlutil::WHITE, rlutil::RED);
+        }
+    }else{
+		msj("NO EXISTE LA CATEGORIA", rlutil::WHITE, rlutil::RED);
     }
 }
+
+
+void listarCategoria(){
+    categoria c;
+    int cant = cantCategoria(), pos = 0, categorias = 5, paginas;
+    if(cant % categorias == 0){
+        paginas = cant / categorias;
+    } else {
+        paginas = (cant / categorias)+1;
+    }
+    int idanterior = -1, hoja = 1, resp = 1;
+    while(resp != 0){
+        cTitulo();
+        cout << left;
+        cout << "*LISTADO DE TODOS LAS CATEGORIAS" << endl;
+        cout << endl;
+        cout << "-----------------------------" << endl;
+        cout << "TOTAL DE CATEGORIAS: " << cant << endl;
+        cout << "-----------------------------" << endl;
+        cTabla(3); // MODO 1 USUARIO
+        for(pos; pos < categorias; pos++){
+            c.leerDisco(pos);
+            if(c.getEstado()==1 && c.getId() != idanterior){
+                c.mostrar();
+                cout << endl << "----------------------------------------------------------------------------"<< endl;
+            }
+            idanterior = c.getId();
+        }
+        cout << "*PAGINA: " << hoja << " / " << paginas << endl;
+        cout << endl;
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        while(!(cin >> resp)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+        hoja = resp;
+        if(pos == cant || hoja > paginas){
+            msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+            resp = 0;
+        }
+        if(resp != 0){
+            pos = 5 *(hoja-1);
+            categorias = pos + 5;
+        }
+    }
+}
+
 
 // SUB MENU CONFIGURACION
 

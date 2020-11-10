@@ -83,6 +83,12 @@ void cTabla(int modo){
         cout << setw(4) << "ID" << setw(ancho2) << "NOMBRE" << setw(ancho2) << "MARCA" /*<< setw(ancho2) << "CATEGORÍA"*/ << setw(10) << "ESTADO" << setw(5) << "STOCK";
         cout << endl << "----------------------------------------------------------------------------"<< endl;
     }
+    if(modo == 3){ //MODO 3 PARA CATEGORIA
+    int ancho1 = 15;
+    cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "ESTADO";
+    cout << endl << "----------------------------------------------------------------------------"<< endl;
+    }
+
 }
 
 

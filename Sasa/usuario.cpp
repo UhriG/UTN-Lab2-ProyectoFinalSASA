@@ -135,7 +135,7 @@ int buscarID(int idB){
 	return -1;
 }
 
-int buscarNombre(char *nombreB){
+int buscarNombrecat(char *nombreB){
 	int pos=0;
 	Usuario u;
 	while(u.leerDisco(pos)==1){

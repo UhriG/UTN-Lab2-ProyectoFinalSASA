@@ -267,7 +267,7 @@
 
 1604682385 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
-1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+1605022518 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -309,7 +309,7 @@
 
 1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
 
-1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1605021798 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
 1604880977 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
@@ -326,7 +326,7 @@
 
 1604771562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
-1604880977 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1605022518 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -336,8 +336,9 @@
 	"carteles.h"
 	"usuario.h"
 	"producto.h"
+	"categoria.h"
 
-1604771562 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1604931300 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -351,7 +352,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1604880977 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1605020401 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -371,7 +372,7 @@
 
 1603985598 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.h
 
-1604782570 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.cpp
+1605021798 source:c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.cpp
 	<iostream>
 	<iomanip>
 	<string>
@@ -380,5 +381,5 @@
 	"categoria.h"
 	"Fecha.h"
 
-1604782562 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.h
+1605020402 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.h
 
