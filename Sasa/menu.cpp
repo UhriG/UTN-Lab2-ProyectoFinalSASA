@@ -465,9 +465,10 @@ void crearCategoria(){
     categoria c; //Clase categoria
     c.cargar();
     if(c.escribirDisco()==true){
-        msj("SE CREO CORRECTAMENTE LA CATEGORIA", rlutil::WHITE, rlutil::GREEN);
+        msj("SE CREO CORRECTAMENTE LA CATEGORÍA", rlutil::WHITE, rlutil::GREEN);
+    }else{
+        msj("ERROR AL CREAR CATEGORÍA", rlutil::WHITE, rlutil::GREEN);
     }
-    msj("SE CREO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
 }
 
 
@@ -475,8 +476,8 @@ void modificarCategoria(){
     cTitulo();
     categoria c;
     int pos, id;
-    cout << "*MODIFICAR CATEGORIA" << endl;
-    cout << "INGRESAR ID CATEGORIA: ";
+    cout << "*MODIFICAR CATEGORÍA" << endl;
+    cout << "INGRESAR ID CATEGORÍA: ";
 
     while(!(cin >> id)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);

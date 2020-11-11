@@ -1,16 +1,17 @@
 # depslib dependency file v1.0
-1604690199 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1604940265 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
 	"ui.h"
 	"rlutil.h"
+	"carteles.h"
 	"usuario.h"
 	"producto.h"
 
-1604682385 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1605103650 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1604689645 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1605103650 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -20,6 +21,7 @@
 	"carteles.h"
 	"usuario.h"
 	"producto.h"
+	"categoria.h"
 
 1603306690 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
 
@@ -186,7 +188,7 @@
 
 1604682385 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
 
-1604518825 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1605103651 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -195,7 +197,7 @@
 	<string>
 	"usuario.h"
 
-1604518825 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
+1605103651 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
 1604704681 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
@@ -209,7 +211,7 @@
 
 1604518825 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 
-1604518825 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1604940266 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -257,7 +259,7 @@
 
 1604703877 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
-1604682385 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+1605103650 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -382,4 +384,26 @@
 	"Fecha.h"
 
 1605020402 c:\users\gabri\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.h
+
+1605103650 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	"ui.h"
+	"rlutil.h"
+	"categoria.h"
+	"Fecha.h"
+
+1605103650 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.h
+
+1605103650 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.h
+
+1605103650 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	"ui.h"
+	"rlutil.h"
+	"fecha.h"
+	"producto.h"
 

@@ -31,15 +31,15 @@ void categoria::setEstado(int e){
 
 void categoria::cargar(){
     id = cantCategoria()+1;
-    cout << "*CREAR CATEGORIA" << endl;
-    cout << "ID CATEGORIA: " << id << endl;
+    cout << "*CREAR CATEGORÍA" << endl;
+    cout << "ID CATEGORÍA: " << id << endl;
     cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
     cout << "Nombre: ";
     cin >> nombre;
 
     int existe;
     while(existe=buscarNombrecat(nombre) != -1){
-        msj("NOMBRE DE CATEGORIA EXISTE, INGRESAR UNO DISTINTO", rlutil::WHITE, rlutil::RED);
+        msj("NOMBRE DE CATEGORÍA EXISTE, INGRESAR UNO DISTINTO", rlutil::WHITE, rlutil::RED);
         cout << "\nNombre: ";
         cin >> nombre;
     }
