@@ -66,7 +66,7 @@
 
 1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\rlutil.h
 
-1605137810 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1605138289 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
@@ -504,7 +504,7 @@
 	"producto.h"
 	"Fecha.h"
 
-1605137823 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
+1605138013 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"

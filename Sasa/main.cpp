@@ -14,7 +14,7 @@ using namespace std;
 int main()
 {
     initUI();
-    int test = 1; // VALOR 0 NORMAL, 1 DEVELOPERS
+    int test = 0; // VALOR 0 NORMAL, 1 DEVELOPERS
     if(test == 0){
         compAdmin();
         Login l;
