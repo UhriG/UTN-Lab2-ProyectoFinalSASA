@@ -15,9 +15,9 @@ class Fecha
         int getMes(){return mes;};
         int getAnio(){return anio;};
         void mostrarFecha();
-        void cargarFecha();
-        void fechaActual();
-
+        void cargarFecha(tm*);
+        void fechaActual(tm*);
+        void conversorFecha(tm*);
 
 };
 

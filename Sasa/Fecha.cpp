@@ -22,10 +22,11 @@ void Fecha::mostrarFecha(){
     cout << dia << "/" << mes << "/" << anio;
 };
 
-void Fecha::cargarFecha(){ //carga la fecha manualmente y la settea en sistema
+void Fecha::cargarFecha(tm *registro){ //carga la fecha manualmente y la settea en sistema
     system("cls");
     cTitulo();
     Fecha f;
+    struct tm *tmPtr=registro;
     int d;
     int m;
     int a;
@@ -42,25 +43,46 @@ void Fecha::cargarFecha(){ //carga la fecha manualmente y la settea en sistema
     dia=d;
     mes=m;
     anio=a;
-    cout << "-----------------------------"<< endl;
-    cout << "LA NUEVA FECHA SERÁ/n"<< endl;
-    f.mostrarFecha();
-    cout << "ES CORRECTO?/n"<< endl;
+    tmPtr->tm_mday = dia;
+    tmPtr->tm_mon = mes-1;
+    tmPtr->tm_year=anio-1900;
 
 };
 
-
-void Fecha::fechaActual(){ //consigue la fecha y la settea en sistema
+void Fecha::fechaActual(tm *registro){ //consigue la fecha y la guarda en un registro de tipo tm
     int *d, *m, *a;
     time_t tiempo;
     struct tm *tmPtr;
     tiempo=time(NULL);          //Obtener algoritmo de fecha del sistema
     tmPtr=localtime(&tiempo);   //Convierte el algoritmo y lo guarda en tmPtr
+    registro=tmPtr;
+    }
+
+void Fecha::conversorFecha(tm *registro){ //toma registro, lo convierte a formato d/m/a y la settea en sistema
+    Fecha f;
+    int *d, *m, *a;
+    struct tm *tmPtr;
+    tmPtr=registro;             //Convierte el algoritmo y lo guarda en tmPtr
     *d=tmPtr->tm_mday;          //Guarda en puntero el Día
     *m=tmPtr->tm_mon+1;         //Guarda en puntero el Mes+1, ya que va del 0 al 11
     *a=1900+tmPtr->tm_year;     //Guarda en puntero el Año+1900
     dia=*d;
     mes=*m;
     anio=*a;
+    f.mostrarFecha();
 };
+
+//void Fecha::fechaActual(){ //consigue la fecha y la settea en sistema
+//    int *d, *m, *a;
+//    time_t tiempo;
+//    struct tm *tmPtr;
+//    tiempo=time(NULL);          //Obtener algoritmo de fecha del sistema
+//    tmPtr=localtime(&tiempo);   //Convierte el algoritmo y lo guarda en tmPtr
+//    *d=tmPtr->tm_mday;          //Guarda en puntero el Día
+//    *m=tmPtr->tm_mon+1;         //Guarda en puntero el Mes+1, ya que va del 0 al 11
+//    *a=1900+tmPtr->tm_year;     //Guarda en puntero el Año+1900
+//    dia=*d;
+//    mes=*m;
+//    anio=*a;
+//};
 
