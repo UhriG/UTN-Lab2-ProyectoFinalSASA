@@ -18,7 +18,7 @@ void menuPrincipal(){
     while(menu){
         cMenuPrincipal();
         while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenuPrincipal();
@@ -43,7 +43,7 @@ void menuPrincipal(){
             case 6:
                 menu = false;
             break;
-            default: msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            default: msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
                 break;
         }
     }
@@ -55,7 +55,7 @@ void menuUsuario(){
     while(menu){
         cMenu(1); // CARTEL MENU GENERAL ( USUARIO )
         while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenu(1); // CARTEL MENU GENERAL ( USUARIO )
@@ -78,7 +78,7 @@ void menuUsuario(){
                 menu = false;
             break;
             default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -90,7 +90,7 @@ void menuProducto(){
     while(menu){
         cMenu(2); // CARTEL MENU GENERAL ( PRODUCTO )
         while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenu(2); // CARTEL MENU GENERAL ( PRODUCTO )
@@ -113,7 +113,7 @@ void menuProducto(){
                 menu = false;
             break;
             default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -123,12 +123,12 @@ void menuCategoria(){
     bool menu = true;
     int opc;
     while(menu){
-        cMenu(3); // CARTEL MENU GENERAL ( CATEGORÍA )
+        cMenu(3); // CARTEL MENU GENERAL ( CATEGORï¿½A )
         while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenu(3); // CARTEL MENU GENERAL ( CATEGORÍA )
+            cMenu(3); // CARTEL MENU GENERAL ( CATEGORï¿½A )
         }
 
         switch(opc){
@@ -148,7 +148,7 @@ void menuCategoria(){
                 menu = false;
             break;
             default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -160,7 +160,7 @@ void menuConfiguracion(){
     while(menu){
         cMenuConfiguracion(); // CARTEL MENU CONFIGURACION
         while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenuConfiguracion(); // CARTEL MENU CONFIGURACION
@@ -180,7 +180,7 @@ void menuConfiguracion(){
                 menu = false;
             break;
             default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -216,11 +216,11 @@ void modificarUsuario(){
 		u.leerDisco(pos);
 		u.mostrar(2);
 		cout << endl;
-		cout << "NOMBRE: 1 \tCONTRASEÑA: 2 \tPERFIL: 3 \tSALIR: 5" << endl;
-		cout << "ELEGIR UNA OPCIÓN: ";
+		cout << "NOMBRE: 1 \tCONTRASEï¿½A: 2 \tPERFIL: 3 \tSALIR: 5" << endl;
+		cout << "ELEGIR UNA OPCIï¿½N: ";
 		int opc;
 		while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
@@ -241,7 +241,7 @@ void modificarUsuario(){
                 int per;
                 cout << "INGRESAR PERFIL: ";
                 while(!(cin >> per)){
-                    msj("OPCIÓN INCORRECTA: 1 - ADMIN \t2 - SUPERVISOR \t3 - OPERADOR", rlutil::WHITE, rlutil::RED);
+                    msj("OPCIï¿½N INCORRECTA: 1 - ADMIN \t2 - SUPERVISOR \t3 - OPERADOR", rlutil::WHITE, rlutil::RED);
                     cin.clear();
                     cin.ignore(123, '\n');
                 }
@@ -251,7 +251,7 @@ void modificarUsuario(){
                 return;
         }
 		if(u.modDisco(pos)==true){
-            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+            msj("SE MODIFICO CON ï¿½XITO", rlutil::WHITE, rlutil::GREEN);
 		}
     }else{
 		msj("NO EXISTE EL USUARIO", rlutil::WHITE, rlutil::RED);
@@ -326,15 +326,15 @@ void listarUsuarios(){
         }
         cout << "*PAGINA: " << hoja << " / " << paginas << endl;
         cout << endl;
-        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        cout << "0- SALIR | INDIQUE Pï¿½GINA: > ";
         while(!(cin >> resp)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-            msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+            msj("NO HAY Mï¿½S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
             resp = 0;
         }
         if(resp != 0){
@@ -351,7 +351,7 @@ void crearProducto(){
     Producto p;
     p.cargar();
     if(p.escribirDisco()==true){
-        msj("SE CREO PRODUCTO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+        msj("SE CREO PRODUCTO CON ï¿½XITO", rlutil::WHITE, rlutil::GREEN);
     } else{
         msj("ERROR AL CREAR PRODUCTO", rlutil::WHITE, rlutil::RED);
     }
@@ -383,7 +383,7 @@ void modificarProducto(){
         }
 		p.setStock(stock);
 		if(p.modDisco(pos)==true){
-            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+            msj("SE MODIFICO CON ï¿½XITO", rlutil::WHITE, rlutil::GREEN);
 		}
 
     }else{
@@ -437,7 +437,7 @@ void listarProducto(){
         cMenuProdListar();
         int opc;
         while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cTitulo();
@@ -460,7 +460,7 @@ void listarProducto(){
                 menu = false;
             break;
             default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -470,22 +470,22 @@ void listarProducto(){
 
 void crearCategoria(){
     cTitulo();
-    categoria c; //Clase categoria
+    Categoria c; //Clase categoria
     c.cargar();
     if(c.escribirDisco()==true){
-        msj("SE CREO CORRECTAMENTE LA CATEGORÍA", rlutil::WHITE, rlutil::GREEN);
+        msj("SE CREO CORRECTAMENTE LA CATEGORï¿½A", rlutil::WHITE, rlutil::GREEN);
     }else{
-        msj("ERROR AL CREAR CATEGORÍA", rlutil::WHITE, rlutil::GREEN);
+        msj("ERROR AL CREAR CATEGORï¿½A", rlutil::WHITE, rlutil::GREEN);
     }
 }
 
 
 void modificarCategoria(){
     cTitulo();
-    categoria c;
+    Categoria c;
     int pos, id;
-    cout << "*MODIFICAR CATEGORÍA" << endl;
-    cout << "INGRESAR ID CATEGORÍA: ";
+    cout << "*MODIFICAR CATEGORï¿½A" << endl;
+    cout << "INGRESAR ID CATEGORï¿½A: ";
 
     while(!(cin >> id)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
@@ -500,10 +500,10 @@ void modificarCategoria(){
 		c.mostrar(2);
 		cout << endl;
 		cout << "NOMBRE: 1 \tSALIR: 5" << endl;
-		cout << "ELEGIR UNA OPCIÓN: ";
+		cout << "ELEGIR UNA OPCIï¿½N: ";
 		int opc;
 		while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
@@ -518,10 +518,10 @@ void modificarCategoria(){
                 return;
         }
 		if(c.modDisco(pos)==true){
-            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+            msj("SE MODIFICO CON ï¿½XITO", rlutil::WHITE, rlutil::GREEN);
 		}
     }else{
-		msj("NO EXISTE LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
+		msj("NO EXISTE LA CATEGORï¿½A", rlutil::WHITE, rlutil::RED);
 		anykey();
     }
 }
@@ -531,8 +531,8 @@ void eliminarCategoria(){
     cTitulo();
     int id, pos;
     char conf;
-    cout << "*ELIMINAR CATEGORÍA" << endl;
-    cout << "INGRESAR ID CATEGORÍA: ";
+    cout << "*ELIMINAR CATEGORï¿½A" << endl;
+    cout << "INGRESAR ID CATEGORï¿½A: ";
     while(!(cin >> id)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
         cin.clear();
@@ -540,7 +540,7 @@ void eliminarCategoria(){
     }
     cout << endl;
     pos = buscarIDcat(id);
-    categoria c;
+    Categoria c;
     if(pos!=-1){
         int ancho = 10;
         c.leerDisco(pos);
@@ -559,16 +559,16 @@ void eliminarCategoria(){
                 msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
             }
         }else{
-            msj("NO SE ELIMINO LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
+            msj("NO SE ELIMINO LA CATEGORï¿½A", rlutil::WHITE, rlutil::RED);
         }
     }else{
-		msj("NO EXISTE LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
+		msj("NO EXISTE LA CATEGORï¿½A", rlutil::WHITE, rlutil::RED);
     }
 }
 
 
 void listarCategoria(){
-    categoria c;
+    Categoria c;
     int cant = cantCategoria(), pos = 0, categorias = 5, paginas;
     if(cant % categorias == 0){
         paginas = cant / categorias;
@@ -584,7 +584,7 @@ void listarCategoria(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE CATEGORIAS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        cTabla(3); // MODO 3 CATEGORÍA
+        cTabla(3); // MODO 3 CATEGORï¿½A
         for(pos; pos < categorias; pos++){
             c.leerDisco(pos);
             if(c.getEstado()==1 && c.getId() != idanterior){
@@ -595,15 +595,15 @@ void listarCategoria(){
         }
         cout << "*PAGINA: " << hoja << " / " << paginas << endl;
         cout << endl;
-        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        cout << "0- SALIR | INDIQUE Pï¿½GINA: > ";
         while(!(cin >> resp)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-            msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+            msj("NO HAY Mï¿½S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
             resp = 0;
         }
         if(resp != 0){
@@ -634,7 +634,8 @@ void copiaSeguridad(){
     int guardo =0;
     guardo += copiaUsuario();
     guardo += copiaProducto();
-    if(guardo > 0){
+    guardo += copiaCategoria();
+    if(guardo == 3){
         msj("SE CREO COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::GREEN);
     } else {
         msj("ERROR AL CREAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
@@ -659,7 +660,8 @@ void recuperarCopia(){
     int rec = 0;
     rec += recUsuario();
     rec += recProducto();
-    if(rec > 0){
+    rec += recCategoria();
+    if(rec == 3){
         msj("SE RECUPERO CORRECTAMENTE",rlutil::WHITE, rlutil::GREEN);
     } else {
         msj("ERROR AL RECUPERAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
@@ -704,15 +706,15 @@ void listarProductoPorCodAs(){
         }
         cout << "*PAGINA: " << hoja << " / " << paginas << endl;
         cout << endl;
-        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        cout << "0- SALIR | INDIQUE Pï¿½GINA: > ";
         while(!(cin >> resp)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                msj("NO HAY Mï¿½S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
         if(resp != 0){
@@ -750,15 +752,15 @@ void listarProductoPorCodDes(){
             idanterior = p.getId();
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
-        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        cout << "0- SALIR | INDIQUE Pï¿½GINA: > ";
         while(!(cin >> resp)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                msj("NO HAY Mï¿½S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
         if(resp != 0){
@@ -802,7 +804,7 @@ void listarProductoTodos(){
     while(resp != 0){
         cTitulo();
         cout << left;
-        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
+        cout << "*LISTAR TODOS LOS PRODUCTOS" << endl;
         cout << endl;
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
@@ -817,15 +819,15 @@ void listarProductoTodos(){
             idanterior = p.getId();
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
-        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        cout << "0- SALIR | INDIQUE Pï¿½GINA: > ";
         while(!(cin >> resp)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                msj("NO HAY Mï¿½S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
         if(resp != 0){
@@ -878,6 +880,30 @@ bool copiaProducto(){
             return false;
         }
         fwrite(&p, sizeof(Producto), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
+}
+
+bool copiaCategoria(){
+    Categoria c;
+    FILE *f = fopen("datos/categoria.dat", "rb");
+    FILE *backup = fopen("datos/categoriaBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer categoria.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&c, sizeof(Categoria), 1, f)){
+        FILE *bk = fopen("datos/categoriaBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&c, sizeof(Categoria), 1, bk);
         fclose(bk);
     }
     fclose(f);
@@ -939,7 +965,7 @@ void menuMovimientos(){
     while(menu){
         cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
         while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
@@ -959,8 +985,31 @@ void menuMovimientos(){
                 menu = false;
             break;
             default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIï¿½N INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
+    
+bool recCategoria(){
+    Categoria c;
+    FILE *bk = fopen("datos/categoriaBK.dat", "rb");
+    FILE *orig = fopen("datos/categoria.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el categoriaBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&c, sizeof(Categoria), 1, bk)){
+        FILE *f = fopen("datos/categoria.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en categoria.";
+            system("pause");
+            return false;
+        }
+        fwrite(&c, sizeof(Categoria), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
 }

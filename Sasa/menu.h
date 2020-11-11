@@ -39,9 +39,11 @@ void listarProductoTodos(); // Listar todos los productos
 // SUB MENU CONFIGURACION COPIA DE SEGURIDAD
 bool copiaUsuario(); // crea bk de usuario.dat
 bool copiaProducto(); // crea bk de producto.dat
+bool copiaCategoria(); // crea bk de categoria.dat
 // SUB MENU CONFIGURACION RESTAURAR COPIAS
 bool recUsuario(); // recupera bk de usuario.dat
 bool recProducto(); // recupera bk de producto.dat
+bool recCategoria(); // recupera bk de categoria.dat
 // FUNCIONES GLOBALES O NECESARIAS
 int validarMenu(int opc, int min, int max);
 
