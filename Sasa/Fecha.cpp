@@ -7,55 +7,56 @@ using namespace std;
 using namespace rlutil;
 #include "fecha.h"
 #include "producto.h"
+#include "carteles.h"
 
-Fecha::Fecha()
-{
-    dia = -1;
-    mes = -1;
-    anio = -1;
-}
 
-//set
-void Fecha::setDia(int d){
-    dia=d;
-};
-void Fecha::setMes(int m){
-    mes=m;
-};;
-void Fecha::setAnio(int a){
-    anio=a;
-};;
 
-void Fecha::cargarFecha(){
+void Fecha::setFecha(int d, int m, int a){ //settea la fecha del sistema
     Fecha f;
-    int d;
-    int m;
-    int a;
-    cin >> d;
-    cin >> m;
-    cin >> a;
-    f.setDia(d);
-    f.setMes(m);
-    f.setAnio(a);
+    f.fechaActual();
 };
+
 void Fecha::mostrarFecha(){
     cout << dia << "/" << mes << "/" << anio;
 };
 
-void fechaActual(int *d, int *m, int *a){
-    time_t tiempo;
-    struct tm *tmPtr;
-    tiempo=time(NULL);
-    tmPtr=localtime(&tiempo);
-    *d=tmPtr->tm_mday;
-    *m=tmPtr->tm_mon+1;
-    *a=1900+tmPtr->tm_year;
+void Fecha::cargarFecha(){
+    system("cls");
+    cTitulo();
+    Fecha f;
+    int d;
+    int m;
+    int a;
+    cout<<left;
+    cout << "MOODIFICAR FECHA DEL REGISTRO/n"<< endl;
+    cout << "-----------------------------"<< endl;
+    cout << "Día: " << endl;
+    cin >> d;
+    cout << "Mes: " << endl;
+    cin >> m;
+    cout << "Año: " << endl;
+    cin >> a;
+
+    f.setFecha(d, m, a);
+    cout << "-----------------------------"<< endl;
+    cout << "LA NUEVA FECHA SERÁ/n"<< endl;
+    f.mostrarFecha();
+    cout << "ES CORRECTO?/n"<< endl;
+
 };
 
 
-
-
-
-
-
+void Fecha::fechaActual(){ //consigue la fecha y la settea en sistema
+    int *d, *m, *a;
+    time_t tiempo;
+    struct tm *tmPtr;
+    tiempo=time(NULL);          //Obtener algoritmo de fecha del sistema
+    tmPtr=localtime(&tiempo);   //Convierte el algoritmo y lo guarda en tmPtr
+    *d=tmPtr->tm_mday;          //Guarda en puntero el Día
+    *m=tmPtr->tm_mon+1;         //Guarda en puntero el Mes+1, ya que va del 0 al 11
+    *a=1900+tmPtr->tm_year;     //Guarda en puntero el Año+1900
+    dia=*d;
+    mes=*m;
+    anio=*a;
+};
 

@@ -570,7 +570,7 @@ void listarCategoria(){
     while(resp != 0){
         cTitulo();
         cout << left;
-        cout << "*LISTADO DE TODOS LAS CATEGORIAS" << endl;
+        cout << "*LISTADO DE TODAS LAS CATEGORIAS" << endl;
         cout << endl;
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE CATEGORIAS: " << cant << endl;

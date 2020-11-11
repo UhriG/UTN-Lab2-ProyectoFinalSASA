@@ -8,16 +8,17 @@ class Fecha
         int mes;
         int anio;
     public:
-        Fecha();
-        void setDia(int);
-        void setMes(int);
-        void setAnio(int);
+        //SET
+        void setFecha(int, int, int);
+        //GET
         int getDia(){return dia;};
         int getMes(){return mes;};
         int getAnio(){return anio;};
-        void cargarFecha();
         void mostrarFecha();
-        void fechaActual(int, int, int);
+        void cargarFecha();
+        void fechaActual();
+
+
 };
 
 
