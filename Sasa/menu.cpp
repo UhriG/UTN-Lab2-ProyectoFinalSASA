@@ -513,7 +513,7 @@ void modificarCategoria(){
             msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
 		}
     }else{
-		msj("NO EXISTE EL USUARIO", rlutil::WHITE, rlutil::RED);
+		msj("NO EXISTE LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
 		anykey();
     }
 }
@@ -523,8 +523,8 @@ void eliminarCategoria(){
     cTitulo();
     int id, pos;
     char conf;
-    cout << "*ELIMINAR CATEGORIA" << endl;
-    cout << "INGRESAR ID CATEGORIA: ";
+    cout << "*ELIMINAR CATEGORÍA" << endl;
+    cout << "INGRESAR ID CATEGORÍA: ";
     while(!(cin >> id)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
         cin.clear();
@@ -551,10 +551,10 @@ void eliminarCategoria(){
                 msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
             }
         }else{
-            msj("NO SE ELIMINO LA CATEGORIA", rlutil::WHITE, rlutil::RED);
+            msj("NO SE ELIMINO LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
         }
     }else{
-		msj("NO EXISTE LA CATEGORIA", rlutil::WHITE, rlutil::RED);
+		msj("NO EXISTE LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
     }
 }
 
@@ -576,7 +576,7 @@ void listarCategoria(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE CATEGORIAS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        cTabla(3); // MODO 1 USUARIO
+        cTabla(3); // MODO 3 CATEGORÍA
         for(pos; pos < categorias; pos++){
             c.leerDisco(pos);
             if(c.getEstado()==1 && c.getId() != idanterior){
