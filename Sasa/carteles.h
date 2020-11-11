@@ -8,6 +8,7 @@ void cMenuConfiguracion(); // Cartel MENU CATEGORIA
 void cMenu(int selec); // Cartel MENU CON VECTORES
 void cMenuLogin(); // Cartel MENU LOGIN
 void cMenuProdListar(); // Cartel PRODUCTO LISTAR
+void cMenuMovimientos(); // Cartel MENU MOVIMIENTOS
 void cTabla(int modo); // Cartel LISTAR FORMATO TABLA
 
 #endif // CARTELES_H

@@ -35,11 +35,16 @@ void menuPrincipal(){
                 menuCategoria();
             break;
             case 4:
-                menuConfiguracion();
+                menuMovimientos();
             break;
             case 5:
+                menuConfiguracion();
+            break;
+            case 6:
                 menu = false;
             break;
+            default: msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+                break;
         }
     }
 }
@@ -71,6 +76,9 @@ void menuUsuario(){
             break;
             case 5:
                 menu = false;
+            break;
+            default:
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -923,4 +931,36 @@ bool recProducto(){
     }
     fclose(bk);
     return true;
+}
+
+void menuMovimientos(){
+    bool menu = true;
+    int opc;
+    while(menu){
+        cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
+        }
+
+        switch(opc){
+            case 1:
+                //cargarIngresos();
+            break;
+            case 2:
+                //cargarEgresos();
+            break;
+            case 3:
+                //listarBitacora();
+            break;
+            case 4:
+                menu = false;
+            break;
+            default:
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            break;
+        }
+    }
 }

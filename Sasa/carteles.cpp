@@ -21,9 +21,10 @@ void cMenuPrincipal(){
     cout << "1) USUARIO" << endl;
     cout << "2) PRODUCTOS" << endl;
     cout << "3) CATEGORÍA" << endl;
-    cout << "4) CONFIGURACIONES" << endl;
+    cout << "4) MOVIMIENTOS" << endl;
+    cout << "5) CONFIGURACIONES" << endl;
     cout << endl;
-    cout << "5) CERRAR SESIÓN" << endl;
+    cout << "6) CERRAR SESIÓN" << endl;
     cout << endl;
     cout << "> ";
 }
@@ -68,6 +69,17 @@ void cMenuProdListar(){
     cout << "4) LISTAR TODOS LOS PRODUCTOS" << endl;
     cout << endl;
     cout << "5) VOLVER ATRÁS" << endl;
+    cout << endl;
+    cout << "> ";
+}
+
+void cMenuMovimientos(){
+    cTitulo();
+    cout << "1) INGRESOS" << endl;
+    cout << "2) EGRESOS" << endl;
+    cout << "3) BITÁCORA" << endl;
+    cout << endl;
+    cout << "4) SALIR" << endl;
     cout << endl;
     cout << "> ";
 }

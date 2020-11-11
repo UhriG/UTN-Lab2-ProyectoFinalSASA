@@ -6,6 +6,7 @@ void menuPrincipal(); // Menu Principal
 void menuUsuario(); // Menu Usuario
 void menuProducto(); // Menu Producto
 void menuCategoria(); // Menu Categoria
+void menuMovimientos(); // Menu Movimientos
 void menuConfiguracion(); // Menu Configuracion
 // SUB MENU USUARIO
 void crearUsuario(); // Crear Usuario
@@ -22,6 +23,10 @@ void crearCategoria(); // Crear Categoria
 void modificarCategoria(); // Modifica Categoria
 void eliminarCategoria(); // Elimina una Categoria
 void listarCategoria(); // Lista Todas las Categorias
+// SUB MENU MOVIMIENTOS
+void cargarIngresos(); // Carga productos al stock
+void cargarEgresos(); // Quita productos al stock
+void listarBitacora(); // Lista el total de movimientos de egreso y egreso
 // SUB MENU CONFIGURACION
 void copiaSeguridad(); // Crear Copia de Seguridad
 void recuperarCopia(); // Recupera Copia de Seguridad
