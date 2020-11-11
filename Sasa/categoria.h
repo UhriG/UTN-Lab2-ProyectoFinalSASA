@@ -1,5 +1,6 @@
 #ifndef CATEGORIA_H_INCLUDED
 #define CATEGORIA_H_INCLUDED
+#include "Fecha.h"
 
 class categoria
 {
@@ -11,9 +12,7 @@ class categoria
         void setNombre(char *n);
         void setEstado(int e=1);
 
-
-//        void setNombre(char *n);
-//        void setFechaCrea(Fecha);
+        void setFechaCrea(Fecha);
 //        void setFechaMod(Fecha);
 
         //Get
@@ -21,23 +20,14 @@ class categoria
         char *getNombre(){return nombre;};
         int getEstado(){return estado;};
 
-
 //        Fecha getFechaCrea(){return Fecha;};
 //        Fecha getFechaMod(){return Fecha;};
-
 
         void cargar();
         void mostrar(int modo=1);
         bool escribirDisco();
         bool leerDisco(int pos);
         bool modDisco(int pos);
-
-
-
-//        void cargar();
-//        void mostrar();
-//        bool escribirDisco();
-//        bool leerDisco(int);
 };
 
 int buscarIDcat(int idB); // Busca el ID

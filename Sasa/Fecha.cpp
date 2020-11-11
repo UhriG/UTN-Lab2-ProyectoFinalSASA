@@ -42,14 +42,18 @@ void Fecha::mostrarFecha(){
     cout << dia << "/" << mes << "/" << anio;
 };
 
-void fechaActual(int *d, int *m, int *a){
+void Fecha::fechaActual(){
+    int d, m, a;
     time_t tiempo;
     struct tm *tmPtr;
     tiempo=time(NULL);
     tmPtr=localtime(&tiempo);
-    *d=tmPtr->tm_mday;
-    *m=tmPtr->tm_mon+1;
-    *a=1900+tmPtr->tm_year;
+    d = tmPtr->tm_mday;
+    m = tmPtr->tm_mon + 1;
+    a = 1900+tmPtr->tm_year;
+    setDia(d);
+    setMes(m);
+    setAnio(a);
 };
 
 

@@ -17,7 +17,7 @@ class Fecha
         int getAnio(){return anio;};
         void cargarFecha();
         void mostrarFecha();
-        void fechaActual(int, int, int);
+        void fechaActual();
 };
 
 
