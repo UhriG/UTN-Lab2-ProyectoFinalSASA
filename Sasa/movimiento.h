@@ -4,7 +4,7 @@
 #include "producto.h"
 #include "Fecha.h"
 
-class Movimiento
+/*class Movimiento
 {
     public:
         //void movimiento();
@@ -16,12 +16,12 @@ class Movimiento
 
     private:
         char usuarioLogueado[20];
-        char producto[20]
+        char producto[20];
         char marca[20];
         int categoria_id;
         int tipoMovimiento;
         int stock;
         Fecha f;
-};
+};*/
 
 #endif // MOVIMIENTOS_H

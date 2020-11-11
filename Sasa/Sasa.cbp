@@ -45,8 +45,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
-		<Unit filename="movimientos.cpp" />
-		<Unit filename="movimientos.h" />
+		<Unit filename="movimiento.cpp" />
+		<Unit filename="movimiento.h" />
 		<Unit filename="producto.cpp" />
 		<Unit filename="producto.h" />
 		<Unit filename="rlutil.h" />

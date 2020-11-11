@@ -6,15 +6,15 @@ using namespace std;
 using namespace rlutil;
 #include "producto.h"
 #include "Fecha.h"
-#include "movimientos.h"
+#include "movimiento.h"
 #include "login.h"
 
-movimientos::movimientos()
+/*Movimiento::Movimiento()
 {
     //ctor
-}
+}*/
 
-void Movimiento::cargar(){
+/*void Movimiento::cargar(){
     setLogueado()
 }
 
@@ -43,4 +43,4 @@ void Movimiento::mostrar(int modo){
         cout << "CATEGORÍA: "<< c.getNombre() << endl;
         cout << "STOCK: "<< stock << endl;
     }
-}
+}*/
