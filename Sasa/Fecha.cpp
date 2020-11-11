@@ -58,6 +58,19 @@ void Fecha::fechaActual(tm *registro){ //consigue la fecha y la guarda en un reg
     registro=tmPtr;
     }
 
+void Fecha::fechaActual(){
+    int d, m, a;
+    time_t tiempo;
+    struct tm *tmPtr;
+    tiempo=time(NULL);
+    tmPtr=localtime(&tiempo);
+    d = tmPtr->tm_mday;
+    m = tmPtr->tm_mon + 1;
+    a = 1900+tmPtr->tm_year;
+    setFecha(d,m,a);
+};
+
+
 void Fecha::conversorFecha(tm *registro){ //toma registro, lo convierte a formato d/m/a y la settea en sistema
     Fecha f;
     int *d, *m, *a;

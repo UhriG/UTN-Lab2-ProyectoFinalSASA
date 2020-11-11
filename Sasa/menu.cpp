@@ -462,7 +462,7 @@ void listarProducto(){
 
 void crearCategoria(){
     cTitulo();
-    categoria c; //Clase categoria
+    Categoria c; //Clase categoria
     c.cargar();
     if(c.escribirDisco()==true){
         msj("SE CREO CORRECTAMENTE LA CATEGORÍA", rlutil::WHITE, rlutil::GREEN);
@@ -474,7 +474,7 @@ void crearCategoria(){
 
 void modificarCategoria(){
     cTitulo();
-    categoria c;
+    Categoria c;
     int pos, id;
     cout << "*MODIFICAR CATEGORÍA" << endl;
     cout << "INGRESAR ID CATEGORÍA: ";
@@ -532,7 +532,7 @@ void eliminarCategoria(){
     }
     cout << endl;
     pos = buscarIDcat(id);
-    categoria c;
+    Categoria c;
     if(pos!=-1){
         int ancho = 10;
         c.leerDisco(pos);
@@ -560,7 +560,7 @@ void eliminarCategoria(){
 
 
 void listarCategoria(){
-    categoria c;
+    Categoria c;
     int cant = cantCategoria(), pos = 0, categorias = 5, paginas;
     if(cant % categorias == 0){
         paginas = cant / categorias;
@@ -626,7 +626,8 @@ void copiaSeguridad(){
     int guardo =0;
     guardo += copiaUsuario();
     guardo += copiaProducto();
-    if(guardo > 0){
+    guardo += copiaCategoria();
+    if(guardo == 3){
         msj("SE CREO COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::GREEN);
     } else {
         msj("ERROR AL CREAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
@@ -651,7 +652,8 @@ void recuperarCopia(){
     int rec = 0;
     rec += recUsuario();
     rec += recProducto();
-    if(rec > 0){
+    rec += recCategoria();
+    if(rec == 3){
         msj("SE RECUPERO CORRECTAMENTE",rlutil::WHITE, rlutil::GREEN);
     } else {
         msj("ERROR AL RECUPERAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
@@ -794,7 +796,7 @@ void listarProductoTodos(){
     while(resp != 0){
         cTitulo();
         cout << left;
-        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
+        cout << "*LISTAR TODOS LOS PRODUCTOS" << endl;
         cout << endl;
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
@@ -876,6 +878,30 @@ bool copiaProducto(){
     return true;
 }
 
+bool copiaCategoria(){
+    Categoria c;
+    FILE *f = fopen("datos/categoria.dat", "rb");
+    FILE *backup = fopen("datos/categoriaBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer categoria.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&c, sizeof(Categoria), 1, f)){
+        FILE *bk = fopen("datos/categoriaBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&c, sizeof(Categoria), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
+}
+
 // SUB MENU RESTAURAR COPIA DE SEGURIDAD
 bool recUsuario(){
     Usuario u;
@@ -919,6 +945,30 @@ bool recProducto(){
             return false;
         }
         fwrite(&p, sizeof(Producto), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
+}
+
+bool recCategoria(){
+    Categoria c;
+    FILE *bk = fopen("datos/categoriaBK.dat", "rb");
+    FILE *orig = fopen("datos/categoria.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el categoriaBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&c, sizeof(Categoria), 1, bk)){
+        FILE *f = fopen("datos/categoria.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en categoria.";
+            system("pause");
+            return false;
+        }
+        fwrite(&c, sizeof(Categoria), 1, f);
         fclose(f);
     }
     fclose(bk);

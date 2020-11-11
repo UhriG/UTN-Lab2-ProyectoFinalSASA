@@ -18,7 +18,7 @@ class Fecha
         void cargarFecha(tm*);
         void fechaActual(tm*);
         void conversorFecha(tm*);
-
+        void fechaActual();
 };
 
 

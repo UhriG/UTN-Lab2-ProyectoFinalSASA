@@ -5,6 +5,8 @@ using namespace std;
 #include "rlutil.h"
 using namespace rlutil;
 #include "producto.h"
+#include "categoria.h"
+#include "Fecha.h"
 
 void Producto::setNombre(char *n){
     strcpy(nombre,n);
@@ -14,9 +16,9 @@ void Producto::setMarca(char *m){
    strcpy(marca,m);
 }
 
-/*void Producto::setCategoria(int c){
+void Producto::setCategoria(int c){
     categoria_id = c;
-}*/
+}
 
 void Producto::setEstado(int e){
     estado = e;
@@ -26,10 +28,11 @@ void Producto::setStock(int s){
     stock = s;
 }
 /*
-void Producto::setFechaCrea(Fecha f){
-    fecha_creacion = f;
+void Producto::setFechaCrea(){
+    Fecha f;
+    fecha_creacion = f.Fecha();
 }
-
+/*
 void Producto::setFechaMod(Fecha f){
     fecha_modificacion = f;
 }
@@ -43,8 +46,9 @@ void Producto::cargar(){
     cin >> nombre;
     cout << "Marca: ";
     cin >> marca;
-    //cout << "Categoría: ";
-    //cin >> categoria_id;
+    listarCategoriaSimple();
+    cout << "Categoría ID: ";
+    cin >> categoria_id;
     estado = 1;
     cout << "Stock: ";
     int s;
@@ -58,19 +62,23 @@ void Producto::cargar(){
 
 void Producto::mostrar(int modo){
     string estados[2] = {"Activo","Inactivo"};
+    Categoria c;
+    int posCat = buscarIDcat(categoria_id);
+    c.leerDisco(posCat);
 
     if(modo == 1){ // MODO 1 MUESTRA EN LISTA
-        int ancho = 10;
+        int ancho = 15;
         cout << setw(4) << id;
-        cout << setw(20) << nombre;
-        cout << setw(20) << marca;
-        //cout << setw(ancho) << categoria_id;
-        cout << setw(ancho) << estados[estado-1];
+        cout << setw(ancho) << nombre;
+        cout << setw(ancho) << marca;
+        cout << setw(ancho) << c.getNombre();
+        cout << setw(10) << estados[estado-1];
         cout << setw(5) << stock;
     } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
         cout << "NOMBRE: "<< nombre << endl;
         cout << "MARCA: "<< marca << endl;
+        cout << "CATEGORÍA: "<< c.getNombre() << endl;
         cout << "ESTADO: "<< estados[estado-1] << endl;
         cout << "STOCK: "<< stock << endl;
     }
