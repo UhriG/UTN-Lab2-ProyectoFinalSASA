@@ -453,3 +453,18 @@
 	"producto.h"
 	"Fecha.h"
 
+1605134016 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
+	<iostream>
+	<iomanip>
+	"ui.h"
+	"rlutil.h"
+	"producto.h"
+	"Fecha.h"
+	"movimiento.h"
+	"login.h"
+
+1605134016 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\movimiento.h
+	"usuario.h"
+	"producto.h"
+	"Fecha.h"
+

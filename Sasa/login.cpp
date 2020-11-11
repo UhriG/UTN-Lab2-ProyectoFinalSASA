@@ -9,7 +9,7 @@ using namespace std;
 #include "login.h"
 #include "menu.h"
 #include "usuario.h"
-#include "movimientos.h"
+#include "movimiento.h"
 #include "ui.h"
 #include "rlutil.h"
 using namespace rlutil;
@@ -63,8 +63,8 @@ void Login::login(){
 
         if(comprobarCredenciales(password, usuario) != -1){
             logueado = true;
-            Movimiento m;
-            m.setLogueado(usuario);
+            /*Movimiento m;
+            m.setLogueado(usuario);*/
         }else{
             msj("CREDENCIALES INCORRECTAS, INTENTE NUEVAMENTE", rlutil::WHITE, rlutil::RED);
             contador++;
