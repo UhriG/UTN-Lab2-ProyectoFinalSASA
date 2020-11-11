@@ -13,14 +13,16 @@ using namespace rlutil;
 
 void Fecha::setFecha(int d, int m, int a){ //settea la fecha del sistema
     Fecha f;
-    f.fechaActual();
+    dia=d;
+    mes=m;
+    anio=a;
 };
 
 void Fecha::mostrarFecha(){
     cout << dia << "/" << mes << "/" << anio;
 };
 
-void Fecha::cargarFecha(){
+void Fecha::cargarFecha(){ //carga la fecha manualmente y la settea en sistema
     system("cls");
     cTitulo();
     Fecha f;
@@ -37,7 +39,9 @@ void Fecha::cargarFecha(){
     cout << "Año: " << endl;
     cin >> a;
 
-    f.setFecha(d, m, a);
+    dia=d;
+    mes=m;
+    anio=a;
     cout << "-----------------------------"<< endl;
     cout << "LA NUEVA FECHA SERÁ/n"<< endl;
     f.mostrarFecha();
