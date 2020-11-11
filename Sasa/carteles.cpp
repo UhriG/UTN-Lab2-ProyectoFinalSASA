@@ -79,8 +79,8 @@ void cTabla(int modo){
         cout << endl << "----------------------------------------------------------------------------"<< endl;
     }
     if(modo == 2){ // MODO 2 PARA PRODUCTO
-        int ancho2 = 20;
-        cout << setw(4) << "ID" << setw(ancho2) << "NOMBRE" << setw(ancho2) << "MARCA" /*<< setw(ancho2) << "CATEGORÍA"*/ << setw(10) << "ESTADO" << setw(5) << "STOCK";
+        int ancho2 = 15;
+        cout << setw(4) << "ID" << setw(ancho2) << "NOMBRE" << setw(ancho2) << "MARCA" << setw(ancho2) << "CATEGORÍA" << setw(10) << "ESTADO" << setw(5) << "STOCK";
         cout << endl << "----------------------------------------------------------------------------"<< endl;
     }
     if(modo == 3){ //MODO 3 PARA CATEGORIA

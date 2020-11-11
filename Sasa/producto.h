@@ -1,13 +1,13 @@
 #ifndef PRODUCTO_H_INCLUDED
 #define PRODUCTO_H_INCLUDED
-
+#include "categoria.h"
 class Producto
 {
     private:
         int id;
         char nombre[20];
         char marca[20];
-        //int categoria_id;
+        int categoria_id;
         int estado;
         int stock;
         //Fecha fecha_creacion;
@@ -15,10 +15,10 @@ class Producto
     public:
         void setNombre(char *n);
         void setMarca(char *m);
-        //void setCategoria(int c);
+        void setCategoria(int c);
         void setEstado(int e);
         void setStock(int s);
-        //void setFechaCrea(Fecha);
+        //void setFechaCrea();
         //void setFechaMod(Fecha);
         int getId(){return id;};
         char *getNombre(){return nombre;};

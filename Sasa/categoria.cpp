@@ -7,14 +7,15 @@ using namespace std;
 using namespace rlutil;
 #include "categoria.h"
 #include "Fecha.h"
+#include "carteles.h"
 
 //SET
 
-void categoria::setNombre(char *n){
+void Categoria::setNombre(char *n){
     strcpy(nombre,n);
 };
 
-void categoria::setEstado(int e){
+void Categoria::setEstado(int e){
     estado = e;
 }
 
@@ -29,7 +30,7 @@ void categoria::setEstado(int e){
 //    return Fecha;
 //};
 
-void categoria::cargar(){
+void Categoria::cargar(){
     id = cantCategoria()+1;
     cout << "*CREAR CATEGORÍA" << endl;
     cout << "ID CATEGORÍA: " << id << endl;
@@ -45,15 +46,8 @@ void categoria::cargar(){
     }
 
     estado = 1;
-
-//    cls();
-//    cout << "Ingresar Categoría: ";
-//    cin >> categoria;
-//
-//
-    escribirDisco();
 };
-void categoria::mostrar(int modo){
+void Categoria::mostrar(int modo){
     string estados[2] = {"Activo","Inactivo"};
 
     if(modo == 1){ //MODO 1 MUESTRA EN LISTA
@@ -68,7 +62,7 @@ void categoria::mostrar(int modo){
     }
 
 };
-bool categoria::escribirDisco(){
+bool Categoria::escribirDisco(){
     bool guardo;
     FILE *f = fopen("datos/categoria.dat", "ab");
     if(f == NULL){
@@ -79,7 +73,7 @@ bool categoria::escribirDisco(){
     fclose(f);
     return guardo;
 };
-bool categoria::leerDisco(int pos){
+bool Categoria::leerDisco(int pos){
     int x;
 	FILE *p;
 	p=fopen("datos/categoria.dat","rb");
@@ -92,7 +86,7 @@ bool categoria::leerDisco(int pos){
 	return x;
 };
 
-bool categoria::modDisco(int pos){
+bool Categoria::modDisco(int pos){
     bool guardo;
     FILE *p;
 	p=fopen("datos/categoria.dat","rb+");
@@ -110,7 +104,7 @@ bool categoria::modDisco(int pos){
 // Funciones externas
 int buscarIDcat(int idB){
     int pos=0;
-	categoria c;
+	Categoria c;
 	while(c.leerDisco(pos)==1){
 		if(idB == c.getId() && c.getEstado()==1){
             return pos;
@@ -122,7 +116,7 @@ int buscarIDcat(int idB){
 
 int buscarNombre(char *nombreB){
 	int pos=0;
-	categoria c;
+	Categoria c;
 	while(c.leerDisco(pos)==1){
 		if(strcmp(nombreB,c.getNombre())==0 && c.getEstado()==1){
             return pos;
@@ -142,20 +136,13 @@ int cantCategoria(){
     fseek(f, 0, SEEK_END);
     bytes = ftell(f);
     fclose(f);
-    cant = bytes / sizeof(categoria);
+    cant = bytes / sizeof(Categoria);
     return cant;
 }
 
-//void compCategoria(){
-//    int existe=cantCategoria();
-//    if(existe == 0){
-//        categoria c;
-//        c.admin();
-//    }
-//}
 
-void ordenarCategoriaDesc(categoria *cat, int cantReg){
-  categoria aux;
+void ordenarCategoriaDesc(Categoria *cat, int cantReg){
+  Categoria aux;
   int i, j, pMayor;
   for(i=0; i<cantReg-1; i++){
     pMayor = i;
@@ -170,3 +157,18 @@ void ordenarCategoriaDesc(categoria *cat, int cantReg){
   }
 }
 
+void listarCategoriaSimple(){
+    Categoria c;
+    int tot = cantCategoria();
+    int pos = 0, idanterior;
+    cTitulo();
+    cTabla(3);
+    for(pos; pos < tot; pos++){
+        c.leerDisco(pos);
+        if(c.getEstado()==1 && c.getId()!=idanterior){
+           c.mostrar(1);
+        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        idanterior = c.getId();
+        }
+    }
+}

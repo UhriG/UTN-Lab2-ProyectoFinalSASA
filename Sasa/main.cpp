@@ -13,12 +13,14 @@ using namespace std;
 int main()
 {
     initUI();
+    int test = 0; // VALOR 0 NORMAL, 1 DEVELOPERS
+    if(test == 0){
+        compAdmin();
+        Login l;
+        l.menuLogin();
+    } else { // FUNCIONES PARA TESTEAR
 
-    compAdmin();
-    Login l;
-    l.menuLogin();
-
-    //INGRESAR LAS FUNCIONES PARA PROBAR, COMENTANDO EL MENUPRINCIPAL
+    }
 
     //return 0;
 }

@@ -2,7 +2,7 @@
 #define CATEGORIA_H_INCLUDED
 #include "Fecha.h"
 
-class categoria
+class Categoria
 {
     private:
         int id;
@@ -34,6 +34,7 @@ int buscarIDcat(int idB); // Busca el ID
 int buscarNombrecat(char *nombre);
 int cantCategoria(); // Devuelve la cantidad de registros
 void compCategoria(); // Comprueba si existe categoria
-void ordenarCategoriaDesc(categoria *cat, int cantReg); // Ordena de forma descendente
+void ordenarCategoriaDesc(Categoria *cat, int cantReg); // Ordena de forma descendente
+void listarCategoriaSimple(); // Muestra las categorias para seleccionar
 
 #endif // CATEGORIA_H_INCLUDED
