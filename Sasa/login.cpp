@@ -94,7 +94,3 @@ int Login::comprobarCredenciales(char *passB, char *nombreB){
     }
 	return -1;
 }
-
-void setLogueado(char *n){
-    strcpy(nombre,n);
-}
