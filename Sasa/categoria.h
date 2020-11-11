@@ -11,18 +11,10 @@ class Categoria
     public:
         void setNombre(char *n);
         void setEstado(int e=1);
-
-        void setFechaCrea(Fecha);
-//        void setFechaMod(Fecha);
-
         //Get
         int getId(){return id;};
         char *getNombre(){return nombre;};
         int getEstado(){return estado;};
-
-//        Fecha getFechaCrea(){return Fecha;};
-//        Fecha getFechaMod(){return Fecha;};
-
         void cargar();
         void mostrar(int modo=1);
         bool escribirDisco();

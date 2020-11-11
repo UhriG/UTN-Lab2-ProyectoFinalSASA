@@ -18,8 +18,13 @@ void Fecha::setFecha(int d, int m, int a){ //settea la fecha del sistema
     anio=a;
 };
 
-void Fecha::mostrarFecha(){
-    cout << dia << "/" << mes << "/" << anio;
+void Fecha::mostrarFecha(int modo){
+    if(modo == 1){
+        cout << dia << "/" << mes << "/" << anio << endl;
+    } else {
+        cout << dia << "/" << mes << "/" << anio;
+    }
+
 };
 
 void Fecha::cargarFecha(tm *registro){ //carga la fecha manualmente y la settea en sistema
@@ -64,10 +69,9 @@ void Fecha::fechaActual(){
     struct tm *tmPtr;
     tiempo=time(NULL);
     tmPtr=localtime(&tiempo);
-    d = tmPtr->tm_mday;
-    m = tmPtr->tm_mon + 1;
-    a = 1900+tmPtr->tm_year;
-    setFecha(d,m,a);
+    dia = tmPtr->tm_mday;
+    mes = tmPtr->tm_mon + 1;
+    anio = 1900+tmPtr->tm_year;
 };
 
 
@@ -82,7 +86,7 @@ void Fecha::conversorFecha(tm *registro){ //toma registro, lo convierte a format
     dia=*d;
     mes=*m;
     anio=*a;
-    f.mostrarFecha();
+    f.mostrarFecha(1);
 };
 
 //void Fecha::fechaActual(){ //consigue la fecha y la settea en sistema

@@ -9,15 +9,19 @@ using namespace rlutil;
 #include "movimiento.h"
 #include "login.h"
 
+void Movimiento::setLogueado(char *n){
+    strcpy(usuarioLogueado,n);
+}
 /*Movimiento::Movimiento()
 {
     //ctor
 }*/
-
-/*void Movimiento::cargar(){
+/*
+void Movimiento::cargar(){
+    f.fechaActual();
     setLogueado()
 }
-
+/*
 void Movimiento::mostrar(int modo){
     //Usuario
     Login l;

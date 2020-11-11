@@ -19,6 +19,7 @@ void Categoria::setEstado(int e){
     estado = e;
 }
 
+
 //void categoria::setFechaCrea(Fecha);
 //void categoria::setFechaMod(Fecha);
 
@@ -59,6 +60,7 @@ void Categoria::mostrar(int modo){
         cout << "ID: "<< id << endl;
         cout << "NOMBRE: "<< nombre << endl;
         cout << "ESTADO: "<< estados[estado-1] << endl;
+        cout << "Fecha: ";
     }
 
 };

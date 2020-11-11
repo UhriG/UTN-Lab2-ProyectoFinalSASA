@@ -4,7 +4,7 @@
 #include "producto.h"
 #include "Fecha.h"
 
-/*class Movimiento
+class Movimiento
 {
     public:
         //void movimiento();
@@ -22,6 +22,7 @@
         int tipoMovimiento;
         int stock;
         Fecha f;
-};*/
+        Usuario u;
+};
 
 #endif // MOVIMIENTOS_H
