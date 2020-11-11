@@ -104,6 +104,6 @@ void cTabla(int modo){
 }
 
 
-#include "carteles.h"
+
 
 

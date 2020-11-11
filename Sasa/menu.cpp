@@ -18,7 +18,7 @@ void menuPrincipal(){
     while(menu){
         cMenuPrincipal();
         while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenuPrincipal();
@@ -43,7 +43,7 @@ void menuPrincipal(){
             case 6:
                 menu = false;
             break;
-            default: msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            default: msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
                 break;
         }
     }
@@ -55,7 +55,7 @@ void menuUsuario(){
     while(menu){
         cMenu(1); // CARTEL MENU GENERAL ( USUARIO )
         while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenu(1); // CARTEL MENU GENERAL ( USUARIO )
@@ -78,7 +78,7 @@ void menuUsuario(){
                 menu = false;
             break;
             default:
-                msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -90,7 +90,7 @@ void menuProducto(){
     while(menu){
         cMenu(2); // CARTEL MENU GENERAL ( PRODUCTO )
         while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenu(2); // CARTEL MENU GENERAL ( PRODUCTO )
@@ -113,7 +113,7 @@ void menuProducto(){
                 menu = false;
             break;
             default:
-                msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -125,7 +125,7 @@ void menuCategoria(){
     while(menu){
         cMenu(3); // CARTEL MENU GENERAL ( CATEGOR�A )
         while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenu(3); // CARTEL MENU GENERAL ( CATEGOR�A )
@@ -148,7 +148,7 @@ void menuCategoria(){
                 menu = false;
             break;
             default:
-                msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -160,7 +160,7 @@ void menuConfiguracion(){
     while(menu){
         cMenuConfiguracion(); // CARTEL MENU CONFIGURACION
         while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenuConfiguracion(); // CARTEL MENU CONFIGURACION
@@ -180,7 +180,7 @@ void menuConfiguracion(){
                 menu = false;
             break;
             default:
-                msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -216,11 +216,11 @@ void modificarUsuario(){
 		u.leerDisco(pos);
 		u.mostrar(2);
 		cout << endl;
-		cout << "NOMBRE: 1 \tCONTRASE�A: 2 \tPERFIL: 3 \tSALIR: 5" << endl;
-		cout << "ELEGIR UNA OPCI�N: ";
+		cout << "NOMBRE: 1 \tCONTRASEÑA: 2 \tPERFIL: 3 \tSALIR: 5" << endl;
+		cout << "ELEGIR UNA OPCIÓN: ";
 		int opc;
 		while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
@@ -241,7 +241,7 @@ void modificarUsuario(){
                 int per;
                 cout << "INGRESAR PERFIL: ";
                 while(!(cin >> per)){
-                    msj("OPCI�N INCORRECTA: 1 - ADMIN \t2 - SUPERVISOR \t3 - OPERADOR", rlutil::WHITE, rlutil::RED);
+                    msj("OPCIÓN INCORRECTA: 1 - ADMIN \t2 - SUPERVISOR \t3 - OPERADOR", rlutil::WHITE, rlutil::RED);
                     cin.clear();
                     cin.ignore(123, '\n');
                 }
@@ -251,7 +251,7 @@ void modificarUsuario(){
                 return;
         }
 		if(u.modDisco(pos)==true){
-            msj("SE MODIFICO CON �XITO", rlutil::WHITE, rlutil::GREEN);
+            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
 		}
     }else{
 		msj("NO EXISTE EL USUARIO", rlutil::WHITE, rlutil::RED);
@@ -281,7 +281,7 @@ void eliminarUsuario(){
         cout << "ELIMINAR? (S/N): ";
         conf = getche();
         while(conf!='S' && conf!='s' && conf!='N' && conf!='n'){
-            cout << "\nIngrese una opcion valida!" << endl << " >";
+            cout << "\nIngrese una opción válida!" << endl << " >";
             conf = getche();
         }
         if(conf == 's' || conf == 'S'){
@@ -326,9 +326,9 @@ void listarUsuarios(){
         }
         cout << "*PAGINA: " << hoja << " / " << paginas << endl;
         cout << endl;
-        cout << "0- SALIR | INDIQUE P�GINA: > ";
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
         while(!(cin >> resp)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
@@ -351,7 +351,7 @@ void crearProducto(){
     Producto p;
     p.cargar();
     if(p.escribirDisco()==true){
-        msj("SE CREO PRODUCTO CON �XITO", rlutil::WHITE, rlutil::GREEN);
+        msj("SE CREO PRODUCTO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
     } else{
         msj("ERROR AL CREAR PRODUCTO", rlutil::WHITE, rlutil::RED);
     }
@@ -383,7 +383,7 @@ void modificarProducto(){
         }
 		p.setStock(stock);
 		if(p.modDisco(pos)==true){
-            msj("SE MODIFICO CON �XITO", rlutil::WHITE, rlutil::GREEN);
+            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
 		}
 
     }else{
@@ -414,7 +414,7 @@ void eliminarProducto(){
         cout << "ELIMINAR? (S/N): ";
         conf = getche();
         while(conf!='S' && conf!='s' && conf!='N' && conf!='n'){
-            cout << "\nIngrese una opcion valida!" << endl << " >";
+            cout << "\nIngrese una opción válida!" << endl << " >";
             conf = getche();
         }
         if(conf == 'S' || conf == 's'){
@@ -437,7 +437,7 @@ void listarProducto(){
         cMenuProdListar();
         int opc;
         while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cTitulo();
@@ -460,7 +460,7 @@ void listarProducto(){
                 menu = false;
             break;
             default:
-                msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
@@ -473,9 +473,9 @@ void crearCategoria(){
     Categoria c; //Clase categoria
     c.cargar();
     if(c.escribirDisco()==true){
-        msj("SE CREO CORRECTAMENTE LA CATEGOR�A", rlutil::WHITE, rlutil::GREEN);
+        msj("SE CREO CORRECTAMENTE LA CATEGORÍA", rlutil::WHITE, rlutil::GREEN);
     }else{
-        msj("ERROR AL CREAR CATEGOR�A", rlutil::WHITE, rlutil::GREEN);
+        msj("ERROR AL CREAR CATEGORÍA", rlutil::WHITE, rlutil::GREEN);
     }
 }
 
@@ -484,8 +484,8 @@ void modificarCategoria(){
     cTitulo();
     Categoria c;
     int pos, id;
-    cout << "*MODIFICAR CATEGOR�A" << endl;
-    cout << "INGRESAR ID CATEGOR�A: ";
+    cout << "*MODIFICAR CATEGORÍA" << endl;
+    cout << "INGRESAR ID CATEGORÍA: ";
 
     while(!(cin >> id)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
@@ -500,10 +500,10 @@ void modificarCategoria(){
 		c.mostrar(2);
 		cout << endl;
 		cout << "NOMBRE: 1 \tSALIR: 5" << endl;
-		cout << "ELEGIR UNA OPCI�N: ";
+		cout << "ELEGIR UNA OPCIÓN: ";
 		int opc;
 		while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCION INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
@@ -518,10 +518,10 @@ void modificarCategoria(){
                 return;
         }
 		if(c.modDisco(pos)==true){
-            msj("SE MODIFICO CON �XITO", rlutil::WHITE, rlutil::GREEN);
+            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
 		}
     }else{
-		msj("NO EXISTE LA CATEGOR�A", rlutil::WHITE, rlutil::RED);
+		msj("NO EXISTE LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
 		anykey();
     }
 }
@@ -549,7 +549,7 @@ void eliminarCategoria(){
         cout << "ELIMINAR? (S/N): ";
         conf = getche();
         while(conf!='S' && conf!='s' && conf!='N' && conf!='n'){
-            cout << "\nIngrese una opcion valida!" << endl << " >";
+            cout << "\nIngrese una opción válida!" << endl << " >";
             conf = getche();
         }
         if(conf == 's' || conf == 'S'){
@@ -595,15 +595,15 @@ void listarCategoria(){
         }
         cout << "*PAGINA: " << hoja << " / " << paginas << endl;
         cout << endl;
-        cout << "0- SALIR | INDIQUE P�GINA: > ";
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
         while(!(cin >> resp)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-            msj("NO HAY M�S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+            msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
             resp = 0;
         }
         if(resp != 0){
@@ -706,9 +706,9 @@ void listarProductoPorCodAs(){
         }
         cout << "*PAGINA: " << hoja << " / " << paginas << endl;
         cout << endl;
-        cout << "0- SALIR | INDIQUE P�GINA: > ";
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
         while(!(cin >> resp)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
@@ -752,9 +752,9 @@ void listarProductoPorCodDes(){
             idanterior = p.getId();
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
-        cout << "0- SALIR | INDIQUE P�GINA: > ";
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
         while(!(cin >> resp)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
@@ -819,15 +819,15 @@ void listarProductoTodos(){
             idanterior = p.getId();
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
-        cout << "0- SALIR | INDIQUE P�GINA: > ";
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
         while(!(cin >> resp)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-                msj("NO HAY M�S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
         if(resp != 0){
@@ -965,7 +965,7 @@ void menuMovimientos(){
     while(menu){
         cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
         while(!(cin >> opc)){
-            msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
@@ -985,11 +985,12 @@ void menuMovimientos(){
                 menu = false;
             break;
             default:
-                msj("OPCI�N INCORRECTA", rlutil::WHITE, rlutil::RED);
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             break;
         }
     }
-    
+}
+
 bool recCategoria(){
     Categoria c;
     FILE *bk = fopen("datos/categoriaBK.dat", "rb");

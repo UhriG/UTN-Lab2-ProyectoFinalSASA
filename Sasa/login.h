@@ -5,11 +5,6 @@
 
 class Login
 {
-    /*private:
-        Usuario nombre;
-        Usuario password;
-        Usuario estado;
-        Usuario perfil;*/
     public:
         void menuLogin();
         void login();
