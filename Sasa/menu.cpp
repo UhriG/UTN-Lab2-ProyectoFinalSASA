@@ -737,7 +737,7 @@ void listarProductoPorCodDes(){
     while(resp != 0){
         cTitulo();
         cout << left;
-        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
+        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD DESCENDENTE" << endl;
         cout << endl;
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE PRODUCTOS: " << cant << endl;
