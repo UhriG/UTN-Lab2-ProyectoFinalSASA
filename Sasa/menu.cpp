@@ -123,12 +123,12 @@ void menuCategoria(){
     bool menu = true;
     int opc;
     while(menu){
-        cMenu(3); // CARTEL MENU GENERAL ( CATEGOR�A )
+        cMenu(3); // CARTEL MENU GENERAL ( CATEGORÍA )
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenu(3); // CARTEL MENU GENERAL ( CATEGOR�A )
+            cMenu(3); // CARTEL MENU GENERAL ( CATEGORÍA )
         }
 
         switch(opc){
@@ -334,7 +334,7 @@ void listarUsuarios(){
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-            msj("NO HAY M�S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+            msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
             resp = 0;
         }
         if(resp != 0){
@@ -531,8 +531,8 @@ void eliminarCategoria(){
     cTitulo();
     int id, pos;
     char conf;
-    cout << "*ELIMINAR CATEGOR�A" << endl;
-    cout << "INGRESAR ID CATEGOR�A: ";
+    cout << "*ELIMINAR CATEGORÍA" << endl;
+    cout << "INGRESAR ID CATEGORÍA: ";
     while(!(cin >> id)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
         cin.clear();
@@ -559,10 +559,10 @@ void eliminarCategoria(){
                 msj("SE ELIMINO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
             }
         }else{
-            msj("NO SE ELIMINO LA CATEGOR�A", rlutil::WHITE, rlutil::RED);
+            msj("NO SE ELIMINO LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
         }
     }else{
-		msj("NO EXISTE LA CATEGOR�A", rlutil::WHITE, rlutil::RED);
+		msj("NO EXISTE LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
     }
 }
 
@@ -584,7 +584,7 @@ void listarCategoria(){
         cout << "-----------------------------" << endl;
         cout << "TOTAL DE CATEGORIAS: " << cant << endl;
         cout << "-----------------------------" << endl;
-        cTabla(3); // MODO 3 CATEGOR�A
+        cTabla(3); // MODO 3 CATEGORÍA
         for(pos; pos < categorias; pos++){
             c.leerDisco(pos);
             if(c.getEstado()==1 && c.getId() != idanterior){
@@ -595,7 +595,7 @@ void listarCategoria(){
         }
         cout << "*PAGINA: " << hoja << " / " << paginas << endl;
         cout << endl;
-        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        cout << "0- SALIR | INDIQUE PAGINA: > ";
         while(!(cin >> resp)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
@@ -714,7 +714,7 @@ void listarProductoPorCodAs(){
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-                msj("NO HAY M�S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
         if(resp != 0){
@@ -760,7 +760,7 @@ void listarProductoPorCodDes(){
         }
         hoja = resp;
         if(pos == cant || hoja > paginas){
-                msj("NO HAY M�S DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
                 resp = 0;
             }
         if(resp != 0){
