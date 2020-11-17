@@ -7,22 +7,30 @@
 class Movimiento
 {
     public:
-        //void movimiento();
+
         void cargar();
         bool escribirDisco();
         void setLogueado(char *n);
+        void setStock(int stk);
+        void setMarca(char *m);
+        void setProducto(char *p);
+        void setCategoriaId(int catId);
+        void setTipoMovimiento(int tpMov);
+        int getTipoMovimiento(){return tipoMovimiento;};
         char *getLogueado(){return usuarioLogueado;};
-        int movimiento();
+        int getStock(){return stock;};
+        char *getMarca(){return marca;};
+        char *getProducto(){return producto;};
+        int getCategoriaId(){return categoria_id;};
 
     private:
         char usuarioLogueado[20];
         char producto[20];
         char marca[20];
         int categoria_id;
-        int tipoMovimiento;
+        int tipoMovimiento; //0: egreso - 1: ingreso
         int stock;
         Fecha f;
-        Usuario u;
 };
 
 #endif // MOVIMIENTOS_H

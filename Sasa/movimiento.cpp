@@ -12,15 +12,32 @@ using namespace rlutil;
 void Movimiento::setLogueado(char *n){
     strcpy(usuarioLogueado,n);
 }
-/*Movimiento::Movimiento()
-{
-    //ctor
-}*/
-/*
+
+void Movimiento::setCategoriaId(int catId){
+    categoria_id = catId;
+}
+
+void Movimiento::setStock(int stk){
+    stock = stk;
+}
+
+void Movimiento::setMarca(char *m){
+    strcpy(marca, m);
+}
+
+void Movimiento::setProducto(char *p){
+    strcpy(producto, p);
+}
+
+void Movimiento::setTipoMovimiento(int tpMov){
+    tipoMovimiento = tpMov;
+}
+
+
 void Movimiento::cargar(){
     f.fechaActual();
-    setLogueado()
 }
+
 /*
 void Movimiento::mostrar(int modo){
     //Usuario

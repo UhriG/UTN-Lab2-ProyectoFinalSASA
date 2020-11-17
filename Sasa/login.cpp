@@ -49,6 +49,8 @@ void Login::login(){
     bool logueado = false;
     char usuario[20], password[10];
 
+    Usuario u;
+
     do{
         cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
@@ -57,14 +59,15 @@ void Login::login(){
 
         cout << ">USUARIO: ";
         cin >> usuario;
-
+        u.setNombre(usuario);
         cout << ">PASSWORD: ";
         cin >> password;
+        u.setPassword(password);
 
-        if(comprobarCredenciales(password, usuario) != -1){
+        if(comprobarCredenciales(u.getPassword(), u.getNombre()) != -1){
             logueado = true;
-            /*Movimiento m;
-            m.setLogueado(usuario);*/
+            Movimiento m;
+            m.setLogueado(u.getNombre());
         }else{
             msj("CREDENCIALES INCORRECTAS, INTENTE NUEVAMENTE", rlutil::WHITE, rlutil::RED);
             contador++;

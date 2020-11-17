@@ -10,6 +10,7 @@ using namespace rlutil;
 #include "usuario.h"
 #include "producto.h"
 #include "categoria.h"
+#include "movimiento.h"
 
 // MENUES PRINCIPAL
 void menuPrincipal(){
@@ -349,9 +350,11 @@ void listarUsuarios(){
 void crearProducto(){
     cTitulo();
     Producto p;
+    Movimiento m;
     p.cargar();
     if(p.escribirDisco()==true){
         msj("SE CREO PRODUCTO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+        m.cargar();
     } else{
         msj("ERROR AL CREAR PRODUCTO", rlutil::WHITE, rlutil::RED);
     }

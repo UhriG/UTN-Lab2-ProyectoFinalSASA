@@ -7,6 +7,8 @@ using namespace rlutil;
 #include "producto.h"
 #include "categoria.h"
 #include "Fecha.h"
+#include "login.h"
+#include "movimiento.h"
 
 void Producto::setNombre(char *n){
     strcpy(nombre,n);
@@ -58,6 +60,12 @@ void Producto::cargar(){
         cin >> s;
     }
     setStock(s);
+    Movimiento m;
+    m.setCategoriaId(categoria_id);
+    m.setProducto(nombre);
+    m.setMarca(marca);
+    m.setStock(s);
+    m.setTipoMovimiento(1);
 }
 
 void Producto::mostrar(int modo){

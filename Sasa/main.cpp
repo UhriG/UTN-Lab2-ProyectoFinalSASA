@@ -11,6 +11,8 @@ using namespace std;
 #include "Fecha.h" // BORRAR DESPUES DE LA PRUEBA
 #include "movimiento.h" // BORRAR DESPUES DE LA PRUEBA
 
+void usuario();
+
 int main()
 {
     initUI();
@@ -20,10 +22,17 @@ int main()
         Login l;
         l.menuLogin();
     } else { // FUNCIONES PARA TESTEAR
-
+        usuario();
+        Movimiento m;
+        Usuario u;
+        m.setLogueado(u.getNombre());
+        cout <<m.getLogueado();
     }
 
     //return 0;
 }
 
-
+void usuario(){
+    Usuario u;
+    u.setNombre("admin");
+}
