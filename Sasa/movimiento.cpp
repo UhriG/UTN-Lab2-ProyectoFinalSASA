@@ -65,3 +65,30 @@ void Movimiento::mostrar(int modo){
         cout << "STOCK: "<< stock << endl;
     }
 }*/
+
+bool Movimiento::escribirDisco(){
+    bool guardo;
+    FILE *f = fopen("datos/bitacora.dat", "ab");
+    if(f == NULL){
+        cout << "No se puede guardar.";
+        return false;
+    }
+    guardo = fwrite(this,sizeof *this, 1, f);
+    fclose(f);
+    return guardo;
+}
+
+int Movimiento::leerDisco(int pos){
+    int x;
+	FILE *p;
+	p=fopen("datos/bitacora.dat","rb");
+	if(p==NULL){
+		cout<<"No existe el archivo";
+		return -1;
+    }
+	fseek(p,pos*sizeof *this,0);
+	x=fread(this,sizeof *this,1,p);
+	fclose(p);
+	return x;
+}
+

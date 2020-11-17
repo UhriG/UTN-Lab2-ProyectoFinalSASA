@@ -22,6 +22,9 @@ class Movimiento
         char *getMarca(){return marca;};
         char *getProducto(){return producto;};
         int getCategoriaId(){return categoria_id;};
+        int movimiento();
+        bool escribirDisco();
+        int leerDisco(int pos);
 
     private:
         char usuarioLogueado[20];

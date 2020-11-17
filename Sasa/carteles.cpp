@@ -5,7 +5,7 @@ using namespace std;
 #include "rlutil.h"
 using namespace rlutil;
 #include "carteles.h"
-
+#include "usuario.h"
 void cTitulo(){
     cls();
     title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
