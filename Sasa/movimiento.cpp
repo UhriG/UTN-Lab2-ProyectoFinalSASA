@@ -8,9 +8,10 @@ using namespace rlutil;
 #include "Fecha.h"
 #include "movimiento.h"
 #include "login.h"
+#include "categoria.h"
 
 Movimiento m;
-
+/*
 void Movimiento::mostrar(){
     cout << "Usuario: " << m.getLogueado() << endl;
     cout << "Producto: " << m.getProducto() << endl;
@@ -19,6 +20,33 @@ void Movimiento::mostrar(){
     cout << "Categoria: " << m.getCategoriaId() << endl;
     //cout << "Fecha: " << m.fa.mostrarFecha(1) << endl;
     cout << "Tipo de Movimiento: " << m.getTipoMovimiento() << endl;
+}
+*/
+
+void Movimiento::mostrar(int modo){
+    Categoria c;
+    int posCat = buscarIDcat(m.getCategoriaId());
+    c.leerDisco(posCat);
+    string tmov[2] = {"Ingreso","Egreso"};
+
+    if(modo == 1){ // MODO 1 MUESTRA EN LISTA
+        int ancho = 15;
+        //cout << setw(4) << id;
+        cout << setw(ancho) << m.getLogueado();
+        cout << setw(ancho) << m.getProducto();
+        cout << setw(ancho) << m.getMarca();
+        cout << setw(10) << c.getNombre();
+        cout << setw(5) << m.getStock();
+        cout << setw(5) << tmov[m.getTipoMovimiento()-1];
+    } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
+        //cout << "ID: "<< id << endl;
+        cout << "USUARIO: " << m.getLogueado() << endl;
+        cout << "PRODUCTO: "<< m.getProducto() << endl;
+        cout << "MARCA: "<< m.getMarca() << endl;
+        cout << "CATEGORÍA: "<< c.getNombre() << endl;
+        cout << "STOCK: "<< m.getStock() << endl;
+        cout << "MOVIMIENTO: " << tmov[m.getTipoMovimiento()-1] << endl;
+    }
 }
 
 void Movimiento::setLogueado(char *n){
@@ -56,33 +84,7 @@ void Movimiento::setTipoMovimiento(int tpMov){
     cout << m.getTipoMovimiento << endl;
 }*/
 
-/*
-void Movimiento::mostrar(int modo){
-    //Usuario
-    Login l;
-    l.getLogueado();
 
-    Categoria c;
-    int posCat = buscarIDcat(categoria_id);
-    c.leerDisco(posCat);
-
-    if(modo == 1){ // MODO 1 MUESTRA EN LISTA
-        int ancho = 15;
-        cout << setw(4) << id;
-        cout << setw(ancho) << u.getNombre;
-        cout << setw(ancho) << marca;
-        cout << setw(ancho) << c.getNombre();
-        cout << setw(10) << estados[estado-1];
-        cout << setw(5) << stock;
-    } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
-        cout << "ID: "<< id << endl;
-        cout << "USUARIO: " << c
-        cout << "NOMBRE: "<< nombre << endl;
-        cout << "MARCA: "<< marca << endl;
-        cout << "CATEGORÍA: "<< c.getNombre() << endl;
-        cout << "STOCK: "<< stock << endl;
-    }
-}*/
 
 bool Movimiento::escribirDisco(){
     bool guardo;

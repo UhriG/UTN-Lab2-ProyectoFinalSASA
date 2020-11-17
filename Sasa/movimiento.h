@@ -9,7 +9,7 @@ class Movimiento
     public:
 
         void cargar();
-        void mostrar();
+        void mostrar(int modo);
         void setLogueado(char *n);
         void setStock(int stk);
         void setMarca(char *m);

@@ -33,7 +33,7 @@ int main()
 
         m.escribirDisco();*/
         m.leerDisco(0);
-        m.mostrar();
+        m.mostrar(2);
     }
 
     //return 0;
