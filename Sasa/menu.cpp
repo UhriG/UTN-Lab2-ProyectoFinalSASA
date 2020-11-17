@@ -10,6 +10,7 @@ using namespace rlutil;
 #include "usuario.h"
 #include "producto.h"
 #include "categoria.h"
+#include "movimiento.h"
 
 // MENUES PRINCIPAL
 void menuPrincipal(){
@@ -911,6 +912,30 @@ bool copiaCategoria(){
     return true;
 }
 
+bool copiaMovimiento(){
+    Movimiento m;
+    FILE *f = fopen("datos/bitacora.dat", "rb");
+    FILE *backup = fopen("datos/bitacoraBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer bitacora.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&m, sizeof(Movimiento), 1, f)){
+        FILE *bk = fopen("datos/bitacoraBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&m, sizeof(Movimiento), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
+}
+
 // SUB MENU RESTAURAR COPIA DE SEGURIDAD
 bool recUsuario(){
     Usuario u;
@@ -1015,3 +1040,30 @@ bool recCategoria(){
     fclose(bk);
     return true;
 }
+
+bool recMovimiento(){
+    Movimiento m;
+    FILE *bk = fopen("datos/bitacoraBK.dat", "rb");
+    FILE *orig = fopen("datos/bitacora.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el bitacoraBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&m, sizeof(Movimiento), 1, bk)){
+        FILE *f = fopen("datos/bitacora.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en bitacora.";
+            system("pause");
+            return false;
+        }
+        fwrite(&m, sizeof(Movimiento), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
+}
+
+
+

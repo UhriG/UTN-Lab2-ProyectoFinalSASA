@@ -13,6 +13,8 @@ class Movimiento
         void setLogueado(char *n);
         char *getLogueado(){return usuarioLogueado;};
         int movimiento();
+        bool escribirDisco();
+        int leerDisco(int pos);
 
     private:
         char usuarioLogueado[20];
