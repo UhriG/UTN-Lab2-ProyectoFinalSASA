@@ -16,7 +16,7 @@ class Fecha
         int getAnio(){return anio;};
         void mostrarFecha(int modo);
         void cargarFecha(tm*);
-        void fechaActual(tm*);
+        //void fechaActual(tm*);
         void conversorFecha(tm*);
         void fechaActual();
 };

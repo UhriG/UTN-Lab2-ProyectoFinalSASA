@@ -9,7 +9,7 @@ class Movimiento
     public:
 
         void cargar();
-        bool escribirDisco();
+        void mostrar();
         void setLogueado(char *n);
         void setStock(int stk);
         void setMarca(char *m);
@@ -22,7 +22,7 @@ class Movimiento
         char *getMarca(){return marca;};
         char *getProducto(){return producto;};
         int getCategoriaId(){return categoria_id;};
-        int movimiento();
+        Fecha fa;
         bool escribirDisco();
         int leerDisco(int pos);
 
@@ -35,5 +35,7 @@ class Movimiento
         int stock;
         Fecha f;
 };
+
+extern Movimiento m;
 
 #endif // MOVIMIENTOS_H

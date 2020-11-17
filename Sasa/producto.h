@@ -21,6 +21,7 @@ class Producto
         char *getMarca(){return marca;};
         int getEstado(){return estado;};
         int getStock(){return stock;};
+        int getCatId(){return categoria_id;};
         void cargar();
         void mostrar(int modo=1);
         bool escribirDisco();

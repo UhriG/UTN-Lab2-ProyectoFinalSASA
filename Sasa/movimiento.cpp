@@ -9,6 +9,18 @@ using namespace rlutil;
 #include "movimiento.h"
 #include "login.h"
 
+Movimiento m;
+
+void Movimiento::mostrar(){
+    cout << "Usuario: " << m.getLogueado() << endl;
+    cout << "Producto: " << m.getProducto() << endl;
+    cout << "Marca: " << m.getMarca() << endl;
+    cout << "Stock: " << m.getStock() << endl;
+    cout << "Categoria: " << m.getCategoriaId() << endl;
+    //cout << "Fecha: " << m.fa.mostrarFecha(1) << endl;
+    cout << "Tipo de Movimiento: " << m.getTipoMovimiento() << endl;
+}
+
 void Movimiento::setLogueado(char *n){
     strcpy(usuarioLogueado,n);
 }
@@ -34,9 +46,15 @@ void Movimiento::setTipoMovimiento(int tpMov){
 }
 
 
-void Movimiento::cargar(){
-    f.fechaActual();
-}
+/*void Movimiento::cargar(){
+
+    cout << m.getCategoriaId() << endl;
+    cout << m.getLogueado << endl;
+    cout << m.getMarca << endl;
+    cout << m.getProducto << endl;
+    cout << m.getStock << endl;
+    cout << m.getTipoMovimiento << endl;
+}*/
 
 /*
 void Movimiento::mostrar(int modo){

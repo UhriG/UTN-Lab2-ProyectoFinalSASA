@@ -54,14 +54,14 @@ void Fecha::cargarFecha(tm *registro){ //carga la fecha manualmente y la settea 
 
 };
 
-void Fecha::fechaActual(tm *registro){ //consigue la fecha y la guarda en un registro de tipo tm
+/*void Fecha::fechaActual(tm *registro){ //consigue la fecha y la guarda en un registro de tipo tm
     int *d, *m, *a;
     time_t tiempo;
     struct tm *tmPtr;
     tiempo=time(NULL);          //Obtener algoritmo de fecha del sistema
     tmPtr=localtime(&tiempo);   //Convierte el algoritmo y lo guarda en tmPtr
     registro=tmPtr;
-    }
+    }*/
 
 void Fecha::fechaActual(){
     int d, m, a;

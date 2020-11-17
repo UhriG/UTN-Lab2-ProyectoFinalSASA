@@ -66,7 +66,6 @@ void Login::login(){
 
         if(comprobarCredenciales(u.getPassword(), u.getNombre()) != -1){
             logueado = true;
-            Movimiento m;
             m.setLogueado(u.getNombre());
         }else{
             msj("CREDENCIALES INCORRECTAS, INTENTE NUEVAMENTE", rlutil::WHITE, rlutil::RED);

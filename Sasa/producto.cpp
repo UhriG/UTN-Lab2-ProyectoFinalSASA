@@ -60,12 +60,7 @@ void Producto::cargar(){
         cin >> s;
     }
     setStock(s);
-    Movimiento m;
-    m.setCategoriaId(categoria_id);
-    m.setProducto(nombre);
-    m.setMarca(marca);
-    m.setStock(s);
-    m.setTipoMovimiento(1);
+   // m.fa.fechaActual();
 }
 
 void Producto::mostrar(int modo){
