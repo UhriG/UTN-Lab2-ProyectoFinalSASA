@@ -355,7 +355,7 @@ void crearProducto(){
 
     if(p.escribirDisco()==true){
         msj("SE CREO PRODUCTO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
-       // m.cargar();
+        //m.cargar();
     } else{
         msj("ERROR AL CREAR PRODUCTO", rlutil::WHITE, rlutil::RED);
     }

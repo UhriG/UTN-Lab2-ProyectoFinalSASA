@@ -14,26 +14,13 @@ using namespace std;
 int main()
 {
     initUI();
-    int test = 1; // VALOR 0 NORMAL, 1 DEVELOPERS
+    int test = 0; // VALOR 0 NORMAL, 1 DEVELOPERS
     if(test == 0){
         compAdmin();
         Login l;
         l.menuLogin();
     } else { // FUNCIONES PARA TESTEAR
-        /*Producto p;
-        p.cargar();
-        m.setLogueado("admin");
-        m.setCategoriaId(p.getCatId());
-        m.setProducto(p.getNombre());
-        m.setMarca(p.getMarca());
-        m.setStock(p.getStock());
-        m.setTipoMovimiento(1);
 
-        m.mostrar();
-
-        m.escribirDisco();*/
-        m.leerDisco(0);
-        m.mostrar(2);
     }
 
     //return 0;

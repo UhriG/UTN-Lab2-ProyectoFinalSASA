@@ -12,7 +12,6 @@ using namespace rlutil;
 
 
 void Fecha::setFecha(int d, int m, int a){ //settea la fecha del sistema
-    Fecha f;
     dia=d;
     mes=m;
     anio=a;
@@ -64,7 +63,6 @@ void Fecha::cargarFecha(tm *registro){ //carga la fecha manualmente y la settea 
     }*/
 
 void Fecha::fechaActual(){
-    int d, m, a;
     time_t tiempo;
     struct tm *tmPtr;
     tiempo=time(NULL);

@@ -6,26 +6,6 @@
 
 class Movimiento
 {
-    public:
-
-        void cargar();
-        void mostrar(int modo);
-        void setLogueado(char *n);
-        void setStock(int stk);
-        void setMarca(char *m);
-        void setProducto(char *p);
-        void setCategoriaId(int catId);
-        void setTipoMovimiento(int tpMov);
-        int getTipoMovimiento(){return tipoMovimiento;};
-        char *getLogueado(){return usuarioLogueado;};
-        int getStock(){return stock;};
-        char *getMarca(){return marca;};
-        char *getProducto(){return producto;};
-        int getCategoriaId(){return categoria_id;};
-        Fecha fa;
-        bool escribirDisco();
-        int leerDisco(int pos);
-
     private:
         char usuarioLogueado[20];
         char producto[20];
@@ -33,7 +13,26 @@ class Movimiento
         int categoria_id;
         int tipoMovimiento; //0: egreso - 1: ingreso
         int stock;
-        Fecha f;
+        Fecha fechaMov;
+    public:
+        void cargar(Producto);
+        void mostrar(int modo);
+        void setLogueado(char *n);
+        void setStock(int stk);
+        void setMarca(char *m);
+        void setProducto(char *p);
+        void setCategoriaId(int catId);
+        void setTipoMovimiento(int tpMov);
+        void setFecha(Fecha);
+        Fecha getFecha();
+        int getTipoMovimiento(){return tipoMovimiento;};
+        char *getLogueado(){return usuarioLogueado;};
+        int getStock(){return stock;};
+        char *getMarca(){return marca;};
+        char *getProducto(){return producto;};
+        int getCategoriaId(){return categoria_id;};
+        bool escribirDisco();
+        int leerDisco(int pos);
 };
 
 extern Movimiento m;

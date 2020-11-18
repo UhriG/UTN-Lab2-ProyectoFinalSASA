@@ -67,7 +67,7 @@
 
 1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\rlutil.h
 
-1605653063 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1605662173 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
@@ -498,7 +498,7 @@
 
 1605651657 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.h
 
-1605651657 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.cpp
+1605654780 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.cpp
 	<iostream>
 	<iomanip>
 	<string>
@@ -508,12 +508,12 @@
 	"producto.h"
 	"carteles.h"
 
-1605653063 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.h
+1605661641 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.h
 	"usuario.h"
 	"producto.h"
 	"Fecha.h"
 
-1605138463 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
+1605662194 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -522,4 +522,5 @@
 	"Fecha.h"
 	"movimiento.h"
 	"login.h"
+	"categoria.h"
 

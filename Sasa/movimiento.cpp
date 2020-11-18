@@ -11,17 +11,6 @@ using namespace rlutil;
 #include "categoria.h"
 
 Movimiento m;
-/*
-void Movimiento::mostrar(){
-    cout << "Usuario: " << m.getLogueado() << endl;
-    cout << "Producto: " << m.getProducto() << endl;
-    cout << "Marca: " << m.getMarca() << endl;
-    cout << "Stock: " << m.getStock() << endl;
-    cout << "Categoria: " << m.getCategoriaId() << endl;
-    //cout << "Fecha: " << m.fa.mostrarFecha(1) << endl;
-    cout << "Tipo de Movimiento: " << m.getTipoMovimiento() << endl;
-}
-*/
 
 void Movimiento::mostrar(int modo){
     Categoria c;
@@ -46,6 +35,8 @@ void Movimiento::mostrar(int modo){
         cout << "CATEGORÍA: "<< c.getNombre() << endl;
         cout << "STOCK: "<< m.getStock() << endl;
         cout << "MOVIMIENTO: " << tmov[m.getTipoMovimiento()-1] << endl;
+        cout << "FECHA: ";
+        fechaMov.mostrarFecha(2);
     }
 }
 
@@ -74,17 +65,24 @@ void Movimiento::setTipoMovimiento(int tpMov){
 }
 
 
-/*void Movimiento::cargar(){
+void Movimiento::cargar(Producto p){
+    setProducto(p.getNombre());
+    setMarca(p.getMarca());
+    setCategoriaId(p.getCatId());
+    setStock(p.getStock());
+    setTipoMovimiento(1);
+    Fecha f;
+    f.fechaActual();
+    setFecha(f);
+}
 
-    cout << m.getCategoriaId() << endl;
-    cout << m.getLogueado << endl;
-    cout << m.getMarca << endl;
-    cout << m.getProducto << endl;
-    cout << m.getStock << endl;
-    cout << m.getTipoMovimiento << endl;
-}*/
+void  Movimiento::setFecha(Fecha f){
+    fechaMov = f;
+}
 
-
+Fecha Movimiento::getFecha(){
+    return fechaMov;
+}
 
 bool Movimiento::escribirDisco(){
     bool guardo;
