@@ -10,31 +10,30 @@ using namespace rlutil;
 #include "login.h"
 #include "categoria.h"
 
-Movimiento m;
-
 void Movimiento::mostrar(int modo){
     Categoria c;
-    int posCat = buscarIDcat(m.getCategoriaId());
+    int posCat = buscarIDcat(getCategoriaId());
     c.leerDisco(posCat);
     string tmov[2] = {"Ingreso","Egreso"};
 
     if(modo == 1){ // MODO 1 MUESTRA EN LISTA
         int ancho = 15;
-        //cout << setw(4) << id;
-        cout << setw(ancho) << m.getLogueado();
-        cout << setw(ancho) << m.getProducto();
-        cout << setw(ancho) << m.getMarca();
+        cout << setw(4) << id;
+        cout << setw(ancho) << getLogueado();
+        cout << setw(ancho) << getProducto();
+        cout << setw(ancho) << getMarca();
         cout << setw(10) << c.getNombre();
-        cout << setw(5) << m.getStock();
-        cout << setw(5) << tmov[m.getTipoMovimiento()-1];
+        cout << setw(6) << getStock();
+        cout << setw(11) << tmov[getTipoMovimiento()-1];
+        cout << setw(6) << fechaMov.getDia() << "/" << fechaMov.getMes() << "/" << fechaMov.getAnio();
     } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
-        //cout << "ID: "<< id << endl;
-        cout << "USUARIO: " << m.getLogueado() << endl;
-        cout << "PRODUCTO: "<< m.getProducto() << endl;
-        cout << "MARCA: "<< m.getMarca() << endl;
+        cout << "ID: "<< id << endl;
+        cout << "USUARIO: " << getLogueado() << endl;
+        cout << "PRODUCTO: "<< getProducto() << endl;
+        cout << "MARCA: "<< getMarca() << endl;
         cout << "CATEGORÍA: "<< c.getNombre() << endl;
-        cout << "STOCK: "<< m.getStock() << endl;
-        cout << "MOVIMIENTO: " << tmov[m.getTipoMovimiento()-1] << endl;
+        cout << "STOCK: "<< getStock() << endl;
+        cout << "MOVIMIENTO: " << tmov[getTipoMovimiento()-1] << endl;
         cout << "FECHA: ";
         fechaMov.mostrarFecha(2);
     }
@@ -66,11 +65,18 @@ void Movimiento::setTipoMovimiento(int tpMov){
 
 
 void Movimiento::cargar(Producto p){
+    id = cantMov()+1;
+
+    Login l;
+    l.leerUsuario();
+
+    setLogueado(l.getNombre());
     setProducto(p.getNombre());
     setMarca(p.getMarca());
     setCategoriaId(p.getCatId());
     setStock(p.getStock());
     setTipoMovimiento(1);
+
     Fecha f;
     f.fechaActual();
     setFecha(f);
@@ -109,4 +115,19 @@ int Movimiento::leerDisco(int pos){
 	fclose(p);
 	return x;
 }
+
+int cantMov(){
+    FILE *f;
+    f = fopen("datos/bitacora.dat", "rb");
+    if(f == NULL){
+        return 0;
+    }
+    int bytes, cant;
+    fseek(f, 0, SEEK_END);
+    bytes = ftell(f);
+    fclose(f);
+    cant = bytes / sizeof(Movimiento);
+    return cant;
+}
+
 

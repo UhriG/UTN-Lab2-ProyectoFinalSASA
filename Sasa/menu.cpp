@@ -11,6 +11,7 @@ using namespace rlutil;
 #include "producto.h"
 #include "categoria.h"
 #include "movimiento.h"
+#include "login.h"
 
 // MENUES PRINCIPAL
 void menuPrincipal(){
@@ -42,6 +43,8 @@ void menuPrincipal(){
                 menuConfiguracion();
             break;
             case 6:
+                Login l;
+                l.eliminarTemp();
                 menu = false;
             break;
             default: msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
@@ -350,12 +353,12 @@ void listarUsuarios(){
 void crearProducto(){
     cTitulo();
     Producto p;
-
     p.cargar();
-
     if(p.escribirDisco()==true){
         msj("SE CREO PRODUCTO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
-        //m.cargar();
+        Movimiento m;
+        m.cargar(p);//SI EL PRODUCTO SE CREA CON EXITO SE GUARDA EL MOVIMIENTO EN LA BITACORA
+        m.escribirDisco();
     } else{
         msj("ERROR AL CREAR PRODUCTO", rlutil::WHITE, rlutil::RED);
     }
@@ -842,6 +845,122 @@ void listarProductoTodos(){
     }
 }
 
+// MENÚ BITÁCORA
+void menuMovimientos(){
+    bool menu = true;
+    int opc;
+    while(menu){
+        cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
+        }
+
+        switch(opc){
+            case 1:
+                //cargarIngresos();
+            break;
+            case 2:
+                //cargarEgresos();
+            break;
+            case 3:
+                listarBitacora();
+            break;
+            case 4:
+                menu = false;
+            break;
+            default:
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            break;
+        }
+    }
+}
+
+// LISTAR BITACORA
+void listarBitacora(){
+    bool menu = true;
+    int opc;
+    while(menu){
+        cMenuBitacora(); // CARTEL MENU GENERAL ( USUARIO )
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenuBitacora(); // CARTEL MENU GENERAL ( USUARIO )
+        }
+
+        switch(opc){
+            case 1:
+                listarMovimientosTodos();
+            break;
+            case 2:
+                //cargarEgresos();
+            break;
+            case 3:
+               // listarBitacora();
+            break;
+            case 4:
+               // listarBitacora();
+            break;
+            case 5:
+                menu = false;
+            break;
+            default:
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            break;
+        }
+    }
+}
+
+//LISTAR TODOS LOS MOVIMIENTOS BITACORA
+void listarMovimientosTodos(){
+    Movimiento m;
+    int cant = cantMov(), pos = 0, movimientos = 5, paginas;
+    if(cant % movimientos == 0){
+        paginas = cant / movimientos;
+    } else {
+        paginas = (cant / movimientos)+1;
+    }
+    int idanterior = -1, hoja = 1;
+    int resp=1;
+    while(resp != 0){
+        cTitulo();
+        cout << left;
+        cout << "*LISTAR TODOS LOS MOVIMIENTOS" << endl;
+        cout << endl;
+        cout << "-----------------------------" << endl;
+        cout << "TOTAL DE MOVIMIENTOS: " << cant << endl;
+        cout << "-----------------------------" << endl;
+        cTabla(4); // MODO 4 BITACORA
+        for(pos; pos < movimientos; pos++){
+            m.leerDisco(pos);
+            if(m.getId() != idanterior && m.getId() != 0){
+                m.mostrar(1);
+                cout << endl << "------------------------------------------------------------------------------------------"<< endl;
+            }
+            idanterior = m.getId();
+        }
+        cout << "PAGINA: " << hoja << " / " << paginas << endl;
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        while(!(cin >> resp)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+        hoja = resp;
+        if(pos == cant || hoja > paginas){
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                resp = 0;
+            }
+        if(resp != 0){
+            pos = 5 *(hoja-1);
+            movimientos = pos + 5;
+        }
+    }
+}
+
 // SUB MENU COPIA DE SEGURIDAD
 bool copiaUsuario(){
     Usuario u;
@@ -986,38 +1105,6 @@ bool recProducto(){
     }
     fclose(bk);
     return true;
-}
-
-void menuMovimientos(){
-    bool menu = true;
-    int opc;
-    while(menu){
-        cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
-        while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
-            cin.clear();
-            cin.ignore(123, '\n');
-            cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
-        }
-
-        switch(opc){
-            case 1:
-                //cargarIngresos();
-            break;
-            case 2:
-                //cargarEgresos();
-            break;
-            case 3:
-                //listarBitacora();
-            break;
-            case 4:
-                menu = false;
-            break;
-            default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
-            break;
-        }
-    }
 }
 
 bool recCategoria(){

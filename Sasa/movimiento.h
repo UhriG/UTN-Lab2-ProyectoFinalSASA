@@ -7,6 +7,7 @@
 class Movimiento
 {
     private:
+        int id;
         char usuarioLogueado[20];
         char producto[20];
         char marca[20];
@@ -25,6 +26,7 @@ class Movimiento
         void setTipoMovimiento(int tpMov);
         void setFecha(Fecha);
         Fecha getFecha();
+        int getId(){return id;};
         int getTipoMovimiento(){return tipoMovimiento;};
         char *getLogueado(){return usuarioLogueado;};
         int getStock(){return stock;};
@@ -33,8 +35,11 @@ class Movimiento
         int getCategoriaId(){return categoria_id;};
         bool escribirDisco();
         int leerDisco(int pos);
+        bool guardarUsuario();
+        int leerUsuario(int pos=1);
+        void eliminarTemp();
 };
 
-extern Movimiento m;
+int cantMov();
 
 #endif // MOVIMIENTOS_H

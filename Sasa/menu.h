@@ -27,6 +27,8 @@ void listarCategoria(); // Lista Todas las Categorias
 void cargarIngresos(); // Carga productos al stock
 void cargarEgresos(); // Quita productos al stock
 void listarBitacora(); // Lista el total de movimientos de egreso y egreso
+// SUB MENU BITACORA
+void listarMovimientosTodos(); //Lista todos los movimientos de la bitacora
 // SUB MENU CONFIGURACION
 void copiaSeguridad(); // Crear Copia de Seguridad
 void recuperarCopia(); // Recupera Copia de Seguridad

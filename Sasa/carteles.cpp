@@ -84,6 +84,18 @@ void cMenuMovimientos(){
     cout << "> ";
 }
 
+void cMenuBitacora(){
+    cTitulo();
+    cout << "1) LISTAR TODOS LOS MOVIMIENTOS" << endl;
+    cout << "2) LISTAR MOVIMIENTOS POR USUARIO" << endl;
+    cout << "3) LISTAR MOVIMIENTOS POR PRODUCTO" << endl;
+    cout << "4) LISTAR MOVIMIENTOS POR FECHA" << endl;
+    cout << endl;
+    cout << "5) SALIR" << endl;
+    cout << endl;
+    cout << "> ";
+}
+
 void cTabla(int modo){
     if(modo == 1){ //MODO 1 PARA USUARIO
         int ancho1 = 15;
@@ -99,6 +111,11 @@ void cTabla(int modo){
     int ancho1 = 15;
     cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "ESTADO";
     cout << endl << "----------------------------------------------------------------------------"<< endl;
+    }
+    if(modo == 4){ //MODO 3 PARA CATEGORIA
+    int ancho1 = 15;
+    cout << setw(4) << "ID" << setw(ancho1) << "USUARIO" << setw(ancho1) << "PRODUCTO" << setw(ancho1) << "MARCA" << setw(10) << "CATEGORIA" << setw(6) << "STOCK" << setw(11) << "MOVIMIENTO" << setw(6) << "FECHA";
+    cout << endl << "------------------------------------------------------------------------------------------"<< endl;
     }
 
 }

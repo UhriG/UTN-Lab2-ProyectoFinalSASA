@@ -66,7 +66,9 @@ void Login::login(){
 
         if(comprobarCredenciales(u.getPassword(), u.getNombre()) != -1){
             logueado = true;
-            m.setLogueado(u.getNombre());
+            setNombreUsuario(u.getNombre());
+            guardarUsuario();
+
         }else{
             msj("CREDENCIALES INCORRECTAS, INTENTE NUEVAMENTE", rlutil::WHITE, rlutil::RED);
             contador++;
@@ -95,4 +97,39 @@ int Login::comprobarCredenciales(char *passB, char *nombreB){
 		pos++;
     }
 	return -1;
+}
+
+void Login::setNombreUsuario(char *n){
+    strcpy(nombreUsuario, n);
+}
+
+bool Login::guardarUsuario(){
+    bool guardo;
+    FILE *f = fopen("datos/temp.dat", "ab");
+    if(f == NULL){
+        cout << "No se puede guardar.";
+        return false;
+    }
+    guardo = fwrite(this,sizeof *this, 1, f);
+    fclose(f);
+    return guardo;
+}
+
+int Login::leerUsuario(int pos){
+    int x;
+	FILE *p;
+	p=fopen("datos/temp.dat","rb");
+	if(p==NULL){
+		cout<<"No existe el archivo";
+		return -1;
+    }
+	fseek(p,pos*sizeof *this,0);
+	x=fread(this,sizeof *this,1,p);
+	fclose(p);
+	return x;
+}
+
+void Login::eliminarTemp(){
+    FILE *orig = fopen("datos/temp.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
 }
