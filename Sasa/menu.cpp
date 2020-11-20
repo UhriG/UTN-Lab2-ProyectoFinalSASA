@@ -70,13 +70,16 @@ void menuUsuario(){
 
         switch(opc){
             case 1:
-                crearUsuario();
+                if(perfilTemp() == 1){crearUsuario();}
+                else{cMsjPerfil();}
             break;
             case 2:
-                modificarUsuario();
+                if(perfilTemp() == 1){modificarUsuario();}
+                else{cMsjPerfil();}
             break;
             case 3:
-                eliminarUsuario();
+                if(perfilTemp() == 1){eliminarUsuario();}
+                else{cMsjPerfil();}
             break;
             case 4:
                 listarUsuarios();
@@ -112,7 +115,7 @@ void menuProducto(){
                 else{cMsjPerfil();}
             break;
             case 3:
-                if(perfilTemp() != 3){eliminarProducto();}
+                if(perfilTemp() == 1){eliminarProducto();}
                 else{cMsjPerfil();}
             break;
             case 4:
