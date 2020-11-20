@@ -36,11 +36,11 @@ void menuPrincipal(){
             break;
             case 3:
                 if(perfilTemp() != 3){menuCategoria();}
-                else{msj("PERFIL SIN ACCESO", rlutil::WHITE, rlutil::RED);}
+                else{cMsjPerfil();}
             break;
             case 4:
                 if(perfilTemp() != 3){menuMovimientos();}
-                else{msj("PERFIL SIN ACCESO", rlutil::WHITE, rlutil::RED);}
+                else{cMsjPerfil();}
             break;
             case 5:
                 menuConfiguracion();
@@ -109,11 +109,11 @@ void menuProducto(){
             break;
             case 2:
                 if(perfilTemp() != 3){modificarProducto();}
-                else{msj("PERFIL SIN ACCESO", rlutil::WHITE, rlutil::RED);}
+                else{cMsjPerfil();}
             break;
             case 3:
                 if(perfilTemp() != 3){eliminarProducto();}
-                else{msj("PERFIL SIN ACCESO", rlutil::WHITE, rlutil::RED);}
+                else{cMsjPerfil();}
             break;
             case 4:
                 listarProducto();
