@@ -12,5 +12,5 @@ void cMenuMovimientos(); // Cartel MENU MOVIMIENTOS
 void cMenuBitacora(); // Cartel listar bitacora
 void cTabla(int modo); // Cartel LISTAR FORMATO TABLA
 void cLinea(); // Cartel DIBUJA UNA LINEA DETERMINADA
-
+void cMsjPerfil(); // Cartel de Perfil sin acceso
 #endif // CARTELES_H

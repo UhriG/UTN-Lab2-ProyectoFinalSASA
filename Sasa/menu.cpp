@@ -29,7 +29,7 @@ void menuPrincipal(){
         switch(opc){
             case 1:
                 if(perfilTemp() != 3){menuUsuario();}
-                else{msj("PERFIL SIN ACCESO", rlutil::WHITE, rlutil::RED);}
+                else{cMsjPerfil();}
             break;
             case 2:
                 menuProducto();

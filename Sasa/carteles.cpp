@@ -120,7 +120,9 @@ void cTabla(int modo){
 
 }
 
-
+void cMsjPerfil(){
+    msj("PERFIL SIN ACCESO", rlutil::WHITE, rlutil::RED);
+}
 
 
 
