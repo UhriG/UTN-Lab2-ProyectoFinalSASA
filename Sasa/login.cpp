@@ -66,9 +66,9 @@ void Login::login(){
 
         if(comprobarCredenciales(u.getPassword(), u.getNombre()) != -1){
             logueado = true;
-            setNombreUsuario(u.getNombre());
-            guardarUsuario();
-
+            //setNombreUsuario(u.getNombre());
+            //guardarUsuario();
+            crearTemp(u);
         }else{
             msj("CREDENCIALES INCORRECTAS, INTENTE NUEVAMENTE", rlutil::WHITE, rlutil::RED);
             contador++;
@@ -103,6 +103,10 @@ void Login::setNombreUsuario(char *n){
     strcpy(nombreUsuario, n);
 }
 
+void Login::setPerfilUsuario(int p){
+    perfilUsuario = p;
+}
+
 bool Login::guardarUsuario(){
     bool guardo;
     FILE *f = fopen("datos/temp.dat", "ab");
@@ -132,4 +136,20 @@ int Login::leerUsuario(int pos){
 void Login::eliminarTemp(){
     FILE *orig = fopen("datos/temp.dat", "wb"); //Seteo a 0 el archivo original
     fclose(orig);
+}
+
+void crearTemp(Usuario u){
+    Login l;
+    int pos = buscarNombre(u.getNombre());
+    u.leerDisco(pos);
+    l.setNombreUsuario(u.getNombre());
+    l.setPerfilUsuario(u.getPerfil());
+    l.guardarUsuario();
+}
+
+int perfilTemp(){
+    Login l;
+    l.leerUsuario();
+    int p = l.getPerfilUsuario();
+    return p;
 }

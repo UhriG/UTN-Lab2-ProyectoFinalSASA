@@ -21,27 +21,13 @@ int main()
         l.eliminarTemp();
         l.menuLogin();
     } else { // FUNCIONES PARA TESTEAR
-       /* Producto p;
-        p.cargar();
-        p.escribirDisco();
-        Movimiento m;
-        m.cargar(p);
-        m.escribirDisco();
-
-        rlutil::cls();
-
-        for(int i=0;i<3;i++){
-            m.leerDisco(i);
-            if(m.getId() != 0){
-                m.mostrar(4);
-                rlutil::anykey();
-            }
-            cout << endl << "------------------------" << endl;
-        }*/
-
         Login l;
-        l.leerUsuario(0);
-        cout << l.getNombre();
+        l.eliminarTemp();
+        Usuario u;
+        u.setNombre("admin");
+        crearTemp(u);
+        int p = perfilTemp();
+        cout << "PERFIL: " << p;
     }
 
     //return 0;

@@ -1,10 +1,13 @@
 #ifndef LOGIN_H_INCLUDED
 #define LOGIN_H_INCLUDED
-
+#include "usuario.h"
 
 
 class Login
 {
+    private:
+        char nombreUsuario[20];
+        int perfilUsuario;
     public:
         void menuLogin();
         void login();
@@ -14,8 +17,11 @@ class Login
         void eliminarTemp();
         void setNombreUsuario(char *n);
         char *getNombre(){return nombreUsuario;};
-    private:
-        char nombreUsuario[20];
+        void setPerfilUsuario(int p);
+        int getPerfilUsuario(){return perfilUsuario;};
 };
+
+void crearTemp(Usuario);
+int perfilTemp();
 
 #endif // LOGIN_H_INCLUDED

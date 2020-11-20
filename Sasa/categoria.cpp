@@ -116,7 +116,7 @@ int buscarIDcat(int idB){
 	return -1;
 }
 
-int buscarNombre(char *nombreB){
+int buscarNombrecat(char *nombreB){
 	int pos=0;
 	Categoria c;
 	while(c.leerDisco(pos)==1){

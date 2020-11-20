@@ -30,7 +30,7 @@ class Usuario
 };
 
 int buscarID(int idB); // Busca el ID
-int buscarNombre(char *nombre);
+int buscarNombre(char *nombre); // Devuelve la posicion
 int cantUsuario(); // Devuelve la cantidad de registros
 void compAdmin(); // Comprueba si existe admin
 void ordenarUsuarioDesc(Usuario *user, int cantReg); // Ordena de forma descendente
