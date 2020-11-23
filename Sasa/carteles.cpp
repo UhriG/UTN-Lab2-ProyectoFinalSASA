@@ -100,17 +100,17 @@ void cTabla(int modo){
     if(modo == 1){ //MODO 1 PARA USUARIO
         int ancho1 = 15;
         cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "PERFIL" << setw(ancho1) << "ESTADO";
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
-    }
+        cLinea(45);
+        }
     if(modo == 2){ // MODO 2 PARA PRODUCTO
         int ancho2 = 15;
         cout << setw(4) << "ID" << setw(ancho2) << "NOMBRE" << setw(ancho2) << "MARCA" << setw(ancho2) << "CATEGORÍA" << setw(10) << "ESTADO" << setw(5) << "STOCK";
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
+        cLinea(75);
     }
     if(modo == 3){ //MODO 3 PARA CATEGORIA
-    int ancho1 = 15;
-    cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "ESTADO";
-    cout << endl << "----------------------------------------------------------------------------"<< endl;
+        int ancho1 = 15;
+        cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "ESTADO";
+        cLinea(30);
     }
     if(modo == 4){ //MODO 3 PARA CATEGORIA
     int ancho1 = 15;
@@ -118,6 +118,15 @@ void cTabla(int modo){
     cout << endl << "------------------------------------------------------------------------------------------"<< endl;
     }
 
+}
+
+void cLinea(int cantidad){ // Determinamos la cantidad de repeticiones
+    string linea = "-", lineas; // Determinamos el separador
+    for(int i=0; i<cantidad; i++){
+        lineas += linea;
+    }
+    cout << endl;
+    cout << lineas << endl;
 }
 
 void cMsjPerfil(){

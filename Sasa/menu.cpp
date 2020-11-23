@@ -60,12 +60,12 @@ void menuUsuario(){
     bool menu = true;
     int opc;
     while(menu){
-        cMenu(1); // CARTEL MENU GENERAL ( USUARIO )
+        cMenu(1); // CARTEL MENU GENERAL ( 1-USUARIO )
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenu(1); // CARTEL MENU GENERAL ( USUARIO )
+            cMenu(1); // CARTEL MENU GENERAL ( 1-USUARIO )
         }
 
         switch(opc){
@@ -98,12 +98,12 @@ void menuProducto(){
     bool menu = true;
     int opc;
     while(menu){
-        cMenu(2); // CARTEL MENU GENERAL ( PRODUCTO )
+        cMenu(2); // CARTEL MENU GENERAL ( 2-PRODUCTO )
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenu(2); // CARTEL MENU GENERAL ( PRODUCTO )
+            cMenu(2); // CARTEL MENU GENERAL ( 2-PRODUCTO )
         }
 
         switch(opc){
@@ -135,12 +135,12 @@ void menuCategoria(){
     bool menu = true;
     int opc;
     while(menu){
-        cMenu(3); // CARTEL MENU GENERAL ( CATEGORÍA )
+        cMenu(3); // CARTEL MENU GENERAL ( 3-CATEGORÍA )
         while(!(cin >> opc)){
             msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cMenu(3); // CARTEL MENU GENERAL ( CATEGORÍA )
+            cMenu(3); // CARTEL MENU GENERAL ( 3-CATEGORÍA )
         }
 
         switch(opc){
@@ -332,7 +332,6 @@ void listarUsuarios(){
             u.leerDisco(pos);
             if(u.getEstado()==1 && u.getId() != idanterior){
                 u.mostrar();
-                cout << endl << "----------------------------------------------------------------------------"<< endl;
             }
             idanterior = u.getId();
         }
@@ -604,7 +603,6 @@ void listarCategoria(){
             c.leerDisco(pos);
             if(c.getEstado()==1 && c.getId() != idanterior){
                 c.mostrar();
-                cout << endl << "----------------------------------------------------------------------------"<< endl;
             }
             idanterior = c.getId();
         }

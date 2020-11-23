@@ -20,15 +20,9 @@ int main()
         Login l;
         l.eliminarTemp();
         l.menuLogin();
-    } else { // FUNCIONES PARA TESTEAR
-        Login l;
-        l.eliminarTemp();
-        Usuario u;
-        u.setNombre("admin");
-        crearTemp(u);
-        int p = perfilTemp();
-        cout << "PERFIL: " << p;
+    } else { // FUNCIONES TESTER
+        cLinea(10);
     }
-
+    // ACA FINALIZAN LAS FUNCIONES TESTER
     //return 0;
 }

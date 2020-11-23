@@ -56,6 +56,7 @@ void Categoria::mostrar(int modo){
         cout << setw(5) << id;
         cout << setw(anchos) << nombre;
         cout << setw(anchos) << estados[estado-1];
+        cLinea(30);
     }else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
         cout << "NOMBRE: "<< nombre << endl;
