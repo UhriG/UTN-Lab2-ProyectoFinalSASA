@@ -981,7 +981,6 @@ void listarMovimientosPorUsuario(){
     cout << left;
     cout << "INGRESAR NOMBRE DE USUARIO: ";
     char nombre[15];
-    cin >> nombre;
     while(!(cin >> nombre)){
         msj("INGRESO INCORRECTO - SOLO SE ADMITEN LETRAS", rlutil::WHITE, rlutil::RED);
         cin.clear();
@@ -1002,7 +1001,6 @@ void listarMovimientosPorUsuario(){
                 m.mostrar(1);
                 cout << endl << "------------------------------------------------------------------------------------------"<< endl;
             }
-            //idanterior = m.getId();
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
         cout << "0- SALIR | INDIQUE PÁGINA: > ";
