@@ -21,7 +21,7 @@ int main()
         l.eliminarTemp();
         l.menuLogin();
     } else { // FUNCIONES TESTER
-        cLinea(10);
+
     }
     // ACA FINALIZAN LAS FUNCIONES TESTER
     //return 0;
