@@ -113,9 +113,9 @@ void cTabla(int modo){
         cLinea(30);
     }
     if(modo == 4){ //MODO 3 PARA CATEGORIA
-    int ancho1 = 15;
-    cout << setw(4) << "ID" << setw(ancho1) << "USUARIO" << setw(ancho1) << "PRODUCTO" << setw(ancho1) << "MARCA" << setw(10) << "CATEGORIA" << setw(6) << "STOCK" << setw(11) << "MOVIMIENTO" << setw(6) << "FECHA";
-    cout << endl << "------------------------------------------------------------------------------------------"<< endl;
+        int ancho1 = 15;
+        cout << setw(4) << "ID" << setw(ancho1) << "USUARIO" << setw(ancho1) << "PRODUCTO" << setw(ancho1) << "MARCA" << setw(10) << "CATEGORIA" << setw(6) << "STOCK" << setw(11) << "MOVIMIENTO" << setw(6) << "FECHA";
+        cLinea(80);
     }
 
 }
