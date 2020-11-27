@@ -154,3 +154,51 @@ int cantProd(){
     cant = bytes / sizeof(Producto);
     return cant;
 }
+
+bool copiaProducto(){
+    Producto p;
+    FILE *f = fopen("datos/producto.dat", "rb");
+    FILE *backup = fopen("datos/productoBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer producto.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&p, sizeof(Producto), 1, f)){
+        FILE *bk = fopen("datos/productoBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&p, sizeof(Producto), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
+}
+
+bool recProducto(){
+    Producto p;
+    FILE *bk = fopen("datos/productoBK.dat", "rb");
+    FILE *orig = fopen("datos/producto.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el productoBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&p, sizeof(Producto), 1, bk)){
+        FILE *f = fopen("datos/producto.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en producto.";
+            system("pause");
+            return false;
+        }
+        fwrite(&p, sizeof(Producto), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
+}

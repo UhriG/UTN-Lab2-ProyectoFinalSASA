@@ -28,5 +28,6 @@ int cantCategoria(); // Devuelve la cantidad de registros
 void compCategoria(); // Comprueba si existe categoria
 void ordenarCategoriaDesc(Categoria *cat, int cantReg); // Ordena de forma descendente
 void listarCategoriaSimple(); // Muestra las categorias para seleccionar
-
+bool copiaCategoria(); // crea bk de categoria.dat
+bool recCategoria(); // recupera bk de categoria.dat
 #endif // CATEGORIA_H_INCLUDED

@@ -175,3 +175,51 @@ void listarCategoriaSimple(){
         }
     }
 }
+
+bool copiaCategoria(){
+    Categoria c;
+    FILE *f = fopen("datos/categoria.dat", "rb");
+    FILE *backup = fopen("datos/categoriaBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer categoria.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&c, sizeof(Categoria), 1, f)){
+        FILE *bk = fopen("datos/categoriaBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&c, sizeof(Categoria), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
+}
+
+bool recCategoria(){
+    Categoria c;
+    FILE *bk = fopen("datos/categoriaBK.dat", "rb");
+    FILE *orig = fopen("datos/categoria.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el categoriaBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&c, sizeof(Categoria), 1, bk)){
+        FILE *f = fopen("datos/categoria.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en categoria.";
+            system("pause");
+            return false;
+        }
+        fwrite(&c, sizeof(Categoria), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
+}

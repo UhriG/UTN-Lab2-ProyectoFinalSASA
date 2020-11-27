@@ -41,5 +41,6 @@ class Movimiento
 };
 
 int cantMov();
-
+bool copiaMovimiento(); // crea bk de bitacora.dat
+bool recMovimiento(); // recupera bk de bitacora.dat
 #endif // MOVIMIENTOS_H

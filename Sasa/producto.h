@@ -32,5 +32,6 @@ class Producto
 // Funciones Externas
 int buscarCod(int codB); // Busca el ID
 int cantProd(); // Devuelve la cantidad de registros
-
+bool copiaProducto(); // crea bk de producto.dat
+bool recProducto(); // recupera bk de producto.dat
 #endif // PRODUCTO_H_INCLUDED

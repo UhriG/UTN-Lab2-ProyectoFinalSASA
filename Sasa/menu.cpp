@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <stdio.h>
+#include <time.h> /// para la funcion TIME
 using namespace std;
 #include "menu.h"
 #include "ui.h"
@@ -630,55 +631,73 @@ void listarCategoria(){
 // SUB MENU CONFIGURACION
 
 void copiaSeguridad(){
+    srand(time(NULL));
+    int numR = rand(), conf=0;
     cTitulo();
-    // BARRA DE PROGRESO
-    gotoxy(35,10);
-    printf("CARGANDO");
-    for(int i=1; i<90; i++){
-        gotoxy(i,13);
-        printf("#");
-        for(int x=50; x<70; x++){
-            for(int y=1; y<70; y++){
-                gotoxy(y,24);
+    cout << "INGRESE EL SIGUIENTE PIN: " << numR << endl;
+    cout << "> ";
+    cin >> conf;
+    if(conf == numR){
+        // BARRA DE PROGRESO
+        gotoxy(35,10);
+        printf("CARGANDO");
+        for(int i=1; i<120; i++){
+            gotoxy(i,13);
+            setColors(rlutil::WHITE, rlutil::BLUE);
+            printf("#");
+            for(int x=50; x<70; x++){
+                for(int y=1; y<70; y++){
+                    gotoxy(y,24);
+                }
             }
         }
-    }
-    // TERMINA BARRA
-    int guardo =0;
-    guardo += copiaUsuario();
-    guardo += copiaProducto();
-    guardo += copiaCategoria();
-    if(guardo == 3){
-        msj("SE CREO COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::GREEN);
-    } else {
-        msj("ERROR AL CREAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
-    }
+        rlutil::resetColor();
+        setColors(APP_FORECOLOR, APP_BACKCOLOR);
+        // FIN BARRA DE PROGRESO
+        int guardo =0;
+        guardo += copiaUsuario();
+        guardo += copiaProducto();
+        guardo += copiaCategoria();
+        guardo += copiaMovimiento();
+        if(guardo == 4){
+            msj("SE CREO COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::GREEN);
+        } else {
+            msj("ERROR AL CREAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
+        }
+    }else{msj("PIN INCORRECTO", rlutil::WHITE, rlutil::RED);}
 }
 
 void recuperarCopia(){
+    int numR = rand(), conf=0;
     cTitulo();
-    // BARRA DE PROGRESO
-    gotoxy(35,10);
-    printf("CARGANDO");
-    for(int i=1; i<90; i++){
-        gotoxy(i,13);
-        printf("#");
-        for(int x=50; x<70; x++){
-            for(int y=1; y<70; y++){
-                gotoxy(y,24);
+    cout << "INGRESE EL SIGUIENTE PIN: " << numR << endl;
+    cout << "> ";
+    cin >> conf;
+    if(conf == numR){
+        // BARRA DE PROGRESO
+        gotoxy(35,10);
+        printf("CARGANDO");
+        for(int i=1; i<90; i++){
+            gotoxy(i,13);
+            printf("#");
+            for(int x=50; x<70; x++){
+                for(int y=1; y<70; y++){
+                    gotoxy(y,24);
+                }
             }
         }
-    }
-    // TERMINA BARRA
-    int rec = 0;
-    rec += recUsuario();
-    rec += recProducto();
-    rec += recCategoria();
-    if(rec == 3){
-        msj("SE RECUPERO CORRECTAMENTE",rlutil::WHITE, rlutil::GREEN);
-    } else {
-        msj("ERROR AL RECUPERAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
-    }
+        // TERMINA BARRA
+        int rec = 0;
+        rec += recUsuario();
+        rec += recProducto();
+        rec += recCategoria();
+        rec += recMovimiento();
+        if(rec == 4){
+            msj("SE RECUPERO CORRECTAMENTE",rlutil::WHITE, rlutil::GREEN);
+        } else {
+            msj("ERROR AL RECUPERAR COPIA DE SEGURIDAD",rlutil::WHITE, rlutil::RED);
+        }
+    }else{msj("PIN INCORRECTO", rlutil::WHITE, rlutil::RED);}
 }
 
 void exportarDatos(){
@@ -1021,199 +1040,7 @@ void listarMovimientosPorUsuario(){
     }
 }
 
-// SUB MENU COPIA DE SEGURIDAD
-bool copiaUsuario(){
-    Usuario u;
-    FILE *f = fopen("datos/usuario.dat", "rb");
-    FILE *backup = fopen("datos/usuarioBK.dat", "wb"); //Seteo a 0 el archivo de bk
-    fclose(backup);
-    if(f == NULL){
-        cout << "No se puede leer usuario.dat .";
-        system("pause");
-        return false;
-    }
-    while(fread(&u, sizeof(Usuario), 1, f)){
-        FILE *bk = fopen("datos/usuarioBK.dat", "ab");
-        if(bk == NULL){
-            cout << "No se puede guardar en BK.";
-            system("pause");
-            return false;
-        }
-        fwrite(&u, sizeof(Usuario), 1, bk);
-        fclose(bk);
-    }
-    fclose(f);
-    return true;
-}
 
-bool copiaProducto(){
-    Producto p;
-    FILE *f = fopen("datos/producto.dat", "rb");
-    FILE *backup = fopen("datos/productoBK.dat", "wb"); //Seteo a 0 el archivo de bk
-    fclose(backup);
-    if(f == NULL){
-        cout << "No se puede leer producto.dat .";
-        system("pause");
-        return false;
-    }
-    while(fread(&p, sizeof(Producto), 1, f)){
-        FILE *bk = fopen("datos/productoBK.dat", "ab");
-        if(bk == NULL){
-            cout << "No se puede guardar en BK.";
-            system("pause");
-            return false;
-        }
-        fwrite(&p, sizeof(Producto), 1, bk);
-        fclose(bk);
-    }
-    fclose(f);
-    return true;
-}
-
-bool copiaCategoria(){
-    Categoria c;
-    FILE *f = fopen("datos/categoria.dat", "rb");
-    FILE *backup = fopen("datos/categoriaBK.dat", "wb"); //Seteo a 0 el archivo de bk
-    fclose(backup);
-    if(f == NULL){
-        cout << "No se puede leer categoria.dat .";
-        system("pause");
-        return false;
-    }
-    while(fread(&c, sizeof(Categoria), 1, f)){
-        FILE *bk = fopen("datos/categoriaBK.dat", "ab");
-        if(bk == NULL){
-            cout << "No se puede guardar en BK.";
-            system("pause");
-            return false;
-        }
-        fwrite(&c, sizeof(Categoria), 1, bk);
-        fclose(bk);
-    }
-    fclose(f);
-    return true;
-}
-
-bool copiaMovimiento(){
-    Movimiento m;
-    FILE *f = fopen("datos/bitacora.dat", "rb");
-    FILE *backup = fopen("datos/bitacoraBK.dat", "wb"); //Seteo a 0 el archivo de bk
-    fclose(backup);
-    if(f == NULL){
-        cout << "No se puede leer bitacora.dat .";
-        system("pause");
-        return false;
-    }
-    while(fread(&m, sizeof(Movimiento), 1, f)){
-        FILE *bk = fopen("datos/bitacoraBK.dat", "ab");
-        if(bk == NULL){
-            cout << "No se puede guardar en BK.";
-            system("pause");
-            return false;
-        }
-        fwrite(&m, sizeof(Movimiento), 1, bk);
-        fclose(bk);
-    }
-    fclose(f);
-    return true;
-}
-
-// SUB MENU RESTAURAR COPIA DE SEGURIDAD
-bool recUsuario(){
-    Usuario u;
-    FILE *bk = fopen("datos/usuarioBK.dat", "rb");
-    FILE *orig = fopen("datos/usuario.dat", "wb"); //Seteo a 0 el archivo original
-    fclose(orig);
-    if(bk == NULL){
-        cout << "No se puede leer el usuarioBK.dat .";
-        system("pause");
-        return false;
-    }
-    while(fread(&u, sizeof(Usuario), 1, bk)){
-        FILE *f = fopen("datos/usuario.dat", "ab");
-        if(f == NULL){
-            cout << "No se puede guardar en usuario.";
-            system("pause");
-            return false;
-        }
-        fwrite(&u, sizeof(Usuario), 1, f);
-        fclose(f);
-    }
-    fclose(bk);
-    return true;
-}
-
-bool recProducto(){
-    Producto p;
-    FILE *bk = fopen("datos/productoBK.dat", "rb");
-    FILE *orig = fopen("datos/producto.dat", "wb"); //Seteo a 0 el archivo original
-    fclose(orig);
-    if(bk == NULL){
-        cout << "No se puede leer el productoBK.dat .";
-        system("pause");
-        return false;
-    }
-    while(fread(&p, sizeof(Producto), 1, bk)){
-        FILE *f = fopen("datos/producto.dat", "ab");
-        if(f == NULL){
-            cout << "No se puede guardar en producto.";
-            system("pause");
-            return false;
-        }
-        fwrite(&p, sizeof(Producto), 1, f);
-        fclose(f);
-    }
-    fclose(bk);
-    return true;
-}
-
-bool recCategoria(){
-    Categoria c;
-    FILE *bk = fopen("datos/categoriaBK.dat", "rb");
-    FILE *orig = fopen("datos/categoria.dat", "wb"); //Seteo a 0 el archivo original
-    fclose(orig);
-    if(bk == NULL){
-        cout << "No se puede leer el categoriaBK.dat .";
-        system("pause");
-        return false;
-    }
-    while(fread(&c, sizeof(Categoria), 1, bk)){
-        FILE *f = fopen("datos/categoria.dat", "ab");
-        if(f == NULL){
-            cout << "No se puede guardar en categoria.";
-            system("pause");
-            return false;
-        }
-        fwrite(&c, sizeof(Categoria), 1, f);
-        fclose(f);
-    }
-    fclose(bk);
-    return true;
-}
-
-bool recMovimiento(){
-    Movimiento m;
-    FILE *bk = fopen("datos/bitacoraBK.dat", "rb");
-    FILE *orig = fopen("datos/bitacora.dat", "wb"); //Seteo a 0 el archivo original
-    fclose(orig);
-    if(bk == NULL){
-        cout << "No se puede leer el bitacoraBK.dat .";
-        system("pause");
-        return false;
-    }
-    while(fread(&m, sizeof(Movimiento), 1, bk)){
-        FILE *f = fopen("datos/bitacora.dat", "ab");
-        if(f == NULL){
-            cout << "No se puede guardar en bitacora.";
-            system("pause");
-            return false;
-        }
-        fwrite(&m, sizeof(Movimiento), 1, f);
-        fclose(f);
-    }
-    fclose(bk);
-    return true;
-}
 
 
 
