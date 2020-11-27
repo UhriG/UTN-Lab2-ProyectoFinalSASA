@@ -9,6 +9,7 @@ using namespace rlutil;
 #include "movimiento.h"
 #include "login.h"
 #include "categoria.h"
+#include "carteles.h"
 
 void Movimiento::mostrar(int modo){
     Categoria c;
@@ -23,7 +24,7 @@ void Movimiento::mostrar(int modo){
         cout << setw(ancho) << getProducto();
         cout << setw(ancho) << getMarca();
         cout << setw(10) << c.getNombre();
-        cout << setw(6) << getStock();
+        cout << setw(1) << "+" << setw(6) << getStock();
         cout << setw(11) << tmov[getTipoMovimiento()-1];
         cout << setw(6) << fechaMov.getDia() << "/" << fechaMov.getMes() << "/" << fechaMov.getAnio();
     } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
@@ -64,7 +65,7 @@ void Movimiento::setTipoMovimiento(int tpMov){
 }
 
 
-void Movimiento::cargar(Producto p){
+void Movimiento::cargar(Producto p, int tM){
     id = cantMov()+1;
 
     Login l;
@@ -75,7 +76,7 @@ void Movimiento::cargar(Producto p){
     setMarca(p.getMarca());
     setCategoriaId(p.getCatId());
     setStock(p.getStock());
-    setTipoMovimiento(1);
+    setTipoMovimiento(tM);
 
     Fecha f;
     f.fechaActual();
@@ -130,4 +131,96 @@ int cantMov(){
     return cant;
 }
 
+void movIngreso(){
+    cTitulo();
+    int pos, id, stock, stockA;
+    Producto p;
+    cout << "INGRESAR STOCK" << endl;
+    cout << "INGRESAR ID PRODUCTO: ";
+    while(!(cin >> id)){
+        msj(" INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
+    cout << endl;
+    pos = buscarCod(id);
+    if(pos!=-1){
+		p.leerDisco(pos);
+		p.mostrar(2);
+		stockA = p.getStock();
+		cout << endl;
+		cout<<"INGRESE CANTIDAD DE UNIDADES A INGRESAR: ";
+		while(!(cin >> stock)){
+            msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
 
+        while(stock <= 0){
+            msj("LA NUEVA CANTIDAD DE UNIDADES NO PUEDE SER IGUAL O MENOR A LA ACTUAL", rlutil::WHITE, rlutil::RED);
+            while(!(cin >> stock)){
+                msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS", rlutil::WHITE, rlutil::RED);
+                cin.clear();
+                cin.ignore(123, '\n');
+            }
+        }
+
+        stockA += stock;
+
+		p.setStock(stockA);
+
+		if(p.modDisco(pos)==true){
+            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+            Movimiento m;
+            p.setStock(stock);
+            m.cargar(p, 1);
+            m.escribirDisco();
+		}
+
+    }else{
+		msj("NO EXISTE EL PRODUCTO", rlutil::WHITE, rlutil::RED);
+		anykey();
+    }
+}
+
+void movEgreso(){
+    cTitulo();
+    int pos, id, stock, stockA;
+    Producto p;
+    cout << "INGRESAR STOCK" << endl;
+    cout << "INGRESAR ID PRODUCTO: ";
+    while(!(cin >> id)){
+        msj(" INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
+    cout << endl;
+    pos = buscarCod(id);
+    if(pos!=-1){
+		p.leerDisco(pos);
+		p.mostrar(2);
+		stockA = p.getStock();
+		cout << endl;
+		cout<<"INGRESE CANTIDAD DE UNIDADES A INGRESAR: ";
+		while(!(cin >> stock) && stock <= 0){
+            msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS POSITIVOS", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+        stockA -= stock;
+
+		p.setStock(stockA);
+
+		if(p.modDisco(pos)==true){
+            msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
+            Movimiento m;
+            p.setStock(stock);
+            m.cargar(p, 0);
+            m.escribirDisco();
+		}
+
+    }else{
+		msj("NO EXISTE EL PRODUCTO", rlutil::WHITE, rlutil::RED);
+		anykey();
+    }
+}

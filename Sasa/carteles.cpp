@@ -26,7 +26,7 @@ void cMenuPrincipal(){
     cout << endl;
     cout << "6) CERRAR SESIÓN" << endl;
     cout << endl;
-    cout << "> ";
+    cout << " > ";
 }
 
 void cMenuConfiguracion(){
@@ -37,7 +37,7 @@ void cMenuConfiguracion(){
     cout << endl;
     cout << "5) VOLVER ATRÁS" << endl;
     cout << endl;
-    cout << "> ";
+    cout << " > ";
 }
 
 void cMenu(int selec){
@@ -51,15 +51,14 @@ void cMenu(int selec){
     cout << endl;
     cout << "5) VOLVER ATRÁS" << endl;
     cout << endl;
-    cout << "> ";
+    cout << " > ";
 }
 
 void cMenuLogin(){
     cTitulo();
     cout << "INGRESE UNA OPCIÓN" << endl;
     cout << "1 - INGRESAR" << endl;
-    cout << "2 - REGISTRARSE" << endl;
-    cout << "3 - SALIR" << endl <<" > ";
+    cout << "2 - SALIR" << endl <<" > ";
 }
 
 void cMenuProdListar(){
@@ -70,7 +69,7 @@ void cMenuProdListar(){
     cout << endl;
     cout << "5) VOLVER ATRÁS" << endl;
     cout << endl;
-    cout << "> ";
+    cout << " > ";
 }
 
 void cMenuMovimientos(){
@@ -81,7 +80,7 @@ void cMenuMovimientos(){
     cout << endl;
     cout << "4) SALIR" << endl;
     cout << endl;
-    cout << "> ";
+    cout << " > ";
 }
 
 void cMenuBitacora(){
@@ -93,7 +92,7 @@ void cMenuBitacora(){
     cout << endl;
     cout << "5) SALIR" << endl;
     cout << endl;
-    cout << "> ";
+    cout << " > ";
 }
 
 void cTabla(int modo){

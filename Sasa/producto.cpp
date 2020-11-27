@@ -29,6 +29,7 @@ void Producto::setEstado(int e){
 void Producto::setStock(int s){
     stock = s;
 }
+
 /*
 void Producto::setFechaCrea(){
     Fecha f;

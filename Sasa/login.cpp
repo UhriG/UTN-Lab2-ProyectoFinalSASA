@@ -32,9 +32,7 @@ void Login::menuLogin(){
         switch(opc){
             case 1: login();
                 break;
-            case 2: //registrar();
-                break;
-            case 3: return;
+            case 2: return;
                 break;
             default:  msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED); break;
         }

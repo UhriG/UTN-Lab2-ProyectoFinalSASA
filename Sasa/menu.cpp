@@ -364,7 +364,7 @@ void crearProducto(){
     if(p.escribirDisco()==true){
         msj("SE CREO PRODUCTO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
         Movimiento m;
-        m.cargar(p);//SI EL PRODUCTO SE CREA CON EXITO SE GUARDA EL MOVIMIENTO EN LA BITACORA
+        m.cargar(p, 1);//SI EL PRODUCTO SE CREA CON EXITO SE GUARDA EL MOVIMIENTO EN LA BITACORA
         m.escribirDisco();
     } else{
         msj("ERROR AL CREAR PRODUCTO", rlutil::WHITE, rlutil::RED);
@@ -866,10 +866,10 @@ void menuMovimientos(){
 
         switch(opc){
             case 1:
-                //cargarIngresos();
+                movIngreso();
             break;
             case 2:
-                //cargarEgresos();
+                movEgreso();
             break;
             case 3:
                 listarBitacora();

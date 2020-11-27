@@ -49,7 +49,7 @@
 
 1603329149 D
 
-1605746523 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\main.cpp
+1606429484 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\main.cpp
 	<iostream>
 	"menu.h"
 	"login.h"
@@ -61,9 +61,9 @@
 	"Fecha.h"
 	"movimiento.h"
 
-1605738536 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.h
+1606429484 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1605746741 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.h
+1605747576 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.h
 
 1603490629 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\rlutil.h
 
@@ -106,7 +106,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1605747473 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1606439055 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -120,7 +120,7 @@
 	"movimiento.h"
 	"login.h"
 
-1605746700 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.cpp
+1605747576 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\ui.cpp
 	<iostream>
 	<iomanip>
 	<cstring>
@@ -134,9 +134,10 @@
 	"ui.h"
 	"rlutil.h"
 
-1605746450 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.h
+1606429484 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.h
+	"usuario.h"
 
-1605745009 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.cpp
+1606434175 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\login.cpp
 	<iostream>
 	<string>
 	<iomanip>
@@ -252,13 +253,13 @@
 	"categoria.h"
 	"Fecha.h"
 
-1605580816 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\usuario.h
+1606429484 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
-1605580816 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\producto.h
+1605747570 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\producto.h
 	"categoria.h"
 
-1605662689 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1606438232 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -269,7 +270,7 @@
 	"login.h"
 	"movimiento.h"
 
-1605580816 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1606429484 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -277,8 +278,9 @@
 	"rlutil.h"
 	<string>
 	"usuario.h"
+	"carteles.h"
 
-1605747426 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+1606434247 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -286,7 +288,7 @@
 	"carteles.h"
 	"usuario.h"
 
-1605738281 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\carteles.h
+1606429484 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
 1606267749 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
@@ -449,7 +451,7 @@
 	"fecha.h"
 	"producto.h"
 
-1605580816 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\categoria.cpp
+1606429484 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\categoria.cpp
 	<iostream>
 	<iomanip>
 	<string>
@@ -459,12 +461,12 @@
 	"Fecha.h"
 	"carteles.h"
 
-1605580816 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\categoria.h
+1605747570 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\categoria.h
 	"Fecha.h"
 
-1605580816 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\fecha.h
+1605747570 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\fecha.h
 
-1605662975 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\fecha.cpp
+1605747570 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\fecha.cpp
 	<iostream>
 	<iomanip>
 	<string>
@@ -482,7 +484,7 @@
 	"producto.h"
 	"Fecha.h"
 
-1605747394 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
+1606439031 source:e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -492,8 +494,9 @@
 	"movimiento.h"
 	"login.h"
 	"categoria.h"
+	"carteles.h"
 
-1605742196 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\movimiento.h
+1606435884 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\movimiento.h
 	"usuario.h"
 	"producto.h"
 	"Fecha.h"

@@ -16,7 +16,7 @@ class Movimiento
         int stock;
         Fecha fechaMov;
     public:
-        void cargar(Producto);
+        void cargar(Producto, int tM);
         void mostrar(int modo);
         void setLogueado(char *n);
         void setStock(int stk);
@@ -41,5 +41,7 @@ class Movimiento
 };
 
 int cantMov();
+void movIngreso();
+void movEgreso();
 
 #endif // MOVIMIENTOS_H
