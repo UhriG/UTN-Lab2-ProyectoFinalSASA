@@ -42,24 +42,33 @@ void Producto::setFechaMod(Fecha f){
 */
 
 void Producto::cargar(){
+    fflush(stdin);
     cout << "Ingresar Producto, completar los siguientes datos: " << endl;
     id = cantProd()+1;
     cout << "ID: " << id <<endl;
     cout << "Nombre: ";
-    cin >> nombre;
+    cin.getline(nombre, 20);
     cout << "Marca: ";
-    cin >> marca;
+    cin.getline(marca, 20);
     listarCategoriaSimple();
     cout << "Categoría ID: ";
-    cin >> categoria_id;
+    while(!(cin >> categoria_id)){
+        cout << "Ingresar una categoria válida: > ";
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
     estado = 1;
     cout << "Stock: ";
     int s;
-    cin >> s;
-    while(s <= 0){
-        cout << "Ingresar Stock mayor a 0: > ";
-        cin >> s;
-    }
+    do{
+        while(!(cin >> s)){
+            cout << "Ingresar stock mayor a 0: > ";
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+        if(s<=0){cout << "Ingresar stock mayor a 0: > ";}
+    }while(s <= 0);
+
     setStock(s);
    // m.fa.fechaActual();
 }
