@@ -639,7 +639,7 @@ void copiaSeguridad(){
     cin >> conf;
     if(conf == numR){
         // BARRA DE PROGRESO
-        gotoxy(35,10);
+        gotoxy(55,10);
         printf("CARGANDO");
         for(int i=1; i<120; i++){
             gotoxy(i,13);
@@ -668,6 +668,7 @@ void copiaSeguridad(){
 }
 
 void recuperarCopia(){
+    srand(time(NULL));
     int numR = rand(), conf=0;
     cTitulo();
     cout << "INGRESE EL SIGUIENTE PIN: " << numR << endl;
@@ -675,10 +676,11 @@ void recuperarCopia(){
     cin >> conf;
     if(conf == numR){
         // BARRA DE PROGRESO
-        gotoxy(35,10);
+        gotoxy(55,10);
         printf("CARGANDO");
-        for(int i=1; i<90; i++){
+        for(int i=1; i<120; i++){
             gotoxy(i,13);
+            setColors(rlutil::WHITE, rlutil::BLUE);
             printf("#");
             for(int x=50; x<70; x++){
                 for(int y=1; y<70; y++){
@@ -686,7 +688,9 @@ void recuperarCopia(){
                 }
             }
         }
-        // TERMINA BARRA
+        rlutil::resetColor();
+        setColors(APP_FORECOLOR, APP_BACKCOLOR);
+        // FIN BARRA DE PROGRESO
         int rec = 0;
         rec += recUsuario();
         rec += recProducto();

@@ -8,7 +8,7 @@ using namespace rlutil;
 #include "usuario.h"
 void cTitulo(){
     cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    title("SISTEMA ADMINISTRACIÓN DE STOCK ALMACÉN");
     gotoXYPred();
 }
 
@@ -58,7 +58,6 @@ void cMenuLogin(){
     cTitulo();
     cout << "INGRESE UNA OPCIÓN" << endl;
     cout << "1 - INGRESAR" << endl;
-    cout << "2 - REGISTRARSE" << endl;
     cout << "3 - SALIR" << endl <<" > ";
 }
 
