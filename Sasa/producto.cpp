@@ -9,6 +9,7 @@ using namespace rlutil;
 #include "Fecha.h"
 #include "login.h"
 #include "movimiento.h"
+#include "validaciones.h"
 
 void Producto::setNombre(char *n){
     strcpy(nombre,n);
@@ -45,32 +46,17 @@ void Producto::cargar(){
     fflush(stdin);
     cout << "Ingresar Producto, completar los siguientes datos: " << endl;
     id = cantProd()+1;
-    cout << "ID: " << id <<endl;
-    cout << "Nombre: ";
-    cin.getline(nombre, 20);
-    cout << "Marca: ";
-    cin.getline(marca, 20);
+    cout << "> ID: " << id <<endl;
+    cout << "> Nombre: ";
+    validarNombre(nombre);
+    cout << "> Marca: ";
+    validarNombre(marca);
     listarCategoriaSimple();
-    cout << "Categoría ID: ";
-    while(!(cin >> categoria_id)){
-        cout << "Ingresar una categoria válida: > ";
-        cin.clear();
-        cin.ignore(123, '\n');
-    }
+    cout << "> Categoría ID: ";
+    setCategoria(validarCategoria());
     estado = 1;
-    cout << "Stock: ";
-    int s;
-    do{
-        while(!(cin >> s)){
-            cout << "Ingresar stock mayor a 0: > ";
-            cin.clear();
-            cin.ignore(123, '\n');
-        }
-        if(s<=0){cout << "Ingresar stock mayor a 0: > ";}
-    }while(s <= 0);
-
-    setStock(s);
-   // m.fa.fechaActual();
+    cout << "\n> Stock: ";
+    setStock(validarStock());
 }
 
 void Producto::mostrar(int modo){

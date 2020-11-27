@@ -8,6 +8,7 @@ using namespace rlutil;
 #include <string>
 #include "usuario.h"
 #include "carteles.h"
+#include "validaciones.h"
 
 
 void Usuario::setNombre(char *n){
@@ -32,7 +33,7 @@ void Usuario::cargar(){
     cout << "ID USUARIO: " << id << endl;
     cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
     cout << "Nombre: ";
-    cin >> nombre;
+    validarNombre(nombre);
 
     int existe;
     while(existe=buscarNombre(nombre) != -1){
@@ -41,7 +42,7 @@ void Usuario::cargar(){
         cin >> nombre;
     }
     cout << "Password: ";
-    cin >> password;
+    validarNombre(password);
 
     cout << "Perfil: ";
     int p;

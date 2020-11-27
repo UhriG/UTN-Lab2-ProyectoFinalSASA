@@ -241,13 +241,13 @@ void modificarUsuario(){
             case 1:
                 char n[20];
                 cout << "INGRESAR NOMBRE: ";
-                cin >> n;
+                validarNombre(n);
                 u.setNombre(n);
             break;
             case 2:
                 char p[10];
                 cout << "INGRESAR PASSWORD: ";
-                cin >> p;
+                validarNombre(p);
                 u.setPassword(p);
             break;
             case 3:
