@@ -15,7 +15,7 @@ void Movimiento::mostrar(int modo){
     Categoria c;
     int posCat = buscarIDcat(getCategoriaId());
     c.leerDisco(posCat);
-    string tmov[2] = {"Ingreso","Egreso"};
+    string tmov[2] = {"Egreso","Ingreso"};
 
     if(modo == 1){ // MODO 1 MUESTRA EN LISTA
         int ancho = 15;
@@ -34,7 +34,7 @@ void Movimiento::mostrar(int modo){
         cout << "MARCA: "<< getMarca() << endl;
         cout << "CATEGORÍA: "<< c.getNombre() << endl;
         cout << "STOCK: "<< getStock() << endl;
-        cout << "MOVIMIENTO: " << tmov[getTipoMovimiento()-1] << endl;
+        cout << "MOVIMIENTO: " << tmov[getTipoMovimiento()] << endl;
         cout << "FECHA: ";
         fechaMov.mostrarFecha(2);
     }
@@ -223,4 +223,52 @@ void movEgreso(){
 		msj("NO EXISTE EL PRODUCTO", rlutil::WHITE, rlutil::RED);
 		anykey();
     }
+}
+
+bool copiaMovimiento(){
+    Movimiento m;
+    FILE *f = fopen("datos/bitacora.dat", "rb");
+    FILE *backup = fopen("datos/bitacoraBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer bitacora.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&m, sizeof(Movimiento), 1, f)){
+        FILE *bk = fopen("datos/bitacoraBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&m, sizeof(Movimiento), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
+}
+
+bool recMovimiento(){
+    Movimiento m;
+    FILE *bk = fopen("datos/bitacoraBK.dat", "rb");
+    FILE *orig = fopen("datos/bitacora.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el bitacoraBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&m, sizeof(Movimiento), 1, bk)){
+        FILE *f = fopen("datos/bitacora.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en bitacora.";
+            system("pause");
+            return false;
+        }
+        fwrite(&m, sizeof(Movimiento), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
 }

@@ -8,7 +8,7 @@ using namespace rlutil;
 #include "usuario.h"
 void cTitulo(){
     cls();
-    title("SISTEMA ADMINISTRACION DE STOCK ALMACÉN");
+    title("SISTEMA ADMINISTRACIÓN DE STOCK ALMACÉN");
     gotoXYPred();
 }
 
@@ -111,7 +111,7 @@ void cTabla(int modo){
         cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "ESTADO";
         cLinea(30);
     }
-    if(modo == 4){ //MODO 3 PARA CATEGORIA
+    if(modo == 4){ //MODO 4 PARA MOVIMIENTO
         int ancho1 = 15;
         cout << setw(4) << "ID" << setw(ancho1) << "USUARIO" << setw(ancho1) << "PRODUCTO" << setw(ancho1) << "MARCA" << setw(10) << "CATEGORIA" << setw(6) << "STOCK" << setw(11) << "MOVIMIENTO" << setw(6) << "FECHA";
         cLinea(80);

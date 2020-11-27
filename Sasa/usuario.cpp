@@ -186,3 +186,51 @@ void ordenarUsuarioDesc(Usuario *user, int cantReg){
     user[pMayor] = aux;
   }
 }
+
+bool copiaUsuario(){
+    Usuario u;
+    FILE *f = fopen("datos/usuario.dat", "rb");
+    FILE *backup = fopen("datos/usuarioBK.dat", "wb"); //Seteo a 0 el archivo de bk
+    fclose(backup);
+    if(f == NULL){
+        cout << "No se puede leer usuario.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&u, sizeof(Usuario), 1, f)){
+        FILE *bk = fopen("datos/usuarioBK.dat", "ab");
+        if(bk == NULL){
+            cout << "No se puede guardar en BK.";
+            system("pause");
+            return false;
+        }
+        fwrite(&u, sizeof(Usuario), 1, bk);
+        fclose(bk);
+    }
+    fclose(f);
+    return true;
+}
+
+bool recUsuario(){
+    Usuario u;
+    FILE *bk = fopen("datos/usuarioBK.dat", "rb");
+    FILE *orig = fopen("datos/usuario.dat", "wb"); //Seteo a 0 el archivo original
+    fclose(orig);
+    if(bk == NULL){
+        cout << "No se puede leer el usuarioBK.dat .";
+        system("pause");
+        return false;
+    }
+    while(fread(&u, sizeof(Usuario), 1, bk)){
+        FILE *f = fopen("datos/usuario.dat", "ab");
+        if(f == NULL){
+            cout << "No se puede guardar en usuario.";
+            system("pause");
+            return false;
+        }
+        fwrite(&u, sizeof(Usuario), 1, f);
+        fclose(f);
+    }
+    fclose(bk);
+    return true;
+}
