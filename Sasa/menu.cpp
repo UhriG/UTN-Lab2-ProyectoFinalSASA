@@ -13,6 +13,7 @@ using namespace rlutil;
 #include "categoria.h"
 #include "movimiento.h"
 #include "login.h"
+#include "validaciones.h"
 
 // MENUES PRINCIPAL
 void menuPrincipal(){
