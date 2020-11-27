@@ -13,4 +13,5 @@ void cMenuBitacora(); // Cartel listar bitacora
 void cTabla(int modo); // Cartel LISTAR FORMATO TABLA
 void cLinea(int cantidad); // Cartel DIBUJA UNA LINEA DETERMINADA
 void cMsjPerfil(); // Cartel de Perfil sin acceso
+void cListar(int cant, int modo, int submodo=0); // Cartel Listado
 #endif // CARTELES_H

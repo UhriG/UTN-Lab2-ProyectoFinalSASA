@@ -322,12 +322,7 @@ void listarUsuarios(){
     int idanterior = -1, hoja = 1, resp = 1;
     while(resp != 0){
         cTitulo();
-        cout << left;
-        cout << "*LISTADO DE TODOS LOS USUARIOS" << endl;
-        cout << endl;
-        cout << "-----------------------------" << endl;
-        cout << "TOTAL DE USUARIOS: " << cant << endl;
-        cout << "-----------------------------" << endl;
+        cListar(cant, 1); // SIEMPRE PASAR CANT
         cTabla(1); // MODO 1 USUARIO
         for(pos; pos < usuarios; pos++){
             u.leerDisco(pos);
@@ -593,12 +588,7 @@ void listarCategoria(){
     int idanterior = -1, hoja = 1, resp = 1;
     while(resp != 0){
         cTitulo();
-        cout << left;
-        cout << "*LISTADO DE TODAS LAS CATEGORIAS" << endl;
-        cout << endl;
-        cout << "-----------------------------" << endl;
-        cout << "TOTAL DE CATEGORIAS: " << cant << endl;
-        cout << "-----------------------------" << endl;
+        cListar(cant, 3); // SIEMPRE PASAR CANT
         cTabla(3); // MODO 3 CATEGORÍA
         for(pos; pos < categorias; pos++){
             c.leerDisco(pos);
@@ -725,12 +715,7 @@ void listarProductoPorCodAs(){
     int resp=1;
     while(resp != 0){
         cTitulo();
-        cout << left;
-        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD ASCENDENTE" << endl;
-        cout << endl;
-        cout << "-----------------------------" << endl;
-        cout << "TOTAL DE PRODUCTOS: " << cant << endl;
-        cout << "-----------------------------" << endl;
+        cListar(cant, 2,1); // SIEMPRE PASAR CANT
         cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
@@ -773,12 +758,7 @@ void listarProductoPorCodDes(){
     int resp=1;
     while(resp != 0){
         cTitulo();
-        cout << left;
-        cout << "*LISTAR TODOS LOS PRODUCTOS POR COD DESCENDENTE" << endl;
-        cout << endl;
-        cout << "-----------------------------" << endl;
-        cout << "TOTAL DE PRODUCTOS: " << cant << endl;
-        cout << "-----------------------------" << endl;
+        cListar(cant, 2,2); // SIEMPRE PASAR CANT
         cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos > productos; pos--){
             p.leerDisco(pos);
@@ -840,12 +820,7 @@ void listarProductoTodos(){
     int resp=1;
     while(resp != 0){
         cTitulo();
-        cout << left;
-        cout << "*LISTAR TODOS LOS PRODUCTOS" << endl;
-        cout << endl;
-        cout << "-----------------------------" << endl;
-        cout << "TOTAL DE PRODUCTOS: " << cant << endl;
-        cout << "-----------------------------" << endl;
+        cListar(cant,2);
         cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
@@ -956,12 +931,7 @@ void listarMovimientosTodos(){
     int resp=1;
     while(resp != 0){
         cTitulo();
-        cout << left;
-        cout << "*LISTAR TODOS LOS MOVIMIENTOS" << endl;
-        cout << endl;
-        cout << "-----------------------------" << endl;
-        cout << "TOTAL DE MOVIMIENTOS: " << cant << endl;
-        cout << "-----------------------------" << endl;
+        cListar(cant,4);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
             m.leerDisco(pos);
@@ -1011,12 +981,7 @@ void listarMovimientosPorUsuario(){
     }
     while(resp != 0){
         cTitulo();
-        cout << left;
-        cout << "*LISTAR TODOS LOS MOVIMIENTOS" << endl;
-        cout << endl;
-        cout << "-----------------------------" << endl;
-        cout << "TOTAL DE MOVIMIENTOS: " << cant << endl;
-        cout << "-----------------------------" << endl;
+        cListar(cant,4,1);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
             m.leerDisco(pos);
