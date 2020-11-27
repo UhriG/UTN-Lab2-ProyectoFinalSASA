@@ -15,7 +15,7 @@ void Movimiento::mostrar(int modo){
     Categoria c;
     int posCat = buscarIDcat(getCategoriaId());
     c.leerDisco(posCat);
-    string tmov[2] = {"Egreso","Ingreso"};
+    string tmov[2] = {"Egreso","Ingreso"} , movt[2] = {"-","+"};
 
     if(modo == 1){ // MODO 1 MUESTRA EN LISTA
         int ancho = 15;
@@ -24,9 +24,9 @@ void Movimiento::mostrar(int modo){
         cout << setw(ancho) << getProducto();
         cout << setw(ancho) << getMarca();
         cout << setw(10) << c.getNombre();
-        cout << setw(1) << "+" << setw(6) << getStock();
-        cout << setw(11) << tmov[getTipoMovimiento()-1];
-        cout << setw(6) << fechaMov.getDia() << "/" << fechaMov.getMes() << "/" << fechaMov.getAnio();
+        cout << setw(1) << movt[getTipoMovimiento()] << setw(6) << getStock();
+        cout << setw(11) << tmov[getTipoMovimiento()];
+        fechaMov.mostrarFecha(3);
     } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
         cout << "USUARIO: " << getLogueado() << endl;

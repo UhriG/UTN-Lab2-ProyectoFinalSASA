@@ -20,8 +20,12 @@ void Fecha::setFecha(int d, int m, int a){ //settea la fecha del sistema
 void Fecha::mostrarFecha(int modo){
     if(modo == 1){
         cout << dia << "/" << mes << "/" << anio << endl;
-    } else {
+    }
+    if(modo == 2){
         cout << dia << "/" << mes << "/" << anio;
+    }
+    if(modo == 3){
+        cout << setw(2) << dia << setw(1) << "/" << setw(2) << mes << setw(1) << "/" << setw(2) << anio;
     }
 
 };
