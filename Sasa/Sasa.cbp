@@ -54,6 +54,8 @@
 		<Unit filename="ui.h" />
 		<Unit filename="usuario.cpp" />
 		<Unit filename="usuario.h" />
+		<Unit filename="validaciones.cpp" />
+		<Unit filename="validaciones.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
