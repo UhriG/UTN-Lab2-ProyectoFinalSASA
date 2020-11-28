@@ -8,6 +8,7 @@ using namespace rlutil;
 #include "categoria.h"
 #include "Fecha.h"
 #include "carteles.h"
+#include "validaciones.h"
 
 //SET
 
@@ -37,13 +38,13 @@ void Categoria::cargar(){
     cout << "ID CATEGORÍA: " << id << endl;
     cout << "INGRESAR LOS SIGUIENTES DATOS " << endl;
     cout << "Nombre: ";
-    cin >> nombre;
+    validarNombre(nombre);
 
     int existe;
     while(existe=buscarNombrecat(nombre) != -1){
         msj("NOMBRE DE CATEGORÍA EXISTE, INGRESAR UNO DISTINTO", rlutil::WHITE, rlutil::RED);
         cout << "\nNombre: ";
-        cin >> nombre;
+        validarNombre(nombre);
     }
 
     estado = 1;

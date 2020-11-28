@@ -527,7 +527,7 @@ void modificarCategoria(){
             case 1:
                 char n[20];
                 cout << "INGRESAR NOMBRE: ";
-                cin >> n;
+                validarNombre(n);
                 c.setNombre(n);
             break;
             case 5:
