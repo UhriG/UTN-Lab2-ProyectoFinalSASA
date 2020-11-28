@@ -10,6 +10,7 @@ using namespace std;
 #include "menu.h"
 #include "usuario.h"
 #include "movimiento.h"
+#include "validaciones.h"
 #include "ui.h"
 #include "rlutil.h"
 using namespace rlutil;
@@ -56,16 +57,14 @@ void Login::login(){
         cout << "\t\t\tLOGIN DE USUARIO" << endl;
 
         cout << ">USUARIO: ";
-        cin >> usuario;
+        validarNombre(usuario);
         u.setNombre(usuario);
         cout << ">PASSWORD: ";
-        cin >> password;
+        validarNombre(password);
         u.setPassword(password);
 
         if(comprobarCredenciales(u.getPassword(), u.getNombre()) != -1){
             logueado = true;
-            //setNombreUsuario(u.getNombre());
-            //guardarUsuario();
             crearTemp(u);
         }else{
             msj("CREDENCIALES INCORRECTAS, INTENTE NUEVAMENTE", rlutil::WHITE, rlutil::RED);

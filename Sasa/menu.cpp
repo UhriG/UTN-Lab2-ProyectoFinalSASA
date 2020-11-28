@@ -13,6 +13,7 @@ using namespace rlutil;
 #include "categoria.h"
 #include "movimiento.h"
 #include "login.h"
+#include "validaciones.h"
 
 // MENUES PRINCIPAL
 void menuPrincipal(){
@@ -241,13 +242,13 @@ void modificarUsuario(){
             case 1:
                 char n[20];
                 cout << "INGRESAR NOMBRE: ";
-                cin >> n;
+                validarNombre(n);
                 u.setNombre(n);
             break;
             case 2:
                 char p[10];
                 cout << "INGRESAR PASSWORD: ";
-                cin >> p;
+                validarNombre(p);
                 u.setPassword(p);
             break;
             case 3:
@@ -522,7 +523,7 @@ void modificarCategoria(){
             case 1:
                 char n[20];
                 cout << "INGRESAR NOMBRE: ";
-                cin >> n;
+                validarNombre(n);
                 c.setNombre(n);
             break;
             case 5:
