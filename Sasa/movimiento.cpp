@@ -141,9 +141,6 @@ void movIngreso(){
         msj(" INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
         cin.clear();
         cin.ignore(123, '\n');
-        cTitulo();
-        cout << "INGRESAR STOCK" << endl;
-        cout << "INGRESAR ID PRODUCTO: ";
     }
     cout << endl;
     pos = buscarCod(id);
@@ -153,14 +150,19 @@ void movIngreso(){
 		stockA = p.getStock();
 		cout << endl;
 		cout<<"INGRESE CANTIDAD DE UNIDADES A INGRESAR: ";
-
-        while(!(cin >> stock) || stock <= 0){
-            msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS POSTIVOS", rlutil::WHITE, rlutil::RED);
+		while(!(cin >> stock)){
+            msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cTitulo();
-            p.mostrar(2);
-            cout<<"INGRESE CANTIDAD DE UNIDADES A INGRESAR: ";
+        }
+
+        while(stock <= 0){
+            msj("LA NUEVA CANTIDAD DE UNIDADES NO PUEDE SER IGUAL O MENOR A LA ACTUAL", rlutil::WHITE, rlutil::RED);
+            while(!(cin >> stock)){
+                msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS", rlutil::WHITE, rlutil::RED);
+                cin.clear();
+                cin.ignore(123, '\n');
+            }
         }
 
         stockA += stock;
@@ -191,9 +193,6 @@ void movEgreso(){
         msj(" INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS", rlutil::WHITE, rlutil::RED);
         cin.clear();
         cin.ignore(123, '\n');
-        cTitulo();
-        cout << "INGRESAR STOCK" << endl;
-        cout << "INGRESAR ID PRODUCTO: ";
     }
     cout << endl;
     pos = buscarCod(id);
@@ -203,13 +202,10 @@ void movEgreso(){
 		stockA = p.getStock();
 		cout << endl;
 		cout<<"INGRESE CANTIDAD DE UNIDADES A INGRESAR: ";
-		while(!(cin >> stock) || stock <= 0){
+		while(!(cin >> stock) && stock <= 0){
             msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS POSITIVOS", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
-            cTitulo();
-            p.mostrar(2);
-            cout<<"INGRESE CANTIDAD DE UNIDADES A INGRESAR: ";
         }
         stockA -= stock;
 
