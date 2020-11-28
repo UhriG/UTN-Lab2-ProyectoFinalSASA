@@ -104,7 +104,7 @@ void cTabla(int modo){
     if(modo == 2){ // MODO 2 PARA PRODUCTO
         int ancho2 = 15;
         cout << setw(4) << "ID" << setw(ancho2) << "NOMBRE" << setw(ancho2) << "MARCA" << setw(ancho2) << "CATEGORÍA" << setw(10) << "ESTADO" << setw(5) << "STOCK";
-        cLinea(75);
+        cLinea(120);
     }
     if(modo == 3){ //MODO 3 PARA CATEGORIA
         int ancho1 = 15;
@@ -114,7 +114,7 @@ void cTabla(int modo){
     if(modo == 4){ //MODO 4 PARA MOVIMIENTO
         int ancho1 = 15;
         cout << setw(4) << "ID" << setw(ancho1) << "USUARIO" << setw(ancho1) << "PRODUCTO" << setw(ancho1) << "MARCA" << setw(10) << "CATEGORIA" << setw(6) << "STOCK" << setw(11) << "MOVIMIENTO" << setw(6) << "FECHA";
-        cLinea(80);
+        cLinea(120);
     }
 
 }

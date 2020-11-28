@@ -328,6 +328,7 @@ void listarUsuarios(){
             u.leerDisco(pos);
             if(u.getEstado()==1 && u.getId() != idanterior){
                 u.mostrar();
+                cLinea(45);
             }
             idanterior = u.getId();
         }
@@ -721,7 +722,7 @@ void listarProductoPorCodAs(){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior){
                 p.mostrar();
-                cout << endl << "----------------------------------------------------------------------------"<< endl;
+                cLinea(120);
             }
             idanterior = p.getId();
         }
@@ -764,7 +765,7 @@ void listarProductoPorCodDes(){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior && p.getId() != 0){
                 p.mostrar();
-                cout << endl << "----------------------------------------------------------------------------"<< endl;
+                cLinea(120);
             }
             idanterior = p.getId();
         }
