@@ -79,7 +79,7 @@
 	"Fecha.h"
 	"movimiento.h"
 
-1606439225 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1606688148 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
 1605749893 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\ui.h
 
@@ -155,7 +155,7 @@
 
 1603496077 
 
-1606525060 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1606688148 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -169,11 +169,12 @@
 	"categoria.h"
 	"movimiento.h"
 	"login.h"
+	"validaciones.h"
 
 1606267749 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
 	"usuario.h"
 
-1606525060 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
+1606688148 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\login.cpp
 	<iostream>
 	<string>
 	<iomanip>
@@ -185,10 +186,11 @@
 	"menu.h"
 	"usuario.h"
 	"movimiento.h"
+	"validaciones.h"
 	"ui.h"
 	"rlutil.h"
 
-1606525060 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1606526073 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -197,6 +199,7 @@
 	<string>
 	"usuario.h"
 	"carteles.h"
+	"validaciones.h"
 
 1606439225 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
@@ -229,7 +232,7 @@
 1605105557 c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.h
 	<string>
 
-1606525060 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1606526073 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -239,6 +242,7 @@
 	"Fecha.h"
 	"login.h"
 	"movimiento.h"
+	"validaciones.h"
 
 1606439225 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.h
 	"categoria.h"
@@ -292,7 +296,7 @@
 
 1606429484 e:\utn frgp\2° cuatrimestre\laboratorio ii\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
-1606525060 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+1606688148 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -300,7 +304,7 @@
 	"carteles.h"
 	"usuario.h"
 
-1606525060 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
+1606688148 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.h
 
 1605125651 source:c:\users\tivit\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
@@ -503,7 +507,7 @@
 	"producto.h"
 	"Fecha.h"
 
-1606525060 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.cpp
+1606526073 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.cpp
 	<iostream>
 	<iomanip>
 	<string>
@@ -512,6 +516,7 @@
 	"categoria.h"
 	"Fecha.h"
 	"carteles.h"
+	"validaciones.h"
 
 1606439225 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.h
 	"Fecha.h"
@@ -528,7 +533,7 @@
 	"producto.h"
 	"carteles.h"
 
-1606439622 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.h
+1606688148 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.h
 	"usuario.h"
 	"producto.h"
 	"Fecha.h"
@@ -693,4 +698,19 @@
 	<string>
 	"usuario.h"
 	"carteles.h"
+
+1606688148 c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\validaciones.h
+
+1606688148 source:c:\users\maxi\documents\github\utn-lab2-proyectofinalsasa\sasa\validaciones.cpp
+	<iostream>
+	<iomanip>
+	<conio.h>
+	"ui.h"
+	"rlutil.h"
+	"producto.h"
+	"categoria.h"
+	"Fecha.h"
+	"login.h"
+	"movimiento.h"
+	"validaciones.h"
 

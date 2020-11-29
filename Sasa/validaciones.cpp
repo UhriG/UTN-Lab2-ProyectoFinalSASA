@@ -59,3 +59,19 @@ void validarNombre(char *n){
     }
 }
 
+int validarNumEntero(){
+    int num;
+    while(!(cin >> num) || num < 1){
+        if(cin.fail()){
+            cout << "INGRESAR SOLO NUMEROS" << endl;
+        }
+        if(num<1){
+            cout << "INGRESAR NÚMERO POSITIVO" << endl;
+        }
+        cin.clear();
+        cin.ignore(123, '\n');
+        cout << "> ";
+    }
+    return num;
+}
+

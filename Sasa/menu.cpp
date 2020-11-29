@@ -908,7 +908,7 @@ void listarBitacora(){
                // listarBitacora();
             break;
             case 4:
-               // listarBitacora();
+               listarMovimientosPorFecha();
             break;
             case 5:
                 menu = false;
@@ -1011,7 +1011,72 @@ void listarMovimientosPorUsuario(){
     }
 }
 
+void listarMovimientosPorFecha(){
+    Movimiento m;
+    int cant = cantMov(), pos = 0, movimientos = 5, paginas;
+    if(cant % movimientos == 0){
+        paginas = cant / movimientos;
+    } else {
+        paginas = (cant / movimientos)+1;
+    }
+    int idanterior = -1, hoja = 1;
+    int resp=1;
+    cTitulo();
 
+    // VARIOS FILTROS 1- DÍA ESPECIFÍCO 2- MES Y AÑO 3- AÑO
+    int modo, fechas[3]={};
+    cout << left;
+    cListarMovFecha();
+    cout << "INGRESAR OPCIÓN A LISTAR: ";
+    while(!(cin >> modo)){
+        msj("INGRESO INCORRECTO - SOLO SE ADMITEN NÚMEROS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
+    modoListarFecha(modo,fechas);
+    cTitulo();
+    cListar(cant,3,2);
+    while(resp != 0){
+        cTitulo();
+        cListar(cant,4,2);
+        cTabla(4); // MODO 4 BITACORA
+        for(pos; pos < movimientos; pos++){
+            m.leerDisco(pos);
+            if(modo == 1){
+                if(fechas[0] == m.getFecha().getDia() && fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio()){
+                    m.mostrar(1);
+                }
+            }
+            if(modo == 2){
+                if(fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio()){
+                    m.mostrar(1);
+                }
+            }
+            if(modo == 3){
+                if(fechas[2] == m.getFecha().getAnio()){
+                    m.mostrar(1);
+                }
+            }
+            cLinea(120);
+        }
+        cout << "PAGINA: " << hoja << " / " << paginas << endl;
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        while(!(cin >> resp)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+        hoja = resp;
+        if(pos == cant || hoja > paginas){
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                resp = 0;
+            }
+        if(resp != 0){
+            pos = 5 *(hoja-1);
+            movimientos = pos + 5;
+        }
+    }
+}
 
 
 

@@ -10,6 +10,7 @@ using namespace rlutil;
 #include "login.h"
 #include "categoria.h"
 #include "carteles.h"
+#include "validaciones.h"
 
 void Movimiento::mostrar(int modo){
     Categoria c;
@@ -275,4 +276,28 @@ bool recMovimiento(){
     }
     fclose(bk);
     return true;
+}
+
+int modoListarFecha(int modo, int *fechas){
+    cout << "INGRESAR FECHA"<< endl;
+    if(modo == 1){
+        cout << "INGRESAR DÍA: ";
+        fechas[0] = validarNumEntero();
+        cout << "INGRESAR MES: ";
+        fechas[1] = validarNumEntero();
+        cout << "INGRESAR AÑO: ";
+        fechas[2] = validarNumEntero();
+    }
+    if(modo == 2){
+        cout << "INGRESAR MES: ";
+        fechas[1] = validarNumEntero();
+        cout << "INGRESAR AÑO: ";
+        fechas[2] = validarNumEntero();
+    }
+    if(modo == 3){
+        cout << "INGRESAR AÑO: ";
+        fechas[2] = validarNumEntero();
+    }
+    cListarMovFecha();
+    return modo;
 }

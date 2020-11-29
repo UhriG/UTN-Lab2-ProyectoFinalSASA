@@ -150,6 +150,8 @@ void cListar(int cant, int modo, int submodo){
     if(modo == 4){
         if(submodo == 0){cout << "*LISTADO DE TODOS " << tipo[modo-1] << endl;}
         if(submodo == 1){cout << "*LISTADO DE TODOS " << tipo[modo-1] << " POR USUARIO"<< endl;}
+
+        if(submodo == 3){cout << "*LISTADO DE TODOS " << tipo[modo-1] << " POR FECHA"<< endl;}
     }
     cout << endl;
     cout << "-----------------------------" << endl;
@@ -158,3 +160,10 @@ void cListar(int cant, int modo, int submodo){
 
 }
 
+void cListarMovFecha(){
+    string opcion[3] = {"DÍA ESPECIFÍCO","MES Y AÑO","AÑO"};
+    for(int i=0; i<3; i++){
+        cout << i+1 << "-" << opcion[i] << " ";
+    }
+    cout << endl;
+}
