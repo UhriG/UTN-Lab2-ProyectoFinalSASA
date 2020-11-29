@@ -21,7 +21,15 @@ int main()
         l.eliminarTemp();
         l.menuLogin();
     } else { // FUNCIONES TESTER
+        title("MODO DEV");
+        gotoXYPred();
 
+        int cant=0, pos=0;
+        Usuario u;
+        while(u.leerDisco(pos++)==1){
+            cant++;
+        }
+        cout << "CANTIDAD DE USUARIO: " << cant;
     }
     // ACA FINALIZAN LAS FUNCIONES TESTER
     //return 0;

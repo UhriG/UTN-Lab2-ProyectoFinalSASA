@@ -150,7 +150,7 @@ int buscarNombre(char *nombreB){
 }
 
 int cantUsuario(){
-    FILE *f;
+    /*FILE *f;
     f = fopen("datos/usuario.dat", "rb");
     if(f == NULL){
         return 0;
@@ -160,6 +160,16 @@ int cantUsuario(){
     bytes = ftell(f);
     fclose(f);
     cant = bytes / sizeof(Usuario);
+    return cant;
+    */
+    int cant=0, pos=0;
+    Usuario u;
+    while(u.leerDisco(pos)==1){
+        if(u.getEstado()==1){
+            cant++;
+        }
+        pos++;
+    }
     return cant;
 }
 

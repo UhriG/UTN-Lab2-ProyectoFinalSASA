@@ -54,7 +54,7 @@ void Login::login(){
         cls();
         title("SISTEMA ADMINISTRACION DE STOCK ALMACEN");
         gotoxy(52, 5);
-        cout << "\t\t\tLOGIN DE USUARIO" << endl;
+        cout << "LOGIN DE USUARIO" << endl;
 
         cout << ">USUARIO: ";
         validarNombre(usuario);

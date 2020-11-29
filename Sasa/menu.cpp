@@ -596,6 +596,7 @@ void listarCategoria(){
             c.leerDisco(pos);
             if(c.getEstado()==1 && c.getId() != idanterior){
                 c.mostrar();
+                cLinea(120);
             }
             idanterior = c.getId();
         }
@@ -806,8 +807,8 @@ void listarProductoInd(){
     p.leerDisco(pos);
     cTabla(2); // MODO 2 PRODUCTO
 	p.mostrar();
-    cout << endl << "----------------------------------------------------------------------------"<< endl;
-    anykey();
+    cLinea(120);
+    msj("PRESIONAR UNA TECLA", rlutil::WHITE, rlutil::GREEN);
 }
 
 void listarProductoTodos(){
@@ -828,7 +829,7 @@ void listarProductoTodos(){
             p.leerDisco(pos);
             if(p.getEstado()==1 && p.getId() != idanterior){
                 p.mostrar();
-                cout << endl << "----------------------------------------------------------------------------"<< endl;
+                cLinea(120);
             }
             idanterior = p.getId();
         }
@@ -939,7 +940,7 @@ void listarMovimientosTodos(){
             m.leerDisco(pos);
             if(m.getId() != idanterior && m.getId() != 0){
                 m.mostrar(1);
-                cout << endl << "------------------------------------------------------------------------------------------"<< endl;
+                cLinea(120);
             }
             idanterior = m.getId();
         }
@@ -989,7 +990,7 @@ void listarMovimientosPorUsuario(){
             m.leerDisco(pos);
             if(strcmp(nombre,m.getLogueado())==0){
                 m.mostrar(1);
-                cout << endl << "------------------------------------------------------------------------------------------"<< endl;
+                cLinea(120);
             }
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
@@ -1045,19 +1046,21 @@ void listarMovimientosPorFecha(){
             if(modo == 1){
                 if(fechas[0] == m.getFecha().getDia() && fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio()){
                     m.mostrar(1);
+                    cLinea(120);
                 }
             }
             if(modo == 2){
                 if(fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio()){
                     m.mostrar(1);
+                    cLinea(120);
                 }
             }
             if(modo == 3){
                 if(fechas[2] == m.getFecha().getAnio()){
                     m.mostrar(1);
+                    cLinea(120);
                 }
             }
-            cLinea(120);
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
         cout << "0- SALIR | INDIQUE PÁGINA: > ";

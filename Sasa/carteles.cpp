@@ -109,7 +109,7 @@ void cTabla(int modo){
     if(modo == 3){ //MODO 3 PARA CATEGORIA
         int ancho1 = 15;
         cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "ESTADO";
-        cLinea(30);
+        cLinea(120);
     }
     if(modo == 4){ //MODO 4 PARA MOVIMIENTO
         int ancho1 = 15;

@@ -138,7 +138,7 @@ int buscarCod(int codB){
 }
 
 int cantProd(){
-    FILE *f;
+    /*FILE *f;
     f = fopen("datos/producto.dat", "rb");
     if(f == NULL){
         return 0;
@@ -148,6 +148,16 @@ int cantProd(){
     bytes = ftell(f);
     fclose(f);
     cant = bytes / sizeof(Producto);
+    return cant;
+    */
+    int cant=0, pos=0;
+    Producto u;
+    while(u.leerDisco(pos)==1){
+        if(u.getEstado()==1){
+            cant++;
+        }
+        pos++;
+    }
     return cant;
 }
 

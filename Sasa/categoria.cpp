@@ -57,7 +57,6 @@ void Categoria::mostrar(int modo){
         cout << setw(5) << id;
         cout << setw(anchos) << nombre;
         cout << setw(anchos) << estados[estado-1];
-        cLinea(30);
     }else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
         cout << "NOMBRE: "<< nombre << endl;
@@ -131,7 +130,7 @@ int buscarNombrecat(char *nombreB){
 }
 
 int cantCategoria(){
-    FILE *f;
+    /*FILE *f;
     f = fopen("datos/categoria.dat", "rb");
     if(f == NULL){
         return 0;
@@ -141,6 +140,16 @@ int cantCategoria(){
     bytes = ftell(f);
     fclose(f);
     cant = bytes / sizeof(Categoria);
+    return cant;
+    */
+    int cant=0, pos=0;
+    Categoria u;
+    while(u.leerDisco(pos)==1){
+        if(u.getEstado()==1){
+            cant++;
+        }
+        pos++;
+    }
     return cant;
 }
 
