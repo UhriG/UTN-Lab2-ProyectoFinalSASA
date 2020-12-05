@@ -20,18 +20,6 @@ void Categoria::setEstado(int e){
     estado = e;
 }
 
-
-//void categoria::setFechaCrea(Fecha);
-//void categoria::setFechaMod(Fecha);
-
-//GET
-//Fecha categoria::getFechaCrea(){
-//    return Fecha;
-//};
-//Fecha categoria::getFechaMod(){
-//    return Fecha;
-//};
-
 void Categoria::cargar(){
     id = cantCategoria()+1;
     cout << "*CREAR CATEGORÍA" << endl;
