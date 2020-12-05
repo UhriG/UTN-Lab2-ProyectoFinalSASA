@@ -10,6 +10,7 @@ void cMenuLogin(); // Cartel MENU LOGIN
 void cMenuProdListar(); // Cartel PRODUCTO LISTAR
 void cMenuMovimientos(); // Cartel MENU MOVIMIENTOS
 void cMenuBitacora(); // Cartel listar bitacora
+void cMenuCsv(); // Cartel exportar CSV
 void cTabla(int modo); // Cartel LISTAR FORMATO TABLA
 void cLinea(int cantidad); // Cartel DIBUJA UNA LINEA DETERMINADA
 void cMsjPerfil(); // Cartel de Perfil sin acceso

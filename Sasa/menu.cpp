@@ -716,10 +716,44 @@ void recuperarCopia(){
 }
 
 void exportarDatos(){
-    cTitulo();
-    cout << "*SE EXPORTA DATOS.DAT A CSV" << endl;
-    cout << "Si es que me sale jaja by Max" << endl;
-    msj("SE EXPORTO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+    cout << "Si me salio jaja by Max" << endl;
+    bool exito;
+    bool menu = true;
+    int opc;
+    while(menu){
+        cMenuCsv();
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenuCsv();
+        }
+
+        switch(opc){
+            case 1:
+                exito = expCsvUsuario();
+            break;
+            case 2:
+                exito = expCsvUsuario();
+            break;
+            case 3:
+                exito = expCsvUsuario();
+            break;
+            case 4:
+                exito = expCsvUsuario();
+            break;
+            case 5:
+                menu = false;
+            break;
+            default: msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+                break;
+        }
+    }
+    if(exito == true){
+        msj("SE EXPORTO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
+    }if(exito == false){
+        msj("ERROR AL EXPORTAR", rlutil::WHITE, rlutil::GREEN);
+    }
 }
 
 // SUB MENU PRODUCTO LISTAR PRODUCTOS

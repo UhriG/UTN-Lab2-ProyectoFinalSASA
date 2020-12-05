@@ -95,6 +95,18 @@ void cMenuBitacora(){
     cout << " > ";
 }
 
+void cMenuCsv(){
+    cTitulo();
+    cout << "1) EXPORTAR TODOS LOS DATOS USUARIO A CSV" << endl;
+    cout << "2) EXPORTAR TODOS LOS DATOS PRODUCTO A CSV" << endl;
+    cout << "3) EXPORTAR TODOS LOS DATOS CATEGORÍA A CSV" << endl;
+    cout << "4) EXPORTAR TODOS LOS DATOS MOVIMIENTO A CSV" << endl;
+    cout << endl;
+    cout << "5) SALIR" << endl;
+    cout << endl;
+    cout << " > ";
+}
+
 void cTabla(int modo){
     if(modo == 1){ //MODO 1 PARA USUARIO
         int ancho1 = 15;
