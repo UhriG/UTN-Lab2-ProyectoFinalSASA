@@ -631,9 +631,18 @@ void copiaSeguridad(){
     cout << "> ";
     cin >> conf;
     if(conf == numR){
+        gotoxy(53,10);
+        cout << "CARGANDO...";
+        for(int a=0; a<=100; a++){
+            gotoxy(65,10);
+            cout << a << "%";
+            for(int b=50; b<80; b++){
+                for(int c=1; c<80; c++){
+                    gotoxy(54,10);
+                }
+            }
+        }
         // BARRA DE PROGRESO
-        gotoxy(55,10);
-        printf("CARGANDO");
         for(int i=1; i<120; i++){
             gotoxy(i,13);
             setColors(rlutil::WHITE, rlutil::BLUE);
@@ -668,9 +677,18 @@ void recuperarCopia(){
     cout << "> ";
     cin >> conf;
     if(conf == numR){
+        gotoxy(53,10);
+        cout << "CARGANDO...";
+        for(int a=0; a<=100; a++){
+            gotoxy(65,10);
+            cout << a << "%";
+            for(int b=50; b<80; b++){
+                for(int c=1; c<80; c++){
+                    gotoxy(54,10);
+                }
+            }
+        }
         // BARRA DE PROGRESO
-        gotoxy(55,10);
-        printf("CARGANDO");
         for(int i=1; i<120; i++){
             gotoxy(i,13);
             setColors(rlutil::WHITE, rlutil::BLUE);
