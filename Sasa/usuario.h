@@ -36,4 +36,5 @@ void compAdmin(); // Comprueba si existe admin
 void ordenarUsuarioDesc(Usuario *user, int cantReg); // Ordena de forma descendente
 bool copiaUsuario(); // crea bk de usuario.dat
 bool recUsuario(); // recupera bk de usuario.dat
+bool expCsvUsuario(); // exporta datos a csv
 #endif // USUARIO_H_INCLUDED

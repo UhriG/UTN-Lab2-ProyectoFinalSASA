@@ -10,6 +10,8 @@ using namespace rlutil;
 #include "carteles.h"
 #include "validaciones.h"
 
+#include <fstream>
+#include <string>
 
 void Usuario::setNombre(char *n){
     strcpy(nombre,n);
@@ -57,19 +59,19 @@ void Usuario::cargar(){
 
 void Usuario::mostrar(int modo){
     string perfiles[3] = {"Admin", "Supervisor", "Operador"};
-    string estados[2] = {"Activo","Inactivo"};
+    string estados[2] = {"Inactivo","Activo"};
 
     if(modo == 1){ //MODO 1 MUESTRA EN LISTA
         int anchos = 15;
         cout << setw(5) << id;
         cout << setw(anchos) << nombre;
         cout << setw(anchos) << perfiles[perfil-1];
-        cout << setw(anchos) << estados[estado-1];
+        cout << setw(anchos) << estados[estado];
     }else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
         cout << "NOMBRE: "<< nombre << endl;
         cout << "PERFIL: "<< perfiles[perfil-1] << endl;
-        cout << "ESTADO: "<< estados[estado-1] << endl;
+        cout << "ESTADO: "<< estados[estado] << endl;
     }
 
 }
@@ -243,4 +245,21 @@ bool recUsuario(){
     }
     fclose(bk);
     return true;
+}
+
+bool expCsvUsuario(){
+    string perfiles[3] = {"Admin", "Supervisor", "Operador"};
+    string estados[2] = {"Activo","Inactivo"};
+    bool grabo;
+
+    std::ofstream filename("datos/Usuario.csv");
+    filename << "ID" << "," << "USUARIO" << "," << "PERFIL" << "," << "ESTADO" << endl;
+    Usuario u;
+    int pos=0;
+    while(u.leerDisco(pos++)){
+        filename << u.getId() << "," << u.getNombre() << "," << perfiles[u.getPerfil()-1] << "," << estados[u.getEstado()] << endl;
+    }
+    filename.close();
+
+    return grabo;
 }
