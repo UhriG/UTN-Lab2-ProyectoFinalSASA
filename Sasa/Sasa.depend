@@ -715,7 +715,7 @@
 	"movimiento.h"
 	"validaciones.h"
 
-1607180990 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
+1607194168 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\carteles.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -758,7 +758,7 @@
 1607180990 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\categoria.h
 	"Fecha.h"
 
-1607180990 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.h
+1607194448 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.h
 
 1607180990 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\validaciones.h
 
@@ -794,7 +794,7 @@
 1607180990 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\login.h
 	"usuario.h"
 
-1607180990 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
+1607193752 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
 1607180990 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.h
 	"usuario.h"
@@ -813,7 +813,7 @@
 	"Fecha.h"
 	"movimiento.h"
 
-1607180990 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1607194168 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>

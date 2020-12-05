@@ -57,15 +57,6 @@ void Fecha::cargarFecha(tm *registro){ //carga la fecha manualmente y la settea 
 
 };
 
-/*void Fecha::fechaActual(tm *registro){ //consigue la fecha y la guarda en un registro de tipo tm
-    int *d, *m, *a;
-    time_t tiempo;
-    struct tm *tmPtr;
-    tiempo=time(NULL);          //Obtener algoritmo de fecha del sistema
-    tmPtr=localtime(&tiempo);   //Convierte el algoritmo y lo guarda en tmPtr
-    registro=tmPtr;
-    }*/
-
 void Fecha::fechaActual(){
     time_t tiempo;
     struct tm *tmPtr;
@@ -77,31 +68,4 @@ void Fecha::fechaActual(){
 };
 
 
-void Fecha::conversorFecha(tm *registro){ //toma registro, lo convierte a formato d/m/a y la settea en sistema
-    Fecha f;
-    int *d, *m, *a;
-    struct tm *tmPtr;
-    tmPtr=registro;             //Convierte el algoritmo y lo guarda en tmPtr
-    *d=tmPtr->tm_mday;          //Guarda en puntero el Día
-    *m=tmPtr->tm_mon+1;         //Guarda en puntero el Mes+1, ya que va del 0 al 11
-    *a=1900+tmPtr->tm_year;     //Guarda en puntero el Año+1900
-    dia=*d;
-    mes=*m;
-    anio=*a;
-    f.mostrarFecha(1);
-};
-
-//void Fecha::fechaActual(){ //consigue la fecha y la settea en sistema
-//    int *d, *m, *a;
-//    time_t tiempo;
-//    struct tm *tmPtr;
-//    tiempo=time(NULL);          //Obtener algoritmo de fecha del sistema
-//    tmPtr=localtime(&tiempo);   //Convierte el algoritmo y lo guarda en tmPtr
-//    *d=tmPtr->tm_mday;          //Guarda en puntero el Día
-//    *m=tmPtr->tm_mon+1;         //Guarda en puntero el Mes+1, ya que va del 0 al 11
-//    *a=1900+tmPtr->tm_year;     //Guarda en puntero el Año+1900
-//    dia=*d;
-//    mes=*m;
-//    anio=*a;
-//};
 

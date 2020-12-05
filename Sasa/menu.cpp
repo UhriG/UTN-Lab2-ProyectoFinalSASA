@@ -924,7 +924,7 @@ void listarBitacora(){
                 listarMovimientosPorUsuario();
             break;
             case 3:
-               // listarBitacora();
+                listarMovimientosPorProducto();
             break;
             case 4:
                listarMovimientosPorFecha();
@@ -1007,6 +1007,55 @@ void listarMovimientosPorUsuario(){
         for(pos; pos < movimientos; pos++){
             m.leerDisco(pos);
             if(strcmp(nombre,m.getLogueado())==0){
+                m.mostrar(1);
+                cLinea(120);
+            }
+        }
+        cout << "PAGINA: " << hoja << " / " << paginas << endl;
+        cout << "0- SALIR | INDIQUE PÁGINA: > ";
+        while(!(cin >> resp)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+        }
+        hoja = resp;
+        if(pos == cant || hoja > paginas){
+                msj("NO HAY MÁS DATOS QUE MOSTRAR", rlutil::WHITE, rlutil::MAGENTA);
+                resp = 0;
+            }
+        if(resp != 0){
+            pos = 5 *(hoja-1);
+            movimientos = pos + 5;
+        }
+    }
+}
+
+void listarMovimientosPorProducto(){
+    Movimiento m;
+    int cant = cantMov(), pos = 0, movimientos = 5, paginas;
+    if(cant % movimientos == 0){
+        paginas = cant / movimientos;
+    } else {
+        paginas = (cant / movimientos)+1;
+    }
+    int idanterior = -1, hoja = 1;
+    int resp=1;
+    cTitulo();
+    cout << left;
+    cout << "INGRESAR NOMBRE DE PRODUCTO: ";
+    char nombre[15];
+    while(!(cin >> nombre)){
+        msj("INGRESO INCORRECTO - SOLO SE ADMITEN LETRAS", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
+    while(resp != 0){
+        cTitulo();
+        cListar(cant,4,2);
+        cTabla(4); // MODO 4 BITACORA
+        for(pos; pos < movimientos; pos++){
+            m.leerDisco(pos);
+            if(strcmp(nombre,m.getProducto())==0){
                 m.mostrar(1);
                 cLinea(120);
             }

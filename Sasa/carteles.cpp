@@ -148,10 +148,10 @@ void cListar(int cant, int modo, int submodo){
         cout << "*LISTADO DE TODOS " << tipo[modo-1] << endl;
     }
     if(modo == 4){
-        if(submodo == 0){cout << "*LISTADO DE TODOS " << tipo[modo-1] << endl;}
-        if(submodo == 1){cout << "*LISTADO DE TODOS " << tipo[modo-1] << " POR USUARIO"<< endl;}
-
-        if(submodo == 3){cout << "*LISTADO DE TODOS " << tipo[modo-1] << " POR FECHA"<< endl;}
+        if(submodo == 0){cout << "*LISTADO DE TODOS LOS " << tipo[modo-1] << endl;}
+        if(submodo == 1){cout << "*LISTADO DE TODOS LOS " << tipo[modo-1] << " POR USUARIO"<< endl;}
+        if(submodo == 2){cout << "*LISTADO DE TODOS LOS " << tipo[modo-1] << " POR PRODUCTO"<< endl;}
+        if(submodo == 3){cout << "*LISTADO DE TODOS LOS " << tipo[modo-1] << " POR FECHA"<< endl;}
     }
     cout << endl;
     cout << "-----------------------------" << endl;

@@ -30,7 +30,7 @@ void listarBitacora(); // Lista el total de movimientos de egreso y egreso
 // SUB MENU BITACORA
 void listarMovimientosTodos(); //Lista todos los movimientos de la bitacora
 void listarMovimientosPorUsuario(); // Lista todos los movimientos por usuario
-
+void listarMovimientosPorProducto(); // Lista todos los movimientos por Producto
 void listarMovimientosPorFecha(); // Lista todo los movimientos por Mes indicado
 // SUB MENU CONFIGURACION
 void copiaSeguridad(); // Crear Copia de Seguridad
