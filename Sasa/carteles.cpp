@@ -97,6 +97,7 @@ void cMenuBitacora(){
 
 void cMenuCsv(){
     cTitulo();
+    cout << "*AL FINAL SI ME SALIO JAJA" << endl;
     cout << "1) EXPORTAR TODOS LOS DATOS USUARIO A CSV" << endl;
     cout << "2) EXPORTAR TODOS LOS DATOS PRODUCTO A CSV" << endl;
     cout << "3) EXPORTAR TODOS LOS DATOS CATEGORÍA A CSV" << endl;
