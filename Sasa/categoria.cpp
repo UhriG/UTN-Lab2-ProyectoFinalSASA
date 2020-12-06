@@ -10,6 +10,8 @@ using namespace rlutil;
 #include "carteles.h"
 #include "validaciones.h"
 
+#include <fstream>
+#include <string>
 //SET
 
 void Categoria::setNombre(char *n){
@@ -219,5 +221,20 @@ bool recCategoria(){
         fclose(f);
     }
     fclose(bk);
+    return true;
+}
+
+bool expCsvCategoria(){
+    string estados[2] = {"Inactivo","Activo"};
+
+    std::ofstream filename("datos/Categoria.csv");
+    filename << "ID" << "," << "NOMBRE" << "," << "ESTADO" << endl;
+    Categoria u;
+    int pos=0;
+    while(u.leerDisco(pos++)){
+        filename << u.getId() << "," << u.getNombre() << "," << estados[u.getEstado()] << endl;
+    }
+    filename.close();
+
     return true;
 }

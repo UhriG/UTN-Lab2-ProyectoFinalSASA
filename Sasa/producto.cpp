@@ -11,6 +11,9 @@ using namespace rlutil;
 #include "movimiento.h"
 #include "validaciones.h"
 
+#include <fstream>
+#include <string>
+
 void Producto::setNombre(char *n){
     strcpy(nombre,n);
 }
@@ -60,7 +63,7 @@ void Producto::cargar(){
 }
 
 void Producto::mostrar(int modo){
-    string estados[2] = {"Activo","Inactivo"};
+    string estados[2] = {"Inactivo","Activo"};
     Categoria c;
     int posCat = buscarIDcat(categoria_id);
     c.leerDisco(posCat);
@@ -71,14 +74,14 @@ void Producto::mostrar(int modo){
         cout << setw(ancho) << nombre;
         cout << setw(ancho) << marca;
         cout << setw(ancho) << c.getNombre();
-        cout << setw(10) << estados[estado-1];
+        cout << setw(10) << estados[estado];
         cout << setw(5) << stock;
     } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
         cout << "NOMBRE: "<< nombre << endl;
         cout << "MARCA: "<< marca << endl;
         cout << "CATEGORÍA: "<< c.getNombre() << endl;
-        cout << "ESTADO: "<< estados[estado-1] << endl;
+        cout << "ESTADO: "<< estados[estado] << endl;
         cout << "STOCK: "<< stock << endl;
     }
 }
@@ -206,5 +209,24 @@ bool recProducto(){
         fclose(f);
     }
     fclose(bk);
+    return true;
+}
+
+bool expCsvProducto(){
+    string estados[2] = {"Inactivo","Activo"};
+    Categoria c;
+    int posCat=0;
+
+    std::ofstream filename("datos/Producto.csv");
+    filename << "ID" << "," << "PRODUCTO" << "," << "MARCA" << "," << "CATEGORÍA" << "," << "ESTADO" << "," << "STOCK" << endl;
+    Producto u;
+    int pos=0;
+    while(u.leerDisco(pos++)){
+        posCat = buscarIDcat(u.getCatId());
+        c.leerDisco(posCat);
+        filename <<u.getId()<<","<<u.getNombre()<<","<<u.getMarca()<<","<<c.getNombre()<<","<<estados[u.getEstado()]<<","<<u.getStock()<<endl;
+    }
+    filename.close();
+
     return true;
 }

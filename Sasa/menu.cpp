@@ -716,39 +716,26 @@ void recuperarCopia(){
 }
 
 void exportarDatos(){
-    cout << "Si me salio jaja by Max" << endl;
-    bool exito;
-    bool menu = true;
-    int opc;
-    while(menu){
+    srand(time(NULL));
+    int numR = rand(), conf=0, opc;
+    bool exito, menu = true;
+    cMenuCsv();
+    while(!(cin >> opc) || opc > 4 || opc < 1){
+        msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+        cin.clear();
+        cin.ignore(123, '\n');
         cMenuCsv();
-        while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
-            cin.clear();
-            cin.ignore(123, '\n');
-            cMenuCsv();
-        }
-
-        switch(opc){
-            case 1:
-                exito = expCsvUsuario();
-            break;
-            case 2:
-                exito = expCsvUsuario();
-            break;
-            case 3:
-                exito = expCsvUsuario();
-            break;
-            case 4:
-                exito = expCsvUsuario();
-            break;
-            case 5:
-                menu = false;
-            break;
-            default: msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
-                break;
-        }
     }
+    cout << "INGRESE EL SIGUIENTE PIN: " << numR << endl;
+    cout << "> ";
+    cin >> conf;
+    if(conf == numR){
+        if(opc == 1){exito = expCsvUsuario();}
+        if(opc == 2){exito = expCsvProducto();}
+        if(opc == 3){exito = expCsvCategoria();}
+        if(opc == 4){exito = expCsvMovimiento();}
+    }else{msj("PIN INCORRECTO", rlutil::WHITE, rlutil::RED);}
+
     if(exito == true){
         msj("SE EXPORTO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
     }if(exito == false){

@@ -30,4 +30,5 @@ void ordenarCategoriaDesc(Categoria *cat, int cantReg); // Ordena de forma desce
 void listarCategoriaSimple(); // Muestra las categorias para seleccionar
 bool copiaCategoria(); // crea bk de categoria.dat
 bool recCategoria(); // recupera bk de categoria.dat
+bool expCsvCategoria(); // // exporta datos a csv
 #endif // CATEGORIA_H_INCLUDED

@@ -12,6 +12,9 @@ using namespace rlutil;
 #include "carteles.h"
 #include "validaciones.h"
 
+#include <fstream>
+#include <string>
+
 void Movimiento::mostrar(int modo){
     Categoria c;
     int posCat = buscarIDcat(getCategoriaId());
@@ -300,4 +303,23 @@ int modoListarFecha(int modo, int *fechas){
     }
     cListarMovFecha();
     return modo;
+}
+
+bool expCsvMovimiento(){
+    string estados[2] = {"Inactivo","Activo"};
+    string tmov[2] = {"Egreso","Ingreso"};
+    Categoria c;
+    int posCat=0;
+    std::ofstream filename("datos/Movimiento.csv");
+    filename <<"ID"<<","<<"USUARIO"<<","<<"PRODUCTO"<<","<<"MARCA"<<","<<"CATEGORÍA"<<","<<"TIPO"<<","<<"STOCK"<<","<<"FECHA"<<endl;
+    Movimiento u;
+    int pos=0;
+    while(u.leerDisco(pos++)){
+        posCat = buscarIDcat(u.getCategoriaId());
+        c.leerDisco(posCat);
+        filename <<u.getId()<<","<<u.getLogueado()<<","<<u.getProducto()<<","<<u.getMarca()<<","<<c.getNombre()<<","<<tmov[u.getTipoMovimiento()]<<","<<u.getStock()<<","<<u.getFecha().getDia()<<"/"<<u.getFecha().getMes()<<"/"<<u.getFecha().getAnio()<<endl;
+    }
+    filename.close();
+
+    return true;
 }

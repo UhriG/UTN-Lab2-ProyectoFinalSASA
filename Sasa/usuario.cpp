@@ -250,7 +250,6 @@ bool recUsuario(){
 bool expCsvUsuario(){
     string perfiles[3] = {"Admin", "Supervisor", "Operador"};
     string estados[2] = {"Inactivo","Activo"};
-    bool grabo=true;
 
     std::ofstream filename("datos/Usuario.csv");
     filename << "ID" << "," << "USUARIO" << "," << "PERFIL" << "," << "ESTADO" << endl;
@@ -261,5 +260,5 @@ bool expCsvUsuario(){
     }
     filename.close();
 
-    return grabo;
+    return true;
 }

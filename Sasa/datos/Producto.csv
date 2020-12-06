@@ -1,0 +1,10 @@
+ID,PRODUCTO,MARCA,CATEGORÍA,ESTADO,STOCK
+1,Fideos,Marolio,Almacén,Activo,5
+2,Vino,Termidor,Almacén,Activo,6
+3,arroz,knor,Almacén,Activo,20
+4,arroz,gallo,Almacén,Activo,50
+5,asdas asd,asdasd asd,Limpieza,Activo,-2
+6,asdasd asd,asdasd asd,Kiosko,Activo,-20
+7,asdads,asdasd,Limpieza,Activo,-12
+8,asdasd,asdasd,Baño,Activo,15
+9,asdasd,asdasd,Kiosko,Activo,20
