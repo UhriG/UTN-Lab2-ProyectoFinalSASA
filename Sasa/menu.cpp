@@ -631,31 +631,7 @@ void copiaSeguridad(){
     cout << "> ";
     cin >> conf;
     if(conf == numR){
-        gotoxy(53,10);
-        cout << "CARGANDO...";
-        for(int a=0; a<=100; a++){
-            gotoxy(65,10);
-            cout << a << "%";
-            for(int b=50; b<80; b++){
-                for(int c=1; c<80; c++){
-                    gotoxy(54,10);
-                }
-            }
-        }
-        // BARRA DE PROGRESO
-        for(int i=1; i<120; i++){
-            gotoxy(i,13);
-            setColors(rlutil::WHITE, rlutil::BLUE);
-            printf("#");
-            for(int x=50; x<70; x++){
-                for(int y=1; y<70; y++){
-                    gotoxy(y,24);
-                }
-            }
-        }
-        rlutil::resetColor();
-        setColors(APP_FORECOLOR, APP_BACKCOLOR);
-        // FIN BARRA DE PROGRESO
+        cCargando();
         int guardo =0;
         guardo += copiaUsuario();
         guardo += copiaProducto();
@@ -677,31 +653,7 @@ void recuperarCopia(){
     cout << "> ";
     cin >> conf;
     if(conf == numR){
-        gotoxy(53,10);
-        cout << "CARGANDO...";
-        for(int a=0; a<=100; a++){
-            gotoxy(65,10);
-            cout << a << "%";
-            for(int b=50; b<80; b++){
-                for(int c=1; c<80; c++){
-                    gotoxy(54,10);
-                }
-            }
-        }
-        // BARRA DE PROGRESO
-        for(int i=1; i<120; i++){
-            gotoxy(i,13);
-            setColors(rlutil::WHITE, rlutil::BLUE);
-            printf("#");
-            for(int x=50; x<70; x++){
-                for(int y=1; y<70; y++){
-                    gotoxy(y,24);
-                }
-            }
-        }
-        rlutil::resetColor();
-        setColors(APP_FORECOLOR, APP_BACKCOLOR);
-        // FIN BARRA DE PROGRESO
+        cCargando();
         int rec = 0;
         rec += recUsuario();
         rec += recProducto();
@@ -717,30 +669,24 @@ void recuperarCopia(){
 
 void exportarDatos(){
     srand(time(NULL));
-    int numR = rand(), conf=0, opc;
-    bool exito, menu = true;
-    cMenuCsv();
-    while(!(cin >> opc) || opc > 4 || opc < 1){
-        msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
-        cin.clear();
-        cin.ignore(123, '\n');
-        cMenuCsv();
-    }
+    int numR = rand(), conf=0;
+    cTitulo();
     cout << "INGRESE EL SIGUIENTE PIN: " << numR << endl;
     cout << "> ";
     cin >> conf;
     if(conf == numR){
-        if(opc == 1){exito = expCsvUsuario();}
-        if(opc == 2){exito = expCsvProducto();}
-        if(opc == 3){exito = expCsvCategoria();}
-        if(opc == 4){exito = expCsvMovimiento();}
+        cCargando();
+        int exp =0;
+        exp += expCsvUsuario();
+        exp += expCsvProducto();
+        exp += expCsvCategoria();
+        exp += expCsvMovimiento();
+        if(exp == 4){
+            msj("SE EXPORTARON LOS DATOS A CSV",rlutil::WHITE, rlutil::GREEN);
+        } else {
+            msj("ERROR AL EXPORTARON DATOS",rlutil::WHITE, rlutil::RED);
+        }
     }else{msj("PIN INCORRECTO", rlutil::WHITE, rlutil::RED);}
-
-    if(exito == true){
-        msj("SE EXPORTO CORRECTAMENTE", rlutil::WHITE, rlutil::GREEN);
-    }if(exito == false){
-        msj("ERROR AL EXPORTAR", rlutil::WHITE, rlutil::GREEN);
-    }
 }
 
 // SUB MENU PRODUCTO LISTAR PRODUCTOS

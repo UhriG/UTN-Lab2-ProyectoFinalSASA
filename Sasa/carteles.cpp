@@ -33,7 +33,7 @@ void cMenuConfiguracion(){
     cTitulo();
     cout << "1) REALIZAR COPIA DE SEGURIDAD" << endl;
     cout << "2) RECUPERAR COPIA DE SEGURIDAD" << endl;
-    cout << "3) EXPORTAR A CSV (Si es que me sale)" << endl;
+    cout << "3) EXPORTAR A CSV" << endl;
     cout << endl;
     cout << "5) VOLVER ATRÁS" << endl;
     cout << endl;
@@ -89,19 +89,6 @@ void cMenuBitacora(){
     cout << "2) LISTAR MOVIMIENTOS POR USUARIO" << endl;
     cout << "3) LISTAR MOVIMIENTOS POR PRODUCTO" << endl;
     cout << "4) LISTAR MOVIMIENTOS POR FECHA" << endl;
-    cout << endl;
-    cout << "5) SALIR" << endl;
-    cout << endl;
-    cout << " > ";
-}
-
-void cMenuCsv(){
-    cTitulo();
-    cout << "*AL FINAL SI ME SALIO JAJA" << endl;
-    cout << "1) EXPORTAR TODOS LOS DATOS USUARIO A CSV" << endl;
-    cout << "2) EXPORTAR TODOS LOS DATOS PRODUCTO A CSV" << endl;
-    cout << "3) EXPORTAR TODOS LOS DATOS CATEGORÍA A CSV" << endl;
-    cout << "4) EXPORTAR TODOS LOS DATOS MOVIMIENTO A CSV" << endl;
     cout << endl;
     cout << "5) SALIR" << endl;
     cout << endl;
@@ -179,4 +166,33 @@ void cListarMovFecha(){
         cout << i+1 << "-" << opcion[i] << " ";
     }
     cout << endl;
+}
+
+void cCargando(){
+// CONTADOR PROGRESO
+    gotoxy(53,10);
+    cout << "CARGANDO...";
+    for(int a=0; a<=100; a++){
+        gotoxy(65,10);
+        cout << a << "%";
+        for(int b=50; b<80; b++){
+            for(int c=1; c<80; c++){
+                gotoxy(54,10);
+            }
+        }
+    }
+    // BARRA DE PROGRESO
+    for(int i=1; i<120; i++){
+        gotoxy(i,13);
+        setColors(rlutil::WHITE, rlutil::BLUE);
+        printf("#");
+        for(int x=50; x<70; x++){
+            for(int y=1; y<70; y++){
+                gotoxy(y,24);
+            }
+        }
+    }
+    rlutil::resetColor();
+    setColors(APP_FORECOLOR, APP_BACKCOLOR);
+    // FIN BARRA DE PROGRESO
 }
