@@ -27,5 +27,5 @@ int main()
 
     }
     // ACA FINALIZAN LAS FUNCIONES TESTER
-    //return 0;
+    return 0;
 }
