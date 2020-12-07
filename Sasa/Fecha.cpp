@@ -25,7 +25,11 @@ void Fecha::mostrarFecha(int modo){
         cout << dia << "/" << mes << "/" << anio;
     }
     if(modo == 3){
-        cout << setw(2) << dia << setw(1) << "/" << setw(2) << mes << setw(1) << "/" << setw(2) << anio;
+        cout << setw(2) << dia;
+        cout << setw(1) << "/";
+        cout << setw(2) << mes;
+        cout << setw(1) << "/";
+        cout << setw(4) << anio;
     }
 
 };

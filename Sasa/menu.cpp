@@ -329,7 +329,7 @@ void listarUsuarios(){
             u.leerDisco(pos);
             if(u.getEstado()==1 && u.getId() != idanterior){
                 u.mostrar();
-                cLinea(45);
+                cLinea(120);
             }
             idanterior = u.getId();
         }
@@ -348,7 +348,7 @@ void listarUsuarios(){
         }
         if(resp != 0){
             pos = 5 *(hoja-1);
-            //usuarios = pos + 5;
+            usuarios = pos + 5;
         }
     }
 }

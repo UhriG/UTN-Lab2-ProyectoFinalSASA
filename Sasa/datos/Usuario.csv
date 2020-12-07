@@ -2,8 +2,6 @@ ID,USUARIO,PERFIL,ESTADO
 1,admin,Admin,Activo
 2,supervisor,Supervisor,Activo
 3,operador,Operador,Activo
-4,max,Operador,Activo
-5,pepe,Operador,Inactivo
-6,Cris,Admin,Inactivo
-7,Max,Admin,Inactivo
-8,elpepe,Operador,Activo
+4,cris,Admin,Activo
+5,max,Admin,Activo
+6,pepe,Operador,Activo

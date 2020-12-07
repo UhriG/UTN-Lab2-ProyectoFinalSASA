@@ -1,18 +1,19 @@
 ID,USUARIO,PRODUCTO,MARCA,CATEGORÍA,TIPO,STOCK,FECHA
-1,admin,Fideos,Marolio,Almacén,Ingreso,12,18/11/2020
-2,supervisor,Vino,Termidor,Almacén,Ingreso,54,18/11/2020
-3,operador,arroz,knor,Almacén,Ingreso,20,19/11/2020
-4,admin,arroz,gallo,Almacén,Ingreso,50,24/11/2020
-5,admin,Vino,Termidor,Almacén,Ingreso,5,26/11/2020
-6,admin,Vino,Termidor,Almacén,Ingreso,6,26/11/2020
-7,admin,Fideos,Marolio,Almacén,Ingreso,6,26/11/2020
-8,admin,Fideos,Marolio,Almacén,Ingreso,16,26/11/2020
-9,admin,Fideos,Marolio,Almacén,Ingreso,2,26/11/2020
-10,admin,Fideos,Marolio,Almacén,Ingreso,4,26/11/2020
-11,admin,Fideos,Marolio,Almacén,Ingreso,6,26/11/2020
-12,admin,Fideos,Marolio,Almacén,Egreso,5,26/11/2020
-13,admin,asdas asd,asdasd asd,Limpieza,Ingreso,-2,26/11/2020
-14,admin,asdasd asd,asdasd asd,Kiosko,Ingreso,-20,26/11/2020
-15,admin,asdads,asdasd,Limpieza,Ingreso,-12,26/11/2020
-16,admin,asdasd,asdasd,Baño,Ingreso,15,26/11/2020
-17,admin,asdasd,asdasd,Kiosko,Ingreso,20,27/11/2020
+1,admin,Tallarin,Marolio,Almacén,Ingreso,10,7/12/2020
+2,admin,Lavandina,Ayudín,Limpieza,Ingreso,5,7/12/2020
+3,admin,Salchicha,Union,Freezer,Ingreso,20,7/12/2020
+4,admin,Jabón,Lux,Baño,Ingreso,30,7/12/2020
+5,admin,Alfajor,Aguila,Kiosko,Ingreso,20,7/12/2020
+6,admin,Harina,Favorita,Almacén,Ingreso,50,7/12/2020
+7,admin,Detergente,Magistral,Limpieza,Ingreso,50,7/12/2020
+8,admin,Papas Fritas,Mc Cain,Freezer,Ingreso,60,7/12/2020
+9,admin,Shampoo,Plusbell,Baño,Ingreso,40,7/12/2020
+10,admin,Turrón,Arcor,Kiosko,Ingreso,10,7/12/2020
+11,admin,Fideos,San Vicente,Almacén,Ingreso,30,7/12/2020
+12,admin,Golosina,Arcor,Kiosko,Ingreso,50,7/12/2020
+13,admin,Dentrifico,Colgate,Baño,Ingreso,20,7/12/2020
+14,admin,Blem,Blem,Limpieza,Ingreso,10,7/12/2020
+15,admin,Cerveza,Quilmes,Bebidas,Ingreso,100,7/12/2020
+16,admin,Hamburguesa,Paty,Freezer,Ingreso,80,7/12/2020
+17,admin,Agua Saborizada,Aquarius,Bebidas,Ingreso,90,7/12/2020
+18,admin,Almohada,Fireball,Hogar,Ingreso,5,7/12/2020

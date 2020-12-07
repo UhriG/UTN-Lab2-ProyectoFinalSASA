@@ -64,8 +64,11 @@ void Usuario::mostrar(int modo){
     if(modo == 1){ //MODO 1 MUESTRA EN LISTA
         int anchos = 15;
         cout << setw(5) << id;
+        cColumna();
         cout << setw(anchos) << nombre;
+        cColumna();
         cout << setw(anchos) << perfiles[perfil-1];
+        cColumna();
         cout << setw(anchos) << estados[estado];
     }else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;

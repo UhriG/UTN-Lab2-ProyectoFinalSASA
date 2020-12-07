@@ -95,25 +95,64 @@ void cMenuBitacora(){
     cout << " > ";
 }
 
+void cColumna(){
+    int columna=2;
+    cout << setw(columna) << " ";
+}
+
 void cTabla(int modo){
     if(modo == 1){ //MODO 1 PARA USUARIO
         int ancho1 = 15;
-        cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "PERFIL" << setw(ancho1) << "ESTADO";
-        cLinea(45);
-        }
+        cout << setw(4) << "ID";
+        cColumna();
+        cout << setw(ancho1) << "NOMBRE";
+        cColumna();
+        cout << setw(ancho1) << "PERFIL";
+        cColumna();
+        cout << setw(ancho1) << "ESTADO";
+        cLinea(120);
+    }
     if(modo == 2){ // MODO 2 PARA PRODUCTO
         int ancho2 = 15;
-        cout << setw(4) << "ID" << setw(ancho2) << "NOMBRE" << setw(ancho2) << "MARCA" << setw(ancho2) << "CATEGORÍA" << setw(10) << "ESTADO" << setw(5) << "STOCK";
+        cout << setw(4) << "ID";
+        cColumna();
+        cout << setw(ancho2) << "NOMBRE";
+        cColumna();
+        cout << setw(ancho2) << "MARCA";
+        cColumna();
+        cout << setw(ancho2) << "CATEGORÍA";
+        cColumna();
+        cout << setw(10) << "ESTADO";
+        cColumna();
+        cout << setw(5) << "STOCK";
         cLinea(120);
     }
     if(modo == 3){ //MODO 3 PARA CATEGORIA
         int ancho1 = 15;
-        cout << setw(5) << "ID" << setw(ancho1) << "NOMBRE" << setw(ancho1) << "ESTADO";
+        cout << setw(4) << "ID";
+        cColumna();
+        cout << setw(ancho1) << "NOMBRE";
+        cColumna();
+        cout << setw(ancho1) << "ESTADO";
         cLinea(120);
     }
     if(modo == 4){ //MODO 4 PARA MOVIMIENTO
         int ancho1 = 15;
-        cout << setw(4) << "ID" << setw(ancho1) << "USUARIO" << setw(ancho1) << "PRODUCTO" << setw(ancho1) << "MARCA" << setw(10) << "CATEGORIA" << setw(6) << "STOCK" << setw(11) << "MOVIMIENTO" << setw(6) << "FECHA";
+        cout << setw(4) << "ID";
+        cColumna();
+        cout << setw(ancho1) << "USUARIO";
+        cColumna();
+        cout << setw(ancho1) << "PRODUCTO";
+        cColumna();
+        cout << setw(ancho1) << "MARCA";
+        cColumna();
+        cout << setw(10) << "CATEGORIA";
+        cColumna();
+        cout << setw(6) << "STOCK";
+        cColumna();
+        cout << setw(11) << "MOVIMIENTO";
+        cColumna();
+        cout << setw(6) << "FECHA";
         cLinea(120);
     }
 

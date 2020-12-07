@@ -1,5 +1,9 @@
 ID,NOMBRE,ESTADO
-1,Limpieza,Activo
-2,Baño,Activo
-3,Almacén,Activo
-4,Kiosko,Activo
+1,Almacén,Activo
+2,Kiosko,Activo
+3,Baño,Activo
+4,Limpieza,Activo
+5,Heladera,Activo
+6,Freezer,Activo
+7,Bebidas,Activo
+8,Hogar,Activo

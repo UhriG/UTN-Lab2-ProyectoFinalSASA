@@ -24,12 +24,19 @@ void Movimiento::mostrar(int modo){
     if(modo == 1){ // MODO 1 MUESTRA EN LISTA
         int ancho = 15;
         cout << setw(4) << id;
+        cColumna();
         cout << setw(ancho) << getLogueado();
+        cColumna();
         cout << setw(ancho) << getProducto();
+        cColumna();
         cout << setw(ancho) << getMarca();
+        cColumna();
         cout << setw(10) << c.getNombre();
+        cColumna();
         cout << setw(1) << movt[getTipoMovimiento()] << setw(6) << getStock();
+        cColumna();
         cout << setw(11) << tmov[getTipoMovimiento()];
+        cColumna();
         fechaMov.mostrarFecha(3);
     } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;

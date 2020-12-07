@@ -44,8 +44,10 @@ void Categoria::mostrar(int modo){
 
     if(modo == 1){ //MODO 1 MUESTRA EN LISTA
         int anchos = 15;
-        cout << setw(5) << id;
+        cout << setw(4) << id;
+        cColumna();
         cout << setw(anchos) << nombre;
+        cColumna();
         cout << setw(anchos) << estados[estado-1];
     }else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
@@ -170,8 +172,8 @@ void listarCategoriaSimple(){
         c.leerDisco(pos);
         if(c.getEstado()==1 && c.getId()!=idanterior){
            c.mostrar(1);
-        cout << endl << "----------------------------------------------------------------------------"<< endl;
-        idanterior = c.getId();
+            cLinea(120);
+            idanterior = c.getId();
         }
     }
 }

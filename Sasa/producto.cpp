@@ -10,6 +10,7 @@ using namespace rlutil;
 #include "login.h"
 #include "movimiento.h"
 #include "validaciones.h"
+#include "carteles.h"
 
 #include <fstream>
 #include <string>
@@ -71,10 +72,15 @@ void Producto::mostrar(int modo){
     if(modo == 1){ // MODO 1 MUESTRA EN LISTA
         int ancho = 15;
         cout << setw(4) << id;
+        cColumna();
         cout << setw(ancho) << nombre;
+        cColumna();
         cout << setw(ancho) << marca;
+        cColumna();
         cout << setw(ancho) << c.getNombre();
+        cColumna();
         cout << setw(10) << estados[estado];
+        cColumna();
         cout << setw(5) << stock;
     } else{ //MODO NORMAL MUESTRA EN UNA COLUMNA
         cout << "ID: "<< id << endl;
