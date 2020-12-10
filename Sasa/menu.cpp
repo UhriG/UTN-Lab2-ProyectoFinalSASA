@@ -269,7 +269,6 @@ void modificarUsuario(){
 		}
     }else{
 		msj("NO EXISTE EL USUARIO", rlutil::WHITE, rlutil::RED);
-		anykey();
     }
 }
 
@@ -327,7 +326,7 @@ void listarUsuarios(){
         cTabla(1); // MODO 1 USUARIO
         for(pos; pos < usuarios; pos++){
             u.leerDisco(pos);
-            if(u.getEstado()==1 && u.getId() != idanterior){
+            if(u.getId() != idanterior){
                 u.mostrar();
                 cLinea(120);
             }
@@ -400,7 +399,6 @@ void modificarProducto(){
 
     }else{
 		msj("NO EXISTE EL PRODUCTO", rlutil::WHITE, rlutil::RED);
-		anykey();
     }
 }
 
@@ -534,7 +532,6 @@ void modificarCategoria(){
 		}
     }else{
 		msj("NO EXISTE LA CATEGORÍA", rlutil::WHITE, rlutil::RED);
-		anykey();
     }
 }
 

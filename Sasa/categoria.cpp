@@ -53,7 +53,6 @@ void Categoria::mostrar(int modo){
         cout << "ID: "<< id << endl;
         cout << "NOMBRE: "<< nombre << endl;
         cout << "ESTADO: "<< estados[estado-1] << endl;
-        cout << "Fecha: ";
     }
 
 };
