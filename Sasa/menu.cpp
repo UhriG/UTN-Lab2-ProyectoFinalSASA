@@ -323,7 +323,7 @@ void listarUsuarios(){
     int idanterior = -1, hoja = 1, resp = 1;
     while(resp != 0){
         cTitulo();
-        cListar(cant, 1); // SIEMPRE PASAR CANT
+        cListar(cant, 1,0,1); // SIEMPRE PASAR CANT
         cTabla(1); // MODO 1 USUARIO
         for(pos; pos < usuarios; pos++){
             u.leerDisco(pos);
@@ -590,7 +590,7 @@ void listarCategoria(){
     int idanterior = -1, hoja = 1, resp = 1;
     while(resp != 0){
         cTitulo();
-        cListar(cant, 3); // SIEMPRE PASAR CANT
+        cListar(cant, 3,0,1); // SIEMPRE PASAR CANT
         cTabla(3); // MODO 3 CATEGORÍA
         for(pos; pos < categorias; pos++){
             c.leerDisco(pos);
@@ -808,7 +808,7 @@ void listarProductoTodos(){
     int resp=1;
     while(resp != 0){
         cTitulo();
-        cListar(cant,2);
+        cListar(cant,2,0,1);
         cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
@@ -919,7 +919,7 @@ void listarMovimientosTodos(){
     int resp=1;
     while(resp != 0){
         cTitulo();
-        cListar(cant,4);
+        cListar(cant,4,0,1);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
             m.leerDisco(pos);

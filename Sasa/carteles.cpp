@@ -171,7 +171,7 @@ void cMsjPerfil(){
     msj("PERFIL SIN ACCESO", rlutil::WHITE, rlutil::RED);
 }
 
-void cListar(int cant, int modo, int submodo){
+void cListar(int cant, int modo, int submodo, int tot){
     string tipo[4] = {"USUARIOS","PRODUCTOS","CATEGORÍAS","MOVIMIENTOS"};
 
     cout << left;
@@ -192,10 +192,13 @@ void cListar(int cant, int modo, int submodo){
         if(submodo == 2){cout << "*LISTADO DE TODOS LOS " << tipo[modo-1] << " POR PRODUCTO"<< endl;}
         if(submodo == 3){cout << "*LISTADO DE TODOS LOS " << tipo[modo-1] << " POR FECHA"<< endl;}
     }
-    cout << endl;
-    cout << "-----------------------------" << endl;
-    cout << "TOTAL DE " << tipo[modo-1] << ": " << cant << endl;
-    cout << "-----------------------------" << endl;
+    if(tot == 1){
+        cout << endl;
+        cout << "-----------------------------" << endl;
+        cout << "TOTAL DE " << tipo[modo-1] << ": " << cant << endl;
+        cout << "-----------------------------" << endl;
+    }
+
 
 }
 
