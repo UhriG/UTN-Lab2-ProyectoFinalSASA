@@ -777,7 +777,7 @@
 
 1607373021 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.h
 
-1607373021 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\validaciones.h
+1607644025 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\validaciones.h
 
 1607373021 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\fecha.cpp
 	<iostream>
@@ -861,7 +861,7 @@
 	<fstream>
 	<string>
 
-1607373021 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
+1607644194 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\producto.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
@@ -883,7 +883,7 @@
 	"ui.h"
 	"rlutil.h"
 
-1607373021 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
+1607641997 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\usuario.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -896,7 +896,7 @@
 	<fstream>
 	<string>
 
-1607373021 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\validaciones.cpp
+1607644025 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\validaciones.cpp
 	<iostream>
 	<iomanip>
 	<conio.h>

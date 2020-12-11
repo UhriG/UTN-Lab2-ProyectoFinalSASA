@@ -51,10 +51,20 @@ void Producto::cargar(){
     cout << "Ingresar Producto, completar los siguientes datos: " << endl;
     id = cantProd()+1;
     cout << "> ID: " << id <<endl;
-    cout << "> Nombre: ";
-    validarNombre(nombre);
-    cout << "> Marca: ";
-    validarNombre(marca);
+    int existe=0;
+    do{
+        cout << "> Nombre: ";
+        validarNombre(nombre);
+        cout << "> Marca: ";
+        validarNombre(marca);
+
+        existe = comprobarProducto(nombre,marca);
+        if(existe >= 0){
+            msj("INGRESAR UN PRODUCTO CON DIFERENTE NOMBRE/MARCA", rlutil::WHITE, rlutil::RED);
+        }
+
+    }while(existe >= 0);
+
     listarCategoriaSimple();
     cout << "> Categoría ID: ";
     setCategoria(validarCategoria());

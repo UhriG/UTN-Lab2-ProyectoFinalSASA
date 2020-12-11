@@ -75,3 +75,14 @@ int validarNumEntero(){
     return num;
 }
 
+int comprobarProducto(char *nombreB, char *marcaB){
+	int pos=0;
+	Producto u;
+	while(u.leerDisco(pos)==1){
+		if(strcmp(nombreB,u.getNombre())==0 && strcmp(marcaB,u.getMarca())==0 && u.getEstado()==1){
+            return pos;
+		}
+		pos++;
+    }
+	return -1;
+}
