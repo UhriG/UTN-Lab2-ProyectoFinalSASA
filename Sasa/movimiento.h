@@ -35,15 +35,14 @@ class Movimiento
         int getCategoriaId(){return categoria_id;};
         bool escribirDisco();
         int leerDisco(int pos);
-        bool guardarUsuario();
-        int leerUsuario(int pos=1);
         void eliminarTemp();
 };
 
 int cantMov();
+int cantMovNombre(char *nombre);
 void movIngreso();
 void movEgreso();
-
+int buscarMovNombre(char *nombreB, int modo);
 bool copiaMovimiento(); // crea bk de bitacora.dat
 bool recMovimiento(); // recupera bk de bitacora.dat
 int modoListarFecha(int modo, int *fechas); // Lista las opciones desde la memoria

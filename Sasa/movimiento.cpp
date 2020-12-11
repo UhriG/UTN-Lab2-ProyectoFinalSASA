@@ -142,6 +142,32 @@ int cantMov(){
     return cant;
 }
 
+int cantMovNombre(char *nombre){
+    int cant=0, pos=0;
+    Movimiento m;
+    while(m.leerDisco(pos)==1){
+        if(strcmp(nombre,m.getLogueado())==0){
+            cant++;
+        }
+        pos++;
+    }
+    return cant;
+}
+
+int buscarMovNombre(char *nombreB, int modo){
+	int pos=0;
+	Movimiento m;
+	if(modo==1){
+        while(m.leerDisco(pos)==1){
+            if(strcmp(nombreB,m.getLogueado())==0){
+                return pos;
+            }
+            pos++;
+        }
+	}
+	return -1;
+}
+
 void movIngreso(){
     cTitulo();
     int pos, id, stock, stockA;

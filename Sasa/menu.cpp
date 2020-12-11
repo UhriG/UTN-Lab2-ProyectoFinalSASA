@@ -591,7 +591,7 @@ void listarCategoria(){
         cTabla(3); // MODO 3 CATEGORÍA
         for(pos; pos < categorias; pos++){
             c.leerDisco(pos);
-            if(c.getEstado()==1 && c.getId() != idanterior){
+            if(c.getId() != idanterior){
                 c.mostrar();
                 cLinea(120);
             }
@@ -704,7 +704,7 @@ void listarProductoPorCodAs(){
         cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
-            if(p.getEstado()==1 && p.getId() != idanterior){
+            if(p.getId() != idanterior){
                 p.mostrar();
                 cLinea(120);
             }
@@ -747,7 +747,7 @@ void listarProductoPorCodDes(){
         cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos > productos; pos--){
             p.leerDisco(pos);
-            if(p.getEstado()==1 && p.getId() != idanterior && p.getId() != 0){
+            if(p.getId() != idanterior && p.getId() != 0){
                 p.mostrar();
                 cLinea(120);
             }
@@ -809,7 +809,7 @@ void listarProductoTodos(){
         cTabla(2); // MODO 2 PRODUCTO
         for(pos; pos < productos; pos++){
             p.leerDisco(pos);
-            if(p.getEstado()==1 && p.getId() != idanterior){
+            if(p.getId() != idanterior){
                 p.mostrar();
                 cLinea(120);
             }
@@ -947,12 +947,6 @@ void listarMovimientosTodos(){
 
 void listarMovimientosPorUsuario(){
     Movimiento m;
-    int cant = cantMov(), pos = 0, movimientos = 5, paginas;
-    if(cant % movimientos == 0){
-        paginas = cant / movimientos;
-    } else {
-        paginas = (cant / movimientos)+1;
-    }
     int idanterior = -1, hoja = 1;
     int resp=1;
     cTitulo();
@@ -964,16 +958,22 @@ void listarMovimientosPorUsuario(){
         cin.clear();
         cin.ignore(123, '\n');
     }
+
+    int cant = cantMovNombre(nombre), pos = buscarMovNombre(nombre,1), movimientos = 5, paginas;
+    if(cant % movimientos == 0){paginas = cant / movimientos;}
+    else{paginas = (cant / movimientos)+1;}
+    movimientos = pos+5;
     while(resp != 0){
         cTitulo();
         cListar(cant,4,1);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
             m.leerDisco(pos);
-            if(strcmp(nombre,m.getLogueado())==0){
+            if(strcmp(nombre,m.getLogueado())==0 && m.getId() != idanterior && m.getId() != 0){
                 m.mostrar(1);
                 cLinea(120);
             }
+            idanterior = m.getId();
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
         cout << "0- SALIR | INDIQUE PÁGINA: > ";
