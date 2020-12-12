@@ -959,16 +959,19 @@ void listarMovimientosPorUsuario(){
         cin.ignore(123, '\n');
     }
 
-    int cant = cantMovNombre(nombre), pos = buscarMovNombre(nombre,1), movimientos = 5, paginas;
+    int cant = cantMovNombre(nombre), pos = 0, movimientos = 5, paginas;
     if(cant % movimientos == 0){paginas = cant / movimientos;}
     else{paginas = (cant / movimientos)+1;}
-    movimientos = pos+5;
+
+    int mov[cant]={};
+    vecMovimiento(mov,cant,nombre);
+
     while(resp != 0){
         cTitulo();
         cListar(cant,4,1);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
-            m.leerDisco(pos);
+            m.leerDisco(mov[pos]);
             if(strcmp(nombre,m.getLogueado())==0 && m.getId() != idanterior && m.getId() != 0){
                 m.mostrar(1);
                 cLinea(120);
