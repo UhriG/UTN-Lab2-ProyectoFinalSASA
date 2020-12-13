@@ -142,7 +142,7 @@ int cantMov(){
     return cant;
 }
 
-int cantMovNombre(char *nombre, int modo){
+int cantMovNombre(char *nombre, int modo, int *fechas){
     int cant=0, pos=0;
     Movimiento m;
     while(m.leerDisco(pos)==1){
