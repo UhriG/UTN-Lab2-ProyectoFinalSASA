@@ -142,12 +142,19 @@ int cantMov(){
     return cant;
 }
 
-int cantMovNombre(char *nombre){
+int cantMovNombre(char *nombre, int modo){
     int cant=0, pos=0;
     Movimiento m;
     while(m.leerDisco(pos)==1){
-        if(strcmp(nombre,m.getLogueado())==0){
-            cant++;
+        if(modo==1){
+            if(strcmp(nombre,m.getLogueado())==0){
+                cant++;
+            }
+        }
+        if(modo==2){
+            if(strcmp(nombre,m.getProducto())==0){
+                cant++;
+            }
         }
         pos++;
     }
@@ -357,15 +364,24 @@ bool expCsvMovimiento(){
     return true;
 }
 
-void vecMovimiento(int *mov, int cant, char *nombre){
+void vecMovimiento(int *mov, int cant, char *nombre, int modo){
     int i=0, pos=0, idanterior;
     Movimiento m;
     while(i<cant){
         m.leerDisco(pos);
-        if(strcmp(nombre,m.getLogueado())==0 && m.getId() != idanterior && m.getId() != 0){
-            mov[i] = pos;
-            i++;
+        if(modo==1){
+            if(strcmp(nombre,m.getLogueado())==0 && m.getId() != idanterior && m.getId() != 0){
+                mov[i] = pos;
+                i++;
+            }
         }
+        if(modo==2){
+            if(strcmp(nombre,m.getProducto())==0 && m.getId() != idanterior && m.getId() != 0){
+                mov[i] = pos;
+                i++;
+            }
+        }
+
         pos++;
         idanterior = m.getId();
     }

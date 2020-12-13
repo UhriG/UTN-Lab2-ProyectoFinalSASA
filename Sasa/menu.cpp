@@ -946,9 +946,6 @@ void listarMovimientosTodos(){
 }
 
 void listarMovimientosPorUsuario(){
-    Movimiento m;
-    int idanterior = -1, hoja = 1;
-    int resp=1;
     cTitulo();
     cout << left;
     cout << "INGRESAR NOMBRE DE USUARIO: ";
@@ -959,12 +956,14 @@ void listarMovimientosPorUsuario(){
         cin.ignore(123, '\n');
     }
 
-    int cant = cantMovNombre(nombre), pos = 0, movimientos = 5, paginas;
+    Movimiento m;
+    int idanterior = -1, hoja=1, resp=1;
+    int cant = cantMovNombre(nombre,1), pos = 0, movimientos = 5, paginas;
     if(cant % movimientos == 0){paginas = cant / movimientos;}
     else{paginas = (cant / movimientos)+1;}
 
     int mov[cant]={};
-    vecMovimiento(mov,cant,nombre);
+    vecMovimiento(mov,cant,nombre,1);
 
     while(resp != 0){
         cTitulo();
@@ -998,15 +997,6 @@ void listarMovimientosPorUsuario(){
 }
 
 void listarMovimientosPorProducto(){
-    Movimiento m;
-    int cant = cantMov(), pos = 0, movimientos = 5, paginas;
-    if(cant % movimientos == 0){
-        paginas = cant / movimientos;
-    } else {
-        paginas = (cant / movimientos)+1;
-    }
-    int idanterior = -1, hoja = 1;
-    int resp=1;
     cTitulo();
     cout << left;
     cout << "INGRESAR NOMBRE DE PRODUCTO: ";
@@ -1016,16 +1006,27 @@ void listarMovimientosPorProducto(){
         cin.clear();
         cin.ignore(123, '\n');
     }
+
+    Movimiento m;
+    int idanterior = -1, hoja=1, resp=1;
+    int cant = cantMovNombre(nombre,2), pos = 0, movimientos = 5, paginas;
+    if(cant % movimientos == 0){paginas = cant / movimientos;}
+    else{paginas = (cant / movimientos)+1;}
+
+    int mov[cant]={};
+    vecMovimiento(mov,cant,nombre,2);
+
     while(resp != 0){
         cTitulo();
         cListar(cant,4,2);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
-            m.leerDisco(pos);
-            if(strcmp(nombre,m.getProducto())==0){
+            m.leerDisco(mov[pos]);
+            if(strcmp(nombre,m.getProducto())==0 && m.getId() != idanterior && m.getId() != 0){
                 m.mostrar(1);
                 cLinea(120);
             }
+            idanterior = m.getId();
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
         cout << "0- SALIR | INDIQUE PÁGINA: > ";
