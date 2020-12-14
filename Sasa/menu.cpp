@@ -1049,16 +1049,9 @@ void listarMovimientosPorProducto(){
 
 void listarMovimientosPorFecha(){
     Movimiento m;
-    int cant = cantMov(), pos = 0, movimientos = 5, paginas;
-    if(cant % movimientos == 0){
-        paginas = cant / movimientos;
-    } else {
-        paginas = (cant / movimientos)+1;
-    }
-    int idanterior = -1, hoja = 1;
-    int resp=1;
-    cTitulo();
 
+
+    cTitulo();
     // VARIOS FILTROS 1- DÍA ESPECIFÍCO 2- MES Y AÑO 3- AÑO
     int modo, fechas[3]={};
     cout << left;
@@ -1071,6 +1064,12 @@ void listarMovimientosPorFecha(){
     }
     modoListarFecha(modo,fechas);
     cTitulo();
+
+    int idanterior = -1, hoja=1, resp=1;
+    int cant = cantMovNombre(nombre,3,fechas), pos = 0, movimientos = 5, paginas;
+    if(cant % movimientos == 0){paginas = cant / movimientos;}
+    else{paginas = (cant / movimientos)+1;}
+
     cListar(cant,3,2);
     while(resp != 0){
         cTitulo();

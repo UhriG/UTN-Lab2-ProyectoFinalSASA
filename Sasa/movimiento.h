@@ -39,7 +39,7 @@ class Movimiento
 };
 
 int cantMov();
-int cantMovNombre(char *nombre, int modo);
+int cantMovNombre(char *nombre, int modo, int *fecha=0);
 void movIngreso();
 void movEgreso();
 int buscarMovNombre(char *nombreB, int modo);
