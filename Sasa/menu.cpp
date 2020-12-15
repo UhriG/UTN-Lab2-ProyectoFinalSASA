@@ -1066,12 +1066,11 @@ void listarMovimientosPorFecha(){
     int cant = cantMovFecha(fechas,modo), pos = 0, movimientos = 5, paginas;
     if(cant % movimientos == 0){paginas = cant / movimientos;}
     else{paginas = (cant / movimientos)+1;}
-    cout << "BIEN " << cant;
+
     int mov[cant]={};
     vecMovimientoFecha(mov,cant,fechas,modo);
-    //cout << "CANT" << cant;
-    //anykey();
-    cListar(cant,3,2);
+
+    cListar(cant,3,2,1);
     while(resp != 0){
         cTitulo();
         cListar(cant,4,2);

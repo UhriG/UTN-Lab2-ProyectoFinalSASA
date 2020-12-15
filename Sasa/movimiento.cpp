@@ -412,23 +412,26 @@ void vecMovimiento(int *mov, int cant, char *nombre, int modo){
 }
 
 void vecMovimientoFecha(int *mov, int cant, int *fechas, int modo){
-    int i=0, pos=0, idanterior;
+    int i=0, pos=0, idanterior=-1;
     Movimiento m;
     while(i<cant){
         m.leerDisco(pos);
         if(modo == 1){
             if(fechas[0] == m.getFecha().getDia() && fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
                 mov[i] = pos;
+                i++;
             }
         }
         if(modo == 2){
             if(fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
                 mov[i] = pos;
+                i++;
             }
         }
         if(modo == 3){
             if(fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
                 mov[i] = pos;
+                i++;
             }
         }
         pos++;
