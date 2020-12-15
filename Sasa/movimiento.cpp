@@ -142,7 +142,7 @@ int cantMov(){
     return cant;
 }
 
-int cantMovNombre(char *nombre, int modo, int *fechas){
+int cantMovNombre(char *nombre, int modo){
     int cant=0, pos=0;
     Movimiento m;
     while(m.leerDisco(pos)==1){
@@ -153,6 +153,30 @@ int cantMovNombre(char *nombre, int modo, int *fechas){
         }
         if(modo==2){
             if(strcmp(nombre,m.getProducto())==0){
+                cant++;
+            }
+        }
+        pos++;
+    }
+    return cant;
+}
+
+int cantMovFecha(int *fechas, int modo){
+    int cant=0, pos=0;
+    Movimiento m;
+    while(m.leerDisco(pos)==1){
+        if(modo == 1){
+            if(fechas[0] == m.getFecha().getDia() && fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio()){
+                cant++;
+            }
+        }
+        if(modo == 2){
+            if(fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio()){
+                cant++;
+            }
+        }
+        if(modo == 3){
+            if(fechas[2] == m.getFecha().getAnio()){
                 cant++;
             }
         }
@@ -387,3 +411,27 @@ void vecMovimiento(int *mov, int cant, char *nombre, int modo){
     }
 }
 
+void vecMovimientoFecha(int *mov, int cant, int *fechas, int modo){
+    int i=0, pos=0, idanterior;
+    Movimiento m;
+    while(i<cant){
+        m.leerDisco(pos);
+        if(modo == 1){
+            if(fechas[0] == m.getFecha().getDia() && fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
+                mov[i] = pos;
+            }
+        }
+        if(modo == 2){
+            if(fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
+                mov[i] = pos;
+            }
+        }
+        if(modo == 3){
+            if(fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
+                mov[i] = pos;
+            }
+        }
+        pos++;
+        idanterior = m.getId();
+    }
+}

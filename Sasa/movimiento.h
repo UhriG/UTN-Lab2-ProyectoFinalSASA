@@ -39,7 +39,8 @@ class Movimiento
 };
 
 int cantMov();
-int cantMovNombre(char *nombre, int modo, int *fecha=0);
+int cantMovNombre(char *nombre, int modo);
+int cantMovFecha(int *vec, int modo);
 void movIngreso();
 void movEgreso();
 int buscarMovNombre(char *nombreB, int modo);
@@ -48,4 +49,5 @@ bool recMovimiento(); // recupera bk de bitacora.dat
 int modoListarFecha(int modo, int *fechas); // Lista las opciones desde la memoria
 bool expCsvMovimiento(); // // exporta datos a csv
 void vecMovimiento(int *vec, int cant, char *nombre, int modo);
+void vecMovimientoFecha(int *vec, int cant, int *fechas, int modo);
 #endif // MOVIMIENTOS_H

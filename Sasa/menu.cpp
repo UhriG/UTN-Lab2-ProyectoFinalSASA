@@ -967,7 +967,7 @@ void listarMovimientosPorUsuario(){
 
     while(resp != 0){
         cTitulo();
-        cListar(cant,4,1);
+        cListar(cant,4,1,1);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
             m.leerDisco(mov[pos]);
@@ -1018,7 +1018,7 @@ void listarMovimientosPorProducto(){
 
     while(resp != 0){
         cTitulo();
-        cListar(cant,4,2);
+        cListar(cant,4,2,1);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
             m.leerDisco(mov[pos]);
@@ -1048,9 +1048,6 @@ void listarMovimientosPorProducto(){
 }
 
 void listarMovimientosPorFecha(){
-    Movimiento m;
-
-
     cTitulo();
     // VARIOS FILTROS 1- DÍA ESPECIFÍCO 2- MES Y AÑO 3- AÑO
     int modo, fechas[3]={};
@@ -1064,37 +1061,43 @@ void listarMovimientosPorFecha(){
     }
     modoListarFecha(modo,fechas);
     cTitulo();
-
+    Movimiento m;
     int idanterior = -1, hoja=1, resp=1;
-    int cant = cantMovNombre(nombre,3,fechas), pos = 0, movimientos = 5, paginas;
+    int cant = cantMovFecha(fechas,modo), pos = 0, movimientos = 5, paginas;
     if(cant % movimientos == 0){paginas = cant / movimientos;}
     else{paginas = (cant / movimientos)+1;}
-
+    cout << "BIEN " << cant;
+    int mov[cant]={};
+    vecMovimientoFecha(mov,cant,fechas,modo);
+    //cout << "CANT" << cant;
+    //anykey();
     cListar(cant,3,2);
     while(resp != 0){
         cTitulo();
         cListar(cant,4,2);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
-            m.leerDisco(pos);
+            m.leerDisco(mov[pos]);
             if(modo == 1){
-                if(fechas[0] == m.getFecha().getDia() && fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio()){
+                if(fechas[0] == m.getFecha().getDia() && fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
                     m.mostrar(1);
                     cLinea(120);
                 }
             }
             if(modo == 2){
-                if(fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio()){
+                if(fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
                     m.mostrar(1);
                     cLinea(120);
                 }
             }
             if(modo == 3){
-                if(fechas[2] == m.getFecha().getAnio()){
+                if(fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
                     m.mostrar(1);
                     cLinea(120);
                 }
             }
+            idanterior = m.getId();
+
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
         cout << "0- SALIR | INDIQUE PÁGINA: > ";

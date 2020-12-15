@@ -813,7 +813,7 @@
 
 1607373021 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.h
 
-1607830367 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.h
+1608069338 c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.h
 	"usuario.h"
 	"producto.h"
 	"Fecha.h"
@@ -831,7 +831,7 @@
 	"movimiento.h"
 	<string.h>
 
-1607830367 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
+1608069338 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\menu.cpp
 	<iostream>
 	<iomanip>
 	<stdio.h>
@@ -847,7 +847,7 @@
 	"login.h"
 	"validaciones.h"
 
-1607830367 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
+1608070275 source:c:\users\max\documents\github\utn-lab2-proyectofinalsasa\sasa\movimiento.cpp
 	<iostream>
 	<iomanip>
 	"ui.h"
