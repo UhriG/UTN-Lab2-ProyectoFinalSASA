@@ -1070,33 +1070,18 @@ void listarMovimientosPorFecha(){
     int mov[cant]={};
     vecMovimientoFecha(mov,cant,fechas,modo);
 
-    cListar(cant,3,2,1);
+    cListar(cant,4,3,1);
     while(resp != 0){
         cTitulo();
-        cListar(cant,4,2);
+        cListar(cant,4,3,1);
         cTabla(4); // MODO 4 BITACORA
         for(pos; pos < movimientos; pos++){
             m.leerDisco(mov[pos]);
-            if(modo == 1){
-                if(fechas[0] == m.getFecha().getDia() && fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
-                    m.mostrar(1);
-                    cLinea(120);
-                }
-            }
-            if(modo == 2){
-                if(fechas[1] == m.getFecha().getMes() && fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
-                    m.mostrar(1);
-                    cLinea(120);
-                }
-            }
-            if(modo == 3){
-                if(fechas[2] == m.getFecha().getAnio() && m.getId() != idanterior && m.getId() != 0){
-                    m.mostrar(1);
-                    cLinea(120);
-                }
+            if(m.getId() != idanterior && m.getId() != 0){
+                m.mostrar(1);
+                cLinea(120);
             }
             idanterior = m.getId();
-
         }
         cout << "PAGINA: " << hoja << " / " << paginas << endl;
         cout << "0- SALIR | INDIQUE PÁGINA: > ";

@@ -17,3 +17,11 @@ ID,USUARIO,PRODUCTO,MARCA,CATEGORÍA,TIPO,STOCK,FECHA
 16,admin,Hamburguesa,Paty,Freezer,Ingreso,80,7/12/2020
 17,admin,Agua Saborizada,Aquarius,Bebidas,Ingreso,90,7/12/2020
 18,admin,Almohada,Fireball,Hogar,Ingreso,5,7/12/2020
+19,supervisor,Dentrifico,Bplus,Baño,Ingreso,50,10/12/2020
+20,supervisor,Tallarin,Marolio,Almacén,Ingreso,50,10/12/2020
+21,supervisor,Lavandina,Ayudín,Limpieza,Ingreso,20,10/12/2020
+22,supervisor,Salchicha,Union,Freezer,Ingreso,40,10/12/2020
+23,supervisor,Alfajor,Aguila,Kiosko,Ingreso,10,10/12/2020
+24,supervisor,Harina,Favorita,Almacén,Ingreso,10,10/12/2020
+25,supervisor,Tallarin,Marolio,Almacén,Ingreso,5,10/12/2020
+26,supervisor,Alfajor,Aguila,Kiosko,Ingreso,5,10/12/2020
