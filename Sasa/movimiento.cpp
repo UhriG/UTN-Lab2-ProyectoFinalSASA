@@ -270,14 +270,14 @@ void movEgreso(){
 		p.mostrar(2);
 		stockA = p.getStock();
 		cout << endl;
-		cout<<"INGRESE CANTIDAD DE UNIDADES A INGRESAR: ";
-		while(!(cin >> stock) || stock <= 0){
-            msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS POSITIVOS", rlutil::WHITE, rlutil::RED);
+		cout<<"INGRESE CANTIDAD DE UNIDADES A EGRESAR: ";
+		while(!(cin >> stock) || stock <= 0 || stock > stockA){
+            msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS POSITIVOS Y MENORES AL STOCK ACTUAL", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
             cTitulo();
             p.mostrar(2);
-            cout<<"INGRESE CANTIDAD DE UNIDADES A INGRESAR: ";
+            cout<<"INGRESE CANTIDAD DE UNIDADES A EGRESAR: ";
         }
         stockA -= stock;
 
