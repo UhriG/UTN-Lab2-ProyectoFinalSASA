@@ -38,19 +38,6 @@ class Movimiento
         void eliminarTemp();
 };
 
-class MovimientoU
-{
-    private:
-        int id;
-        Movimiento;
-        Usuario;
-    public:
-        Movimiento getMov();
-        Usuario getUser();
-        void cargarU(Usuario, int tM);
-        bool escribirDisco();
-        int leerDisco(int pos);
-};
 
 int cantMov(); // devuelve la cantidad de registros totales
 int cantMovNombre(char *nombre, int modo); // devuelve la cantidad de registros encontrados por nombre/producto

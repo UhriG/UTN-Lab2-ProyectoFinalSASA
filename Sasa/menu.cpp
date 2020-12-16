@@ -385,14 +385,21 @@ void modificarProducto(){
     if(pos!=-1){
 		p.leerDisco(pos);
 		p.mostrar(2);
-		cout << endl;
-		cout<<"INGRESE NUEVO STOCK: ";
+
+		cout << "PRODUCTO A MODIFICAR CATEGORÍA, PRESIONAR UNA TECLA." << endl;
+		anykey();
+
+		listarCategoriaSimple();
+        cout << "> CATEGORÍA ID: ";
+        p.setCategoria(validarCategoria());
+
+		/*cout<<"INGRESE NUEVO STOCK: ";
 		while(!(cin >> stock)){
             msj("INGRESO INCORRECTO - SOLO SE ADMITEN NUMEROS ENTEROS", rlutil::WHITE, rlutil::RED);
             cin.clear();
             cin.ignore(123, '\n');
         }
-		p.setStock(stock);
+		p.setStock(stock);*/
 		if(p.modDisco(pos)==true){
             msj("SE MODIFICO CON ÉXITO", rlutil::WHITE, rlutil::GREEN);
 		}
@@ -845,38 +852,6 @@ void menuMovimientos(){
             cin.clear();
             cin.ignore(123, '\n');
             cMenuMovimientos(); // CARTEL MENU GENERAL ( USUARIO )
-        }
-
-        switch(opc){
-            case 1:
-                subMenuMovimiento();
-            break;
-            case 2:
-                //movEgreso();
-            break;
-            case 3:
-                //listarBitacora();
-            break;
-            case 4:
-                menu = false;
-            break;
-            default:
-                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
-            break;
-        }
-    }
-}
-
-void subMenuMovimiento(){
-    bool menu = true;
-    int opc;
-    while(menu){
-        cMenuMovimientosSub(); // CARTEL MENU GENERAL ( USUARIO )
-        while(!(cin >> opc)){
-            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
-            cin.clear();
-            cin.ignore(123, '\n');
-            cMenuMovimientosSub(); // CARTEL MENU GENERAL ( USUARIO )
         }
 
         switch(opc){

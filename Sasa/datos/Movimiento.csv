@@ -25,3 +25,9 @@ ID,USUARIO,PRODUCTO,MARCA,CATEGORÍA,TIPO,STOCK,FECHA
 24,supervisor,Harina,Favorita,Almacén,Ingreso,10,10/12/2020
 25,supervisor,Tallarin,Marolio,Almacén,Ingreso,5,10/12/2020
 26,supervisor,Alfajor,Aguila,Kiosko,Ingreso,5,10/12/2020
+27,admin,Lavandina,Ayudín,Limpieza,Egreso,30,15/12/2020
+28,admin,Salchicha,Union,Freezer,Egreso,65,15/12/2020
+29,admin,Alfajor,Aguila,Kiosko,Egreso,5,15/12/2020
+30,admin,Alfajor,Aguila,Kiosko,Egreso,40,15/12/2020
+31,admin,Lavandina,Ayudín,Limpieza,Egreso,10,15/12/2020
+32,admin,Detergente,Magistral,Limpieza,Egreso,10,15/12/2020

@@ -47,12 +47,15 @@ void Producto::setFechaMod(Fecha f){
 */
 
 void Producto::cargar(){
-    fflush(stdin);
-    cout << "Ingresar Producto, completar los siguientes datos: " << endl;
-    id = cantProd()+1;
-    cout << "> ID: " << id <<endl;
     int existe=0;
     do{
+        cTitulo();
+        fflush(stdin);
+        cout << "Ingresar Producto, completar los siguientes datos: " << endl;
+        id = cantProd()+1;
+
+        cout << "> ID: " << id <<endl;
+
         cout << "> Nombre: ";
         validarNombre(nombre);
         cout << "> Marca: ";

@@ -25,20 +25,6 @@ int main()
         title("MODO DEV");
         gotoXYPred();
 
-        cout << "NOMBRE: >";
-        char nombre[15];
-        cin >> nombre;
-        int cant = cantMovNombre(nombre,1);
-        Movimiento m;
-        int mov[cant]={};
-        vecMovimiento(mov,cant,nombre,1);
-
-
-        for(int v=0; v<cant; v++){
-            m.leerDisco(mov[v]);
-            m.mostrar(1);
-            cLinea(120);
-        }
     }
     // ACA FINALIZAN LAS FUNCIONES TESTER
     return 0;

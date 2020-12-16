@@ -1,11 +1,11 @@
 ID,PRODUCTO,MARCA,CATEGORÍA,ESTADO,STOCK
-1,Tallarin,Marolio,Almacén,Activo,65
-2,Lavandina,Ayudín,Limpieza,Activo,25
-3,Salchicha,Union,Freezer,Activo,60
+1,Tallarin,Marolio,Almacén,Activo,-935
+2,Lavandina,Ayudín,Limpieza,Activo,-15
+3,Salchicha,Union,Freezer,Activo,-5
 4,Jabón,Lux,Baño,Activo,30
-5,Alfajor,Aguila,Kiosko,Activo,35
+5,Alfajor,Aguila,Kiosko,Activo,-10
 6,Harina,Favorita,Almacén,Activo,60
-7,Detergente,Magistral,Limpieza,Activo,50
+7,Detergente,Magistral,Limpieza,Activo,40
 8,Papas Fritas,Mc Cain,Freezer,Activo,60
 9,Shampoo,Plusbell,Baño,Activo,40
 10,Turrón,Arcor,Kiosko,Activo,10
