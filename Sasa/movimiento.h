@@ -38,9 +38,23 @@ class Movimiento
         void eliminarTemp();
 };
 
-int cantMov();
-int cantMovNombre(char *nombre, int modo);
-int cantMovFecha(int *vec, int modo);
+class MovimientoU
+{
+    private:
+        int id;
+        Movimiento;
+        Usuario;
+    public:
+        Movimiento getMov();
+        Usuario getUser();
+        void cargarU(Usuario, int tM);
+        bool escribirDisco();
+        int leerDisco(int pos);
+};
+
+int cantMov(); // devuelve la cantidad de registros totales
+int cantMovNombre(char *nombre, int modo); // devuelve la cantidad de registros encontrados por nombre/producto
+int cantMovFecha(int *vec, int modo); // devuelve la cantidad de registros encontrados por fecha
 void movIngreso();
 void movEgreso();
 int buscarMovNombre(char *nombreB, int modo);
@@ -48,6 +62,6 @@ bool copiaMovimiento(); // crea bk de bitacora.dat
 bool recMovimiento(); // recupera bk de bitacora.dat
 int modoListarFecha(int modo, int *fechas); // Lista las opciones desde la memoria
 bool expCsvMovimiento(); // // exporta datos a csv
-void vecMovimiento(int *vec, int cant, char *nombre, int modo);
-void vecMovimientoFecha(int *vec, int cant, int *fechas, int modo);
+void vecMovimiento(int *vec, int cant, char *nombre, int modo); // devuelve las posiciones encontradas
+void vecMovimientoFecha(int *vec, int cant, int *fechas, int modo); // devuelve las posiciones encontradas
 #endif // MOVIMIENTOS_H

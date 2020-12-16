@@ -438,3 +438,57 @@ void vecMovimientoFecha(int *mov, int cant, int *fechas, int modo){
         idanterior = m.getId();
     }
 }
+
+// MOVIMIENTO USUARIO
+Movimiento MovimientoU::getMov(){
+    return Movimiento;
+}
+
+Usuario MovimientoU::getUser(){
+    return Usuario;
+}
+
+bool MovimientoU::escribirDisco(){
+    bool guardo;
+    FILE *f = fopen("datos/bitacoraUsuario.dat", "ab");
+    if(f == NULL){
+        cout << "No se puede guardar.";
+        return false;
+    }
+    guardo = fwrite(this,sizeof *this, 1, f);
+    fclose(f);
+    return guardo;
+}
+
+int MovimientoU::leerDisco(int pos){
+    int x;
+	FILE *p;
+	p=fopen("datos/bitacoraUsuario.dat","rb");
+	if(p==NULL){
+		cout<<"No existe el archivo";
+		return -1;
+    }
+	fseek(p,pos*sizeof *this,0);
+	x=fread(this,sizeof *this,1,p);
+	fclose(p);
+	return x;
+}
+
+void MovimientoU::cargarU(Usuario u, int tM){
+    id = cantMov()+1;
+
+    Login l;
+    l.leerUsuario();
+
+    Movimiento m;
+    m.setLogueado(l.getNombre());
+    m.setTipoMovimiento(tM);
+
+    int pos = buscarNombre(l.getNombre());
+    u.leerDisco(pos);
+    u.getEstado();
+
+    Fecha f;
+    f.fechaActual();
+    m.setFecha(f);
+}

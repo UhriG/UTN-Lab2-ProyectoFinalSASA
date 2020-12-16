@@ -24,6 +24,7 @@ void modificarCategoria(); // Modifica Categoria
 void eliminarCategoria(); // Elimina una Categoria
 void listarCategoria(); // Lista Todas las Categorias
 // SUB MENU MOVIMIENTOS
+void subMenuMovimiento(); // Sub menu Movimiento
 void cargarIngresos(); // Carga productos al stock
 void cargarEgresos(); // Quita productos al stock
 void listarBitacora(); // Lista el total de movimientos de egreso y egreso

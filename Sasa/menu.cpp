@@ -849,6 +849,38 @@ void menuMovimientos(){
 
         switch(opc){
             case 1:
+                subMenuMovimiento();
+            break;
+            case 2:
+                //movEgreso();
+            break;
+            case 3:
+                //listarBitacora();
+            break;
+            case 4:
+                menu = false;
+            break;
+            default:
+                msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            break;
+        }
+    }
+}
+
+void subMenuMovimiento(){
+    bool menu = true;
+    int opc;
+    while(menu){
+        cMenuMovimientosSub(); // CARTEL MENU GENERAL ( USUARIO )
+        while(!(cin >> opc)){
+            msj("OPCIÓN INCORRECTA", rlutil::WHITE, rlutil::RED);
+            cin.clear();
+            cin.ignore(123, '\n');
+            cMenuMovimientosSub(); // CARTEL MENU GENERAL ( USUARIO )
+        }
+
+        switch(opc){
+            case 1:
                 movIngreso();
             break;
             case 2:

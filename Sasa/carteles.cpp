@@ -74,6 +74,17 @@ void cMenuProdListar(){
 
 void cMenuMovimientos(){
     cTitulo();
+    cout << "1) PRODUCTOS" << endl;
+    cout << "2) USUARIOS" << endl;
+    cout << "3) CATEGORÍAS" << endl;
+    cout << endl;
+    cout << "4) SALIR" << endl;
+    cout << endl;
+    cout << " > ";
+}
+
+void cMenuMovimientosSub(){
+    cTitulo();
     cout << "1) INGRESOS" << endl;
     cout << "2) EGRESOS" << endl;
     cout << "3) BITÁCORA" << endl;
